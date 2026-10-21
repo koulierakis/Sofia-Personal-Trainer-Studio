@@ -7,13 +7,13 @@ test('Every published phase and review candidate exists as WebP; blocked phases 
  let count=0;
  for(const [id,e] of Object.entries(manifest.exercises)){
   assert.equal(e.status,'pending_visual_review');
-  for(const url of e.candidates){const b=await readFile(new URL('../public'+url,import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');count++;}
+  for(const url of [...(e.candidates||[]),...(e.importedCandidates||[]).map(c=>c.url)]){const b=await readFile(new URL('../public'+url,import.meta.url));assert.equal(b.toString('ascii',0,4),'RIFF');assert.equal(b.toString('ascii',8,12),'WEBP');count++;}
   for(const [i,url] of e.phases.entries()){
-   if(e.blockedPhases[String(i+1)]){assert.equal(url,null);assert.equal(imageFor({},id,i,manifest.exercises,{}),null);}
+   if(!url||e.blockedPhases[String(i+1)]){assert.equal(url,null);assert.equal(imageFor({},id,i,manifest.exercises,{}),null);}
    else assert.equal(imageFor({},id,i,manifest.exercises,{}).url,url);
   }
  }
- assert.equal(count,140);
+ assert.equal(count,141);
 });
 test('Coach decisions persist per exact ID, phase and asset; no automatic approvals',()=>{
  const memory=new Map();const storage={getItem:k=>memory.get(k),setItem:(k,v)=>memory.set(k,v)};
@@ -35,4 +35,16 @@ test('All ten programs resolve their explicit exercise references to the central
  const programs=JSON.parse(await readFile(new URL('../public/data/functional-programs.json',import.meta.url)));assert.equal(programs.length,10);let references=0;
  for(const program of programs)for(const block of program.blocks){const id=block.activity.match(/\bfunctional-\d{3}\b/)?.[0];if(id){assert.ok(catalog.some(e=>e.id===id));references++;}}
  assert.equal(references,80);
+});
+test('Imported candidates remain outside movement phases and keep exact provenance',()=>{
+ const e=manifest.exercises['functional-031'];
+ assert.ok(e.phases.every(p=>p===null));
+ assert.equal(e.importedCandidates.length,1);
+ assert.equal(e.importedCandidates[0].phase,1);
+ assert.equal(e.importedCandidates[0].reviewStatus,'pending_visual_review');
+ assert.equal(e.importedCandidates[0].sourceExerciseId,'functional-031');
+});
+test('Blocked URLs cannot render even if a malformed manifest maps them',()=>{
+ const url='/images/exercises/functional-021/05.webp';
+ assert.equal(imageFor({},'functional-021',0,{'functional-021':{status:'approved',phases:[url],blockedPhases:{1:'rejected'}}},{}),null);
 });

@@ -840,6 +840,30 @@
       "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
       "sequenceComplete": false,
       "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-031": {
+      "status": "pending_visual_review",
+      "phases": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "candidates": [],
+      "blockedPhases": {},
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-031/01-88609f345393161b.webp",
+          "sourceExerciseId": "functional-031",
+          "sourcePhase": 1,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "c732683e46920ba5ba40dbacc70a122be896bc7ffb082279856b3ba7a6562da1",
+          "sha256": "88609f345393161b5a62f777026f9f97f9a74adc1bb8b2c0866ddfc7218b49e6",
+          "mappingReviewer": "Codex exact-ID mapping; visual candidate only",
+          "reviewStatus": "pending_visual_review"
+        }
+      ]
     }
   },
   "note": "Only permanently committed, individually reviewed photos should appear here. Do not claim placeholder prompts are photographs."

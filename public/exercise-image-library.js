@@ -13,10 +13,11 @@ export async function loadImageLibrary(){
 export function imageFor(exercise,id,index,library,reviews=readImageReviews()){
  const entry=library[id];
  const path=entry?.phases?.[index];
+ if(entry?.blockedPhases?.[String(index+1)])return null;
  if(!entry||!['approved','pending_visual_review'].includes(entry.status))return null;
- if(typeof path!=='string'||!/^\/images\/exercises\/[a-z0-9-]+\/\d{2}\.webp$/.test(path))return null;
+ if(typeof path!=='string'||!/^\/images\/exercises\/[a-z0-9-]+\/\d{2}(?:-[a-f0-9]{16})?\.webp$/.test(path))return null;
  if(!path.includes('/'+id+'/'))return null;
- const status=reviews[imageReviewKey(id,index,path)]||entry.status;
+ const status=reviews[imageReviewKey(id,index,path)]||entry.phaseReviews?.[String(index+1)]?.status||entry.status;
  return {url:path,status,label:entry.labels?.[index]};
 }
 

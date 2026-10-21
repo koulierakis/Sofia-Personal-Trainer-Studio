@@ -108,6 +108,6 @@ void loadImageLibrary().then(entries=>{imageLibrary=entries;});
 
 
 function renderCandidateReview(target,exercise,entry){
- if(!entry)return;const candidates=[...Object.entries(entry.blockedPhases||{}).map(([phase,reason])=>({url:entry.candidates[Number(phase)-1],reason})),...(entry.additionalReviewCandidates||[]).map(url=>({url,reason:entry.reviewNotes}))];
+ if(!entry)return;const candidates=[...Object.entries(entry.blockedPhases||{}).map(([phase,reason])=>({url:entry.candidates[Number(phase)-1],reason})),...(entry.additionalReviewCandidates||[]).map(url=>({url,reason:entry.reviewNotes})),...(entry.importedCandidates||[]).map(item=>({url:item.url,reason:'Φάση '+item.phase+' · '+item.provider+' · '+item.reviewStatus}))];
  if(!candidates.length)return;const details=document.createElement('details');details.append(text('summary','Αποκλεισμένες εικόνες και νέες δοκιμές για τεχνικό επανέλεγχο'));const grid=text('div','','phasegrid');for(const item of candidates){const cell=text('div','','phase');const img=document.createElement('img');img.src=item.url;img.alt=name(exercise)+' — δοκιμαστική εικόνα προς επανέλεγχο';img.loading='lazy';cell.append(img,text('p','Δεν έχει συνδεθεί ως έγκυρη φάση.','warning'),text('p',item.reason));grid.append(cell);}details.append(grid);target.append(details);
 }

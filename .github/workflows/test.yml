@@ -11,6 +11,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r tools/image-library/requirements.txt
+      - run: npm run images:test
+      - run: npm run images:validate
       - run: npm test
       - run: node --check server.mjs
       - run: node --check public/app.js
