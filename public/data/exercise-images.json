@@ -233,7 +233,15 @@
       },
       "source": "Uploaded AI-created composite crops; not coach approved",
       "sequenceComplete": false,
-      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+      "reviewNotes": "Six new full-frame images generated. Identity/studio retained, but exact contralateral forward/backward phase progression remains unverified. Do not publish as a validated sequence.",
+      "additionalReviewCandidates": [
+        "/images/exercises/functional-027-review-v2/01.webp",
+        "/images/exercises/functional-027-review-v2/02.webp",
+        "/images/exercises/functional-027-review-v2/03.webp",
+        "/images/exercises/functional-027-review-v2/04.webp",
+        "/images/exercises/functional-027-review-v2/05.webp",
+        "/images/exercises/functional-027-review-v2/06.webp"
+      ]
     },
     "functional-028": {
       "status": "pending_visual_review",
