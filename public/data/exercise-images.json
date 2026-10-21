@@ -590,6 +590,256 @@
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
       "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+    },
+    "functional-011": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-011/01.webp",
+        "/images/exercises/functional-011/02.webp",
+        "/images/exercises/functional-011/03.webp",
+        "/images/exercises/functional-011/04.webp"
+      ],
+      "labels": [
+        "Αλτήρες στο ύψος των ώμων",
+        "Έναρξη πίεσης",
+        "Σταθεροποίηση πάνω από το κεφάλι",
+        "Ελεγχόμενη επιστροφή στους ώμους"
+      ],
+      "candidates": [
+        "/images/exercises/functional-011/01.webp",
+        "/images/exercises/functional-011/02.webp",
+        "/images/exercises/functional-011/03.webp",
+        "/images/exercises/functional-011/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-012": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-012/01.webp",
+        "/images/exercises/functional-012/02.webp",
+        "/images/exercises/functional-012/03.webp",
+        "/images/exercises/functional-012/04.webp"
+      ],
+      "labels": [
+        "Όρθια αρχική θέση",
+        "Αρχική κάμψη ισχίων",
+        "Κάτω θέση Romanian Deadlift",
+        "Ελεγχόμενη άνοδος"
+      ],
+      "candidates": [
+        "/images/exercises/functional-012/01.webp",
+        "/images/exercises/functional-012/02.webp",
+        "/images/exercises/functional-012/03.webp",
+        "/images/exercises/functional-012/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-013": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-013/01.webp",
+        "/images/exercises/functional-013/02.webp",
+        "/images/exercises/functional-013/03.webp",
+        "/images/exercises/functional-013/04.webp"
+      ],
+      "labels": [
+        "Φτέρνες στο έδαφος",
+        "Άνοδος στις μύτες",
+        "Κράτημα στην κορυφή",
+        "Επιστροφή φτερνών"
+      ],
+      "candidates": [
+        "/images/exercises/functional-013/01.webp",
+        "/images/exercises/functional-013/02.webp",
+        "/images/exercises/functional-013/03.webp",
+        "/images/exercises/functional-013/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-014": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-014/01.webp",
+        "/images/exercises/functional-014/02.webp",
+        "/images/exercises/functional-014/03.webp",
+        "/images/exercises/functional-014/04.webp"
+      ],
+      "labels": [
+        "Προετοιμασία στον τοίχο",
+        "Κάθοδος στον τοίχο",
+        "Κράτημα καθίσματος",
+        "Άνοδος στον τοίχο"
+      ],
+      "candidates": [
+        "/images/exercises/functional-014/01.webp",
+        "/images/exercises/functional-014/02.webp",
+        "/images/exercises/functional-014/03.webp",
+        "/images/exercises/functional-014/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-015": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-015/01.webp",
+        "/images/exercises/functional-015/02.webp",
+        "/images/exercises/functional-015/03.webp",
+        "/images/exercises/functional-015/04.webp"
+      ],
+      "labels": [
+        "Όρθια αρχική θέση",
+        "Πλάγιο βήμα και κάμψη",
+        "Κάτω θέση πλάγιας προβολής",
+        "Επιστροφή στο κέντρο"
+      ],
+      "candidates": [
+        "/images/exercises/functional-015/01.webp",
+        "/images/exercises/functional-015/02.webp",
+        "/images/exercises/functional-015/03.webp",
+        "/images/exercises/functional-015/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-016": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-016/01.webp",
+        "/images/exercises/functional-016/02.webp",
+        "/images/exercises/functional-016/03.webp",
+        "/images/exercises/functional-016/04.webp"
+      ],
+      "labels": [
+        "Χέρια προς την αγκύρωση",
+        "Έλξη λάστιχου",
+        "Λαβές προς τα πλευρά",
+        "Ελεγχόμενη επαναφορά"
+      ],
+      "candidates": [
+        "/images/exercises/functional-016/01.webp",
+        "/images/exercises/functional-016/02.webp",
+        "/images/exercises/functional-016/03.webp",
+        "/images/exercises/functional-016/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-017": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-017/01.webp",
+        "/images/exercises/functional-017/02.webp",
+        "/images/exercises/functional-017/03.webp",
+        "/images/exercises/functional-017/04.webp"
+      ],
+      "labels": [
+        "Πλάγια αρχική στήριξη",
+        "Ανύψωση λεκάνης",
+        "Κράτημα πλάγιας σανίδας στα γόνατα",
+        "Επιστροφή λεκάνης"
+      ],
+      "candidates": [
+        "/images/exercises/functional-017/01.webp",
+        "/images/exercises/functional-017/02.webp",
+        "/images/exercises/functional-017/03.webp",
+        "/images/exercises/functional-017/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-018": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-018/01.webp",
+        "/images/exercises/functional-018/02.webp",
+        "/images/exercises/functional-018/03.webp",
+        "/images/exercises/functional-018/04.webp"
+      ],
+      "labels": [
+        "Αλτήρες κάτω",
+        "Κάμψη αγκώνων",
+        "Κορυφή κάμψης",
+        "Ελεγχόμενη κάθοδος"
+      ],
+      "candidates": [
+        "/images/exercises/functional-018/01.webp",
+        "/images/exercises/functional-018/02.webp",
+        "/images/exercises/functional-018/03.webp",
+        "/images/exercises/functional-018/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-019": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-019/01.webp",
+        "/images/exercises/functional-019/02.webp",
+        "/images/exercises/functional-019/03.webp",
+        "/images/exercises/functional-019/04.webp"
+      ],
+      "labels": [
+        "Αρχική στήριξη στα γόνατα",
+        "Κάθοδος κορμού",
+        "Κάτω θέση push-up",
+        "Πίεση προς την αρχική θέση"
+      ],
+      "candidates": [
+        "/images/exercises/functional-019/01.webp",
+        "/images/exercises/functional-019/02.webp",
+        "/images/exercises/functional-019/03.webp",
+        "/images/exercises/functional-019/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
+    },
+    "functional-020": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-020/01.webp",
+        "/images/exercises/functional-020/02.webp",
+        "/images/exercises/functional-020/03.webp",
+        "/images/exercises/functional-020/04.webp"
+      ],
+      "labels": [
+        "Όρθια αρχική θέση",
+        "Μετακίνηση ισχίων πίσω",
+        "Πλήρης κάμψη ισχίων",
+        "Επιστροφή προς την όρθια θέση"
+      ],
+      "candidates": [
+        "/images/exercises/functional-020/01.webp",
+        "/images/exercises/functional-020/02.webp",
+        "/images/exercises/functional-020/03.webp",
+        "/images/exercises/functional-020/04.webp"
+      ],
+      "blockedPhases": {},
+      "source": "AI-generated individual full-frame exercise photos; awaiting Sofia technical approval",
+      "sequenceComplete": false,
+      "reviewNotes": "Four separate saved photos, reviewed for identity and stage. Precise biomechanics and phase sequence require Sofia approval."
     }
   },
   "note": "Only permanently committed, individually reviewed photos should appear here. Do not claim placeholder prompts are photographs."
