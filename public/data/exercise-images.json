@@ -1,1 +1,338 @@
-{"version":1,"exercises":{},"note":"Only permanently committed, individually reviewed photos should appear here. Do not claim placeholder prompts are photographs."}
+{
+  "version": 1,
+  "exercises": {
+    "functional-021": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-021/01.webp",
+        "/images/exercises/functional-021/02.webp",
+        "/images/exercises/functional-021/03.webp",
+        "/images/exercises/functional-021/04.webp",
+        null,
+        "/images/exercises/functional-021/06.webp"
+      ],
+      "labels": [
+        "Αρχική θέση rack",
+        "Κάθοδος squat",
+        "Βαθύ squat",
+        "Άνοδος προς πίεση",
+        "Πίεση πάνω από το κεφάλι",
+        "Επιστροφή rack"
+      ],
+      "candidates": [
+        "/images/exercises/functional-021/01.webp",
+        "/images/exercises/functional-021/02.webp",
+        "/images/exercises/functional-021/03.webp",
+        "/images/exercises/functional-021/04.webp",
+        "/images/exercises/functional-021/05.webp",
+        "/images/exercises/functional-021/06.webp"
+      ],
+      "blockedPhases": {
+        "5": "Overhead weights cropped"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-022": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-022/01.webp",
+        "/images/exercises/functional-022/02.webp",
+        "/images/exercises/functional-022/03.webp",
+        "/images/exercises/functional-022/04.webp",
+        "/images/exercises/functional-022/05.webp",
+        "/images/exercises/functional-022/06.webp"
+      ],
+      "labels": [
+        "Υψηλή σανίδα",
+        "Σταθεροποίηση",
+        "Κωπηλατική",
+        "Επιστροφή σανίδας",
+        "Κωπηλατική ίδιας πλευράς",
+        "Επιστροφή"
+      ],
+      "candidates": [
+        "/images/exercises/functional-022/01.webp",
+        "/images/exercises/functional-022/02.webp",
+        "/images/exercises/functional-022/03.webp",
+        "/images/exercises/functional-022/04.webp",
+        "/images/exercises/functional-022/05.webp",
+        "/images/exercises/functional-022/06.webp"
+      ],
+      "blockedPhases": {},
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. Opposite-arm row is missing."
+    },
+    "functional-023": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-023/01.webp",
+        "/images/exercises/functional-023/02.webp",
+        "/images/exercises/functional-023/03.webp",
+        "/images/exercises/functional-023/04.webp",
+        null,
+        "/images/exercises/functional-023/06.webp"
+      ],
+      "labels": [
+        "Προετοιμασία",
+        "Λαβή kettlebell",
+        "Clean προς rack",
+        "Σταθεροποίηση rack",
+        "Overhead press",
+        "Ελεγχόμενη κάθοδος"
+      ],
+      "candidates": [
+        "/images/exercises/functional-023/01.webp",
+        "/images/exercises/functional-023/02.webp",
+        "/images/exercises/functional-023/03.webp",
+        "/images/exercises/functional-023/04.webp",
+        "/images/exercises/functional-023/05.webp",
+        "/images/exercises/functional-023/06.webp"
+      ],
+      "blockedPhases": {
+        "5": "Overhead kettlebell cropped"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-024": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-024/01.webp",
+        "/images/exercises/functional-024/02.webp",
+        "/images/exercises/functional-024/03.webp",
+        "/images/exercises/functional-024/04.webp",
+        "/images/exercises/functional-024/05.webp",
+        null
+      ],
+      "labels": [
+        "Όρθια θέση",
+        "Χέρια στο έδαφος",
+        "Σανίδα",
+        "Κάθοδος push-up",
+        "Πόδια μπροστά",
+        "Κατακόρυφο άλμα"
+      ],
+      "candidates": [
+        "/images/exercises/functional-024/01.webp",
+        "/images/exercises/functional-024/02.webp",
+        "/images/exercises/functional-024/03.webp",
+        "/images/exercises/functional-024/04.webp",
+        "/images/exercises/functional-024/05.webp",
+        "/images/exercises/functional-024/06.webp"
+      ],
+      "blockedPhases": {
+        "6": "Hands cropped"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-025": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-025/01.webp",
+        "/images/exercises/functional-025/02.webp",
+        "/images/exercises/functional-025/03.webp",
+        "/images/exercises/functional-025/04.webp",
+        "/images/exercises/functional-025/05.webp",
+        null
+      ],
+      "labels": [
+        "Όρθια προετοιμασία",
+        "Αλτήρες στο έδαφος",
+        "Push-up",
+        "Κωπηλατική",
+        "Squat σε rack",
+        "Overhead press"
+      ],
+      "candidates": [
+        "/images/exercises/functional-025/01.webp",
+        "/images/exercises/functional-025/02.webp",
+        "/images/exercises/functional-025/03.webp",
+        "/images/exercises/functional-025/04.webp",
+        "/images/exercises/functional-025/05.webp",
+        "/images/exercises/functional-025/06.webp"
+      ],
+      "blockedPhases": {
+        "6": "Weights cropped; second row missing from sequence"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. Opposite-arm row is missing."
+    },
+    "functional-026": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-026/01.webp",
+        "/images/exercises/functional-026/02.webp",
+        "/images/exercises/functional-026/03.webp",
+        null,
+        "/images/exercises/functional-026/05.webp",
+        "/images/exercises/functional-026/06.webp"
+      ],
+      "labels": [
+        "Αρχική λαβή",
+        "Hip hinge",
+        "Πίσω πέρασμα",
+        "Έκταση ισχίων",
+        "Αιώρηση στο ύψος στέρνου",
+        "Επιστροφή hip hinge"
+      ],
+      "candidates": [
+        "/images/exercises/functional-026/01.webp",
+        "/images/exercises/functional-026/02.webp",
+        "/images/exercises/functional-026/03.webp",
+        "/images/exercises/functional-026/04.webp",
+        "/images/exercises/functional-026/05.webp",
+        "/images/exercises/functional-026/06.webp"
+      ],
+      "blockedPhases": {
+        "4": "Apparent backward lean instead of neutral hip extension"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-027": {
+      "status": "pending_visual_review",
+      "phases": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "labels": [
+        "Αιώρηση γονάτων",
+        "Μεταφορά βάρους",
+        "Βήμα εμπρός",
+        "Σταθεροποίηση",
+        "Βήμα πίσω",
+        "Επιστροφή"
+      ],
+      "candidates": [
+        "/images/exercises/functional-027/01.webp",
+        "/images/exercises/functional-027/02.webp",
+        "/images/exercises/functional-027/03.webp",
+        "/images/exercises/functional-027/04.webp",
+        "/images/exercises/functional-027/05.webp",
+        "/images/exercises/functional-027/06.webp"
+      ],
+      "blockedPhases": {
+        "1": "Forward/backward contralateral progression not demonstrated clearly",
+        "2": "Forward/backward contralateral progression not demonstrated clearly",
+        "3": "Forward/backward contralateral progression not demonstrated clearly",
+        "4": "Forward/backward contralateral progression not demonstrated clearly",
+        "5": "Forward/backward contralateral progression not demonstrated clearly",
+        "6": "Forward/backward contralateral progression not demonstrated clearly"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-028": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-028/01.webp",
+        "/images/exercises/functional-028/02.webp",
+        "/images/exercises/functional-028/03.webp",
+        "/images/exercises/functional-028/04.webp",
+        "/images/exercises/functional-028/05.webp",
+        "/images/exercises/functional-028/06.webp"
+      ],
+      "labels": [
+        "Μπάλα στο στήθος",
+        "Ανύψωση",
+        "Πάνω από το κεφάλι",
+        "Ρίψη",
+        "Επαφή εδάφους",
+        "Παραλαβή"
+      ],
+      "candidates": [
+        "/images/exercises/functional-028/01.webp",
+        "/images/exercises/functional-028/02.webp",
+        "/images/exercises/functional-028/03.webp",
+        "/images/exercises/functional-028/04.webp",
+        "/images/exercises/functional-028/05.webp",
+        "/images/exercises/functional-028/06.webp"
+      ],
+      "blockedPhases": {},
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-029": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-029/01.webp",
+        "/images/exercises/functional-029/02.webp",
+        "/images/exercises/functional-029/03.webp",
+        null,
+        null,
+        "/images/exercises/functional-029/06.webp"
+      ],
+      "labels": [
+        "Μονόχειρο rack",
+        "Κάθοδος squat",
+        "Βαθύ squat",
+        "Άνοδος και πίεση",
+        "Overhead σταθεροποίηση",
+        "Αλλαγή πλευράς σε rack"
+      ],
+      "candidates": [
+        "/images/exercises/functional-029/01.webp",
+        "/images/exercises/functional-029/02.webp",
+        "/images/exercises/functional-029/03.webp",
+        "/images/exercises/functional-029/04.webp",
+        "/images/exercises/functional-029/05.webp",
+        "/images/exercises/functional-029/06.webp"
+      ],
+      "blockedPhases": {
+        "4": "Overhead dumbbell cropped",
+        "5": "Overhead dumbbell cropped"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    },
+    "functional-030": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-030/01.webp",
+        "/images/exercises/functional-030/02.webp",
+        "/images/exercises/functional-030/03.webp",
+        null,
+        "/images/exercises/functional-030/05.webp",
+        "/images/exercises/functional-030/06.webp"
+      ],
+      "labels": [
+        "Μπάλα στο στήθος",
+        "Κάθοδος squat",
+        "Βαθύ squat",
+        "Ρίψη στον τοίχο",
+        "Υποδοχή",
+        "Επιστροφή"
+      ],
+      "candidates": [
+        "/images/exercises/functional-030/01.webp",
+        "/images/exercises/functional-030/02.webp",
+        "/images/exercises/functional-030/03.webp",
+        "/images/exercises/functional-030/04.webp",
+        "/images/exercises/functional-030/05.webp",
+        "/images/exercises/functional-030/06.webp"
+      ],
+      "blockedPhases": {
+        "4": "Released ball cropped"
+      },
+      "source": "Uploaded AI-created composite crops; not coach approved",
+      "sequenceComplete": false,
+      "reviewNotes": "Composite crop boundaries visible in some frames. Sequence requires Sofia review; no automatic approval. "
+    }
+  },
+  "note": "Only permanently committed, individually reviewed photos should appear here. Do not claim placeholder prompts are photographs."
+}
