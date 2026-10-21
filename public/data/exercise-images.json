@@ -1,1 +1,116 @@
-{"version":1,"exercises":{},"note":"Only permanently committed, individually reviewed photos should appear here. Do not claim placeholder prompts are photographs."}
+{
+  "version": 1,
+  "exercises": {
+    "functional-021": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-021/01.webp",
+        "/images/exercises/functional-021/02.webp",
+        "/images/exercises/functional-021/03.webp",
+        "/images/exercises/functional-021/04.webp",
+        "/images/exercises/functional-021/05.webp",
+        "/images/exercises/functional-021/06.webp"
+      ]
+    },
+    "functional-022": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-022/01.webp",
+        "/images/exercises/functional-022/02.webp",
+        "/images/exercises/functional-022/03.webp",
+        "/images/exercises/functional-022/04.webp",
+        "/images/exercises/functional-022/05.webp",
+        "/images/exercises/functional-022/06.webp"
+      ]
+    },
+    "functional-023": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-023/01.webp",
+        "/images/exercises/functional-023/02.webp",
+        "/images/exercises/functional-023/03.webp",
+        "/images/exercises/functional-023/04.webp",
+        "/images/exercises/functional-023/05.webp",
+        "/images/exercises/functional-023/06.webp"
+      ]
+    },
+    "functional-024": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-024/01.webp",
+        "/images/exercises/functional-024/02.webp",
+        "/images/exercises/functional-024/03.webp",
+        "/images/exercises/functional-024/04.webp",
+        "/images/exercises/functional-024/05.webp",
+        "/images/exercises/functional-024/06.webp"
+      ]
+    },
+    "functional-025": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-025/01.webp",
+        "/images/exercises/functional-025/02.webp",
+        "/images/exercises/functional-025/03.webp",
+        "/images/exercises/functional-025/04.webp",
+        "/images/exercises/functional-025/05.webp",
+        "/images/exercises/functional-025/06.webp"
+      ]
+    },
+    "functional-026": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-026/01.webp",
+        "/images/exercises/functional-026/02.webp",
+        "/images/exercises/functional-026/03.webp",
+        "/images/exercises/functional-026/04.webp",
+        "/images/exercises/functional-026/05.webp",
+        "/images/exercises/functional-026/06.webp"
+      ]
+    },
+    "functional-027": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-027/01.webp",
+        "/images/exercises/functional-027/02.webp",
+        "/images/exercises/functional-027/03.webp",
+        "/images/exercises/functional-027/04.webp",
+        "/images/exercises/functional-027/05.webp",
+        "/images/exercises/functional-027/06.webp"
+      ]
+    },
+    "functional-028": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-028/01.webp",
+        "/images/exercises/functional-028/02.webp",
+        "/images/exercises/functional-028/03.webp",
+        "/images/exercises/functional-028/04.webp",
+        "/images/exercises/functional-028/05.webp",
+        "/images/exercises/functional-028/06.webp"
+      ]
+    },
+    "functional-029": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-029/01.webp",
+        "/images/exercises/functional-029/02.webp",
+        "/images/exercises/functional-029/03.webp",
+        "/images/exercises/functional-029/04.webp",
+        "/images/exercises/functional-029/05.webp",
+        "/images/exercises/functional-029/06.webp"
+      ]
+    },
+    "functional-030": {
+      "status": "pending_visual_review",
+      "phases": [
+        "/images/exercises/functional-030/01.webp",
+        "/images/exercises/functional-030/02.webp",
+        "/images/exercises/functional-030/03.webp",
+        "/images/exercises/functional-030/04.webp",
+        "/images/exercises/functional-030/05.webp",
+        "/images/exercises/functional-030/06.webp"
+      ]
+    }
+  },
+  "note": "AI-created imagery. Pending images are unvalidated by a coach; retain review warnings until approval."
+}
