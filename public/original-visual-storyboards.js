@@ -14,6 +14,7 @@ export function originalAdvancedFrames(x){
  return steps.map(([label,description],index)=>({
    phase:index+1,labelEl:label,
    cue:description+" First pattern: "+parts[0]+". Second pattern: "+parts[1]+". Greek coaching reference: "+(cues[Math.min(index,cues.length-1)]||x.instructions),
+   prompt:"Photorealistic professional fitness instruction image. "+(Number(x.id.slice(-1))%2===0?"Fictional Greek Mediterranean woman aged 26 with dark shoulder-length hair, black sports bra and tight black leggings.":"Fictional Greek Mediterranean man aged 27 with short dark hair, black t-shirt and fitted black training pants.")+" Same model, outfit, studio and camera across all phases; clean modern high-end personal training studio with neutral lighting and no background text. Exercise: "+x.name+". Equipment: "+(x.equipment||[]).join(", ")+". Phase "+(index+1)+" of six: "+label+". "+description+" First movement: "+parts[0]+". Second movement: "+parts[1]+". Maintain plausible load path, balance, grip, and joint alignment. Show the full body in a fixed three-quarter view, no annotations or watermark. Pending coach biomechanical review.",
    image:null,imageStatus:"not_generated",reviewStatus:"pending_visual_review",
    requiresCoachReview:true
  }));
