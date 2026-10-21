@@ -2,6 +2,7 @@ name: Sofia Node checks
 on:
   push:
   pull_request:
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,3 +15,14 @@ jobs:
       - run: node --check server.mjs
       - run: node --check public/app.js
       - run: node --check public/advanced-catalog.js
+      - name: Start server and check health and homepage
+        shell: bash
+        run: |
+          node server.mjs > sofia-server.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          sleep 2
+          curl --fail --silent http://127.0.0.1:3100/api/health | grep -q '"ok":true'
+          curl --fail --silent http://127.0.0.1:3100/ | grep -q 'Sofia Personal Trainer Studio'
+          curl --fail --silent http://127.0.0.1:3100/app.js | grep -q 'buildOriginalConcepts'
+
