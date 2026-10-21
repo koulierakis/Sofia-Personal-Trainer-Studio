@@ -862,6 +862,85 @@
           "sha256": "88609f345393161b5a62f777026f9f97f9a74adc1bb8b2c0866ddfc7218b49e6",
           "mappingReviewer": "Codex exact-ID mapping; visual candidate only",
           "reviewStatus": "pending_visual_review"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-031/02-0f76d142fc4ac70c.webp",
+          "sourceExerciseId": "functional-031",
+          "sourcePhase": 2,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "08cd384abed432c47b1b6b64e33814ef9834e248f6ab8e1e2716a0d0a16e1d09",
+          "sha256": "0f76d142fc4ac70cd6be0e9e11fb92233e627923556ba023fca2458ae96c7721",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-031/04-b2ca0e2b503e1e4e.webp",
+          "sourceExerciseId": "functional-031",
+          "sourcePhase": 4,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "9cf40b20d97ef88043467dce988475975f53bd70edb508990bd6d9f12381467f",
+          "sha256": "b2ca0e2b503e1e4e3da7f8f63ce35ba3433e2ed7def4598b36536335669be7bb",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
+        }
+      ]
+    },
+    "functional-032": {
+      "status": "pending_visual_review",
+      "phases": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "candidates": [],
+      "blockedPhases": {},
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-032/01-0e53be58c1edee6d.webp",
+          "sourceExerciseId": "functional-032",
+          "sourcePhase": 1,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "6ec7d1111f372802e150c89828625fa9b588609cad760f8ecae8d14b2018e4ea",
+          "sha256": "0e53be58c1edee6d2c7c663e2421b3dd12a3b7608ca8fb50dc35c53a5a32c023",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-032/02-b4b4621d00743665.webp",
+          "sourceExerciseId": "functional-032",
+          "sourcePhase": 2,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "cb1618d7e720efd8958f07c2f65d42ca6ef4952332f21b265085879aeb70f3f0",
+          "sha256": "b4b4621d00743665a94b3d6b940a7fc499885ca90520e2d387359b7daac3fe86",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-032/03-8dbe8dfe854fd74b.webp",
+          "sourceExerciseId": "functional-032",
+          "sourcePhase": 3,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "1074c7c481b668c3be110c27227a3d7cc4c873b5d66a9d06a3f84d2218610353",
+          "sha256": "8dbe8dfe854fd74bdcb7201cb22219adb7db04232bdf5bed64ac297bf0dda14c",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-032/04-3e28c9669e0eaad5.webp",
+          "sourceExerciseId": "functional-032",
+          "sourcePhase": 4,
+          "provider": "OpenAI image generation tool",
+          "sourceSha256": "3cbf1f06c158a3568caa28e4aa49476b6cfb082cf2ece8b80f79161c068b16a3",
+          "sha256": "3e28c9669e0eaad57eacfb026d716d0effe2dea3fef49eded9c2c9acd16d0201",
+          "mappingReviewer": "Codex exact-ID/phase intake mapping, not biomechanical approval",
+          "reviewStatus": "pending_visual_review"
         }
       ]
     }

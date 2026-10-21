@@ -56,16 +56,16 @@ def audit(out):
             if url and not valid and not blocked: invalid.append(url)
             reviewed=entry.get('phaseReviews',{}).get(str(i+1),{})
             approved=valid and reviewed.get('status')=='approved' and reviewed.get('sha256')==assets[url]['sha256'] and bool(reviewed.get('reviewer'))
-            state='approved' if approved else 'rejected' if blocked else 'pending_human_review' if valid else 'missing'
+            imported=[c for c in entry.get('importedCandidates',[]) if c['phase']==i+1 and c['url'] in assets and c.get('reviewStatus')!='rejected']
+            state='approved' if approved else 'rejected' if blocked else 'pending_human_review' if valid or imported else 'missing'
             frame=dict(frames[i]) if i<len(frames) else {}
             exact_label=entry.get('labels',[])[i] if i<len(entry.get('labels',[])) else frame.get('label')
             if exact_label and frame.get('label')!=exact_label:
                 frame['draftPrompt']=frame.pop('prompt',None)
                 frame['prompt']=f'Photorealistic full-body gym instruction photograph. Exercise: {e["name"]}. Exact source image phase: {exact_label}. Equipment: {e.get("equipment")}. Source instructions: {e.get("instructions")}. One adult athlete in black training clothes, all limbs and equipment visible, neutral spine, same athlete and studio across sequence. No text, panels or watermark. Coach review required.'
-            imported=[c for c in entry.get('importedCandidates',[]) if c['phase']==i+1 and c['url'] in assets and c.get('reviewStatus')!='rejected']
             details.append({'phase':i+1,'label':entry.get('labels',[])[i] if i<len(entry.get('labels',[])) else frame.get('label'),'url':url,'state':state,'technicalValid':valid,'reason':blocked,'humanReviewRequired':not approved,'importedCandidates':[c['url'] for c in imported]})
             if not approved:
-                queue.append({'exerciseId':id,'name':e['name'],'phase':i+1,'action':'human_review' if valid or imported else 'generate','status':'awaiting_human_review' if valid or imported else 'queued','existingUrl':url,'reason':blocked,'equipment':e.get('equipment'),'instructions':e.get('instructions'), 'specification':frame,'requiresCoachReview':True})
+                queue.append({'exerciseId':id,'name':e['name'],'phase':i+1,'action':'human_review' if valid or imported else 'generate','status':'awaiting_human_review' if valid or imported else 'queued','existingUrl':url,'candidateUrls':[c['url'] for c in imported],'reason':blocked,'equipment':e.get('equipment'),'instructions':e.get('instructions'), 'specification':frame,'requiresCoachReview':True})
         status='INVALID_MAPPING' if invalid else 'COMPLETE_VERIFIED' if all(p['state']=='approved' for p in details) else 'REJECTED_IMAGES' if any(p['state']=='rejected' for p in details) else 'PARTIALLY_COMPLETE' if any(p['technicalValid'] or p['importedCandidates'] for p in details) else 'MISSING_IMAGES'
         records.append({'id':id,'name':e['name'],'concept':bool(e.get('requiresCoachReview')),'status':status,'requiredPhases':count,'phases':details,'invalidMappings':invalid})
     for id,entry in manifest['exercises'].items():

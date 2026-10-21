@@ -1,10 +1,10 @@
 {
   "version": 1,
-  "head": "54db1e175c1b49b17a4e9401cd3e9cbcc9e41b8c",
+  "head": "44dab7544d3da6d982d170efda632b9be9cfc497",
   "exerciseCount": 308,
   "programCount": 10,
   "programReferences": 80,
-  "assetCount": 147,
+  "assetCount": 153,
   "assets": {
     "/images/exercises/functional-001/01.webp": {
       "width": 1280,
@@ -1034,6 +1034,48 @@
       "format": "WEBP",
       "sha256": "88609f345393161b5a62f777026f9f97f9a74adc1bb8b2c0866ddfc7218b49e6",
       "bytes": 173222
+    },
+    "/images/exercises/functional-031/02-0f76d142fc4ac70c.webp": {
+      "width": 1374,
+      "height": 1145,
+      "format": "WEBP",
+      "sha256": "0f76d142fc4ac70cd6be0e9e11fb92233e627923556ba023fca2458ae96c7721",
+      "bytes": 162510
+    },
+    "/images/exercises/functional-031/04-b2ca0e2b503e1e4e.webp": {
+      "width": 1374,
+      "height": 1145,
+      "format": "WEBP",
+      "sha256": "b2ca0e2b503e1e4e3da7f8f63ce35ba3433e2ed7def4598b36536335669be7bb",
+      "bytes": 166578
+    },
+    "/images/exercises/functional-032/01-0e53be58c1edee6d.webp": {
+      "width": 1536,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "0e53be58c1edee6d2c7c663e2421b3dd12a3b7608ca8fb50dc35c53a5a32c023",
+      "bytes": 206106
+    },
+    "/images/exercises/functional-032/02-b4b4621d00743665.webp": {
+      "width": 1536,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "b4b4621d00743665a94b3d6b940a7fc499885ca90520e2d387359b7daac3fe86",
+      "bytes": 177020
+    },
+    "/images/exercises/functional-032/03-8dbe8dfe854fd74b.webp": {
+      "width": 1536,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "8dbe8dfe854fd74bdcb7201cb22219adb7db04232bdf5bed64ac297bf0dda14c",
+      "bytes": 183572
+    },
+    "/images/exercises/functional-032/04-3e28c9669e0eaad5.webp": {
+      "width": 1536,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "3e28c9669e0eaad57eacfb026d716d0effe2dea3fef49eded9c2c9acd16d0201",
+      "bytes": 163650
     }
   },
   "duplicateGroups": [],
@@ -2750,7 +2792,7 @@
           "phase": 1,
           "label": "Αρχική θέση",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
@@ -2762,11 +2804,13 @@
           "phase": 2,
           "label": "Έναρξη κίνησης",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-031/02-0f76d142fc4ac70c.webp"
+          ]
         },
         {
           "phase": 3,
@@ -2782,11 +2826,13 @@
           "phase": 4,
           "label": "Ελεγχόμενη επιστροφή",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-031/04-b2ca0e2b503e1e4e.webp"
+          ]
         }
       ],
       "invalidMappings": []
@@ -2795,48 +2841,56 @@
       "id": "functional-032",
       "name": "Half-Kneeling Single-Arm Landmine Press",
       "concept": false,
-      "status": "MISSING_IMAGES",
+      "status": "PARTIALLY_COMPLETE",
       "requiredPhases": 4,
       "phases": [
         {
           "phase": 1,
           "label": "Αρχική θέση",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-032/01-0e53be58c1edee6d.webp"
+          ]
         },
         {
           "phase": 2,
           "label": "Έναρξη κίνησης",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-032/02-b4b4621d00743665.webp"
+          ]
         },
         {
           "phase": 3,
           "label": "Ολοκλήρωση",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-032/03-8dbe8dfe854fd74b.webp"
+          ]
         },
         {
           "phase": 4,
           "label": "Ελεγχόμενη επιστροφή",
           "url": null,
-          "state": "missing",
+          "state": "pending_human_review",
           "technicalValid": false,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-032/04-3e28c9669e0eaad5.webp"
+          ]
         }
       ],
       "invalidMappings": []
