@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {buildOriginalConcepts} from '../public/advanced-catalog.js';
+import {exerciseStoryboard} from '../public/storyboard-prompts.js';
 test('208 original entries, unique IDs, four phases and Greek instructions',()=>{
  const xs=buildOriginalConcepts();
  assert.equal(xs.length,208);
@@ -29,4 +30,17 @@ test('Sofia homepage and JS exist and use the expected catalog',async()=>{
  assert.match(app,/SpeechRecognition/);
  assert.match(app,/data\.exercises/);
  assert.match(app,/data\.programs/);
+});
+
+test('Image prompt storyboard: simple 4, Advanced 6, model and studio repeated',()=>{
+ const basic=exerciseStoryboard({id:'functional-001',name:'Bodyweight Squat',level:'Beginner',equipment:['Βάρος σώματος'],instructions:'Σωστή εκτέλεση squat.'});
+ const advanced=exerciseStoryboard(buildOriginalConcepts()[0]);
+ assert.equal(basic.length,4);
+ assert.equal(advanced.length,6);
+ for(const story of [basic,advanced])for(const frame of story){
+   assert.match(frame.prompt,/Greek\/Mediterranean/);
+   assert.match(frame.prompt,/black/);
+   assert.match(frame.prompt,/modern personal training studio/);
+   assert.equal(frame.status,'prompt_only');
+ }
 });
