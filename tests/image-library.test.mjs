@@ -13,7 +13,7 @@ test('Every published phase and review candidate exists as WebP; blocked phases 
    else assert.equal(imageFor({},id,i,manifest.exercises,{}).url,url);
   }
  }
- assert.equal(count,60);
+ assert.equal(count,100);
 });
 test('Coach decisions persist per exact ID, phase and asset; no automatic approvals',()=>{
  const memory=new Map();const storage={getItem:k=>memory.get(k),setItem:(k,v)=>memory.set(k,v)};
