@@ -1,3 +1,4 @@
+import {curatedFrames} from './data/visual-batch-011-020.js';
 // Reproducible DALL-E-ready instructions, not generated or validated images.
 // Ensure every phase is a separate complete prompt with all visual invariants.
 const models={
@@ -11,7 +12,7 @@ const greek6=["Αρχική θέση","Πρώτη κίνηση","Ενδιάμε�
 const greek4=["Αρχική θέση","Εκτέλεση","Ολοκλήρωση","Επιστροφή"];
 const clean=x=>String(x??'').replace(/\s+/g,' ').trim();
 export function exerciseStoryboard(exercise){
- const complex=Boolean(exercise.newConcept||exercise.requiresCoachReview||/advanced/i.test(exercise.level||'')||/complex|flow|burpee|clean.*press|squat.*press|lunge.*press|crawl.*row/i.test(clean(exercise.name)));
+ const complex=!curatedFrames(exercise)&&Boolean(exercise.newConcept||exercise.requiresCoachReview||/advanced/i.test(exercise.level||'')||/complex|flow|burpee|clean.*press|squat.*press|lunge.*press|crawl.*row/i.test(clean(exercise.name)));
  const count=complex?6:4;
  const labels=complex?labels6:labels4,gr=complex?greek6:greek4;
  const existing=Array.isArray(exercise.phases)?exercise.phases:[];
@@ -19,7 +20,8 @@ export function exerciseStoryboard(exercise){
  const equipment=Array.isArray(exercise.equipment)?exercise.equipment.join(', '):clean(exercise.equipment)||'bodyweight';
  const instructions=clean(exercise.instructions||exercise.description);
  const character=models[/\d$/.test(exercise.id||'')&&Number((exercise.id||'').slice(-1))%2===0?'male':'female'];
- const cues=existing.map(p=>clean(p.cue||p.description||p.label));
+ const curated=curatedFrames(exercise);
+ const cues=curated?curated.map(p=>p.cue):existing.map(p=>clean(p.cue||p.description||p.label));
  return labels.map((phase,i)=>({
    phase:i+1,label:phase,labelEl:gr[i],
    status:"prompt_only",
