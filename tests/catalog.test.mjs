@@ -44,3 +44,6 @@ test('Image prompt storyboard: simple 4, Advanced 6, model and studio repeated',
    assert.equal(frame.status,'prompt_only');
  }
 });
+
+import {reviewConcept,visibleConcepts,reviewCounts,sanitizeReviews} from '../public/review-system.js';
+test('Sofia approves or rejects without resurrecting rejected exercise on reload',()=>{const all=buildOriginalConcepts();let r={};r=reviewConcept(all[0].id,'approved',r,'2026-10-21T00:00:00Z');r=reviewConcept(all[1].id,'rejected',r,'2026-10-21T00:00:00Z');const reloaded=sanitizeReviews(JSON.parse(JSON.stringify(r)));const defaultList=visibleConcepts(all,reloaded,false);assert.equal(defaultList.length,1);assert.equal(defaultList[0].approvedBySofia,true);assert.equal(defaultList[0].requiresCoachReview,false);const queue=visibleConcepts(all,reloaded,true);assert.equal(queue.length,207);assert.ok(!queue.some(x=>x.id===all[1].id));assert.deepEqual(reviewCounts(all,reloaded),{pending:206,approved:1,rejected:1});});
