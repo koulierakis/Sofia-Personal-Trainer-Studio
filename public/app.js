@@ -94,12 +94,15 @@ async function loadBuiltIn(){
       return response.json();
     }));
     if(data.slice(0,4).some(x=>!Array.isArray(x)||x.length!==25)||!Array.isArray(data[4])||data[4].length!==10)throw Error('Μη αναμενόμενος αριθμός εγγραφών');
+    const originalResponse=await fetch('/data/hybrid-original-library.json',{cache:'no-cache'});
+    const originalExercises=originalResponse.ok?await originalResponse.json():[];
+    if(!Array.isArray(originalExercises))throw Error('Μη έγκυρη νέα βιβλιοθήκη');
     const exercises=data.slice(0,4).flat(),programs=data[4];
     const ids=new Set(exercises.map(x=>x.id));
     if(ids.size!==100||programs.some(p=>p.blocks.reduce((s,b)=>s+Number(b.minutes||0),0)!==60))throw Error('Μη έγκυρα αρχικά δεδομένα');
-    base={exercises,programs};
+    base={exercises:[...exercises,...originalExercises],programs};
     if(mode)render();
-    msg('Φορτώθηκαν οι 100 αρχικές ασκήσεις και τα 10 προγράμματα των 60 λεπτών. Διαθέσιμες και 208 νέες ιδέες υπό αξιολόγηση.');
+    msg('Φορτώθηκαν οι 100 αρχικές ασκήσεις, '+originalExercises.length+' νέες υβριδικές υπό αξιολόγηση και τα 10 προγράμματα των 60 λεπτών.');
   }catch(e){msg('Σφάλμα φόρτωσης αρχικής βιβλιοθήκης: '+e.message+' — δοκίμασε ανανέωση.');}
 }
 void loadBuiltIn();
