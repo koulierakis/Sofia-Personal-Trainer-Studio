@@ -20,3 +20,7 @@
 .exercise-player .muted{margin:10px 0 0}
 #detail .phasegrid>.phase.active-frame{outline:3px solid #e7cfac;outline-offset:-3px;background:#283850}
 @media(max-width:650px){.exercise-player-controls label{flex-basis:100%}.exercise-player-controls button{flex:1}}
+
+.exercise-player-hero{height:clamp(280px,57vh,640px);display:flex;justify-content:center;align-items:center;overflow:hidden;border-radius:12px;background:#172235;margin-bottom:12px}
+.exercise-player-hero img{height:100%;max-width:100%;object-fit:contain}
+.exercise-player-hero p{padding:22px;text-align:center}
