@@ -10,3 +10,13 @@
 #detail .phasegrid>.phase small{font-size:12px;font-weight:700;min-height:2.5em}
 #detail .phasegrid>.phase img{width:100%;height:180px;object-fit:contain}
 @media(max-width:650px){#detail .phasegrid>.phase{flex-basis:72vw;max-width:260px}#detail .phasegrid>.phase img{height:180px}}
+
+/* Sofia full-repetition slideshow controls */
+.exercise-player{margin:14px 0 22px;padding:12px;border:1px solid #465877;border-radius:14px;background:#101b2d}
+.exercise-player-controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.exercise-player-controls button{font-weight:650;min-height:44px}
+.exercise-player-controls label{min-width:190px;flex:1;font-size:12px}
+.exercise-player-controls select{margin-top:5px}
+.exercise-player .muted{margin:10px 0 0}
+#detail .phasegrid>.phase.active-frame{outline:3px solid #e7cfac;outline-offset:-3px;background:#283850}
+@media(max-width:650px){.exercise-player-controls label{flex-basis:100%}.exercise-player-controls button{flex:1}}
