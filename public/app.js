@@ -42,7 +42,7 @@ let exercisePlayerCleanup=()=>{};
 function stopExercisePlayer(){exercisePlayerCleanup();exercisePlayerCleanup=()=>{};}
 function createExercisePlayer(filmstrip,total){
  const wrap=text('section','','exercise-player');
- const controls=text('div','','exercise-player-controls');
+ const hero=text('div','','exercise-player-hero');const heroImage=document.createElement('img');heroImage.alt='Προεπισκόπηση επιλεγμένης φάσης';heroImage.hidden=true;const heroFallback=text('p','Δεν υπάρχει ακόμη εικόνα γι’ αυτή τη φάση.','warning');hero.append(heroImage,heroFallback);const controls=text('div','','exercise-player-controls');
  const play=button('▶ Έναρξη άσκησης',()=>toggle());
  const reset=button('↺ Από την αρχή',()=>{pause();show(0);});
  const label=text('label','Ταχύτητα προβολής');
@@ -52,13 +52,13 @@ function createExercisePlayer(filmstrip,total){
  const status=text('p','','muted');status.setAttribute('aria-live','polite');
  let timer=null,index=0;
  const cells=()=>Array.from(filmstrip.querySelectorAll('.phase'));
- function show(i){index=Math.max(0,Math.min(total-1,i));cells().forEach((cell,n)=>cell.classList.toggle('active-frame',n===index));const cell=cells()[index];if(cell)cell.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});status.textContent='Φάση '+(index+1)+' από '+total+(index===total-1?' · Τέλος επανάληψης':'');}
+ function show(i){index=Math.max(0,Math.min(total-1,i));cells().forEach((cell,n)=>cell.classList.toggle('active-frame',n===index));const cell=cells()[index];if(cell){cell.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});const candidate=cell.querySelector('img');if(candidate&&candidate.complete&&candidate.naturalWidth>0){heroImage.src=candidate.currentSrc||candidate.src;heroImage.hidden=false;heroFallback.hidden=true;}else{heroImage.hidden=true;heroFallback.hidden=false;heroFallback.textContent='Φάση '+(index+1)+': δεν έχει παραχθεί ακόμη διαθέσιμη εικόνα.';}}status.textContent='Φάση '+(index+1)+' από '+total+(index===total-1?' · Τέλος επανάληψης':'');}
  function pause(){if(timer!==null)clearTimeout(timer);timer=null;play.textContent=index===total-1?'▶ Επανάληψη':'▶ Συνέχεια';}
  function tick(){if(timer===null)return;if(index>=total-1){pause();return;}show(index+1);if(index===total-1){pause();return;}timer=setTimeout(tick,Number(select.value));}
  function toggle(){if(timer!==null){pause();return;}if(index===total-1)show(0);play.textContent='Ⅱ Παύση';timer=setTimeout(tick,Number(select.value));}
  select.addEventListener('change',()=>{if(timer!==null){clearTimeout(timer);timer=setTimeout(tick,Number(select.value));}});
  cells().forEach((cell,i)=>cell.addEventListener('click',()=>{pause();show(i);}));
- controls.append(play,reset,label);wrap.append(controls,status);
+ controls.append(play,reset,label);wrap.append(hero,controls,status);
  show(0);
  exercisePlayerCleanup=()=>{if(timer!==null)clearTimeout(timer);timer=null;};
  return wrap;
