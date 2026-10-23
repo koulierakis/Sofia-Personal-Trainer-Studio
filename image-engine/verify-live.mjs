@@ -21,6 +21,7 @@ function image(uri){
 async function generate(label,payload){
   const result=await call('/api/image-engine/generate',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});
   if(result.success!==true)throw Error(label+': unsuccessful result');
+  if(label==='output-image-to-image'&&result.record?.provider!=='gemini_imagen')throw Error('Image-to-Image cannot be verified: selected provider '+(result.record?.provider||'unknown')+' does not prove reference-image support in current generator');
   const {b,extension}=image(result.record?.imageDataUri),path=join(out,label+'.'+extension);
   await writeFile(path,b);
   console.log(label+': PASS, '+b.length+' bytes, '+path+', provider='+(result.record?.provider||'unknown'));
