@@ -1,3 +1,4 @@
+import { imageEngineHandler } from './image-engine/bridge.mjs';
 import http from 'node:http';
 import {readFile} from 'node:fs/promises';
 import {resolve,join,extname,sep} from 'node:path';
@@ -11,6 +12,7 @@ http.createServer(async(req,res)=>{
   const send=(status,body,type='application/json; charset=utf-8')=>{res.writeHead(status,{'Content-Type':type,'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(body);};
   try{
     const u=new URL(req.url,'http://localhost');
+    if (await imageEngineHandler(req,res)) return;
     if(u.pathname==='/api/health')return send(200,JSON.stringify({ok:true,app:'Sofia',port}));
     if(req.method!=='GET'&&req.method!=='HEAD')return send(405,JSON.stringify({error:'Method not allowed'}));
     const relative=decodeURIComponent(u.pathname==='/'?'index.html':u.pathname.slice(1));
