@@ -1,22 +1,39 @@
-# Sofia AI Image Engine bridge (integration branch)
+# Sofia AI Image Engine — local verification
 
-This is an **opt-in server-side bridge**, not a verified working image generator. The existing Sofia application remains the source of truth for exercise records.
+The bridge is disabled unless SOFIA_IMAGE_ENGINE_URL is set in the **Sofia server process**. Only loopback generator URLs are accepted.
 
-## Safety
-- Disabled unless `SOFIA_IMAGE_ENGINE_URL` is configured.
-- Only a loopback service is accepted; no arbitrary URLs, paid providers, or browser-exposed API keys.
-- Status endpoint does not claim successful inference.
-- No generated image is automatically accepted into the exercise library.
+## Windows PowerShell (two terminals)
 
-## API
-- `GET /api/image-engine/status`: bridge configuration state.
-- `POST /api/image-engine/generate`: forwards `{ "prompt": "...", "seed": 123 }` to a local worker at `/api/generate`.
-- The upstream worker must implement that contract; the Google AI Studio generator may use a **different** endpoint. Verify its actual route before enabling.
+Prerequisite: Node.js 20+ and a working local copy of GIANNIS AI IMAGE GENERATOR. The generator project starts on port 3000 using its `npm run dev` script.
 
-## Next gates
-1. Verify the generator's real route and response schema.
-2. Run Node tests and real upstream generation; save the image and validate dimensions and format.
-3. Add persistent, reviewed exercise-image imports with backup and rollback.
-4. Confirm deployed Sofia runtime can reach the worker. A cloud server cannot reach a user's `127.0.0.1`.
+Terminal A, from the generator project:
 
-No production deployment or main-branch merge is authorized by this module.
+```powershell
+npm install
+npm run lint
+npm run build
+npm run dev
+```
+
+Terminal B, from the Sofia repository:
+
+```powershell
+$env:SOFIA_IMAGE_ENGINE_URL = "http://127.0.0.1:3000"
+npm test
+npm start
+```
+
+Terminal C, from the Sofia repository:
+
+```powershell
+$env:SOFIA_REFERENCE_IMAGE = (Resolve-Path ".\public\generated\sofia_fitness_squat_1792787128316.jpg").Path
+node .\image-engine\verify-live.mjs
+```
+
+Use an existing real PNG/JPEG/WebP image path for SOFIA_REFERENCE_IMAGE; the example filename is from the generator's sample images, and may not exist in Sofia. Copy a real image to `reference.png` in the Sofia repository and set `$env:SOFIA_REFERENCE_IMAGE = (Resolve-Path ".\reference.png").Path` if necessary.
+
+Successful verification saves images under `live-verification/`. A nonzero exit code means a test failed.
+
+**Important:** The generator's Pollinations, ComfyUI and Forge routes currently do not prove image-to-image conditioning; only the Gemini path forwards the reference image in the inspected code. The live script deliberately rejects an image-to-image result from an unverified provider. Successful image bytes alone do not prove image conditioning.
+
+Sofia's package.json has **no build script**: it is a Node.js server serving static files. Use `npm test` and `node --check server.mjs` for its executable server entrypoint. Generator has `npm run build` and `npm run lint`. Neither production build nor actual provider inference is certified until run on the target machine.
