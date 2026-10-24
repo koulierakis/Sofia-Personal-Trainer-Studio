@@ -12,7 +12,8 @@ let base={exercises:[],programs:[]};
 const conceptExercises=buildOriginalConcepts();
 let reviews={};try{reviews=sanitizeReviews(JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}'));}catch{reviews={};}
 let queueOnly=false;
-let rehabilitationLibrary={conditions:[],programs:[],sources:{},notice:''};\nlet programFormat='all';
+let rehabilitationLibrary={conditions:[],programs:[],sources:{},notice:''};
+let programFormat='all';
 function saveReviews(next){try{localStorage.setItem(REVIEW_KEY,JSON.stringify(next));reviews=next;return true;}catch(e){msg('Αποτυχία αποθήκευσης αξιολόγησης: '+e.message);return false;}}
 function changeReview(id,status){stopExercisePlayer();const next=reviewConcept(id,status,reviews);if(!saveReviews(next))return;$('studio').classList.remove('detail-open');selected=null;render();msg(status==='approved'?'Εγκρίθηκε ολόκληρη η άσκηση μαζί με τις φάσεις της.':'Απορρίφθηκε ολόκληρη η άσκηση και αφαιρέθηκε από τον κατάλογο αυτού του browser.');}
 
