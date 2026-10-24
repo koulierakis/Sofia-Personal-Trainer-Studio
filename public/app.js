@@ -11,7 +11,8 @@ let state={exercises:[],programs:[]},mode=null,tab='exercises',limit=20,selected
 let base={exercises:[],programs:[]};
 const conceptExercises=buildOriginalConcepts();
 let reviews={};try{reviews=sanitizeReviews(JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}'));}catch{reviews={};}
-let queueOnly=false;\nlet rehabilitationLibrary={conditions:[],programs:[],sources:{},notice:''};\nlet programFormat='all';
+let queueOnly=false;
+let rehabilitationLibrary={conditions:[],programs:[],sources:{},notice:''};\nlet programFormat='all';
 function saveReviews(next){try{localStorage.setItem(REVIEW_KEY,JSON.stringify(next));reviews=next;return true;}catch(e){msg('Αποτυχία αποθήκευσης αξιολόγησης: '+e.message);return false;}}
 function changeReview(id,status){stopExercisePlayer();const next=reviewConcept(id,status,reviews);if(!saveReviews(next))return;$('studio').classList.remove('detail-open');selected=null;render();msg(status==='approved'?'Εγκρίθηκε ολόκληρη η άσκηση μαζί με τις φάσεις της.':'Απορρίφθηκε ολόκληρη η άσκηση και αφαιρέθηκε από τον κατάλογο αυτού του browser.');}
 
@@ -152,7 +153,9 @@ async function loadBuiltIn(){
     const exercises=data.slice(0,4).flat(),programs=data[4];
     const ids=new Set(exercises.map(x=>x.id));
     if(ids.size!==100||programs.some(p=>p.blocks.reduce((s,b)=>s+Number(b.minutes||0),0)!==60))throw Error('Μη έγκυρα αρχικά δεδομένα');
-    const rehabResponse=await fetch('/data/rehabilitation-library.json',{cache:'no-cache'});if(!rehabResponse.ok)throw Error('rehabilitation-library.json HTTP '+rehabResponse.status);const rehabData=await rehabResponse.json();if(rehabData.version!==1||!Array.isArray(rehabData.conditions)||!Array.isArray(rehabData.programs))throw Error('Μη έγκυρη βιβλιοθήκη αποκατάστασης');rehabilitationLibrary=rehabData;\n    const formatsResponse=await fetch('/data/program-format-examples.json',{cache:'no-cache'});if(!formatsResponse.ok)throw Error('program-format-examples.json HTTP '+formatsResponse.status);const formatData=await formatsResponse.json();if(formatData.version!==1||!Array.isArray(formatData.programs))throw Error('Μη έγκυρα προγράμματα/μορφές');\n    base={exercises:[...exercises,...originalExercises],programs:[...programs,...formatData.programs]};
+    const rehabResponse=await fetch('/data/rehabilitation-library.json',{cache:'no-cache'});if(!rehabResponse.ok)throw Error('rehabilitation-library.json HTTP '+rehabResponse.status);const rehabData=await rehabResponse.json();if(rehabData.version!==1||!Array.isArray(rehabData.conditions)||!Array.isArray(rehabData.programs))throw Error('Μη έγκυρη βιβλιοθήκη αποκατάστασης');rehabilitationLibrary=rehabData;
+    const formatsResponse=await fetch('/data/program-format-examples.json',{cache:'no-cache'});if(!formatsResponse.ok)throw Error('program-format-examples.json HTTP '+formatsResponse.status);const formatData=await formatsResponse.json();if(formatData.version!==1||!Array.isArray(formatData.programs))throw Error('Μη έγκυρα προγράμματα/μορφές');
+    base={exercises:[...exercises,...originalExercises],programs:[...programs,...formatData.programs]};
     if(mode)render();
     msg('Φορτώθηκαν 100 λειτουργικές ασκήσεις, '+rehabilitationLibrary.conditions.length+' κατηγορίες παθήσεων και οι μορφές προγραμμάτων.');
   }catch(e){msg('Σφάλμα φόρτωσης αρχικής βιβλιοθήκης: '+e.message+' — δοκίμασε ανανέωση.');}
