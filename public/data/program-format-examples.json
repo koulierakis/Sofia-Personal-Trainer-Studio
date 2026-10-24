@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "note": "Προγράμματα γενικής φυσικής κατάστασης. Δεν ανήκουν στην ενότητα Αποκατάσταση.",
+  "programs": [
+    {
+      "id": "fmt-circuit-30",
+      "name": "Κυκλικό με χρόνο · 30′",
+      "format": "timed_circuit",
+      "formatLabel": "Κυκλικά με χρόνο",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 30,
+      "summary": "Κύκλος 40″ εργασία / 20″ μετάβαση · 3 γύροι. Ένταση RPE 6/10, τεχνική πριν από ταχύτητα.",
+      "blocks": [
+        {
+          "minutes": 6,
+          "activity": "Προθέρμανση: 2′ ζωηρό βάδισμα, 1′ καθίσματα χωρίς βάρος, 1′ hip hinge, 1′ κύκλοι ώμων και 1′ ελεγχόμενες προβολές."
+        },
+        {
+          "minutes": 18,
+          "activity": "Κύριο μέρος · 3 γύροι, 40″ άσκηση / 20″ αλλαγή: goblet squat, κωπηλατική με αλτήρα, Romanian deadlift με kettlebell, πιέσεις σε επικλινή στήριξη, farmer carry. Ξεκουράσου 60″ ανά γύρο."
+        },
+        {
+          "minutes": 6,
+          "activity": "Αποθεραπεία: 3′ χαλαρό βάδισμα και 3′ ήπιες κινητικές κινήσεις ισχίων, θώρακα και ώμων χωρίς πίεση."
+        }
+      ]
+    },
+    {
+      "id": "fmt-amrap-24",
+      "name": "AMRAP · 36′ συνεδρία (12′ AMRAP)",
+      "format": "amrap",
+      "formatLabel": "AMRAP",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 36,
+      "summary": "Όσοι ποιοτικοί γύροι χωρούν σε 12′. Η προθέρμανση και αποθεραπεία είναι εκτός AMRAP.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση: 2 γύροι ήπιων step-ups, hip hinge χωρίς βάρος, band pull-aparts και dead bug, 8 επαναλήψεις το καθένα."
+        },
+        {
+          "minutes": 12,
+          "activity": "AMRAP 12′: 8 goblet squats, 10 ring/TRX rows, 8 push-ups σε πάγκο, 30 m farmer carry. Κατέγραψε γύρους και επαναλήψεις. Σταμάτα το σετ όταν χαλάει η τεχνική."
+        },
+        {
+          "minutes": 10,
+          "activity": "Κορμός/έλεγχος: 3 γύροι dead bug 8/πλευρά, glute bridge 12, bird-dog 8/πλευρά, διάλειμμα 45″."
+        },
+        {
+          "minutes": 6,
+          "activity": "Αποθεραπεία: 4′ χαλαρό βάδισμα, 2′ ήπιες αναπνοές και κινητικότητα."
+        }
+      ]
+    },
+    {
+      "id": "fmt-emom-36",
+      "name": "EMOM · 36′",
+      "format": "emom",
+      "formatLabel": "EMOM",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 36,
+      "summary": "Κάθε λεπτό ξεκινά διαφορετική εργασία. Κράτα τουλάχιστον 15″ ανάπαυση μέσα στο λεπτό.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση: 2 γύροι, 8 air squats, 8 hip hinges, 8 band rows, 20″ march-in-place."
+        },
+        {
+          "minutes": 20,
+          "activity": "EMOM 20′ · 5 σταθμοί × 4 γύροι: 1ο λεπτό 8 kettlebell deadlifts, 2ο λεπτό 8 incline push-ups, 3ο λεπτό 10 step-ups συνολικά, 4ο λεπτό 10 band rows, 5ο λεπτό ανάπαυση. Ρύθμισε επαναλήψεις ώστε να μένει χρόνος ανάπαυσης."
+        },
+        {
+          "minutes": 8,
+          "activity": "Αποθεραπεία και κινητικότητα: 4′ βάδισμα, 4′ ήπιες κινήσεις θώρακα και ισχίων."
+        }
+      ]
+    },
+    {
+      "id": "fmt-chipper-35",
+      "name": "Chipper · 35′ cap",
+      "format": "chipper",
+      "formatLabel": "Chipper",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 35,
+      "summary": "Μία σειρά εργασιών με προκαθορισμένες επαναλήψεις και χρονικό όριο. Χωρίζεις τις επαναλήψεις σε μικρά ποιοτικά σετ.",
+      "blocks": [
+        {
+          "minutes": 7,
+          "activity": "Προθέρμανση: κινητοποίηση, 8 squat-to-box, 8 band rows, 8 hip hinges, 3′ προοδευτικό βάδισμα."
+        },
+        {
+          "minutes": 20,
+          "activity": "Chipper · cap 20′: 40 sit-to-stand σε κουτί, 30 band rows, 20 χαμηλά step-ups ανά πόδι, 15 dumbbell floor presses, 10 controlled kettlebell deadlifts. Προσαρμόζεις ύψος, φορτίο και διαλείμματα."
+        },
+        {
+          "minutes": 8,
+          "activity": "Αποθεραπεία: 5′ αργό βάδισμα και 3′ ήπιες διατάσεις χωρίς αναπήδηση."
+        }
+      ]
+    },
+    {
+      "id": "fmt-for-time-32",
+      "name": "For Time · 32′ cap",
+      "format": "for_time",
+      "formatLabel": "For Time",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 32,
+      "summary": "Ολοκλήρωσε την εργασία με καλή τεχνική. Το χρονόμετρο είναι ανώτατο όριο, όχι στόχος να θυσιάσεις την τεχνική.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση: 2 γύροι, 8 box squats, 8 band rows, 8 glute bridges και 30″ march."
+        },
+        {
+          "minutes": 16,
+          "activity": "For Time · cap 16′: 4 γύροι από 8 kettlebell deadlifts, 8 push-ups σε πάγκο, 10 band pull-aparts και 30 m suitcase carry ανά πλευρά. Σημείωσε χρόνο και κράτησε ρυθμό RPE 6–7/10."
+        },
+        {
+          "minutes": 8,
+          "activity": "Αποθεραπεία: 5′ ήπιο βάδισμα, 3′ αναπνοή/κινητικότητα."
+        }
+      ]
+    },
+    {
+      "id": "fmt-cross-training-40",
+      "name": "Cross Training · 40′",
+      "format": "cross_training",
+      "formatLabel": "Cross Training",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 40,
+      "summary": "Συνδυασμός δύναμης, αερόβιας εργασίας και κινητικότητας. Κλιμάκωσε με βάση εμπειρία και διαθέσιμο εξοπλισμό.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση RAMP: 3′ βάδισμα/ποδήλατο, 3′ κινητικότητα ισχίων και θώρακα, 2′ ενεργοποίηση με λάστιχο."
+        },
+        {
+          "minutes": 24,
+          "activity": "Τρία blocks των 6′ με 2′ μετάβαση: A) 8 goblet squats + 10 TRX rows, B) 8 dumbbell Romanian deadlifts + 8 incline presses, C) 30″ rope waves χαμηλής έντασης + 8 step-ups ανά πόδι. Δούλεψε RPE 6/10."
+        },
+        {
+          "minutes": 8,
+          "activity": "Αποθεραπεία: 5′ χαλαρή αερόβια κίνηση και 3′ ήπιες κινητικές ασκήσεις."
+        }
+      ]
+    },
+    {
+      "id": "fmt-tabata-28",
+      "name": "Tabata · 28′",
+      "format": "tabata",
+      "formatLabel": "Tabata",
+      "discipline": "functional",
+      "level": "Intermediate",
+      "durationMinutes": 28,
+      "summary": "Το κλασικό 20″ εργασία / 10″ ανάπαυση εφαρμόζεται μόνο σε επιλεγμένη, τεχνικά ασφαλή άσκηση. Δεν είναι πρωτόκολλο αποκατάστασης.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση: 3′ ελαφρύ ποδήλατο/βάδισμα, 5′ δυναμική κινητικότητα και 2 δοκιμαστικοί κύκλοι."
+        },
+        {
+          "minutes": 12,
+          "activity": "3 blocks × 4′: 20″ εργασία / 10″ ανάπαυση × 8 γύροι. Block 1: χαμηλά step-ups, Block 2: battle ropes σε ελεγχόμενη ένταση, Block 3: air bike ή γρήγορο βάδισμα. Αν δεν διατηρείς τεχνική, σταμάτα το block."
+        },
+        {
+          "minutes": 8,
+          "activity": "Αποθεραπεία: 5′ αργή κίνηση, 3′ ήρεμη αναπνοή."
+        }
+      ]
+    },
+    {
+      "id": "fmt-bands-30",
+      "name": "Δύναμη με λάστιχα · 30′",
+      "format": "resistance_bands",
+      "formatLabel": "Ασκήσεις με λάστιχα",
+      "discipline": "functional",
+      "level": "Beginner",
+      "durationMinutes": 30,
+      "summary": "Προπόνηση δύναμης με λάστιχο. Επιλογή αντίστασης που επιτρέπει ομαλή κίνηση και 2–3 επαναλήψεις σε εφεδρεία.",
+      "blocks": [
+        {
+          "minutes": 5,
+          "activity": "Προθέρμανση: 3′ βάδισμα, 2′ ώμοι/ισχία."
+        },
+        {
+          "minutes": 20,
+          "activity": "3 γύροι: band row 12–15, band chest press 10–12, lateral walk 8–10 βήματα ανά κατεύθυνση, band hip hinge 12, Pallof press 10/πλευρά. Ξεκούραση 45–60″ ανά άσκηση."
+        },
+        {
+          "minutes": 5,
+          "activity": "Αποθεραπεία: χαλαρή κινητικότητα και αναπνοές."
+        }
+      ]
+    },
+    {
+      "id": "fmt-hiit-30",
+      "name": "Έντονα διαλειμματικά · 30′",
+      "format": "hiit",
+      "formatLabel": "Έντονα διαλειμματικά",
+      "discipline": "functional",
+      "level": "Advanced",
+      "durationMinutes": 30,
+      "summary": "Για υγιείς, προπονημένους ασκούμενους χωρίς αντένδειξη. Δυνατότητα τροποποίησης σε χαμηλής πρόσκρουσης βάδισμα/ποδήλατο.",
+      "blocks": [
+        {
+          "minutes": 8,
+          "activity": "Προθέρμανση: 5′ προοδευτική αερόβια κίνηση και 3′ δυναμική κινητικότητα."
+        },
+        {
+          "minutes": 16,
+          "activity": "8 κύκλοι: 40″ δυνατή αλλά ελεγχόμενη εργασία / 80″ ενεργητική αποκατάσταση σε ποδήλατο, κωπηλατικό ή γρήγορο βάδισμα. Ένταση RPE έως 8/10, ποτέ all-out."
+        },
+        {
+          "minutes": 6,
+          "activity": "Αποθεραπεία: 4′ σταδιακή μείωση ρυθμού, 2′ ήρεμη αναπνοή."
+        }
+      ]
+    }
+  ]
+}
