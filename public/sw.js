@@ -1,6 +1,6 @@
-const CACHE_NAME = "sofia-studio-shell-v4";
+const CACHE_NAME = "sofia-studio-shell-v5";
 const CORE_ASSETS = [
-  "/", "/index.html", "/style.css", "/app.js", "/device-view.js", "/screen-wake-lock.js", "/pwa.js",
+  "/", "/index.html", "/style.css?v=blue-grey-1", "/app.js", "/device-view.js", "/screen-wake-lock.js", "/pwa.js",
   "/exercise-image-library.js", "/image-review-store.js",
   "/original-visual-storyboards.js", "/advanced-catalog.js",
   "/storyboard-prompts.js", "/review-system.js",
