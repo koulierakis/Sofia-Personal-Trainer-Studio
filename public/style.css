@@ -229,3 +229,27 @@ input:focus,select:focus{border-color:#bca56f}
 .screen-wake-lock[data-active="true"]{border-color:var(--sofia-gold);color:var(--sofia-gold-bright)}
 .screen-wake-lock:disabled{cursor:default;opacity:.65}
 @media(max-width:400px){.screen-wake-lock span{display:none}}
+
+
+/* Refined midnight blue-grey palette; champagne gold accents stay unchanged */
+:root{
+ --sofia-night:#080e18;--sofia-navy:#101b2a;--sofia-panel:#152337;--sofia-panel-raised:#1d2d42;
+ --sofia-line:#40536c;--sofia-line-soft:rgba(214,190,132,.22);
+ background:linear-gradient(145deg,#080e18 0%,#0d1827 48%,#17263a 100%) fixed;
+}
+html{background:#080e18}
+body{background:transparent}
+header{border-bottom-color:rgba(160,181,207,.22)}
+.brand-emblem{background:radial-gradient(circle at 50% 38%,#1b2a3d 0,#101b2a 62%,#080e18 100%)}
+button,.file{background:linear-gradient(155deg,#1b2b40,#111c2a);border-color:#40536c}
+button:hover,.file:hover{background:linear-gradient(145deg,#263950,#17263a);border-color:var(--sofia-gold)}
+input,select{background:#101b2a;border-color:#3d5068}
+.big{background:linear-gradient(145deg,#1b2c42 0%,#17253a 58%,#111b29 100%);border-color:#52657b}
+.big:hover{background:linear-gradient(145deg,#243751,#1a2a40 58%,#121e2d)}
+.card,article#detail,article#programDetail,.exercise-player,.exercise-player-hero{background:linear-gradient(160deg,#1b2b40,#121d2b 76%);border-color:#3d5068}
+.phase{background:#111c2a;border-color:#40536c}
+#detail .phasegrid>.phase{background:#111c2a;border-color:#40536c}
+#detail .phasegrid>.phase.active-frame{background:#26374c;outline-color:var(--sofia-gold-bright)}
+.exercise-player-hero{background:#0e1927}
+.catalog-empty{background:linear-gradient(160deg,#17263a,#101b29);border-color:#596c82}
+#notice{color:#b9c9d9}
