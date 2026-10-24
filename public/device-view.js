@@ -11,6 +11,7 @@
 
   function selectView(view) {
     app.dataset.deviceView = view;
+    document.documentElement.dataset.deviceView = view;
     controls.forEach((button) => {
       const selected = button.dataset.deviceView === view;
       button.setAttribute("aria-pressed", String(selected));
