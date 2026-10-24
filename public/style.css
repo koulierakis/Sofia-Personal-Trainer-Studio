@@ -194,3 +194,30 @@ input:focus,select:focus{border-color:#bca56f}
 #app[data-device-view="mobile"]{max-width:430px}
 @media(min-width:651px){#app[data-device-view="mobile"]{min-height:100vh;border-inline:1px solid var(--sofia-line-soft);box-shadow:0 0 48px #0008}}
 @media(max-width:650px){.device-view-switch button{width:36px;height:36px}}
+
+
+/* Device mode changes the actual composition, independent of the browser viewport */
+#app[data-device-view="mobile"]{width:min(430px,calc(100vw - 20px));max-width:430px;margin-inline:auto}
+#app[data-device-view="mobile"] header{flex-direction:column;align-items:stretch}
+#app[data-device-view="mobile"] .header-actions{display:flex;flex-direction:row;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+#app[data-device-view="mobile"] .header-actions button{flex:0 1 auto;padding:9px 11px;font-size:12px}
+#app[data-device-view="mobile"] .homegrid{grid-template-columns:1fr;gap:12px}
+#app[data-device-view="mobile"] .filters{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#app[data-device-view="mobile"] .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#app[data-device-view="mobile"] .phasegrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#app[data-device-view="mobile"] .big{min-height:170px;padding:22px;border-radius:19px}
+#app[data-device-view="mobile"] .big strong{font-size:24px}
+#app[data-device-view="mobile"] .tabs button{flex:1 1 44%;font-size:12px;padding:9px}
+@media(max-width:400px){#app[data-device-view="mobile"] .filters{grid-template-columns:1fr}}
+@media(max-width:650px){
+ html[data-device-view="desktop"] body{overflow-x:auto}
+ #app[data-device-view="desktop"]{width:720px;max-width:none;margin-inline:0;padding:24px}
+ #app[data-device-view="desktop"] header{flex-direction:row;align-items:center}
+ #app[data-device-view="desktop"] .header-actions{flex-direction:row;align-items:center;flex-wrap:nowrap}
+ #app[data-device-view="desktop"] .homegrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #app[data-device-view="desktop"] .filters{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #app[data-device-view="desktop"] .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+ #app[data-device-view="desktop"] .phasegrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #app[data-device-view="desktop"] .tabs{flex-wrap:nowrap}
+ #app[data-device-view="desktop"] .tabs button{flex:0 0 auto}
+}
