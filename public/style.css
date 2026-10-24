@@ -221,3 +221,11 @@ input:focus,select:focus{border-color:#bca56f}
  #app[data-device-view="desktop"] .tabs{flex-wrap:nowrap}
  #app[data-device-view="desktop"] .tabs button{flex:0 0 auto}
 }
+
+
+/* Screen awake control */
+.screen-wake-lock{display:flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}
+.screen-wake-lock svg{width:17px;height:17px;flex:0 0 17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.screen-wake-lock[data-active="true"]{border-color:var(--sofia-gold);color:var(--sofia-gold-bright)}
+.screen-wake-lock:disabled{cursor:default;opacity:.65}
+@media(max-width:400px){.screen-wake-lock span{display:none}}
