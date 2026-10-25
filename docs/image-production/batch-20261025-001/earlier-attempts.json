@@ -1,0 +1,115 @@
+{
+  "note": "Local generated originals retained; excluded from published coverage. Filename paths describe this workspace, not downloadable repository assets.",
+  "attempts": [
+    {
+      "exerciseId": "functional-001",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-23e5db3e-990b-4197-bd19-d8baf47ee50d.png",
+      "sha256": "bac5c99f4a1254cffed4a17c2b455abaf5991353c7ed0602dec023579e7b8206",
+      "decision": "superseded",
+      "reason": "Frontal view does not meet updated camera requirement.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-002",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-b11361fb-d864-4bac-80d1-e0fa17204587.png",
+      "sha256": "4832989581fce2b224e5c7e144e2bdfc85fb0eb20aba425de49cc44b93cbeb99",
+      "decision": "superseded",
+      "reason": "Frontal view does not meet updated camera requirement.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-003",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-126ed7e4-4b96-4047-a0c0-85fc4ee7057f.png",
+      "sha256": "b3bbe2068c4d3ba328c755e7f7a7c0a6e359313426f50c941de5ab16e7469d61",
+      "decision": "rejected",
+      "reason": "Five visual panels instead of six.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-004",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-c95ec32f-6161-4114-ac25-9b7ba8ed3dda.png",
+      "sha256": "ef424585ec700120e915599fd5310e91bf9d98708ac7e17e03b0be2732877ffc",
+      "decision": "rejected",
+      "reason": "Insufficient margin for feet at cell borders.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-005",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-e6d1b2a0-5724-4399-8489-0372dc5d8049.png",
+      "sha256": "a5aaddebc08d58c4aaf71279b9eab9d4808e96774653e4475be6ddddb66c8fae",
+      "decision": "rejected",
+      "reason": "Uneven panel widths and near-boundary body parts.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-003",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-59bc4236-e04b-4cba-8d77-60a5d3c160f5.png",
+      "sha256": "2c8b287bf2b622efe327127dece47db12aeb15b844349b75c648abe1abe19dfa",
+      "decision": "superseded",
+      "reason": "Front view; later side-view policy applies.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-001",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-a186162b-fe8f-4e95-b5a7-d5ea174e3deb.png",
+      "sha256": "343dd75ff49322a5d1e466c48035eea457152b03f774eb24f8728a668cff739b",
+      "decision": "rejected",
+      "reason": "Hands cross or are cut at panel boundaries.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-002",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-cf4fd79e-0703-42e1-a1b8-b65528613b3a.png",
+      "sha256": "60f2b4ea5ac66a7e3289b6f10fcf54c69af2091185b40a4003654deedf44805b",
+      "decision": "rejected",
+      "reason": "Near-boundary shoes; unsuitable for automatic publication.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-003",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-0e83bc35-589d-48a6-8d30-b6eacd82f68c.png",
+      "sha256": "fb18a0a64c0464e7e18780dafd0b298101f5d18c5c9786ffd060eec1cf0c200b",
+      "decision": "rejected",
+      "reason": "Shoes cross panel edges in several phases.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-004",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-242ee5a7-c535-4ba5-a341-dbd40ea94bb3.png",
+      "sha256": "944ebee1da23308b8c8dc0c0b7dbaedf574ec8d1195070b3aad91a0ec0b89fa4",
+      "decision": "rejected",
+      "reason": "Incorrect/unequal panel geometry.",
+      "promoted": false,
+      "humanApproval": false
+    },
+    {
+      "exerciseId": "functional-005",
+      "provider": "OpenAI image_gen conversation tool",
+      "localSource": "/workspace/generated_images/exec-5a0f9de4-fc6b-4499-abe7-16167868608b.png",
+      "sha256": "f9ea76a2995abf1f5cc434d3625b607b5ff17b584c6c17495d8ceeac5a4e1e5a",
+      "decision": "superseded",
+      "reason": "Replaced by four-stage side-profile storyboard; no coach approval assigned.",
+      "promoted": false,
+      "humanApproval": false
+    }
+  ]
+}

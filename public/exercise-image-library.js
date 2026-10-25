@@ -21,6 +21,16 @@ export function imageFor(exercise,id,index,library,reviews=readImageReviews()){
  return {url:path,status,label:entry.labels?.[index]};
 }
 
+// Explicitly enabled batch previews are unapproved alternatives. Keep the original
+// phase mapping/reviews intact, and never supersede a coach-approved sequence.
+export function playerImageEntry(entry){
+ const preview=entry?.storyboardPreview;
+ const approved=entry?.status==='approved'||Object.values(entry?.phaseReviews||{}).some(r=>r.status==='approved');
+ if(approved||preview?.status!=='pending_visual_review'||preview.coachApproved!==false||!Array.isArray(preview.phases)||preview.phases.length<4||preview.phases.length>10||preview.labels?.length!==preview.phases.length)return entry;
+ if(!preview.phases.every((url,i)=>entry.importedCandidates?.some(c=>c.url===url&&c.phase===i+1&&c.reviewStatus==='pending_visual_review')))return entry;
+ return {...entry,status:'pending_visual_review',phases:preview.phases,labels:preview.labels,blockedPhases:{},phaseReviews:{},previewActive:true};
+}
+
 
 const REVIEW_KEY='sofia_repository_image_reviews_v1';
 export function imageReviewKey(id,index,url){return JSON.stringify([id,index,url]);}

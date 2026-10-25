@@ -1,0 +1,72 @@
+{
+  "exercises": [
+    {
+      "title": "Bodyweight Squat",
+      "cells": 4,
+      "urls": [
+        "/images/exercises/functional-001/01-a049cad262aced44.webp",
+        "/images/exercises/functional-001/02-38e6cda576f4ff76.webp",
+        "/images/exercises/functional-001/03-5e519bb34fe17e34.webp",
+        "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp"
+      ],
+      "heroInitiallyVisible": true,
+      "heroVisibleAfterSelect": true,
+      "playAdvances": true,
+      "lastFrameVisible": true
+    },
+    {
+      "title": "Reverse Lunge",
+      "cells": 4,
+      "urls": [
+        "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp",
+        "/images/exercises/functional-002/02-8d8894904d4ebf77.webp",
+        "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp",
+        "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp"
+      ],
+      "heroInitiallyVisible": true,
+      "heroVisibleAfterSelect": true,
+      "lastFrameVisible": true
+    },
+    {
+      "title": "Forward Lunge",
+      "cells": 4,
+      "urls": [
+        "/images/exercises/functional-003/01-9ece256f7eb0bced.webp",
+        "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp",
+        "/images/exercises/functional-003/03-3dc5539bb6479881.webp",
+        "/images/exercises/functional-003/04-a9b992dd84e339f2.webp"
+      ],
+      "heroInitiallyVisible": true,
+      "heroVisibleAfterSelect": true,
+      "lastFrameVisible": true
+    },
+    {
+      "title": "Incline Push-Up",
+      "cells": 4,
+      "urls": [
+        "/images/exercises/functional-004/01-4828d28761d176b7.webp",
+        "/images/exercises/functional-004/02-fac91148495c59b5.webp",
+        "/images/exercises/functional-004/03-2d31d8c781faebe9.webp",
+        "/images/exercises/functional-004/04-4d5133e3965775e4.webp"
+      ],
+      "heroInitiallyVisible": true,
+      "heroVisibleAfterSelect": true,
+      "lastFrameVisible": true
+    },
+    {
+      "title": "Glute Bridge",
+      "cells": 4,
+      "urls": [
+        "/images/exercises/functional-005/01-569d60c8b150885d.webp",
+        "/images/exercises/functional-005/02-8e1448e0095e804e.webp",
+        "/images/exercises/functional-005/03-c6797f48b32c517b.webp",
+        "/images/exercises/functional-005/04-3120c396486e2c84.webp"
+      ],
+      "heroInitiallyVisible": true,
+      "heroVisibleAfterSelect": true,
+      "lastFrameVisible": true
+    }
+  ],
+  "consoleErrors": [],
+  "success": true
+}

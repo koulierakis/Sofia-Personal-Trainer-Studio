@@ -1,0 +1,326 @@
+{
+  "version": 1,
+  "batch": "batch-20261025-001",
+  "jobs": {
+    "functional-001": {
+      "status": "imported",
+      "exerciseId": "functional-001",
+      "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+      "sourceUrl": "/images/storyboards/functional-001-aae8804a4859e965.png",
+      "phases": [
+        "/images/exercises/functional-001/01-a049cad262aced44.webp",
+        "/images/exercises/functional-001/02-38e6cda576f4ff76.webp",
+        "/images/exercises/functional-001/03-5e519bb34fe17e34.webp",
+        "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp"
+      ],
+      "cropBoxes": [
+        [
+          0,
+          0,
+          384,
+          1024
+        ],
+        [
+          384,
+          0,
+          768,
+          1024
+        ],
+        [
+          768,
+          0,
+          1152,
+          1024
+        ],
+        [
+          1152,
+          0,
+          1536,
+          1024
+        ]
+      ],
+      "rightPaddingPixels": 0,
+      "frameCount": 4,
+      "frameDimensions": [
+        384,
+        1024
+      ],
+      "coachApproved": false,
+      "previewActivated": true,
+      "generationRequest": {
+        "exerciseId": "functional-001",
+        "sha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+        "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "frameCount": 4,
+        "visualDecision": "candidate",
+        "provider": "OpenAI image_gen conversation tool",
+        "prompt": "One photorealistic horizontal 4-frame storyboard for Bodyweight Squat (functional-001). EXACTLY 4 equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. Every full body, hands, feet and equipment completely inside its own column. Use the attached adult athlete photograph as the actual face/body identity reference. Preserve hairstyle, proportions and black sports bra, black mid-thigh cycling shorts, white trainers, tied dark hair in every frame. Preserve the reference's modern ATHLETICO gym, dark marble, wood and warm lights; NOT a white background. Same camera, scale and lighting in all cells. Camera: oblique side profile, about 70 degrees from front, facing right; hands on hips to keep fingers inside the cell. Never a frontal view. Keep this angle fixed for the entire repetition. Equipment: ['Βάρος σώματος']. Source mechanics: Στάσου με τα πέλματα περίπου στο άνοιγμα των ώμων. Κράτησε ολόκληρο το πέλμα σε επαφή με το έδαφος και λύγισε ταυτόχρονα ισχία και γόνατα. Κατέβασε τη λεκάνη όσο επιτρέπει η κινητικότητά σου χωρίς να χάνεις τον έλεγχο της σπονδυλικής στήλης. Πίεσε το έδαφος και επέστρεψε όρθιος.. Left-to-right poses: 1: Όρθια αρχική θέση με τα χέρια στους γοφούς και πέλματα στο άνοιγμα ώμων.; 2: Κάθοδος στο χαμηλό squat: ισχία πίσω, γόνατα προς τα δάχτυλα και φτέρνες στο έδαφος.; 3: Ελεγχόμενη άνοδος με έκταση ισχίων και γονάτων, χωρίς αλλαγή της θέσης των πελμάτων.; 4: Πλήρης όρθια επαναφορά, ουδέτερος κορμός, χέρια στους γοφούς.. Anatomically plausible exercise illustration, pending coach review.",
+        "promptRecord": "Production specification; actual image requests additionally constrained four equal cells and full-body margins.",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; hands on hips to keep fingers inside the cell",
+        "inspection": {
+          "reviewer": "Codex preliminary visual inspection, not human coach approval",
+          "posePlausible": true,
+          "wholeBodyVisible": true,
+          "notes": "Side/oblique profile. Coach must confirm identity, load mechanics, lead-leg consistency and technique. Near-boundary toes in lunge need particular review."
+        },
+        "toolOutputFile": "exec-036d1fde-7e2f-4bb2-aa8d-39f331e73443.png"
+      }
+    },
+    "functional-002": {
+      "status": "imported",
+      "exerciseId": "functional-002",
+      "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+      "sourceUrl": "/images/storyboards/functional-002-550df6b16d650850.png",
+      "phases": [
+        "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp",
+        "/images/exercises/functional-002/02-8d8894904d4ebf77.webp",
+        "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp",
+        "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp"
+      ],
+      "cropBoxes": [
+        [
+          0,
+          0,
+          384,
+          1024
+        ],
+        [
+          384,
+          0,
+          768,
+          1024
+        ],
+        [
+          768,
+          0,
+          1152,
+          1024
+        ],
+        [
+          1152,
+          0,
+          1536,
+          1024
+        ]
+      ],
+      "rightPaddingPixels": 0,
+      "frameCount": 4,
+      "frameDimensions": [
+        384,
+        1024
+      ],
+      "coachApproved": false,
+      "previewActivated": true,
+      "generationRequest": {
+        "exerciseId": "functional-002",
+        "sha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+        "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+        "frameCount": 4,
+        "visualDecision": "candidate",
+        "provider": "OpenAI image_gen conversation tool",
+        "prompt": "One photorealistic horizontal 4-frame storyboard for Reverse Lunge (functional-002). EXACTLY 4 equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. Every full body, hands, feet and equipment completely inside its own column. Use the attached adult athlete photograph as the actual face/body identity reference. Preserve hairstyle, proportions and black fitted t-shirt, grey mid-thigh shorts, white trainers in every frame. Preserve the reference's modern ATHLETICO gym, dark marble, wood and warm lights; NOT a white background. Same camera, scale and lighting in all cells. Camera: oblique side profile, about 70 degrees from front, facing right; backward step travels left. Never a frontal view. Keep this angle fixed for the entire repetition. Equipment: ['Βάρος σώματος']. Source mechanics: Από όρθια θέση κάνε ελεγχόμενο βήμα προς τα πίσω. Λύγισε και τα δύο γόνατα κατεβάζοντας κατακόρυφα το σώμα. Κράτησε τη λεκάνη στραμμένη μπροστά και το μπροστινό πέλμα σταθερό. Πίεσε με το μπροστινό πόδι για επιστροφή και επανάλαβε στην άλλη πλευρά.. Left-to-right poses: 1: Όρθια αρχική θέση, πέλματα στο άνοιγμα ισχίων.; 2: Βήμα του δεξιού ποδιού προς τα πίσω και κάθοδος: το αριστερό πέλμα μένει σταθερό και το δεξί γόνατο πλησιάζει το έδαφος.; 3: Πίεση από το αριστερό πέλμα, άνοδος και έναρξη επιστροφής του δεξιού ποδιού προς τα εμπρός.; 4: Όρθια επαναφορά με τα δύο πέλματα στο αρχικό άνοιγμα.. Anatomically plausible exercise illustration, pending coach review.",
+        "promptRecord": "Production specification; actual image requests additionally constrained four equal cells and full-body margins.",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; backward step travels left",
+        "inspection": {
+          "reviewer": "Codex preliminary visual inspection, not human coach approval",
+          "posePlausible": true,
+          "wholeBodyVisible": true,
+          "notes": "Side/oblique profile. Coach must confirm identity, load mechanics, lead-leg consistency and technique. Near-boundary toes in lunge need particular review."
+        },
+        "toolOutputFile": "exec-48307169-9782-431e-a524-ad57cd30fb53.png"
+      }
+    },
+    "functional-003": {
+      "status": "imported",
+      "exerciseId": "functional-003",
+      "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+      "sourceUrl": "/images/storyboards/functional-003-019939147c2c4492.png",
+      "phases": [
+        "/images/exercises/functional-003/01-9ece256f7eb0bced.webp",
+        "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp",
+        "/images/exercises/functional-003/03-3dc5539bb6479881.webp",
+        "/images/exercises/functional-003/04-a9b992dd84e339f2.webp"
+      ],
+      "cropBoxes": [
+        [
+          0,
+          0,
+          384,
+          1024
+        ],
+        [
+          384,
+          0,
+          768,
+          1024
+        ],
+        [
+          768,
+          0,
+          1152,
+          1024
+        ],
+        [
+          1152,
+          0,
+          1536,
+          1024
+        ]
+      ],
+      "rightPaddingPixels": 0,
+      "frameCount": 4,
+      "frameDimensions": [
+        384,
+        1024
+      ],
+      "coachApproved": false,
+      "previewActivated": true,
+      "generationRequest": {
+        "exerciseId": "functional-003",
+        "sha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+        "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "frameCount": 4,
+        "visualDecision": "candidate",
+        "provider": "OpenAI image_gen conversation tool",
+        "prompt": "One photorealistic horizontal 4-frame storyboard for Forward Lunge (functional-003). EXACTLY 4 equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. Every full body, hands, feet and equipment completely inside its own column. Use the attached adult athlete photograph as the actual face/body identity reference. Preserve hairstyle, proportions and black sports bra, black mid-thigh cycling shorts, white trainers, tied dark hair in every frame. Preserve the reference's modern ATHLETICO gym, dark marble, wood and warm lights; NOT a white background. Same camera, scale and lighting in all cells. Camera: oblique side profile, about 70 degrees from front, facing right; forward step travels right. Never a frontal view. Keep this angle fixed for the entire repetition. Equipment: ['Βάρος σώματος']. Source mechanics: Στάσου όρθιος με ενεργό κορμό. Κάνε βήμα μπροστά και χαμήλωσε το κέντρο βάρους λυγίζοντας τα γόνατα. Διατήρησε ελεγχόμενη ευθυγράμμιση ισχίου, γονάτου και πέλματος. Σπρώξε από το μπροστινό πέλμα για να επανέλθεις στην αρχική θέση.. Left-to-right poses: 1: Όρθια αρχική θέση, πέλματα στο άνοιγμα ισχίων.; 2: Βήμα του δεξιού ποδιού προς τα εμπρός και κάθοδος: το δεξί γόνατο πάνω από τον αστράγαλο και το αριστερό γόνατο κοντά στο έδαφος.; 3: Πίεση από το δεξί πέλμα, άνοδος και έναρξη επιστροφής του δεξιού ποδιού προς τα πίσω.; 4: Όρθια επαναφορά με τα δύο πέλματα στο αρχικό άνοιγμα.. Anatomically plausible exercise illustration, pending coach review.",
+        "promptRecord": "Production specification; actual image requests additionally constrained four equal cells and full-body margins.",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; forward step travels right",
+        "inspection": {
+          "reviewer": "Codex preliminary visual inspection, not human coach approval",
+          "posePlausible": true,
+          "wholeBodyVisible": true,
+          "notes": "Side/oblique profile. Coach must confirm identity, load mechanics, lead-leg consistency and technique. Near-boundary toes in lunge need particular review."
+        },
+        "toolOutputFile": "exec-002cead2-2d4d-4092-942c-d9143f83ea41.png"
+      }
+    },
+    "functional-004": {
+      "status": "imported",
+      "exerciseId": "functional-004",
+      "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+      "sourceUrl": "/images/storyboards/functional-004-a4ab1a2bbb0eba4f.png",
+      "phases": [
+        "/images/exercises/functional-004/01-4828d28761d176b7.webp",
+        "/images/exercises/functional-004/02-fac91148495c59b5.webp",
+        "/images/exercises/functional-004/03-2d31d8c781faebe9.webp",
+        "/images/exercises/functional-004/04-4d5133e3965775e4.webp"
+      ],
+      "cropBoxes": [
+        [
+          0,
+          0,
+          543,
+          724
+        ],
+        [
+          543,
+          0,
+          1086,
+          724
+        ],
+        [
+          1086,
+          0,
+          1629,
+          724
+        ],
+        [
+          1629,
+          0,
+          2172,
+          724
+        ]
+      ],
+      "rightPaddingPixels": 0,
+      "frameCount": 4,
+      "frameDimensions": [
+        543,
+        724
+      ],
+      "coachApproved": false,
+      "previewActivated": true,
+      "generationRequest": {
+        "exerciseId": "functional-004",
+        "sha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+        "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+        "frameCount": 4,
+        "visualDecision": "candidate",
+        "provider": "OpenAI image_gen conversation tool",
+        "prompt": "One photorealistic horizontal 4-frame storyboard for Incline Push-Up (functional-004). EXACTLY 4 equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. Every full body, hands, feet and equipment completely inside its own column. Use the attached adult athlete photograph as the actual face/body identity reference. Preserve hairstyle, proportions and black fitted t-shirt, grey mid-thigh shorts, white trainers in every frame. Preserve the reference's modern ATHLETICO gym, dark marble, wood and warm lights; NOT a white background. Same camera, scale and lighting in all cells. Camera: true side profile, facing right toward bench; shoulders hips and heels visible in one line. Never a frontal view. Keep this angle fixed for the entire repetition. Equipment: ['Σταθερός πάγκος']. Source mechanics: Τοποθέτησε τις παλάμες σε σταθερό, μη ολισθηρό πάγκο λίγο πιο ανοιχτά από τους ώμους. Φέρε τα πόδια πίσω ώστε το σώμα να σχηματίζει ευθεία γραμμή. Λύγισε τους αγκώνες κατεβάζοντας το στήθος προς τον πάγκο. Πίεσε και επέστρεψε με ελεγχόμενο ρυθμό.. Left-to-right poses: 1: Υψηλή επικλινής σανίδα, παλάμες σε σταθερό πάγκο και κορμός σε ευθεία με τα πόδια.; 2: Κάμψη αγκώνων και ελεγχόμενη προσέγγιση του στήθους στον πάγκο, χωρίς κάμψη στη μέση.; 3: Πίεση προς τα πάνω με έκταση αγκώνων, σταθερά πέλματα και ουδέτερο κορμό.; 4: Επιστροφή στην επικλινή σανίδα με τεντωμένους αγκώνες.. Anatomically plausible exercise illustration, pending coach review.",
+        "promptRecord": "Production specification; actual image requests additionally constrained four equal cells and full-body margins.",
+        "cameraAngle": "true side profile, facing right toward bench; shoulders hips and heels visible in one line",
+        "inspection": {
+          "reviewer": "Codex preliminary visual inspection, not human coach approval",
+          "posePlausible": true,
+          "wholeBodyVisible": true,
+          "notes": "Side/oblique profile. Coach must confirm identity, load mechanics, lead-leg consistency and technique. Near-boundary toes in lunge need particular review."
+        },
+        "toolOutputFile": "exec-e092af1c-7a78-468a-985f-7d2c27e540b3.png"
+      }
+    },
+    "functional-005": {
+      "status": "imported",
+      "exerciseId": "functional-005",
+      "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+      "sourceUrl": "/images/storyboards/functional-005-65602680ada67808.png",
+      "phases": [
+        "/images/exercises/functional-005/01-569d60c8b150885d.webp",
+        "/images/exercises/functional-005/02-8e1448e0095e804e.webp",
+        "/images/exercises/functional-005/03-c6797f48b32c517b.webp",
+        "/images/exercises/functional-005/04-3120c396486e2c84.webp"
+      ],
+      "cropBoxes": [
+        [
+          0,
+          0,
+          543,
+          724
+        ],
+        [
+          543,
+          0,
+          1086,
+          724
+        ],
+        [
+          1086,
+          0,
+          1629,
+          724
+        ],
+        [
+          1629,
+          0,
+          2172,
+          724
+        ]
+      ],
+      "rightPaddingPixels": 1,
+      "frameCount": 4,
+      "frameDimensions": [
+        543,
+        724
+      ],
+      "coachApproved": false,
+      "previewActivated": true,
+      "generationRequest": {
+        "exerciseId": "functional-005",
+        "sha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+        "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "frameCount": 4,
+        "visualDecision": "candidate",
+        "provider": "OpenAI image_gen conversation tool",
+        "prompt": "One photorealistic horizontal 4-frame storyboard for Glute Bridge (functional-005). EXACTLY 4 equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. Every full body, hands, feet and equipment completely inside its own column. Use the attached adult athlete photograph as the actual face/body identity reference. Preserve hairstyle, proportions and black sports bra, black mid-thigh cycling shorts, white trainers, tied dark hair in every frame. Preserve the reference's modern ATHLETICO gym, dark marble, wood and warm lights; NOT a white background. Same camera, scale and lighting in all cells. Camera: true side profile, head left feet right; shoulder hip and knee alignment visible. Never a frontal view. Keep this angle fixed for the entire repetition. Equipment: ['Στρώμα']. Source mechanics: Ξάπλωσε ανάσκελα με λυγισμένα γόνατα και πέλματα στο έδαφος. Ενεργοποίησε κοιλιακούς και γλουτούς. Πίεσε από τα πέλματα για να σηκώσεις τη λεκάνη μέχρι ο κορμός να ευθυγραμμιστεί περίπου με τους μηρούς. Κράτησε στιγμιαία και κατέβασε αργά.. Left-to-right poses: 1: Ύπτια αρχική θέση σε στρώμα, γόνατα λυγισμένα, πέλματα επίπεδα και χέρια στο έδαφος.; 2: Ανύψωση λεκάνης μέχρι ώμοι, ισχία και γόνατα να ευθυγραμμιστούν, χωρίς υπερέκταση μέσης.; 3: Ελεγχόμενη κάθοδος της λεκάνης, χωρίς να αλλάζει η θέση ώμων και πελμάτων.; 4: Ύπτια επαναφορά με τη λεκάνη στο στρώμα και τα γόνατα λυγισμένα.. Anatomically plausible exercise illustration, pending coach review.",
+        "promptRecord": "Production specification; actual image requests additionally constrained four equal cells and full-body margins.",
+        "cameraAngle": "true side profile, head left feet right; shoulder hip and knee alignment visible",
+        "inspection": {
+          "reviewer": "Codex preliminary visual inspection, not human coach approval",
+          "posePlausible": true,
+          "wholeBodyVisible": true,
+          "notes": "Side/oblique profile. Coach must confirm identity, load mechanics, lead-leg consistency and technique. Near-boundary toes in lunge need particular review."
+        },
+        "toolOutputFile": "exec-16dcfa65-c6ec-4b40-9988-dec122228b13.png"
+      }
+    }
+  }
+}

@@ -11,7 +11,8 @@
     "images:import": "python tools/image-library/library.py import",
     "images:comfy": "python tools/image-library/comfy.py",
     "images:test": "python -m unittest discover -s tools/image-library -p \"test_*.py\"",
-    "images:review": "python tools/image-library/review.py"
+    "images:review": "python tools/image-library/review.py",
+    "images:bulk": "python tools/image-library/bulk_storyboards.py"
   },
   "engines": {
     "node": ">=20"

@@ -1,17 +1,31 @@
 {
   "version": 1,
-  "head": "44dab7544d3da6d982d170efda632b9be9cfc497",
+  "head": "741832beb62a6815e08cf920e812913b125e746c",
   "exerciseCount": 308,
   "programCount": 10,
   "programReferences": 80,
-  "assetCount": 153,
+  "assetCount": 173,
   "assets": {
+    "/images/exercises/functional-001/01-a049cad262aced44.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "a049cad262aced44c5d858c33147a689194a08b22973fce4c9ea0d0660b249fb",
+      "bytes": 82154
+    },
     "/images/exercises/functional-001/01.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "db05f9eea6c6af375116f6957498456a51588eff6c96af7bcc186ccfb2df429e",
       "bytes": 133654
+    },
+    "/images/exercises/functional-001/02-38e6cda576f4ff76.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "38e6cda576f4ff767335fa7789653e5f79e9f2440d4e89bcd1212ed877ad578d",
+      "bytes": 81864
     },
     "/images/exercises/functional-001/02.webp": {
       "width": 1280,
@@ -20,12 +34,26 @@
       "sha256": "165e067d0cea50a36bf911832e5e0c184691422bf0638da32fd0d71a96dcf754",
       "bytes": 121342
     },
+    "/images/exercises/functional-001/03-5e519bb34fe17e34.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "5e519bb34fe17e34a22e2e3b1e60ac2bc4e41d91969a42f0783243ef79b06d42",
+      "bytes": 81010
+    },
     "/images/exercises/functional-001/03.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "4c64fca68305a13ba96a5b27b5b35f530a4bca1568b0144b64451fa722607aea",
       "bytes": 122048
+    },
+    "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "60f5c37233e9d5b851744b5c8eafc541c354da60a8daebe6b3ada72cb8d7dac2",
+      "bytes": 80384
     },
     "/images/exercises/functional-001/04.webp": {
       "width": 1280,
@@ -34,12 +62,26 @@
       "sha256": "ffc2031e8e50b613814d7121513eae51cce082780a1b0b718fa7932183bfbe7a",
       "bytes": 135212
     },
+    "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "1a0fa3afb3b27fd38c47190dadcb88c8609dbea6a92b2b390f7d143505f96190",
+      "bytes": 74592
+    },
     "/images/exercises/functional-002/01.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "78408b61283209a9c8981be3fb35b12f054f8061e5afef51c9bbf41513ada06c",
       "bytes": 124076
+    },
+    "/images/exercises/functional-002/02-8d8894904d4ebf77.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "8d8894904d4ebf7733c6081be2ccfe34e1596ed1536f6e69ce1a192f43f71542",
+      "bytes": 73208
     },
     "/images/exercises/functional-002/02.webp": {
       "width": 1280,
@@ -48,12 +90,26 @@
       "sha256": "4c5905606836a1d889aabde6dcc0441f86bbce3d2641ad94770dd4ff84cd8e8f",
       "bytes": 126490
     },
+    "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "67adc2dc3f78ebe3938b61e00b2a9863162bf5b3d1f16083bc0eea694c1bc6ab",
+      "bytes": 72986
+    },
     "/images/exercises/functional-002/03.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "1c624f06d3f32b0d8f42e4e56a1a02524c2433b49795da195c64cd28d7f46b7a",
       "bytes": 125140
+    },
+    "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "c928bbf25d4c5e273112d406418db839cb05d83a28e87520a7d0f2a0f721550d",
+      "bytes": 72564
     },
     "/images/exercises/functional-002/04.webp": {
       "width": 1280,
@@ -62,12 +118,26 @@
       "sha256": "0d75ce76aa1c2f354f21a3906632962d66c98b9928f7a225ba48f4d8e4f4a472",
       "bytes": 131816
     },
+    "/images/exercises/functional-003/01-9ece256f7eb0bced.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "9ece256f7eb0bced0fcc58d215af37bb13e95d6b728c96e0e6219f983322c30f",
+      "bytes": 80548
+    },
     "/images/exercises/functional-003/01.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "1fab25ae20c5158c8291ea89d6fd8003aab87d2c2e5493284452b8df83cb718f",
       "bytes": 138516
+    },
+    "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "b7f33dc0ed77de71b40397eb11a4361bb5b8473dfdb71b949bc954b9731c6cc8",
+      "bytes": 81738
     },
     "/images/exercises/functional-003/02.webp": {
       "width": 1280,
@@ -76,12 +146,26 @@
       "sha256": "62d5c2af97202948e9f2e1f00fec512fab54b77425e38c78a24a87ef5f86d67c",
       "bytes": 126790
     },
+    "/images/exercises/functional-003/03-3dc5539bb6479881.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "3dc5539bb6479881e458aff4680d6a00f66ae23cd2e095a6b72090461a060e53",
+      "bytes": 80500
+    },
     "/images/exercises/functional-003/03.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "574a9e8d987611189cd3342a06ff6d4702db3699008445d1e3f63534fbb1947f",
       "bytes": 125192
+    },
+    "/images/exercises/functional-003/04-a9b992dd84e339f2.webp": {
+      "width": 384,
+      "height": 1024,
+      "format": "WEBP",
+      "sha256": "a9b992dd84e339f2d2632c067e7178d5ee368e68bc6d19e4edc7bbdadf413d1b",
+      "bytes": 77936
     },
     "/images/exercises/functional-003/04.webp": {
       "width": 1280,
@@ -90,12 +174,26 @@
       "sha256": "a154e77df8d9f9d6c09e0dd95bdb631feb107457b561bc891ed185ee1ba5a9dd",
       "bytes": 123080
     },
+    "/images/exercises/functional-004/01-4828d28761d176b7.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "4828d28761d176b77163d5f4fcb49a00adb227009099eaa93ffa8c2ea94468e7",
+      "bytes": 83046
+    },
     "/images/exercises/functional-004/01.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "63c79c70db5dc32d2281d35d7eaa7ac0c2e4faad1259fc7222d43af224e3c062",
       "bytes": 146882
+    },
+    "/images/exercises/functional-004/02-fac91148495c59b5.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "fac91148495c59b569aeb4c66b793ab6f59642bc2a4b2fd367de61be47e69ef2",
+      "bytes": 82840
     },
     "/images/exercises/functional-004/02.webp": {
       "width": 1280,
@@ -104,12 +202,26 @@
       "sha256": "2ca50cd83a94454b236b325a97b335e739c01f157c971f6a4c282255d7e16d38",
       "bytes": 135222
     },
+    "/images/exercises/functional-004/03-2d31d8c781faebe9.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "2d31d8c781faebe9eb9fb3a18f44d80c11dc89d8442e265a15f9aa5ecdb373f0",
+      "bytes": 83084
+    },
     "/images/exercises/functional-004/03.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "1b3c0016655ac1e71df7fb0d774b547923565715b6196d0b5a1c0709f0985ba5",
       "bytes": 135608
+    },
+    "/images/exercises/functional-004/04-4d5133e3965775e4.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "4d5133e3965775e4466dbcc6bca65afd9d28d3340813d69413a11390452a9e55",
+      "bytes": 82740
     },
     "/images/exercises/functional-004/04.webp": {
       "width": 1280,
@@ -118,12 +230,26 @@
       "sha256": "06a8b79fb180b46c7d061539c46a3be281da83170dfebcf7b17600d94e0e5f80",
       "bytes": 130736
     },
+    "/images/exercises/functional-005/01-569d60c8b150885d.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "569d60c8b150885d6f0d9b8980021ac1cd80a1b81d4a33204238a09127a165e5",
+      "bytes": 77454
+    },
     "/images/exercises/functional-005/01.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "6c13fe822591720b4b2cb6f3516e5fa451e91c214076c071c43b588c37a3b79d",
       "bytes": 124262
+    },
+    "/images/exercises/functional-005/02-8e1448e0095e804e.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "8e1448e0095e804e185fc1911573d0e93ef994ca1f91a1bab29b0f8ceb47f6e7",
+      "bytes": 77910
     },
     "/images/exercises/functional-005/02.webp": {
       "width": 1280,
@@ -132,12 +258,26 @@
       "sha256": "d07525b312ace6c8d2656acefbf15d028603053ba35cf84bc73627578373cb12",
       "bytes": 115498
     },
+    "/images/exercises/functional-005/03-c6797f48b32c517b.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "c6797f48b32c517b54dd2495beb681e8a3a85728598b423e0f0fbd838998882e",
+      "bytes": 77374
+    },
     "/images/exercises/functional-005/03.webp": {
       "width": 1280,
       "height": 853,
       "format": "WEBP",
       "sha256": "72d50fae99d23274f524d75344a58b6cf578878250fc76e5414996f6acb2a2cf",
       "bytes": 117054
+    },
+    "/images/exercises/functional-005/04-3120c396486e2c84.webp": {
+      "width": 543,
+      "height": 724,
+      "format": "WEBP",
+      "sha256": "3120c396486e2c849d32b2d6aa5be9086cfe14f6b711beec5da5f29cfc45cd30",
+      "bytes": 77290
     },
     "/images/exercises/functional-005/04.webp": {
       "width": 1280,
@@ -1096,7 +1236,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-001/01-a049cad262aced44.webp"
+          ]
         },
         {
           "phase": 2,
@@ -1106,7 +1248,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-001/02-38e6cda576f4ff76.webp"
+          ]
         },
         {
           "phase": 3,
@@ -1116,7 +1260,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-001/03-5e519bb34fe17e34.webp"
+          ]
         },
         {
           "phase": 4,
@@ -1126,7 +1272,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp"
+          ]
         }
       ],
       "invalidMappings": []
@@ -1146,7 +1294,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp"
+          ]
         },
         {
           "phase": 2,
@@ -1156,7 +1306,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-002/02-8d8894904d4ebf77.webp"
+          ]
         },
         {
           "phase": 3,
@@ -1166,7 +1318,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp"
+          ]
         },
         {
           "phase": 4,
@@ -1176,7 +1330,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp"
+          ]
         }
       ],
       "invalidMappings": []
@@ -1196,7 +1352,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-003/01-9ece256f7eb0bced.webp"
+          ]
         },
         {
           "phase": 2,
@@ -1206,7 +1364,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp"
+          ]
         },
         {
           "phase": 3,
@@ -1216,7 +1376,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-003/03-3dc5539bb6479881.webp"
+          ]
         },
         {
           "phase": 4,
@@ -1226,7 +1388,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-003/04-a9b992dd84e339f2.webp"
+          ]
         }
       ],
       "invalidMappings": []
@@ -1246,7 +1410,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-004/01-4828d28761d176b7.webp"
+          ]
         },
         {
           "phase": 2,
@@ -1256,7 +1422,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-004/02-fac91148495c59b5.webp"
+          ]
         },
         {
           "phase": 3,
@@ -1266,7 +1434,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-004/03-2d31d8c781faebe9.webp"
+          ]
         },
         {
           "phase": 4,
@@ -1276,7 +1446,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-004/04-4d5133e3965775e4.webp"
+          ]
         }
       ],
       "invalidMappings": []
@@ -1296,7 +1468,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-005/01-569d60c8b150885d.webp"
+          ]
         },
         {
           "phase": 2,
@@ -1306,7 +1480,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-005/02-8e1448e0095e804e.webp"
+          ]
         },
         {
           "phase": 3,
@@ -1316,7 +1492,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-005/03-c6797f48b32c517b.webp"
+          ]
         },
         {
           "phase": 4,
@@ -1326,7 +1504,9 @@
           "technicalValid": true,
           "reason": null,
           "humanReviewRequired": true,
-          "importedCandidates": []
+          "importedCandidates": [
+            "/images/exercises/functional-005/04-3120c396486e2c84.webp"
+          ]
         }
       ],
       "invalidMappings": []

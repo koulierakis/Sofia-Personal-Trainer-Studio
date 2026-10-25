@@ -364,7 +364,138 @@
       "blockedPhases": {},
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
-      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval.",
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-001/01-a049cad262aced44.webp",
+          "sourceExerciseId": "functional-001",
+          "sourcePhase": 1,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+          "sha256": "a049cad262aced44c5d858c33147a689194a08b22973fce4c9ea0d0660b249fb",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            0,
+            0,
+            384,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-001/02-38e6cda576f4ff76.webp",
+          "sourceExerciseId": "functional-001",
+          "sourcePhase": 2,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+          "sha256": "38e6cda576f4ff767335fa7789653e5f79e9f2440d4e89bcd1212ed877ad578d",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            384,
+            0,
+            768,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-001/03-5e519bb34fe17e34.webp",
+          "sourceExerciseId": "functional-001",
+          "sourcePhase": 3,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+          "sha256": "5e519bb34fe17e34a22e2e3b1e60ac2bc4e41d91969a42f0783243ef79b06d42",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp",
+          "sourceExerciseId": "functional-001",
+          "sourcePhase": 4,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+          "sha256": "60f5c37233e9d5b851744b5c8eafc541c354da60a8daebe6b3ada72cb8d7dac2",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1152,
+            0,
+            1536,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        }
+      ],
+      "storyboardPreview": {
+        "version": 1,
+        "status": "pending_visual_review",
+        "batch": "batch-20261025-001",
+        "phases": [
+          "/images/exercises/functional-001/01-a049cad262aced44.webp",
+          "/images/exercises/functional-001/02-38e6cda576f4ff76.webp",
+          "/images/exercises/functional-001/03-5e519bb34fe17e34.webp",
+          "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp"
+        ],
+        "labels": [
+          "Όρθια αρχική θέση με τα χέρια στους γοφούς και πέλματα στο άνοιγμα ώμων.",
+          "Κάθοδος στο χαμηλό squat: ισχία πίσω, γόνατα προς τα δάχτυλα και φτέρνες στο έδαφος.",
+          "Ελεγχόμενη άνοδος με έκταση ισχίων και γονάτων, χωρίς αλλαγή της θέσης των πελμάτων.",
+          "Πλήρης όρθια επαναφορά, ουδέτερος κορμός, χέρια στους γοφούς."
+        ],
+        "provider": "OpenAI image_gen conversation tool",
+        "sourceSha256": "aae8804a4859e965b5f731401c90b1d62335bb1a87d370e1ce93b8045a4a9f4e",
+        "cropBoxes": [
+          [
+            0,
+            0,
+            384,
+            1024
+          ],
+          [
+            384,
+            0,
+            768,
+            1024
+          ],
+          [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          [
+            1152,
+            0,
+            1536,
+            1024
+          ]
+        ],
+        "rightPaddingPixels": 0,
+        "athleteReference": "/images/athletes/athletico-female-reference.jpg",
+        "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; hands on hips to keep fingers inside the cell",
+        "coachApproved": false,
+        "geometryChecked": true,
+        "visualReview": "pending",
+        "notes": "Equal crops verified; anatomy, identity, pose and panel boundaries require human review."
+      }
     },
     "functional-002": {
       "status": "pending_visual_review",
@@ -389,7 +520,138 @@
       "blockedPhases": {},
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
-      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval.",
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp",
+          "sourceExerciseId": "functional-002",
+          "sourcePhase": 1,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+          "sha256": "1a0fa3afb3b27fd38c47190dadcb88c8609dbea6a92b2b390f7d143505f96190",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            0,
+            0,
+            384,
+            1024
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-002/02-8d8894904d4ebf77.webp",
+          "sourceExerciseId": "functional-002",
+          "sourcePhase": 2,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+          "sha256": "8d8894904d4ebf7733c6081be2ccfe34e1596ed1536f6e69ce1a192f43f71542",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            384,
+            0,
+            768,
+            1024
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp",
+          "sourceExerciseId": "functional-002",
+          "sourcePhase": 3,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+          "sha256": "67adc2dc3f78ebe3938b61e00b2a9863162bf5b3d1f16083bc0eea694c1bc6ab",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp",
+          "sourceExerciseId": "functional-002",
+          "sourcePhase": 4,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+          "sha256": "c928bbf25d4c5e273112d406418db839cb05d83a28e87520a7d0f2a0f721550d",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1152,
+            0,
+            1536,
+            1024
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        }
+      ],
+      "storyboardPreview": {
+        "version": 1,
+        "status": "pending_visual_review",
+        "batch": "batch-20261025-001",
+        "phases": [
+          "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp",
+          "/images/exercises/functional-002/02-8d8894904d4ebf77.webp",
+          "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp",
+          "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp"
+        ],
+        "labels": [
+          "Όρθια αρχική θέση, πέλματα στο άνοιγμα ισχίων.",
+          "Βήμα του δεξιού ποδιού προς τα πίσω και κάθοδος: το αριστερό πέλμα μένει σταθερό και το δεξί γόνατο πλησιάζει το έδαφος.",
+          "Πίεση από το αριστερό πέλμα, άνοδος και έναρξη επιστροφής του δεξιού ποδιού προς τα εμπρός.",
+          "Όρθια επαναφορά με τα δύο πέλματα στο αρχικό άνοιγμα."
+        ],
+        "provider": "OpenAI image_gen conversation tool",
+        "sourceSha256": "550df6b16d650850bc744a0ba76ab7e58adfacf3ee0796d7c47d0ba6729c5a3a",
+        "cropBoxes": [
+          [
+            0,
+            0,
+            384,
+            1024
+          ],
+          [
+            384,
+            0,
+            768,
+            1024
+          ],
+          [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          [
+            1152,
+            0,
+            1536,
+            1024
+          ]
+        ],
+        "rightPaddingPixels": 0,
+        "athleteReference": "/images/athletes/athletico-male-reference.jpg",
+        "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; backward step travels left",
+        "coachApproved": false,
+        "geometryChecked": true,
+        "visualReview": "pending",
+        "notes": "Equal crops verified; anatomy, identity, pose and panel boundaries require human review."
+      }
     },
     "functional-003": {
       "status": "pending_visual_review",
@@ -414,7 +676,138 @@
       "blockedPhases": {},
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
-      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval.",
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-003/01-9ece256f7eb0bced.webp",
+          "sourceExerciseId": "functional-003",
+          "sourcePhase": 1,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+          "sha256": "9ece256f7eb0bced0fcc58d215af37bb13e95d6b728c96e0e6219f983322c30f",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            0,
+            0,
+            384,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp",
+          "sourceExerciseId": "functional-003",
+          "sourcePhase": 2,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+          "sha256": "b7f33dc0ed77de71b40397eb11a4361bb5b8473dfdb71b949bc954b9731c6cc8",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            384,
+            0,
+            768,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-003/03-3dc5539bb6479881.webp",
+          "sourceExerciseId": "functional-003",
+          "sourcePhase": 3,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+          "sha256": "3dc5539bb6479881e458aff4680d6a00f66ae23cd2e095a6b72090461a060e53",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-003/04-a9b992dd84e339f2.webp",
+          "sourceExerciseId": "functional-003",
+          "sourcePhase": 4,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+          "sha256": "a9b992dd84e339f2d2632c067e7178d5ee368e68bc6d19e4edc7bbdadf413d1b",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1152,
+            0,
+            1536,
+            1024
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        }
+      ],
+      "storyboardPreview": {
+        "version": 1,
+        "status": "pending_visual_review",
+        "batch": "batch-20261025-001",
+        "phases": [
+          "/images/exercises/functional-003/01-9ece256f7eb0bced.webp",
+          "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp",
+          "/images/exercises/functional-003/03-3dc5539bb6479881.webp",
+          "/images/exercises/functional-003/04-a9b992dd84e339f2.webp"
+        ],
+        "labels": [
+          "Όρθια αρχική θέση, πέλματα στο άνοιγμα ισχίων.",
+          "Βήμα του δεξιού ποδιού προς τα εμπρός και κάθοδος: το δεξί γόνατο πάνω από τον αστράγαλο και το αριστερό γόνατο κοντά στο έδαφος.",
+          "Πίεση από το δεξί πέλμα, άνοδος και έναρξη επιστροφής του δεξιού ποδιού προς τα πίσω.",
+          "Όρθια επαναφορά με τα δύο πέλματα στο αρχικό άνοιγμα."
+        ],
+        "provider": "OpenAI image_gen conversation tool",
+        "sourceSha256": "019939147c2c4492e76612e4b0f5361f95a459766d9c7a7daaccbd01ff994c78",
+        "cropBoxes": [
+          [
+            0,
+            0,
+            384,
+            1024
+          ],
+          [
+            384,
+            0,
+            768,
+            1024
+          ],
+          [
+            768,
+            0,
+            1152,
+            1024
+          ],
+          [
+            1152,
+            0,
+            1536,
+            1024
+          ]
+        ],
+        "rightPaddingPixels": 0,
+        "athleteReference": "/images/athletes/athletico-female-reference.jpg",
+        "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "cameraAngle": "oblique side profile, about 70 degrees from front, facing right; forward step travels right",
+        "coachApproved": false,
+        "geometryChecked": true,
+        "visualReview": "pending",
+        "notes": "Equal crops verified; anatomy, identity, pose and panel boundaries require human review."
+      }
     },
     "functional-004": {
       "status": "pending_visual_review",
@@ -439,7 +832,138 @@
       "blockedPhases": {},
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
-      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval.",
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-004/01-4828d28761d176b7.webp",
+          "sourceExerciseId": "functional-004",
+          "sourcePhase": 1,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+          "sha256": "4828d28761d176b77163d5f4fcb49a00adb227009099eaa93ffa8c2ea94468e7",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            0,
+            0,
+            543,
+            724
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-004/02-fac91148495c59b5.webp",
+          "sourceExerciseId": "functional-004",
+          "sourcePhase": 2,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+          "sha256": "fac91148495c59b569aeb4c66b793ab6f59642bc2a4b2fd367de61be47e69ef2",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            543,
+            0,
+            1086,
+            724
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-004/03-2d31d8c781faebe9.webp",
+          "sourceExerciseId": "functional-004",
+          "sourcePhase": 3,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+          "sha256": "2d31d8c781faebe9eb9fb3a18f44d80c11dc89d8442e265a15f9aa5ecdb373f0",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1086,
+            0,
+            1629,
+            724
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-004/04-4d5133e3965775e4.webp",
+          "sourceExerciseId": "functional-004",
+          "sourcePhase": 4,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+          "sha256": "4d5133e3965775e4466dbcc6bca65afd9d28d3340813d69413a11390452a9e55",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1629,
+            0,
+            2172,
+            724
+          ],
+          "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+        }
+      ],
+      "storyboardPreview": {
+        "version": 1,
+        "status": "pending_visual_review",
+        "batch": "batch-20261025-001",
+        "phases": [
+          "/images/exercises/functional-004/01-4828d28761d176b7.webp",
+          "/images/exercises/functional-004/02-fac91148495c59b5.webp",
+          "/images/exercises/functional-004/03-2d31d8c781faebe9.webp",
+          "/images/exercises/functional-004/04-4d5133e3965775e4.webp"
+        ],
+        "labels": [
+          "Υψηλή επικλινής σανίδα, παλάμες σε σταθερό πάγκο και κορμός σε ευθεία με τα πόδια.",
+          "Κάμψη αγκώνων και ελεγχόμενη προσέγγιση του στήθους στον πάγκο, χωρίς κάμψη στη μέση.",
+          "Πίεση προς τα πάνω με έκταση αγκώνων, σταθερά πέλματα και ουδέτερο κορμό.",
+          "Επιστροφή στην επικλινή σανίδα με τεντωμένους αγκώνες."
+        ],
+        "provider": "OpenAI image_gen conversation tool",
+        "sourceSha256": "a4ab1a2bbb0eba4f7226bbd80c5cbd15b5c33fe09ec4df72481a82d653f073b1",
+        "cropBoxes": [
+          [
+            0,
+            0,
+            543,
+            724
+          ],
+          [
+            543,
+            0,
+            1086,
+            724
+          ],
+          [
+            1086,
+            0,
+            1629,
+            724
+          ],
+          [
+            1629,
+            0,
+            2172,
+            724
+          ]
+        ],
+        "rightPaddingPixels": 0,
+        "athleteReference": "/images/athletes/athletico-male-reference.jpg",
+        "athleteReferenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+        "cameraAngle": "true side profile, facing right toward bench; shoulders hips and heels visible in one line",
+        "coachApproved": false,
+        "geometryChecked": true,
+        "visualReview": "pending",
+        "notes": "Equal crops verified; anatomy, identity, pose and panel boundaries require human review."
+      }
     },
     "functional-005": {
       "status": "pending_visual_review",
@@ -464,7 +988,138 @@
       "blockedPhases": {},
       "source": "AI-generated individual full-frame photos; reviewed for exercise identity and phase mapping, awaiting Sofia technical approval",
       "sequenceComplete": false,
-      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval."
+      "reviewNotes": "Four distinct saved photos. Coach must confirm precise movement, phase sequence and anatomy before approval.",
+      "importedCandidates": [
+        {
+          "phase": 1,
+          "url": "/images/exercises/functional-005/01-569d60c8b150885d.webp",
+          "sourceExerciseId": "functional-005",
+          "sourcePhase": 1,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+          "sha256": "569d60c8b150885d6f0d9b8980021ac1cd80a1b81d4a33204238a09127a165e5",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            0,
+            0,
+            543,
+            724
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 2,
+          "url": "/images/exercises/functional-005/02-8e1448e0095e804e.webp",
+          "sourceExerciseId": "functional-005",
+          "sourcePhase": 2,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+          "sha256": "8e1448e0095e804e185fc1911573d0e93ef994ca1f91a1bab29b0f8ceb47f6e7",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            543,
+            0,
+            1086,
+            724
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 3,
+          "url": "/images/exercises/functional-005/03-c6797f48b32c517b.webp",
+          "sourceExerciseId": "functional-005",
+          "sourcePhase": 3,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+          "sha256": "c6797f48b32c517b54dd2495beb681e8a3a85728598b423e0f0fbd838998882e",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1086,
+            0,
+            1629,
+            724
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        },
+        {
+          "phase": 4,
+          "url": "/images/exercises/functional-005/04-3120c396486e2c84.webp",
+          "sourceExerciseId": "functional-005",
+          "sourcePhase": 4,
+          "provider": "OpenAI image_gen conversation tool",
+          "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+          "sha256": "3120c396486e2c849d32b2d6aa5be9086cfe14f6b711beec5da5f29cfc45cd30",
+          "mappingReviewer": "Codex explicit storyboard ID/column mapping",
+          "reviewStatus": "pending_visual_review",
+          "batch": "batch-20261025-001",
+          "cropBox": [
+            1629,
+            0,
+            2172,
+            724
+          ],
+          "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6"
+        }
+      ],
+      "storyboardPreview": {
+        "version": 1,
+        "status": "pending_visual_review",
+        "batch": "batch-20261025-001",
+        "phases": [
+          "/images/exercises/functional-005/01-569d60c8b150885d.webp",
+          "/images/exercises/functional-005/02-8e1448e0095e804e.webp",
+          "/images/exercises/functional-005/03-c6797f48b32c517b.webp",
+          "/images/exercises/functional-005/04-3120c396486e2c84.webp"
+        ],
+        "labels": [
+          "Ύπτια αρχική θέση σε στρώμα, γόνατα λυγισμένα, πέλματα επίπεδα και χέρια στο έδαφος.",
+          "Ανύψωση λεκάνης μέχρι ώμοι, ισχία και γόνατα να ευθυγραμμιστούν, χωρίς υπερέκταση μέσης.",
+          "Ελεγχόμενη κάθοδος της λεκάνης, χωρίς να αλλάζει η θέση ώμων και πελμάτων.",
+          "Ύπτια επαναφορά με τη λεκάνη στο στρώμα και τα γόνατα λυγισμένα."
+        ],
+        "provider": "OpenAI image_gen conversation tool",
+        "sourceSha256": "65602680ada6780858b6b901e0a2d37fcf4786305a095ae9ca7ff3138f05663b",
+        "cropBoxes": [
+          [
+            0,
+            0,
+            543,
+            724
+          ],
+          [
+            543,
+            0,
+            1086,
+            724
+          ],
+          [
+            1086,
+            0,
+            1629,
+            724
+          ],
+          [
+            1629,
+            0,
+            2172,
+            724
+          ]
+        ],
+        "rightPaddingPixels": 1,
+        "athleteReference": "/images/athletes/athletico-female-reference.jpg",
+        "athleteReferenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+        "cameraAngle": "true side profile, head left feet right; shoulder hip and knee alignment visible",
+        "coachApproved": false,
+        "geometryChecked": true,
+        "visualReview": "pending",
+        "notes": "Equal crops verified; anatomy, identity, pose and panel boundaries require human review."
+      }
     },
     "functional-006": {
       "status": "pending_visual_review",

@@ -8,7 +8,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-001/01.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-001/01-a049cad262aced44.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -31,7 +33,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-001/02.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-001/02-38e6cda576f4ff76.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -54,7 +58,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-001/03.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-001/03-5e519bb34fe17e34.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -77,7 +83,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-001/04.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-001/04-60f5c37233e9d5b8.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -100,7 +108,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-002/01.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-002/01-1a0fa3afb3b27fd3.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -123,7 +133,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-002/02.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-002/02-8d8894904d4ebf77.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -146,7 +158,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-002/03.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-002/03-67adc2dc3f78ebe3.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -169,7 +183,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-002/04.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-002/04-c928bbf25d4c5e27.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -192,7 +208,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-003/01.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-003/01-9ece256f7eb0bced.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -215,7 +233,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-003/02.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-003/02-b7f33dc0ed77de71.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -238,7 +258,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-003/03.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-003/03-3dc5539bb6479881.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -261,7 +283,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-003/04.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-003/04-a9b992dd84e339f2.webp"
+      ],
       "reason": null,
       "equipment": [
         "Βάρος σώματος"
@@ -284,7 +308,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-004/01.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-004/01-4828d28761d176b7.webp"
+      ],
       "reason": null,
       "equipment": [
         "Σταθερός πάγκος"
@@ -307,7 +333,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-004/02.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-004/02-fac91148495c59b5.webp"
+      ],
       "reason": null,
       "equipment": [
         "Σταθερός πάγκος"
@@ -330,7 +358,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-004/03.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-004/03-2d31d8c781faebe9.webp"
+      ],
       "reason": null,
       "equipment": [
         "Σταθερός πάγκος"
@@ -353,7 +383,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-004/04.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-004/04-4d5133e3965775e4.webp"
+      ],
       "reason": null,
       "equipment": [
         "Σταθερός πάγκος"
@@ -376,7 +408,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-005/01.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-005/01-569d60c8b150885d.webp"
+      ],
       "reason": null,
       "equipment": [
         "Στρώμα"
@@ -399,7 +433,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-005/02.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-005/02-8e1448e0095e804e.webp"
+      ],
       "reason": null,
       "equipment": [
         "Στρώμα"
@@ -422,7 +458,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-005/03.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-005/03-c6797f48b32c517b.webp"
+      ],
       "reason": null,
       "equipment": [
         "Στρώμα"
@@ -445,7 +483,9 @@
       "action": "human_review",
       "status": "awaiting_human_review",
       "existingUrl": "/images/exercises/functional-005/04.webp",
-      "candidateUrls": [],
+      "candidateUrls": [
+        "/images/exercises/functional-005/04-3120c396486e2c84.webp"
+      ],
       "reason": null,
       "equipment": [
         "Στρώμα"
