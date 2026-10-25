@@ -12,6 +12,21 @@ let base={exercises:[],programs:[]};
 const conceptExercises=buildOriginalConcepts();
 let reviews={};try{reviews=sanitizeReviews(JSON.parse(localStorage.getItem(REVIEW_KEY)||'{}'));}catch{reviews={};}
 let queueOnly=false;
+let catalogRevealed=false;
+function hasActiveExerciseFilters(){
+  return Boolean($('query')?.value.trim() || $('muscle')?.value || $('equipment')?.value || $('level')?.value || queueOnly);
+}
+function ensureCatalogActions(){
+  const panel=$('searchPanel');
+  if(!panel || $('catalogActions'))return;
+  const actions=document.createElement('div');actions.id='catalogActions';actions.className='catalog-actions';
+  const show=button('Προβολή όλων των ασκήσεων',()=>{catalogRevealed=true;renderCards();});
+  show.id='showAllExercises';
+  const hide=button('Απόκρυψη ασκήσεων',()=>{catalogRevealed=false;$('query').value='';$('muscle').value='';$('equipment').value='';$('level').value='';queueOnly=false;render();});
+  hide.id='hideExercises';
+  actions.append(show,hide);
+  panel.append(actions);
+}
 function saveReviews(next){try{localStorage.setItem(REVIEW_KEY,JSON.stringify(next));reviews=next;return true;}catch(e){msg('Αποτυχία αποθήκευσης αξιολόγησης: '+e.message);return false;}}
 function changeReview(id,status){stopExercisePlayer();const next=reviewConcept(id,status,reviews);if(!saveReviews(next))return;$('studio').classList.remove('detail-open');selected=null;render();msg(status==='approved'?'Εγκρίθηκε ολόκληρη η άσκηση μαζί με τις φάσεις της.':'Απορρίφθηκε ολόκληρη η άσκηση και αφαιρέθηκε από τον κατάλογο αυτού του browser.');}
 
@@ -28,14 +43,26 @@ const catalog=()=>mode==='functional'?(queueOnly?[...savedExercises().filter(x=>
 const equipment=x=>Array.isArray(x.equipment)?x.equipment:(x.equipment?[x.equipment]:[]);
 const muscles=x=>[...(Array.isArray(x.muscles)?x.muscles:[]),...(Array.isArray(x.primaryMuscles)?x.primaryMuscles:[]),...(Array.isArray(x.detailedMuscles)?x.detailedMuscles:[])].filter(Boolean);
 const discipline=x=>x.discipline==='pilates'||x.trainingType==='reformer'?'pilates':'functional';
-function openMode(next){stopExercisePlayer();$('studio').classList.remove('detail-open');selected=null;mode=next;tab='exercises';$('welcome').hidden=true;$('studio').hidden=false;$('back').hidden=false;$('studioTitle').textContent=next==='functional'?'Functional Training':'Pilates';$('query').value='';$('level').value='';limit=20;render();}
+function openMode(next){catalogRevealed=false;stopExercisePlayer();$('studio').classList.remove('detail-open');selected=null;mode=next;tab='exercises';$('welcome').hidden=true;$('studio').hidden=false;$('back').hidden=false;$('studioTitle').textContent=next==='functional'?'Functional Training':'Pilates';$('query').value='';$('level').value='';limit=20;render();}
 document.querySelectorAll('[data-mode]').forEach(x=>x.addEventListener('click',()=>openMode(x.dataset.mode)));
 $('back').onclick=()=>{stopExercisePlayer();$('studio').classList.remove('detail-open');selected=null;$('studio').hidden=true;$('welcome').hidden=false;$('back').hidden=true;mode=null;};
-document.querySelectorAll('[data-tab]').forEach(x=>x.onclick=()=>{tab=x.dataset.tab;limit=20;render();});
+document.querySelectorAll('[data-tab]').forEach(x=>x.onclick=()=>{tab=x.dataset.tab;catalogRevealed=false;limit=20;render();});
 function filtered(){const q=norm($('query').value.trim()),level=$('level').value,muscle=$('muscle').value,eq=$('equipment').value;return catalog().filter(x=>discipline(x)===mode&&(!level||x.level===level)&&(!eq||equipment(x).includes(eq))&&(!muscle||muscles(x).includes(muscle)||x.category===muscle)&&(!q||norm([name(x),x.category,x.instructions,...muscles(x),...equipment(x)].join(' ')).includes(q))&&(tab!=='stretches'||/stretch|mobility|διατα|κινητικο/.test(norm([x.category,x.name,x.goal,x.discipline].join(' ')))));}
 function filters(){const list=catalog().filter(x=>discipline(x)===mode);for(const [id,values] of [['muscle',list.flatMap(x=>[...muscles(x),x.category].filter(Boolean))],['equipment',list.flatMap(equipment)]]){const e=$(id),old=e.value,first=e.options[0].text;e.replaceChildren(new Option(first,''));[...new Set(values)].sort((a,b)=>a.localeCompare(b,'el')).forEach(x=>e.add(new Option(x,x)));if([...e.options].some(o=>o.value===old))e.value=old;}}
 for(const id of ['query','muscle','equipment','level'])$(id).addEventListener(id==='query'?'input':'change',()=>{limit=20;renderCards();});
-function renderCards(){const arr=filtered(),target=$('cards');target.replaceChildren();$('count').textContent=arr.length+' αποτελέσματα · '+catalog().filter(x=>discipline(x)===mode).length+' στη βιβλιοθήκη';for(const x of arr.slice(0,limit)){const card=text('article','','card');card.append(text('span',x.requiresCoachReview?'ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ':(x.level||'—'),'badge'),text('h3',name(x)),text('p',equipment(x).join(' · ')||'Βάρος σώματος'));card.append(button('Προβολή άσκησης',()=>viewExercise(x)));target.append(card);}if(arr.length>limit)target.append(button('Περισσότερες ασκήσεις',()=>{limit+=20;renderCards();}));if(!arr.length)target.append(text('p','Δεν βρέθηκαν ασκήσεις. Αλλάξτε κριτήρια ή εισαγάγετε αρχείο JSON.'));if(!selected)$('detail').hidden=true;}
+function renderCards(){
+  ensureCatalogActions();
+  const target=$('cards');target.replaceChildren();
+  const visible=catalogRevealed||hasActiveExerciseFilters();
+  $('showAllExercises').hidden=visible;
+  $('hideExercises').hidden=!visible;
+  if(!visible){
+    $('count').textContent='Η βιβλιοθήκη παραμένει κρυφή. Χρησιμοποιήστε αναζήτηση, φίλτρα ή «Προβολή όλων».';
+    target.append(text('p','Οι ασκήσεις θα εμφανιστούν μόνο όταν τις ζητήσετε.','catalog-empty'));
+    if(!selected)$('detail').hidden=true;
+    return;
+  }
+  const arr=filtered();$('count').textContent=arr.length+' αποτελέσματα · '+catalog().filter(x=>discipline(x)===mode).length+' στη βιβλιοθήκη';for(const x of arr.slice(0,limit)){const card=text('article','','card');card.append(text('span',x.requiresCoachReview?'ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ':(x.level||'—'),'badge'),text('h3',name(x)),text('p',equipment(x).join(' · ')||'Βάρος σώματος'));card.append(button('Προβολή άσκησης',()=>viewExercise(x)));target.append(card);}if(arr.length>limit)target.append(button('Περισσότερες ασκήσεις',()=>{limit+=20;renderCards();}));if(!arr.length)target.append(text('p','Δεν βρέθηκαν ασκήσεις. Αλλάξτε κριτήρια ή εισαγάγετε αρχείο JSON.'));if(!selected)$('detail').hidden=true;}
 function previewKind(src){if(typeof src!=='string')return 'none';if(src.startsWith('data:image/svg+xml'))return 'placeholder';if(src.startsWith('data:image/')||/^https?:\/\//.test(src)||src.startsWith('/'))return 'image';return 'none';}
 
 

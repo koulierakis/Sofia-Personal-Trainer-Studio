@@ -1,0 +1,37 @@
+{
+  "id": "/",
+  "name": "Sofia Personal Trainer Studio",
+  "short_name": "Sofia Studio",
+  "description": "Functional και Pilates προπόνηση της Sofia.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#080b11",
+  "theme_color": "#080b11",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/sofia-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/sofia-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/sofia-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
