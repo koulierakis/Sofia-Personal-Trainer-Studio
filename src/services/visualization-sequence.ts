@@ -149,39 +149,53 @@ function bridgeCount(exercise: Partial<Exercise>, phaseCount: number): number {
   return 3;
 }
 
+function shortCue(value: string): string {
+  return clean(value).split(' Τεχνική σώματος:')[0];
+}
+
 function changeBetween(exercise: Partial<Exercise>, from: string, to: string, step: number, total: number): string {
-  const legacy = String(exercise.id || '').startsWith('hybrid-') ? exercise.instructions : '';
-  const identity = norm([exercise.name, exercise.patterns?.join?.(' '), from, to, legacy].filter(Boolean).join(' '));
-  const stage = step === 1 ? 'Πρώτη μικρή μετατόπιση' : step === total ? 'Τελική προσέγγιση στην επόμενη στάση' : 'Ενδιάμεση μετατόπιση';
-  let change = 'Μετακίνησε μόνο τα μέρη του σώματος που απαιτεί η επόμενη φάση. Κράτησε σταθερά τα υπόλοιπα σημεία στήριξης, τον κορμό και τη θέση του εξοπλισμού· μην προσθέσεις νέο βήμα ή αλλαγή λαβής.';
-
+  const identity = norm([exercise.name, exercise.patterns?.join?.(' '), exercise.instructions].filter(Boolean).join(' '));
+  const stage = step === 1
+    ? 'Έναρξη της μετάβασης'
+    : step === total
+      ? 'Ολοκλήρωση της μετάβασης'
+      : step === 2
+        ? 'Συνέχεια της ίδιας μετάβασης'
+        : 'Προσέγγιση της επόμενης θέσης';
+  let bodyMap = 'Κίνησε μόνο τα μέλη και τις αρθρώσεις που πρέπει να αλλάξουν για να φτάσεις από την προηγούμενη στην επόμενη καταγεγραμμένη θέση. Διατήρησε αμετάβλητα τα υπόλοιπα μέλη, τα σημεία στήριξης, τη λαβή και τη θέση του εξοπλισμού.';
   if (/squat|κάθισ|καθισ|thruster|goblet/.test(identity)) {
-    change = 'Μετακίνησε τη λεκάνη σταδιακά πίσω και κάτω, λύγισε ισχία και γόνατα μαζί και άφησε τις κνήμες να κινηθούν όσο επιτρέπει η ισορροπία. Τα πέλματα μένουν ολόκληρα κάτω, τα γόνατα ακολουθούν τα δάκτυλα και ο κορμός γέρνει ως ενιαίο, ουδέτερο σύνολο.';
+    bodyMap = 'Η αλλαγή αφορά ισχία, γόνατα και αστραγάλους όπως απαιτεί η επόμενη θέση: τα ισχία κινούνται πίσω/κάτω στην κάθοδο ή μπροστά/πάνω στην άνοδο, τα γόνατα ακολουθούν τη φορά των δακτύλων και τα πέλματα μένουν ολόκληρα στο έδαφος. Ο κορμός ακολουθεί ως σταθερό σύνολο.';
   } else if (/lunge|split squat|προβολ|step.back|knee drive/.test(identity)) {
-    change = 'Μετακίνησε το πόδι που περιγράφει η φάση προς τα εμπρός ή πίσω και πάτησε ολόκληρο το πέλμα πριν μεταφέρεις βάρος. Έπειτα λύγισε σταδιακά τα γόνατα ή ξεκίνα την άνοδο, με λεκάνη στραμμένη μπροστά και γόνατο στην κατεύθυνση των δακτύλων.';
+    bodyMap = 'Πρώτα μετακινείται το πόδι που περιγράφει η επόμενη θέση και το πέλμα τοποθετείται σταθερά. Κατόπιν τα γόνατα λυγίζουν ή εκτείνονται προς την ακριβή θέση-στόχο· στη μεταφορά σε άρση γονάτου το ελεύθερο πόδι έρχεται μπροστά, ενώ το πέλμα στήριξης μένει σταθερό.';
   } else if (/hinge|deadlift|rdl|άρση|swing/.test(identity)) {
-    change = 'Στείλε τη λεκάνη προς τα πίσω, κράτησε τα γόνατα μαλακά και κλίνε τον κορμό από τα ισχία σαν ενιαίο σύνολο. Τα χέρια και το φορτίο ακολουθούν κοντά στους μηρούς· μην καμπουριάσεις και μην αλλάξεις την καμπύλη της μέσης.';
+    bodyMap = 'Η μεταβολή ξεκινά από τα ισχία: η λεκάνη μετακινείται πίσω στην κάμψη ή μπροστά στην έκταση, τα γόνατα παραμένουν μαλακά και η σπονδυλική στήλη διατηρεί την ίδια ουδέτερη γραμμή. Τα χέρια και το φορτίο ακολουθούν κοντά στο σώμα.';
   } else if (/row|κωπηλα|pull|έλξ/.test(identity)) {
-    change = 'Κράτησε ακίνητο τον κορμό και μετακίνησε τους βραχίονες: οι αγκώνες οδηγούν προς τα πίσω κοντά στα πλευρά, οι ωμοπλάτες συγκλίνουν χωρίς ανασήκωμα ώμων και το φορτίο ακολουθεί την ίδια τροχιά.';
+    bodyMap = 'Κινήθηκαν οι βραχίονες και οι ωμοπλάτες στη διαδρομή της επόμενης θέσης: οι αγκώνες πλησιάζουν προς τα πίσω στην έλξη ή επιστρέφουν ελεγχόμενα μπροστά. Κορμός, λεκάνη και πέλματα παραμένουν ακίνητα.';
   } else if (/press|push.up|push up|πιέσ|ώθησ|thruster/.test(identity)) {
-    change = 'Οδήγησε παλάμες ή φορτίο προοδευτικά προς την κατεύθυνση της πίεσης. Οι αγκώνες εκτείνονται ομαλά, οι καρποί παραμένουν ευθείς πάνω από τους πήχεις και πλευρά/λεκάνη μένουν στοιβαγμένες χωρίς υπερέκταση της μέσης.';
+    bodyMap = 'Οι παλάμες ή το φορτίο μετακινούνται προς τη θέση-στόχο και οι αγκώνες εκτείνονται στην ώθηση ή λυγίζουν στην επιστροφή. Οι καρποί μένουν ευθυγραμμισμένοι με τους πήχεις και ο κορμός δεν αλλάζει στήριξη.';
   } else if (/curl|δικέφα|κάμψη αγκώ/.test(identity)) {
-    change = 'Κράτησε τον βραχίονα δίπλα στον κορμό και κάμψε τον αγκώνα σταδιακά ώστε το φορτίο να πλησιάσει τον ώμο. Ο καρπός μένει ουδέτερος, ο ώμος δεν προχωρά μπροστά και ο κορμός δεν αιωρείται.';
+    bodyMap = 'Η αλλαγή γίνεται στους αγκώνες: οι πήχεις πλησιάζουν τον ώμο στην κάμψη ή απομακρύνονται ελεγχόμενα στην έκταση. Οι βραχίονες μένουν δίπλα στον κορμό, οι καρποί ευθείς και οι ώμοι και ο κορμός σταθεροί.';
   } else if (/plank|σανίδ|bear|crawl|beast|bird dog|quadruped|kickthrough/.test(identity)) {
-    change = 'Μετέφερε ελεγχόμενα το άκρο ή το σημείο στήριξης που ορίζει η φάση. Πίεσε το έδαφος με τις υπόλοιπες παλάμες και τα πέλματα, κράτησε λεκάνη και θώρακα χωρίς πτώση ή στροφή και διατήρησε τον αυχένα στην ίδια γραμμή.';
+    bodyMap = 'Μετακινείται μόνο το άκρο ή αλλάζει μόνο το σημείο στήριξης που ορίζει η επόμενη θέση. Οι υπόλοιπες παλάμες και τα πέλματα πιέζουν σταθερά, ενώ λεκάνη και θώρακας δεν βυθίζονται ούτε στρίβουν.';
   } else if (/rotation|rotat|twist|περιστροφ|woodchop/.test(identity)) {
-    change = 'Άρχισε μικρή, ελεγχόμενη στροφή από τον θώρακα προς την κατεύθυνση της επόμενης στάσης. Τα πέλματα παραμένουν σταθερά, η λεκάνη δεν στρίβει απότομα και ο εξοπλισμός κινείται μαζί με τα χέρια χωρίς να τραβά τη μέση.';
+    bodyMap = 'Ο θώρακας και τα χέρια στρέφονται ελεγχόμενα προς τη θέση-στόχο. Πέλματα και λεκάνη μένουν στη θέση που ορίζουν οι οδηγίες και ο αυχένας ακολουθεί φυσικά τον θώρακα, χωρίς εξαναγκασμένη στροφή.';
   } else if (/jump|bound|άλμα|burpee|slam/.test(identity)) {
-    change = 'Φόρτισε τα ισχία και τα γόνατα προοδευτικά ή ξεκίνησε την ώθηση όπως ορίζει η φάση. Κράτησε γόνατα στην κατεύθυνση των δακτύλων· αν ακολουθεί προσγείωση, απορρόφησέ την με αστράγαλο, γόνατο και ισχίο πριν συνεχίσεις.';
+    bodyMap = 'Ισχία, γόνατα και αστράγαλοι λυγίζουν για φόρτιση ή εκτείνονται για ώθηση σύμφωνα με τη θέση-στόχο. Αν η θέση-στόχος είναι προσγείωση, τα πέλματα έρχονται στο σημείο στήριξης και οι αρθρώσεις απορροφούν την κίνηση.';
   } else if (/step.up|step up|lateral step|side step|march|βάδισμα/.test(identity)) {
-    change = 'Μετακίνησε πρώτα το πόδι που οδηγεί και τοποθέτησε όλο το πέλμα στο νέο σημείο στήριξης. Έπειτα μετέφερε σταδιακά το βάρος, κράτησε γόνατο και δάκτυλα στην ίδια κατεύθυνση και σταθεροποίησε πριν σηκώσεις το άλλο πόδι.';
+    bodyMap = 'Το πόδι που οδηγεί μετακινείται πρώτο και το πέλμα πατά πλήρως στο νέο σημείο. Το βάρος περνά σταδιακά σε αυτό το πόδι· το άλλο πόδι κινείται μόνο όπως απαιτεί η θέση-στόχος.';
   } else if (/calf raise|γάμπ/.test(identity)) {
-    change = 'Ανύψωσε τις φτέρνες σταδιακά χωρίς να μετακινηθούν τα γόνατα ή να κυλήσουν οι αστράγαλοι προς τα έξω ή μέσα. Η πίεση μένει μοιρασμένη στη βάση του μεγάλου και του μικρού δακτύλου.';
+    bodyMap = 'Οι αστράγαλοι κάνουν την αλλαγή: οι φτέρνες σηκώνονται στην άνοδο ή κατεβαίνουν στην επιστροφή. Γόνατα, ισχία και κορμός παραμένουν σταθερά και η πίεση μένει στη βάση των δακτύλων.';
   } else if (/hip thrust|glute bridge|γέφυρα/.test(identity)) {
-    change = 'Πίεσε τα πέλματα στο έδαφος και ανύψωσε τη λεκάνη από τους γλουτούς. Κράτησε πλευρά και λεκάνη ελεγχόμενες και σταμάτησε πριν η μέση υπερεκταθεί.';
+    bodyMap = 'Η λεκάνη κινείται προς τα πάνω με πίεση των πελμάτων και σύσπαση των γλουτών ή χαμηλώνει ελεγχόμενα στην επιστροφή. Πέλματα και ωμοπλάτες παραμένουν σταθερά, χωρίς υπερέκταση της μέσης.';
   }
-
-  return `${stage} (${step}/${total} της διαδρομής προς το επόμενο καρέ): ${change}`;
+  const fromCue = shortCue(from);
+  const toCue = shortCue(to);
+  const stageRule = step === 1
+    ? 'Σε αυτό το καρέ ξεκινά μόνο η αλλαγή από την προηγούμενη θέση.'
+    : step === total
+      ? 'Σε αυτό το καρέ ολοκληρώνεται η μετάβαση και το σώμα φτάνει ακριβώς στην επόμενη περιγραφόμενη θέση.'
+      : 'Σε αυτό το καρέ η ίδια αλλαγή συνεχίζεται και πρέπει να φαίνεται καθαρά διαφορετική από το προηγούμενο, χωρίς να έχει φτάσει ακόμη στην τελική θέση.';
+  return `${stage}. Από «${fromCue}» προς «${toCue}». ${stageRule} ${bodyMap} Μην προσθέσεις άλλη κίνηση, μέλος ή περιστροφή.`;
 }
 
 function uniqueFrames(source: any[]): { label: string; cue: string }[] {
@@ -231,7 +245,7 @@ function promptFor(
   next?: string
 ): string {
   const phaseCue = phase.poseDescription;
-  const transition = `Προηγούμενο καρέ: ${previous || 'αρχική προετοιμασία'}. Επόμενο καρέ: ${next || 'ολοκλήρωση της επανάληψης'}.`;
+  const transition = `Προηγούμενο καρέ: ${previous || 'αρχική προετοιμασία'}. Επόμενη καταγεγραμμένη θέση: ${next || 'ολοκλήρωση της επανάληψης'}. Διατήρησε ακριβώς την ίδια γωνία και απόσταση κάμερας, κάδρο, προοπτική, φωτισμό, φόντο και ταυτότητα μοντέλου με το συνημμένο εγκεκριμένο πρότυπο.`;
   return [
     lockedVisualPrompt(exercise, phaseCue, profile),
     `Frame ${index + 1} of ${total}. ${phase.label}.`,
@@ -284,11 +298,12 @@ export function buildVisualization(
     });
   }
 
-  const expanded: { label: string; poseDescription: string; changeFromPrevious: string }[] = [];
+  const expanded: { label: string; poseDescription: string; changeFromPrevious: string; nextPosition?: string }[] = [];
   const startPhase = {
     ...base[0],
     changeFromPrevious:
       'Αρχική θέση της επανάληψης. Δεν έχει προηγηθεί κίνηση. Σταθεροποίησε πρώτα πέλματα ή σημεία στήριξης, κορμό και λαβή εξοπλισμού.',
+    nextPosition: base[1]?.poseDescription,
   };
   expanded.push(startPhase);
 
@@ -299,17 +314,20 @@ export function buildVisualization(
     const prev = base[i - 1];
     const nxt = base[i];
     for (let step = 1; step <= bridges; step++) {
-      const delta = changeBetween(exercise, prev.poseDescription, nxt.poseDescription, step, bridges);
+      const actualPrevious = expanded[expanded.length - 1].poseDescription;
+      const delta = changeBetween(exercise, actualPrevious, nxt.poseDescription, step, bridges);
       const cue = `${delta} Η στάση μετακινείται ομαλά από το προηγούμενο καρέ προς την επόμενη καταγεγραμμένη θέση.`;
       expanded.push({
         label: `${prev.label} → ${nxt.label} · ενδιάμεσο ${step}/${bridges}`,
         poseDescription: detailedCue(exercise, cue, `${prev.label} ${nxt.label}`),
         changeFromPrevious: delta,
+        nextPosition: nxt.poseDescription,
       });
     }
     expanded.push({
       ...nxt,
-      changeFromPrevious: changeBetween(exercise, prev.poseDescription, nxt.poseDescription, bridges, bridges),
+      changeFromPrevious: changeBetween(exercise, expanded[expanded.length - 1].poseDescription, nxt.poseDescription, bridges, bridges),
+      nextPosition: base[i + 1]?.poseDescription,
     });
   }
 
@@ -324,7 +342,7 @@ export function buildVisualization(
     referenceImage: reference.url,
     referenceSha256: reference.sha256,
     sameImageAs: null,
-    prompt: promptFor(exercise, profile, phase, i, total, base[i - 1]?.poseDescription, base[i + 1]?.poseDescription),
+    prompt: promptFor(exercise, profile, phase, i, total, expanded[i - 1]?.poseDescription, phase.nextPosition),
   }));
 
   frames.push({
@@ -344,16 +362,16 @@ export function buildVisualization(
   });
 
   return {
-    version: 2,
+    version: 3,
     referenceProfile: profile,
     referenceImage: reference.url,
     referenceSha256: reference.sha256,
     promptTemplate:
-      'MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo ' +
+      'MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo as an input image, not a text-only URL: ' +
       reference.url +
       ' (SHA-256 ' +
       reference.sha256 +
-      '). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.',
+      '). Use that person and that background only. Preserve identity, facial features, hair, body proportions, skin tone, clothing, shoes and studio. Lock the camera to the attached reference: same height, distance, horizontal angle, lens perspective, orientation, crop and full-body framing. The camera is fixed: no pan, tilt, orbit, zoom, rotation, reframing or background change. Generate one distinct image for each numbered pose. If the reference cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.',
     fixedVisualContext:
       'Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.',
     frameCount: frames.length,
@@ -366,7 +384,7 @@ export function buildVisualization(
 export function ensureVisualization(exercise: Partial<Exercise> = {}): Exercise {
   const current = exercise.visualization;
   const complete =
-    current?.version === 2 &&
+    current?.version === 3 &&
     Array.isArray(current.frames) &&
     current.frames.length >= 3 &&
     current.frames.every((frame) => frame.prompt && frame.referenceImage && frame.referenceSha256 && 'sameImageAs' in frame);
