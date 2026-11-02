@@ -61,6 +61,6 @@ export function lockedVisualPrompt(
       equipment +
       '. Movement phase: ' +
       String(phaseCue || exercise.instructions || 'Follow the exercise instructions exactly.'),
-    'Show the complete body and equipment. Keep the same camera, framing, lighting and studio across every frame. Do not invent transitions.',
+    'Show the complete body and equipment. Lock the camera to the attached reference: keep the same camera height, distance, horizontal angle, lens perspective, orientation, crop and full-body framing in every frame. The camera is fixed; do not pan, tilt, orbit, zoom, rotate, reframe or change the background. Keep the same model identity, face, hair, body proportions, skin tone, clothing and shoes. Do not invent transitions.',
   ].join(' ');
 }
