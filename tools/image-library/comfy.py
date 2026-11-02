@@ -1,6 +1,7 @@
 """Local ComfyUI runner: run beside ComfyUI, export ZIP for cloud intake."""
 import argparse, hashlib, json, pathlib, time, urllib.request, urllib.parse, uuid, zipfile
 from library import read, write, inspect
+from reference_lock import PROFILES, validate_reference
 
 def request(endpoint, route, data=None, binary=False):
     req=urllib.request.Request(endpoint+route,data=json.dumps(data).encode() if data is not None else None,headers={'Content-Type':'application/json'})
@@ -14,6 +15,28 @@ def workflow_validate(workflow, objects):
     for key,node in workflow.items():
         if not isinstance(node,dict) or node.get('class_type') not in objects or not isinstance(node.get('inputs'),dict): raise ValueError('Unknown workflow node '+key)
     if not any(node['class_type']=='SaveImage' for node in workflow.values()): raise ValueError('Workflow must include SaveImage')
+    ref_nodes=[(key,node) for key,node in workflow.items()
+               if node['class_type']=='LoadImage' and node['inputs'].get('image')=='SOFIA_REFERENCE_IMAGE']
+    if len(ref_nodes)!=1: raise ValueError('Workflow must load exactly one SOFIA_REFERENCE_IMAGE through LoadImage')
+    ref_id=ref_nodes[0][0]
+    links=[]
+    for node in workflow.values():
+        for value in node['inputs'].values():
+            if isinstance(value,list) and len(value)==2 and str(value[0])==str(ref_id):
+                links.append(node['class_type'])
+    if not any(('IPAdapter' in name or 'Reference' in name) for name in links):
+        raise ValueError('Approved reference must feed an IPAdapter or Reference conditioning node')
+
+def upload_reference(endpoint, path):
+    boundary='sofia-'+uuid.uuid4().hex
+    body=(f'--{boundary}\r\nContent-Disposition: form-data; name="image"; filename="{path.name}"\r\n'
+          'Content-Type: image/jpeg\r\n\r\n').encode()+path.read_bytes()
+    body+=f'\r\n--{boundary}\r\nContent-Disposition: form-data; name="overwrite"\r\n\r\ntrue\r\n--{boundary}--\r\n'.encode()
+    req=urllib.request.Request(endpoint+'/upload/image',data=body,headers={'Content-Type':'multipart/form-data; boundary='+boundary})
+    with urllib.request.urlopen(req,timeout=30) as response: result=json.loads(response.read(1024*1024))
+    if result.get('name')!=path.name or result.get('subfolder') not in ('',None):
+        raise ValueError('ComfyUI did not place the approved reference at the expected input path')
+    return result['name']
 
 def run(args):
     endpoint=args.endpoint.rstrip('/'); u=urllib.parse.urlparse(endpoint)
@@ -24,8 +47,20 @@ def run(args):
     for job in queue:
         if job['action']!='generate': continue
         if submitted>=args.limit: break
-        prompt=job['specification'].get('prompt')
-        if not prompt: raise ValueError('Missing exact phase prompt; coach must author it')
+        specification=job.get('specification') or {}
+        prompt=specification.get('prompt')
+        profile=job.get('referenceProfile') or specification.get('referenceProfile')
+        if profile not in PROFILES: raise ValueError('No approved Sofia model profile; generation blocked')
+        approved_path=validate_reference(pathlib.Path(__file__).resolve().parents[2]/'public',profile)
+        approved=PROFILES[profile]
+        expected_url='/images/athletes/'+approved['file']
+        expected_sha=approved['sha256']
+        if job.get('reference')!=expected_url or specification.get('reference')!=expected_url:
+            raise ValueError('Queue does not point to the exact approved Sofia reference; generation blocked')
+        if job.get('referenceSha256')!=expected_sha or specification.get('referenceSha256')!=expected_sha:
+            raise ValueError('Queue reference hash mismatch; generation blocked')
+        if not prompt or 'MANDATORY SOFIA VISUAL REFERENCE LOCK' not in prompt or expected_sha not in prompt:
+            raise ValueError('Missing mandatory locked prompt/reference hash; generation blocked')
         if 'SOFIA_PROMPT' not in json.dumps(template): raise ValueError('Workflow requires SOFIA_PROMPT placeholder')
         # Replace only whole string placeholders, preserving quotes and Greek text safely.
         def replace(v):
@@ -33,6 +68,7 @@ def run(args):
             if isinstance(v,list): return [replace(x) for x in v]
             return prompt if v=='SOFIA_PROMPT' else v
         workflow=replace(template)
+        workflow=replace_reference(workflow,upload_reference(endpoint,approved_path))
         key=hashlib.sha256(json.dumps([job['exerciseId'],job['phase'],workflow],sort_keys=True).encode()).hexdigest()
         record=state.get(key,{})
         if record.get('status')=='complete':
@@ -68,5 +104,11 @@ def run(args):
         for row in exports: z.write(state_path.parent/row['file'],row['file'])
     print('Export ready for explicit mapping review and images:import; no automatic coach approval.')
 
+def replace_reference(value, filename):
+    if isinstance(value,dict): return {k:replace_reference(v,filename) for k,v in value.items()}
+    if isinstance(value,list): return [replace_reference(v,filename) for v in value]
+    return filename if value=='SOFIA_REFERENCE_IMAGE' else value
+
 if __name__=='__main__':
     p=argparse.ArgumentParser(); p.add_argument('--endpoint',default='http://127.0.0.1:8188'); p.add_argument('--workflow',required=True); p.add_argument('--queue',default='docs/production-queue.json'); p.add_argument('--output',default='.image-production'); p.add_argument('--limit',type=int,default=1); p.add_argument('--timeout',type=int,default=600); p.add_argument('--retry-failed',action='store_true'); run(p.parse_args())
+

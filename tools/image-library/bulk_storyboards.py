@@ -16,11 +16,7 @@ import uuid
 
 from PIL import Image
 from library import ROOT, PUBLIC, MANIFEST, inspect, digest, read, write
-
-PROFILES = {
-    'female': 'athletico-female-reference.jpg',
-    'male': 'athletico-male-reference.jpg',
-}
+from reference_lock import profile_for, validate_reference, locked_prompt
 POSES = {
     'functional-001': ['Όρθια αρχική θέση με τα χέρια στους γοφούς και πέλματα στο άνοιγμα ώμων.', 'Κάθοδος στο χαμηλό squat: ισχία πίσω, γόνατα προς τα δάχτυλα και φτέρνες στο έδαφος.', 'Ελεγχόμενη άνοδος με έκταση ισχίων και γονάτων, χωρίς αλλαγή της θέσης των πελμάτων.', 'Πλήρης όρθια επαναφορά, ουδέτερος κορμός, χέρια στους γοφούς.'],
     'functional-002': ['Όρθια αρχική θέση, πέλματα στο άνοιγμα ισχίων.', 'Βήμα του δεξιού ποδιού προς τα πίσω και κάθοδος: το αριστερό πέλμα μένει σταθερό και το δεξί γόνατο πλησιάζει το έδαφος.', 'Πίεση από το αριστερό πέλμα, άνοδος και έναρξη επιστροφής του δεξιού ποδιού προς τα εμπρός.', 'Όρθια επαναφορά με τα δύο πέλματα στο αρχικό άνοιγμα.'],
@@ -53,24 +49,18 @@ def exercises(scope='first-100'):
 
 
 def job_for(e):
-    suffix = e['id'].split('-')[-1]
-    parity = int(suffix) if suffix.isdecimal() else int(digest(e['id'].encode())[:8], 16)
-    profile = e.get('modelProfile') if e.get('modelProfile') in PROFILES else ('female' if parity % 2 else 'male')
-    reference = PUBLIC / 'images/athletes' / PROFILES[profile]
-    if not reference.is_file():
-        raise ValueError('Missing user-supplied athlete reference')
-    cues = POSES.get(e['id'])
-    if cues is None:
-        # Keep remaining production blocked until an exact movement storyboard is reviewed.
-        cues = [f.get('sourceCue') or f.get('label') or f.get('labelEl') for f in e['productionFrames']]
-    approved_plan = e['id'] in POSES
-    count = len(cues)
+    profile = profile_for(e)
+    reference = validate_reference(PUBLIC, profile)
+    frames=e.get('visualization',{}).get('frames') or e.get('productionFrames') or []
+    cues = [f.get('poseDescription') or f.get('sourceCue') or f.get('label') or f.get('labelEl') for f in frames]
+    approved_plan = bool(frames) and all(cues)
+    count = len(frames)
     if not 4 <= count <= 10:
-        raise ValueError('Storyboard must describe 4..10 movement phases')
+        raise ValueError('Storyboard must describe 4..10 ordered movement frames')
     clothes = ('black sports bra, black mid-thigh cycling shorts, white trainers, tied dark hair'
                if profile == 'female' else 'black fitted t-shirt, grey mid-thigh shorts, white trainers')
     camera = CAMERAS.get(e['id'], 'oblique side view chosen to expose the exercise joint mechanics')
-    prompt = (f"One photorealistic horizontal {count}-frame storyboard for {e['name']} ({e['id']}). "
+    prompt = (locked_prompt(profile) + ' ' + f"One photorealistic horizontal {count}-frame storyboard for {e['name']} ({e['id']}). "
               f"EXACTLY {count} equal-width vertical columns in ONE ROW, with thin full-height white dividers at every cell boundary. No gutters or captions. "
               "Every full body, hands, feet and equipment completely inside its own column. "
               "Use the attached adult athlete photograph as the actual face/body identity reference. "
@@ -79,11 +69,13 @@ def job_for(e):
               "NOT a white background. Same camera, scale and lighting in all cells. "
               f"Camera: {camera}. Never a frontal view. Keep this angle fixed for the entire repetition. "
               f"Equipment: {e.get('equipment')}. Source mechanics: {e.get('instructions')}. "
-              "Left-to-right poses: " + '; '.join(f'{i+1}: {cue}' for i, cue in enumerate(cues)) +
+              "Follow these complete per-frame specifications from left to right; the final panel marked for reuse must match frame 1 exactly: " +
+              ' '.join(f"FRAME {i+1} — {f.get('label')}: {f.get('prompt') or cue}" for i,(f,cue) in enumerate(zip(frames,cues))) +
               '. Anatomically plausible exercise illustration, pending coach review.')
     return {'exerciseId': e['id'], 'name': e['name'], 'profile': profile,
             'reference': '/' + reference.relative_to(PUBLIC).as_posix(),
             'referenceSha256': digest(reference.read_bytes()), 'labels': cues,
+            'frames': frames,
             'frameCount': count, 'cameraAngle': camera, 'storyboardPlanReady': approved_plan, 'prompt': prompt,
             'status': 'ready' if approved_plan else 'needs_storyboard_review'}
 
@@ -150,7 +142,13 @@ def openai_generate(job):
     field('prompt', job['prompt'])
     field('size', '1536x1024')
     field('n', '1')
-    reference = PUBLIC / job['reference'].lstrip('/')
+    profile = job.get('profile')
+    approved = validate_reference(PUBLIC, profile)
+    if (job.get('reference') != '/' + approved.relative_to(PUBLIC).as_posix()
+            or job.get('referenceSha256') != digest(approved.read_bytes())
+            or job.get('referenceSha256') not in job.get('prompt', '')):
+        raise ValueError('Approved reference path/hash missing or altered; generation blocked')
+    reference = approved
     parts.append(f'--{boundary}\r\nContent-Disposition: form-data; name="image[]"; filename="reference.jpg"\r\nContent-Type: image/jpeg\r\n\r\n'.encode() + reference.read_bytes() + b'\r\n')
     parts.append(f'--{boundary}--\r\n'.encode())
     request = urllib.request.Request('https://api.openai.com/v1/images/edits', b''.join(parts),
@@ -248,6 +246,8 @@ def main():
     if not a.batch.replace('-', '').replace('_', '').isalnum():
         p.error('Unsafe batch name')
     jobs = [job_for(e) for e in selected]
+    if a.provider != 'plan' and any(any(frame.get('sameImageAs') for frame in job.get('frames', [])) for job in jobs):
+        p.error('Canonical Sofia sequences require one image per frame and exact reuse of sameImageAs frames. Use the per-frame production queue; composite storyboard generation is not allowed for these exercises.')
     folder = ROOT / 'docs/image-production' / a.batch
     folder.mkdir(parents=True, exist_ok=True)
     checkpoint = folder / 'checkpoint.json'
@@ -297,6 +297,10 @@ def main():
                     metadata = read(a.source_dir / f'{id}.json')
                     if (metadata.get('exerciseId') != id or metadata.get('sha256') != digest(data)
                             or metadata.get('referenceSha256') != job['referenceSha256']
+                            or metadata.get('reference') != job['reference']
+                            or metadata.get('referenceAttached') is not True
+                            or 'MANDATORY SOFIA VISUAL REFERENCE LOCK' not in metadata.get('prompt', '')
+                            or job['referenceSha256'] not in metadata.get('prompt', '')
                             or metadata.get('frameCount') != job['frameCount']
                             or metadata.get('visualDecision') != 'candidate'
                             or not metadata.get('provider') or not metadata.get('prompt')):

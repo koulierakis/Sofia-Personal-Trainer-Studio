@@ -1,5 +1,15 @@
 # Exercise image production and review
 
+## Canonical exercise visualization sequence
+
+Every exercise record now carries a `visualization` object. It contains the complete exercise-specific frame sequence, the fixed approved Sofia model/background reference and its SHA-256, and one independent prompt for each pose. The chosen sequence has 3–20 frames, including the initial pose as Frame 1 and a closing frame whose `sameImageAs: 1` value requires reuse of Frame 1's exact image. The closing image is not generated a second time.
+
+The same sequence schema is used by the 100 Functional records, 12 Hybrid records and 208 custom concepts. The 208 custom concepts remain proposed Advanced/Full Body entries requiring coach review. Built-in exercise details, imported exercise data, the prompt export and the workout player all read this canonical sequence; older `imagePrompts` or phase arrays are not allowed to change its frame order. An older image sequence is shown only when its frame count matches the canonical sequence.
+
+AI prompts are available per frame in the exercise detail and downloadable together. Each prompt names the exact approved model/background image and its SHA-256, specifies one body pose and the transition context, and instructs the image tool not to invent a model or setting. No existing exercise-movement photograph is required as input. A generated image remains a candidate until the coach reviews it.
+
+For image production, use the one-image-per-frame jobs in `docs/production-queue.json` and honor `reuseImageFromPhase`/`sameImageAs` without submitting a generation request for the closing frame. The older composite storyboard helper in `bulk_storyboards.py` can make multi-panel drafts; those drafts cannot satisfy exact closing-frame reuse and must not be used as the canonical frame sequence without reconciliation.
+
 The audited base is 54db1e1, not the historical da8a2d9. There are 100 Functional records, 208 unapproved original concepts, 10 programs and 80 program references. Browser-only imports/approvals are not available to this repository audit. No ZIPs were found in the workspace or named in reachable Git history. Existing 146 WebPs are preserved. The new functional-031 phase-1 image is a candidate, not a certified demonstration.
 
 ## Reproduce
@@ -90,3 +100,4 @@ Read `docs/image-production/batch-2026-10-21-031-032.json` first: it checkpoints
 Run `npm run images:audit` before selecting more work. Queue human-review jobs now include exact `candidateUrls`; phases with retained candidates must not be generated again just because their motion-phase URL is still null. The batch intake JSON is provenance for the completed import, not a request to import it again. Duplicate imports remain rejected. Counts at this checkpoint: 153 production WebPs, 1,633 generation tasks, 133 human-review tasks, zero newly coach-approved photos. All 308 records and ten programs remain intact.
 
 The 031 phase-3 opposite step still needs production: both attempts reproduced the same leading-leg pattern and were excluded. A next attempt should use an unambiguous opposite-leg reference or an actual validated KinesioForge/ComfyUI export. No genuine KinesioForge export was available in this workspace or reachable Git history during this batch. Do not synthesize programmatic graphics as photographs. The 032 sequence needs coach assessment of support-leg/pressing-hand assignment, rigid landmine geometry and shoulder mechanics before promotion. No blocker prevents further general image generation; this is a completed, review-pending batch checkpoint, not full-library completion.
+

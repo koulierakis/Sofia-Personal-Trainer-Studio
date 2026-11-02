@@ -1,6 +1,7 @@
 """Offline image intake. Untrusted exports never assign exercise identities implicitly."""
 import argparse, contextlib, hashlib, io, json, os, pathlib, subprocess, tempfile, zipfile
 from PIL import Image, ImageStat
+from reference_lock import profile_for, validate_reference, locked_prompt
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 PUBLIC = ROOT / 'public'
 MANIFEST = PUBLIC / 'data/exercise-images.json'
@@ -48,24 +49,32 @@ def audit(out):
     records=[]; queue=[]
     for id,e in cats.items():
         entry=manifest['exercises'].get(id,{}); frames=e['productionFrames']; phases=entry.get('phases',[])
-        count=max(len(frames),len(phases)); details=[]; invalid=[]
+        profile=profile_for(e); reference=validate_reference(PUBLIC,profile); reference_sha256=digest(reference.read_bytes()); reference_url='/images/athletes/'+reference.name
+        # The authored exercise sequence is authoritative. Legacy image phases
+        # beyond it stay in storage but are not exposed as movement frames.
+        count=len(frames); details=[]; invalid=[]
         for i in range(count):
-            url=phases[i] if i<len(phases) else None
+            frame=dict(frames[i]) if i<len(frames) else {}
+            reuse=frame.get('sameImageAs')
+            source_phase=reuse if type(reuse) is int and 1 <= reuse <= count else i+1
+            source_index=source_phase-1
+            url=phases[source_index] if source_index<len(phases) else None
             blocked=entry.get('blockedPhases',{}).get(str(i+1))
             valid=bool(url and url in assets and url.startswith('/images/exercises/'+id+'/') and url not in duplicate_urls and not blocked)
             if url and not valid and not blocked: invalid.append(url)
-            reviewed=entry.get('phaseReviews',{}).get(str(i+1),{})
+            reviewed=entry.get('phaseReviews',{}).get(str(source_phase),{})
             approved=valid and reviewed.get('status')=='approved' and reviewed.get('sha256')==assets[url]['sha256'] and bool(reviewed.get('reviewer'))
-            imported=[c for c in entry.get('importedCandidates',[]) if c['phase']==i+1 and c['url'] in assets and c.get('reviewStatus')!='rejected']
+            imported=[c for c in entry.get('importedCandidates',[]) if c['phase']==source_phase and c['url'] in assets and c.get('reviewStatus')!='rejected']
             state='approved' if approved else 'rejected' if blocked else 'pending_human_review' if valid or imported else 'missing'
-            frame=dict(frames[i]) if i<len(frames) else {}
             exact_label=entry.get('labels',[])[i] if i<len(entry.get('labels',[])) else frame.get('label')
-            if exact_label and frame.get('label')!=exact_label:
-                frame['draftPrompt']=frame.pop('prompt',None)
-                frame['prompt']=f'Photorealistic full-body gym instruction photograph. Exercise: {e["name"]}. Exact source image phase: {exact_label}. Equipment: {e.get("equipment")}. Source instructions: {e.get("instructions")}. One adult athlete in black training clothes, all limbs and equipment visible, neutral spine, same athlete and studio across sequence. No text, panels or watermark. Coach review required.'
-            details.append({'phase':i+1,'label':entry.get('labels',[])[i] if i<len(entry.get('labels',[])) else frame.get('label'),'url':url,'state':state,'technicalValid':valid,'reason':blocked,'humanReviewRequired':not approved,'importedCandidates':[c['url'] for c in imported]})
-            if not approved:
-                queue.append({'exerciseId':id,'name':e['name'],'phase':i+1,'action':'human_review' if valid or imported else 'generate','status':'awaiting_human_review' if valid or imported else 'queued','existingUrl':url,'candidateUrls':[c['url'] for c in imported],'reason':blocked,'equipment':e.get('equipment'),'instructions':e.get('instructions'), 'specification':frame,'requiresCoachReview':True})
+            authored_prompt=frame.get('prompt')
+            frame['draftPrompt']=None
+            frame['prompt']=authored_prompt if authored_prompt and 'MANDATORY SOFIA VISUAL REFERENCE LOCK' in authored_prompt and reference_sha256 in authored_prompt else locked_prompt(profile)+f' Exercise: {e["name"]}. Exact source image phase: {exact_label or frame.get("label")}. Equipment: {e.get("equipment")}. Source instructions: {e.get("instructions")}. One full-body athlete, safe mechanics. No panels or watermark. Coach review required.'
+            frame['referenceProfile']=profile;frame['reference'] = reference_url;frame['referenceSha256']=reference_sha256
+            details.append({'phase':i+1,'label':frame.get('label'),'url':url,'state':state,'technicalValid':valid,'reason':blocked,'humanReviewRequired':not approved,'importedCandidates':[c['url'] for c in imported],'sameImageAs':reuse})
+            # Closing frames reuse their source frame and are never separately generated.
+            if not approved and not reuse:
+                queue.append({'exerciseId':id,'name':e['name'],'phase':i+1,'action':'human_review' if valid or imported else 'generate','status':'awaiting_human_review' if valid or imported else 'queued','reuseImageFromPhase':None,'existingUrl':url,'candidateUrls':[c['url'] for c in imported],'reason':blocked,'equipment':e.get('equipment'),'instructions':e.get('instructions'), 'specification':frame,'referenceProfile':profile,'reference':reference_url,'referenceSha256':reference_sha256,'requiresCoachReview':True})
         status='INVALID_MAPPING' if invalid else 'COMPLETE_VERIFIED' if all(p['state']=='approved' for p in details) else 'REJECTED_IMAGES' if any(p['state']=='rejected' for p in details) else 'PARTIALLY_COMPLETE' if any(p['technicalValid'] or p['importedCandidates'] for p in details) else 'MISSING_IMAGES'
         records.append({'id':id,'name':e['name'],'concept':bool(e.get('requiresCoachReview')),'status':status,'requiredPhases':count,'phases':details,'invalidMappings':invalid})
     for id,entry in manifest['exercises'].items():
@@ -123,6 +132,8 @@ def import_export(source, mapping_path, dry=False):
             url=f'/images/exercises/{id}/{phase:02d}-{output_info["sha256"][:16]}.webp'
             if local_url(url).exists(): raise ValueError('Asset collision')
             entry=manifest['exercises'].setdefault(id,{'status':'pending_visual_review','phases':[None]*len(cats[id]['productionFrames']),'candidates':[],'blockedPhases':{}})
+            entry.setdefault('phases',[])
+            entry['phases'] += [None] * max(0, len(cats[id]['productionFrames']) - len(entry['phases']))
             entry.setdefault('importedCandidates',[]).append({'phase':phase,'url':url,'sourceExerciseId':row['sourceExerciseId'],'sourcePhase':row.get('sourcePhase'),'provider':row['provider'],'sourceSha256':info['sha256'],'sha256':output_info['sha256'],'mappingReviewer':row['mappingReviewer'],'reviewStatus':'pending_visual_review'})
             # Promotion is a separate coach decision. Imports are review candidates only.
             pending.append((local_url(url),output))
