@@ -98,6 +98,7 @@ test('Every exercise (all 320 across catalogs) has descriptions, initial positio
     // 2. Must have visualization sequence
     assert.ok(exercise.visualization, `Exercise ${exercise.id} must have visualization`);
     const frames = exercise.visualization.frames;
+    assert.equal(exercise.visualization.version, 3, `Exercise ${exercise.id} must use the audited frame prompt version`);
     assert.ok(Array.isArray(frames) && frames.length >= 4, `Exercise ${exercise.id} must have at least 4 frames`);
 
     // 3. First frame must be initial position (Αρχική θέση)
@@ -112,6 +113,8 @@ test('Every exercise (all 320 across catalogs) has descriptions, initial positio
     for (let i = 1; i < frames.length - 1; i++) {
       const f = frames[i];
       assert.ok(f.poseDescription && f.poseDescription.trim().length > 15, `Exercise ${exercise.id} frame ${f.frame} must have pose description`);
+      assert.match(f.changeFromPrevious || '', /Από «.+» προς «.+»/, `Exercise ${exercise.id} frame ${f.frame} must compare the exact prior and next positions`);
+      assert.match(f.prompt, /same camera height, distance, horizontal angle, lens perspective/, `Exercise ${exercise.id} frame ${f.frame} must lock camera viewpoint`);
       assert.ok(
         (f.changeFromPrevious && f.changeFromPrevious.length > 5) || (f.transitionDescription && f.transitionDescription.length > 5),
         `Exercise ${exercise.id} frame ${f.frame} must describe transition/change from previous frame`
@@ -127,4 +130,14 @@ test('Every exercise (all 320 across catalogs) has descriptions, initial positio
       `Exercise ${exercise.id} last frame must reset to initial position`
     );
   }
+});
+
+test('Zevara has 27 distinct frames and a complete controlled return to standing', async () => {
+  const custom = JSON.parse(await readFile(new URL('../public/data/custom-sequences.json', import.meta.url), 'utf8'));
+  const zevara = ensureVisualization(custom.find((exercise) => exercise.id === 'hybrid-zev'));
+  assert.equal(zevara.visualization.frames.length, 27);
+  assert.match(zevara.instructions, /λυγισμένο γόνατο.*ισορροπία/s);
+  assert.match(zevara.instructions, /οδήγησε το λυγισμένο πόδι προς τα πίσω.*πίσω προβολή/s);
+  assert.match(zevara.instructions, /φέρε τα πόδια δίπλα δίπλα στην αρχική όρθια στάση/);
+  assert.ok(zevara.visualization.frames.some((frame) => /Ελεγχόμενη επιστροφή σε προβολή/.test(frame.label)));
 });
