@@ -270,7 +270,11 @@ export function buildVisualization(
   const raw = Array.isArray(sourceFrames) && sourceFrames.length ? sourceFrames : derivedSource(exercise);
   const cues = uniqueFrames(raw);
   const start = deriveStart(exercise, raw);
-  const interior = cues.filter((x) => norm(x.cue) !== norm(start));
+  const interior = cues.filter((x, index) => {
+    const label = norm(x.label);
+    const markedStart = index === 0 && /^(αρχικη θεση|αρχη|start|setup)/.test(label);
+    return !markedStart && norm(x.cue) !== norm(start);
+  });
 
   if (!interior.length) {
     const fallback = sentences(exercise.instructions || exercise.description).slice(1);
