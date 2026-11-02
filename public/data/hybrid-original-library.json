@@ -1,1 +1,1606 @@
-[{"id":"hybrid-zev","code":"ZEV","name":"Zevara","greekName":"Υβριδική ακολουθία ZEV","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Τετρακέφαλοι","Γλουτιαίοι","Οπίσθιοι μηριαίοι","Γαστροκνήμιοι","Κορμός"],"equipment":["Βάρος σώματος"],"instructions":"1. Αρχή: όρθιος με πέλματα στο άνοιγμα των ισχίων. 2. Κίνηση 1: πίσω προβολή με λυγισμένα γόνατα. 3. Κίνηση 2: άνοδος με μεταφορά του πίσω γονάτου εμπρός. 4. Κορύφωση: ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά. 5. Επιστροφή 1: άνοδος με μεταφορά του πίσω γονάτου εμπρός. 6. Επιστροφή 2: πίσω προβολή με λυγισμένα γόνατα. 7. Τέλος / Αρχική: όρθιος με πέλματα στο άνοιγμα των ισχίων.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος με πέλματα στο άνοιγμα των ισχίων","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"πίσω προβολή με λυγισμένα γόνατα","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"άνοδος με μεταφορά του πίσω γονάτου εμπρός","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"άνοδος με μεταφορά του πίσω γονάτου εμπρός","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"πίσω προβολή με λυγισμένα γόνατα","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος με πέλματα στο άνοιγμα των ισχίων","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος με πέλματα στο άνοιγμα των ισχίων","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος με πέλματα στο άνοιγμα των ισχίων Προετοίμασε ομαλή μετάβαση προς: πίσω προβολή με λυγισμένα γόνατα","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"πίσω προβολή με λυγισμένα γόνατα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πίσω προβολή με λυγισμένα γόνατα Προετοίμασε ομαλή μετάβαση προς: άνοδος με μεταφορά του πίσω γονάτου εμπρός","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"άνοδος με μεταφορά του πίσω γονάτου εμπρός","transitionDescription":"Ακολούθησε την προηγούμενη στάση. άνοδος με μεταφορά του πίσω γονάτου εμπρός Προετοίμασε ομαλή μετάβαση προς: ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά Προετοίμασε ομαλή μετάβαση προς: άνοδος με μεταφορά του πίσω γονάτου εμπρός","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"άνοδος με μεταφορά του πίσω γονάτου εμπρός","transitionDescription":"Ακολούθησε την προηγούμενη στάση. άνοδος με μεταφορά του πίσω γονάτου εμπρός Προετοίμασε ομαλή μετάβαση προς: πίσω προβολή με λυγισμένα γόνατα","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"πίσω προβολή με λυγισμένα γόνατα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πίσω προβολή με λυγισμένα γόνατα","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος με πέλματα στο άνοιγμα των ισχίων","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-vyx","code":"VYX","name":"Vyxora","greekName":"Υβριδική ακολουθία VYX","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Λοξοί κοιλιακοί","Ώμοι","Γλουτιαίοι","Τρικέφαλοι","Κορμός"],"equipment":["Στρώμα"],"instructions":"1. Αρχή: ψηλή σανίδα. 2. Κίνηση 1: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι. 3. Κίνηση 2: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό. 4. Κορύφωση: πλήρης έκταση του ποδιού σε kickthrough. 5. Επιστροφή 1: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό. 6. Επιστροφή 2: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι. 7. Τέλος / Αρχική: ψηλή σανίδα.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"ψηλή σανίδα","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"πλήρης έκταση του ποδιού σε kickthrough","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"ψηλή σανίδα","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"ψηλή σανίδα","transitionDescription":"Ξεκίνημα από την αρχική θέση. ψηλή σανίδα Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","transitionDescription":"Ακολούθησε την προηγούμενη στάση. στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι Προετοίμασε ομαλή μετάβαση προς: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πέρασμα του αντίθετου ποδιού κάτω από τον κορμό Προετοίμασε ομαλή μετάβαση προς: πλήρης έκταση του ποδιού σε kickthrough","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"πλήρης έκταση του ποδιού σε kickthrough","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πλήρης έκταση του ποδιού σε kickthrough Προετοίμασε ομαλή μετάβαση προς: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"πέρασμα του αντίθετου ποδιού κάτω από τον κορμό","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πέρασμα του αντίθετου ποδιού κάτω από τον κορμό Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","transitionDescription":"Ακολούθησε την προηγούμενη στάση. στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"ψηλή σανίδα","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-qor","code":"QOR","name":"Qorix","greekName":"Υβριδική ακολουθία QOR","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Τετρακέφαλοι","Γλουτιαίοι","Δελτοειδείς","Τρικέφαλοι","Κορμός"],"equipment":["Αλτήρες"],"instructions":"1. Αρχή: όρθιος κρατώντας δύο αλτήρες. 2. Κίνηση 1: ελεγχόμενο βαθύ κάθισμα. 3. Κίνηση 2: επιστροφή όρθιος με αλτήρες στους ώμους. 4. Κορύφωση: κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι. 5. Επιστροφή 1: επιστροφή όρθιος με αλτήρες στους ώμους. 6. Επιστροφή 2: ελεγχόμενο βαθύ κάθισμα. 7. Τέλος / Αρχική: όρθιος κρατώντας δύο αλτήρες.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος κρατώντας δύο αλτήρες","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"ελεγχόμενο βαθύ κάθισμα","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"επιστροφή όρθιος με αλτήρες στους ώμους","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"επιστροφή όρθιος με αλτήρες στους ώμους","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"ελεγχόμενο βαθύ κάθισμα","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος κρατώντας δύο αλτήρες","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος κρατώντας δύο αλτήρες","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος κρατώντας δύο αλτήρες Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενο βαθύ κάθισμα","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"ελεγχόμενο βαθύ κάθισμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ελεγχόμενο βαθύ κάθισμα Προετοίμασε ομαλή μετάβαση προς: επιστροφή όρθιος με αλτήρες στους ώμους","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"επιστροφή όρθιος με αλτήρες στους ώμους","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή όρθιος με αλτήρες στους ώμους Προετοίμασε ομαλή μετάβαση προς: κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι Προετοίμασε ομαλή μετάβαση προς: επιστροφή όρθιος με αλτήρες στους ώμους","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"επιστροφή όρθιος με αλτήρες στους ώμους","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή όρθιος με αλτήρες στους ώμους Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενο βαθύ κάθισμα","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"ελεγχόμενο βαθύ κάθισμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ελεγχόμενο βαθύ κάθισμα","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος κρατώντας δύο αλτήρες","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-nex","code":"NEX","name":"Nexari","greekName":"Υβριδική ακολουθία NEX","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Πλατύς ραχιαίος","Ρομβοειδείς","Οπίσθιοι δελτοειδείς","Δικέφαλοι","Οπίσθιοι μηριαίοι","Κορμός"],"equipment":["Αλτήρες"],"instructions":"1. Αρχή: όρθιος με αλτήρες μπροστά στους μηρούς. 2. Κίνηση 1: κλίση από τα ισχία με ουδέτερη πλάτη. 3. Κίνηση 2: κωπηλατική με αγκώνες πίσω. 4. Κορύφωση: άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο. 5. Επιστροφή 1: κωπηλατική με αγκώνες πίσω. 6. Επιστροφή 2: κλίση από τα ισχία με ουδέτερη πλάτη. 7. Τέλος / Αρχική: όρθιος με αλτήρες μπροστά στους μηρούς.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος με αλτήρες μπροστά στους μηρούς","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"κλίση από τα ισχία με ουδέτερη πλάτη","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"κωπηλατική με αγκώνες πίσω","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"κωπηλατική με αγκώνες πίσω","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"κλίση από τα ισχία με ουδέτερη πλάτη","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος με αλτήρες μπροστά στους μηρούς","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος με αλτήρες μπροστά στους μηρούς","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος με αλτήρες μπροστά στους μηρούς Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία με ουδέτερη πλάτη","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"κλίση από τα ισχία με ουδέτερη πλάτη","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία με ουδέτερη πλάτη Προετοίμασε ομαλή μετάβαση προς: κωπηλατική με αγκώνες πίσω","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"κωπηλατική με αγκώνες πίσω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κωπηλατική με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο Προετοίμασε ομαλή μετάβαση προς: κωπηλατική με αγκώνες πίσω","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"κωπηλατική με αγκώνες πίσω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κωπηλατική με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία με ουδέτερη πλάτη","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"κλίση από τα ισχία με ουδέτερη πλάτη","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία με ουδέτερη πλάτη","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος με αλτήρες μπροστά στους μηρούς","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-azy","code":"AZY","name":"Azyra","greekName":"Υβριδική ακολουθία AZY","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Τετρακέφαλοι","Γλουτιαίοι","Οπίσθιοι μηριαίοι","Ραχιαίοι","Κορμός"],"equipment":["Kettlebell"],"instructions":"1. Αρχή: όρθιος πάνω από kettlebell στο πάτωμα. 2. Κίνηση 1: κλίση από τα ισχία και ασφαλής λαβή. 3. Κίνηση 2: έκταση ισχίων και kettlebell στο στήθος. 4. Κορύφωση: κάθισμα goblet με kettlebell στο στήθος. 5. Επιστροφή 1: έκταση ισχίων και kettlebell στο στήθος. 6. Επιστροφή 2: κλίση από τα ισχία και ασφαλής λαβή. 7. Τέλος / Αρχική: όρθιος πάνω από kettlebell στο πάτωμα.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος πάνω από kettlebell στο πάτωμα","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"κλίση από τα ισχία και ασφαλής λαβή","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"έκταση ισχίων και kettlebell στο στήθος","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"κάθισμα goblet με kettlebell στο στήθος","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"έκταση ισχίων και kettlebell στο στήθος","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"κλίση από τα ισχία και ασφαλής λαβή","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος πάνω από kettlebell στο πάτωμα","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος πάνω από kettlebell στο πάτωμα","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος πάνω από kettlebell στο πάτωμα Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία και ασφαλής λαβή","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"κλίση από τα ισχία και ασφαλής λαβή","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία και ασφαλής λαβή Προετοίμασε ομαλή μετάβαση προς: έκταση ισχίων και kettlebell στο στήθος","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"έκταση ισχίων και kettlebell στο στήθος","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έκταση ισχίων και kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: κάθισμα goblet με kettlebell στο στήθος","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"κάθισμα goblet με kettlebell στο στήθος","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κάθισμα goblet με kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: έκταση ισχίων και kettlebell στο στήθος","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"έκταση ισχίων και kettlebell στο στήθος","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έκταση ισχίων και kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία και ασφαλής λαβή","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"κλίση από τα ισχία και ασφαλής λαβή","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία και ασφαλής λαβή","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος πάνω από kettlebell στο πάτωμα","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-xul","code":"XUL","name":"Xulene","greekName":"Υβριδική ακολουθία XUL","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Εγκάρσιος κοιλιακός","Ορθός κοιλιακός","Λοξοί κοιλιακοί","Καμπτήρες ισχίου","Σταθεροποιητές κορμού"],"equipment":["Στρώμα"],"instructions":"1. Αρχή: ανάσκελα με γόνατα και ισχία 90 μοιρών. 2. Κίνηση 1: έκταση αντίθετου χεριού και ποδιού. 3. Κίνηση 2: επιστροφή άκρων στο κέντρο. 4. Κορύφωση: έκταση άλλου αντίθετου χεριού και ποδιού. 5. Επιστροφή 1: επιστροφή άκρων στο κέντρο. 6. Επιστροφή 2: έκταση αντίθετου χεριού και ποδιού. 7. Τέλος / Αρχική: ανάσκελα με γόνατα και ισχία 90 μοιρών.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"ανάσκελα με γόνατα και ισχία 90 μοιρών","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"έκταση αντίθετου χεριού και ποδιού","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"επιστροφή άκρων στο κέντρο","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"έκταση άλλου αντίθετου χεριού και ποδιού","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"επιστροφή άκρων στο κέντρο","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"έκταση αντίθετου χεριού και ποδιού","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"ανάσκελα με γόνατα και ισχία 90 μοιρών","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"ανάσκελα με γόνατα και ισχία 90 μοιρών","transitionDescription":"Ξεκίνημα από την αρχική θέση. ανάσκελα με γόνατα και ισχία 90 μοιρών Προετοίμασε ομαλή μετάβαση προς: έκταση αντίθετου χεριού και ποδιού","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"έκταση αντίθετου χεριού και ποδιού","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έκταση αντίθετου χεριού και ποδιού Προετοίμασε ομαλή μετάβαση προς: επιστροφή άκρων στο κέντρο","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"επιστροφή άκρων στο κέντρο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή άκρων στο κέντρο Προετοίμασε ομαλή μετάβαση προς: έκταση άλλου αντίθετου χεριού και ποδιού","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"έκταση άλλου αντίθετου χεριού και ποδιού","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έκταση άλλου αντίθετου χεριού και ποδιού Προετοίμασε ομαλή μετάβαση προς: επιστροφή άκρων στο κέντρο","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"επιστροφή άκρων στο κέντρο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή άκρων στο κέντρο Προετοίμασε ομαλή μετάβαση προς: έκταση αντίθετου χεριού και ποδιού","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"έκταση αντίθετου χεριού και ποδιού","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έκταση αντίθετου χεριού και ποδιού","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"ανάσκελα με γόνατα και ισχία 90 μοιρών","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-jax","code":"JAX","name":"Jaxori","greekName":"Υβριδική ακολουθία JAX","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Δελτοειδείς","Ρομβοειδείς","Στροφείς ώμου"],"equipment":["Λάστιχο αντίστασης"],"instructions":"1. Αρχή: όρθιος με λάστιχο μπροστά στο στήθος. 2. Κίνηση 1: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση. 3. Κίνηση 2: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω. 4. Κορύφωση: σταθερή τελική θέση έξω στροφής ώμων. 5. Επιστροφή 1: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω. 6. Επιστροφή 2: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση. 7. Τέλος / Αρχική: όρθιος με λάστιχο μπροστά στο στήθος.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος με λάστιχο μπροστά στο στήθος","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"σταθερή τελική θέση έξω στροφής ώμων","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος με λάστιχο μπροστά στο στήθος","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος με λάστιχο μπροστά στο στήθος","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος με λάστιχο μπροστά στο στήθος Προετοίμασε ομαλή μετάβαση προς: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","transitionDescription":"Ακολούθησε την προηγούμενη στάση. οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση Προετοίμασε ομαλή μετάβαση προς: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω Προετοίμασε ομαλή μετάβαση προς: σταθερή τελική θέση έξω στροφής ώμων","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"σταθερή τελική θέση έξω στροφής ώμων","transitionDescription":"Ακολούθησε την προηγούμενη στάση. σταθερή τελική θέση έξω στροφής ώμων Προετοίμασε ομαλή μετάβαση προς: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω Προετοίμασε ομαλή μετάβαση προς: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","transitionDescription":"Ακολούθησε την προηγούμενη στάση. οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος με λάστιχο μπροστά στο στήθος","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-ruv","code":"RUV","name":"Ruvexa","greekName":"Υβριδική ακολουθία RUV","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Τετρακέφαλοι","Γλουτιαίοι","Προσαγωγοί","Μέσος γλουτιαίος","Κορμός"],"equipment":["TRX"],"instructions":"1. Αρχή: όρθιος κρατώντας τους ιμάντες TRX. 2. Κίνηση 1: πλάγια προβολή αριστερά. 3. Κίνηση 2: επιστροφή στο κέντρο. 4. Κορύφωση: πλάγια προβολή δεξιά. 5. Επιστροφή 1: επιστροφή στο κέντρο. 6. Επιστροφή 2: πλάγια προβολή αριστερά. 7. Τέλος / Αρχική: όρθιος κρατώντας τους ιμάντες TRX.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος κρατώντας τους ιμάντες TRX","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"πλάγια προβολή αριστερά","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"επιστροφή στο κέντρο","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"πλάγια προβολή δεξιά","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"επιστροφή στο κέντρο","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"πλάγια προβολή αριστερά","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος κρατώντας τους ιμάντες TRX","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος κρατώντας τους ιμάντες TRX","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος κρατώντας τους ιμάντες TRX Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή αριστερά","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"πλάγια προβολή αριστερά","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πλάγια προβολή αριστερά Προετοίμασε ομαλή μετάβαση προς: επιστροφή στο κέντρο","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"επιστροφή στο κέντρο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή στο κέντρο Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή δεξιά","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"πλάγια προβολή δεξιά","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πλάγια προβολή δεξιά Προετοίμασε ομαλή μετάβαση προς: επιστροφή στο κέντρο","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"επιστροφή στο κέντρο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επιστροφή στο κέντρο Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή αριστερά","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"πλάγια προβολή αριστερά","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πλάγια προβολή αριστερά","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος κρατώντας τους ιμάντες TRX","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-tyk","code":"TYK","name":"Tykora","greekName":"Υβριδική ακολουθία TYK","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Λοξοί κοιλιακοί","Ώμοι","Γλουτιαίοι","Τρικέφαλοι","Κορμός"],"equipment":["Βάρος σώματος"],"instructions":"1. Αρχή: θέση beast με γόνατα λίγο πάνω από το πάτωμα. 2. Κίνηση 1: μεταφορά βάρους και στροφή λεκάνης. 3. Κίνηση 2: πέρασμα ποδιού κάτω από το σώμα. 4. Κορύφωση: ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω. 5. Επιστροφή 1: πέρασμα ποδιού κάτω από το σώμα. 6. Επιστροφή 2: μεταφορά βάρους και στροφή λεκάνης. 7. Τέλος / Αρχική: θέση beast με γόνατα λίγο πάνω από το πάτωμα.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"θέση beast με γόνατα λίγο πάνω από το πάτωμα","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"μεταφορά βάρους και στροφή λεκάνης","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"πέρασμα ποδιού κάτω από το σώμα","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"πέρασμα ποδιού κάτω από το σώμα","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"μεταφορά βάρους και στροφή λεκάνης","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"θέση beast με γόνατα λίγο πάνω από το πάτωμα","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"θέση beast με γόνατα λίγο πάνω από το πάτωμα","transitionDescription":"Ξεκίνημα από την αρχική θέση. θέση beast με γόνατα λίγο πάνω από το πάτωμα Προετοίμασε ομαλή μετάβαση προς: μεταφορά βάρους και στροφή λεκάνης","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"μεταφορά βάρους και στροφή λεκάνης","transitionDescription":"Ακολούθησε την προηγούμενη στάση. μεταφορά βάρους και στροφή λεκάνης Προετοίμασε ομαλή μετάβαση προς: πέρασμα ποδιού κάτω από το σώμα","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"πέρασμα ποδιού κάτω από το σώμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πέρασμα ποδιού κάτω από το σώμα Προετοίμασε ομαλή μετάβαση προς: ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω Προετοίμασε ομαλή μετάβαση προς: πέρασμα ποδιού κάτω από το σώμα","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"πέρασμα ποδιού κάτω από το σώμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. πέρασμα ποδιού κάτω από το σώμα Προετοίμασε ομαλή μετάβαση προς: μεταφορά βάρους και στροφή λεκάνης","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"μεταφορά βάρους και στροφή λεκάνης","transitionDescription":"Ακολούθησε την προηγούμενη στάση. μεταφορά βάρους και στροφή λεκάνης","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"θέση beast με γόνατα λίγο πάνω από το πάτωμα","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-bex","code":"BEX","name":"Bexali","greekName":"Υβριδική ακολουθία BEX","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Θωρακικοί","Τρικέφαλοι","Πρόσθιοι δελτοειδείς","Κορμός"],"equipment":["Σταθερός πάγκος"],"instructions":"1. Αρχή: επικλινής σανίδα με παλάμες σε σταθερό πάγκο. 2. Κίνηση 1: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο. 3. Κίνηση 2: ώθηση πίσω σε τεντωμένα χέρια. 4. Κορύφωση: επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης. 5. Επιστροφή 1: ώθηση πίσω σε τεντωμένα χέρια. 6. Επιστροφή 2: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο. 7. Τέλος / Αρχική: επικλινής σανίδα με παλάμες σε σταθερό πάγκο.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"επικλινής σανίδα με παλάμες σε σταθερό πάγκο","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"ώθηση πίσω σε τεντωμένα χέρια","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"ώθηση πίσω σε τεντωμένα χέρια","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"επικλινής σανίδα με παλάμες σε σταθερό πάγκο","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"επικλινής σανίδα με παλάμες σε σταθερό πάγκο","transitionDescription":"Ξεκίνημα από την αρχική θέση. επικλινής σανίδα με παλάμες σε σταθερό πάγκο Προετοίμασε ομαλή μετάβαση προς: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο Προετοίμασε ομαλή μετάβαση προς: ώθηση πίσω σε τεντωμένα χέρια","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"ώθηση πίσω σε τεντωμένα χέρια","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ώθηση πίσω σε τεντωμένα χέρια Προετοίμασε ομαλή μετάβαση προς: επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης","transitionDescription":"Ακολούθησε την προηγούμενη στάση. επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης Προετοίμασε ομαλή μετάβαση προς: ώθηση πίσω σε τεντωμένα χέρια","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"ώθηση πίσω σε τεντωμένα χέρια","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ώθηση πίσω σε τεντωμένα χέρια Προετοίμασε ομαλή μετάβαση προς: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","transitionDescription":"Ακολούθησε την προηγούμενη στάση. κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"επικλινής σανίδα με παλάμες σε σταθερό πάγκο","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-dax","code":"DAX","name":"Daxune","greekName":"Υβριδική ακολουθία DAX","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Ρομβοειδείς","Πλατύς ραχιαίος","Δικέφαλοι","Κορμός"],"equipment":["Λάστιχο αντίστασης"],"instructions":"1. Αρχή: όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά. 2. Κίνηση 1: έλξη προς πλευρά με αγκώνες πίσω. 3. Κίνηση 2: ελεγχόμενη επιστροφή χεριών εμπρός. 4. Κορύφωση: δεύτερη έλξη με μικρή παύση στις ωμοπλάτες. 5. Επιστροφή 1: ελεγχόμενη επιστροφή χεριών εμπρός. 6. Επιστροφή 2: έλξη προς πλευρά με αγκώνες πίσω. 7. Τέλος / Αρχική: όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"έλξη προς πλευρά με αγκώνες πίσω","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"ελεγχόμενη επιστροφή χεριών εμπρός","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"δεύτερη έλξη με μικρή παύση στις ωμοπλάτες","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"ελεγχόμενη επιστροφή χεριών εμπρός","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"έλξη προς πλευρά με αγκώνες πίσω","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"male","referenceImage":"/images/athletes/athletico-male-reference.jpg","referenceSha256":"132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά Προετοίμασε ομαλή μετάβαση προς: έλξη προς πλευρά με αγκώνες πίσω","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"έλξη προς πλευρά με αγκώνες πίσω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έλξη προς πλευρά με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενη επιστροφή χεριών εμπρός","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"ελεγχόμενη επιστροφή χεριών εμπρός","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ελεγχόμενη επιστροφή χεριών εμπρός Προετοίμασε ομαλή μετάβαση προς: δεύτερη έλξη με μικρή παύση στις ωμοπλάτες","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"δεύτερη έλξη με μικρή παύση στις ωμοπλάτες","transitionDescription":"Ακολούθησε την προηγούμενη στάση. δεύτερη έλξη με μικρή παύση στις ωμοπλάτες Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενη επιστροφή χεριών εμπρός","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"ελεγχόμενη επιστροφή χεριών εμπρός","transitionDescription":"Ακολούθησε την προηγούμενη στάση. ελεγχόμενη επιστροφή χεριών εμπρός Προετοίμασε ομαλή μετάβαση προς: έλξη προς πλευρά με αγκώνες πίσω","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"έλξη προς πλευρά με αγκώνες πίσω","transitionDescription":"Ακολούθησε την προηγούμενη στάση. έλξη προς πλευρά με αγκώνες πίσω","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"male","custom":true,"classification":"Custom","newConcept":true},{"id":"hybrid-uza","code":"UZA","name":"Uzaro","greekName":"Υβριδική ακολουθία UZA","discipline":"functional","level":"Advanced","category":"Full Body","muscles":["Τετρακέφαλοι","Γλουτιαίοι","Οπίσθιοι μηριαίοι","Κορμός"],"equipment":["Smith machine"],"instructions":"1. Αρχή: όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith. 2. Κίνηση 1: αργή κάθοδος σε split squat. 3. Κίνηση 2: άνοδος πιέζοντας το μπροστινό πέλμα. 4. Κορύφωση: σταθερή ψηλή θέση split squat. 5. Επιστροφή 1: άνοδος πιέζοντας το μπροστινό πέλμα. 6. Επιστροφή 2: αργή κάθοδος σε split squat. 7. Τέλος / Αρχική: όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith.","description":"Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.","breathing":"Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.","safety":"Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.","requiresCoachReview":true,"source":"original-ai-designed-unverified","phases":[{"label":"Αρχή","cue":"όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith","image":"","sequenceIndex":1},{"label":"Κίνηση 1","cue":"αργή κάθοδος σε split squat","image":"","sequenceIndex":2},{"label":"Κίνηση 2","cue":"άνοδος πιέζοντας το μπροστινό πέλμα","image":"","sequenceIndex":3},{"label":"Κορύφωση","cue":"σταθερή ψηλή θέση split squat","image":"","sequenceIndex":4},{"label":"Επιστροφή 1","cue":"άνοδος πιέζοντας το μπροστινό πέλμα","image":"","sequenceIndex":5},{"label":"Επιστροφή 2","cue":"αργή κάθοδος σε split squat","image":"","sequenceIndex":6},{"label":"Τέλος / Αρχική","cue":"όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith","image":"","sequenceIndex":7}],"visualization":{"version":1,"referenceProfile":"female","referenceImage":"/images/athletes/athletico-female-reference.jpg","referenceSha256":"59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6","promptTemplate":"MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.","fixedVisualContext":"Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.","frameCount":7,"closingFrameReuses":1,"frames":[{"frame":1,"label":"Αρχική θέση","poseDescription":"όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith","transitionDescription":"Ξεκίνημα από την αρχική θέση. όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith Προετοίμασε ομαλή μετάβαση προς: αργή κάθοδος σε split squat","sameImageAs":null},{"frame":2,"label":"Κίνηση 1","poseDescription":"αργή κάθοδος σε split squat","transitionDescription":"Ακολούθησε την προηγούμενη στάση. αργή κάθοδος σε split squat Προετοίμασε ομαλή μετάβαση προς: άνοδος πιέζοντας το μπροστινό πέλμα","sameImageAs":null},{"frame":3,"label":"Κίνηση 2","poseDescription":"άνοδος πιέζοντας το μπροστινό πέλμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. άνοδος πιέζοντας το μπροστινό πέλμα Προετοίμασε ομαλή μετάβαση προς: σταθερή ψηλή θέση split squat","sameImageAs":null},{"frame":4,"label":"Κορύφωση","poseDescription":"σταθερή ψηλή θέση split squat","transitionDescription":"Ακολούθησε την προηγούμενη στάση. σταθερή ψηλή θέση split squat Προετοίμασε ομαλή μετάβαση προς: άνοδος πιέζοντας το μπροστινό πέλμα","sameImageAs":null},{"frame":5,"label":"Επιστροφή 1","poseDescription":"άνοδος πιέζοντας το μπροστινό πέλμα","transitionDescription":"Ακολούθησε την προηγούμενη στάση. άνοδος πιέζοντας το μπροστινό πέλμα Προετοίμασε ομαλή μετάβαση προς: αργή κάθοδος σε split squat","sameImageAs":null},{"frame":6,"label":"Επιστροφή 2","poseDescription":"αργή κάθοδος σε split squat","transitionDescription":"Ακολούθησε την προηγούμενη στάση. αργή κάθοδος σε split squat","sameImageAs":null},{"frame":7,"label":"Τελική επαναφορά — ίδια με την αρχική θέση","poseDescription":"όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith","transitionDescription":"Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.","sameImageAs":1}]},"modelProfile":"female","custom":true,"classification":"Custom","newConcept":true}]
+[
+  {
+    "id": "hybrid-zev",
+    "code": "ZEV",
+    "name": "Zevara",
+    "greekName": "Υβριδική ακολουθία ZEV",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Τετρακέφαλοι",
+      "Γλουτιαίοι",
+      "Οπίσθιοι μηριαίοι",
+      "Γαστροκνήμιοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Βάρος σώματος"
+    ],
+    "instructions": "1. Αρχή: όρθιος με πέλματα στο άνοιγμα των ισχίων. 2. Κίνηση 1: πίσω προβολή με λυγισμένα γόνατα. 3. Κίνηση 2: άνοδος με μεταφορά του πίσω γονάτου εμπρός. 4. Κορύφωση: ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά. 5. Επιστροφή 1: άνοδος με μεταφορά του πίσω γονάτου εμπρός. 6. Επιστροφή 2: πίσω προβολή με λυγισμένα γόνατα. 7. Τέλος / Αρχική: όρθιος με πέλματα στο άνοιγμα των ισχίων.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "πίσω προβολή με λυγισμένα γόνατα",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "πίσω προβολή με λυγισμένα γόνατα",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος με πέλματα στο άνοιγμα των ισχίων Προετοίμασε ομαλή μετάβαση προς: πίσω προβολή με λυγισμένα γόνατα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "πίσω προβολή με λυγισμένα γόνατα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πίσω προβολή με λυγισμένα γόνατα Προετοίμασε ομαλή μετάβαση προς: άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. άνοδος με μεταφορά του πίσω γονάτου εμπρός Προετοίμασε ομαλή μετάβαση προς: ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά Προετοίμασε ομαλή μετάβαση προς: άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. άνοδος με μεταφορά του πίσω γονάτου εμπρός Προετοίμασε ομαλή μετάβαση προς: πίσω προβολή με λυγισμένα γόνατα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "πίσω προβολή με λυγισμένα γόνατα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πίσω προβολή με λυγισμένα γόνατα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-vyx",
+    "code": "VYX",
+    "name": "Vyxora",
+    "greekName": "Υβριδική ακολουθία VYX",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Λοξοί κοιλιακοί",
+      "Ώμοι",
+      "Γλουτιαίοι",
+      "Τρικέφαλοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Στρώμα"
+    ],
+    "instructions": "1. Αρχή: ψηλή σανίδα. 2. Κίνηση 1: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι. 3. Κίνηση 2: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό. 4. Κορύφωση: πλήρης έκταση του ποδιού σε kickthrough. 5. Επιστροφή 1: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό. 6. Επιστροφή 2: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι. 7. Τέλος / Αρχική: ψηλή σανίδα.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "ψηλή σανίδα",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "πλήρης έκταση του ποδιού σε kickthrough",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "ψηλή σανίδα",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "ψηλή σανίδα",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. ψηλή σανίδα Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι Προετοίμασε ομαλή μετάβαση προς: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πέρασμα του αντίθετου ποδιού κάτω από τον κορμό Προετοίμασε ομαλή μετάβαση προς: πλήρης έκταση του ποδιού σε kickthrough",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "πλήρης έκταση του ποδιού σε kickthrough",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πλήρης έκταση του ποδιού σε kickthrough Προετοίμασε ομαλή μετάβαση προς: πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πέρασμα του αντίθετου ποδιού κάτω από τον κορμό Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "ψηλή σανίδα",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-qor",
+    "code": "QOR",
+    "name": "Qorix",
+    "greekName": "Υβριδική ακολουθία QOR",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Τετρακέφαλοι",
+      "Γλουτιαίοι",
+      "Δελτοειδείς",
+      "Τρικέφαλοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Αλτήρες"
+    ],
+    "instructions": "1. Αρχή: όρθιος κρατώντας δύο αλτήρες. 2. Κίνηση 1: ελεγχόμενο βαθύ κάθισμα. 3. Κίνηση 2: επιστροφή όρθιος με αλτήρες στους ώμους. 4. Κορύφωση: κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι. 5. Επιστροφή 1: επιστροφή όρθιος με αλτήρες στους ώμους. 6. Επιστροφή 2: ελεγχόμενο βαθύ κάθισμα. 7. Τέλος / Αρχική: όρθιος κρατώντας δύο αλτήρες.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος κρατώντας δύο αλτήρες",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "ελεγχόμενο βαθύ κάθισμα",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "επιστροφή όρθιος με αλτήρες στους ώμους",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "επιστροφή όρθιος με αλτήρες στους ώμους",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "ελεγχόμενο βαθύ κάθισμα",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος κρατώντας δύο αλτήρες",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος κρατώντας δύο αλτήρες",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος κρατώντας δύο αλτήρες Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενο βαθύ κάθισμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "ελεγχόμενο βαθύ κάθισμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ελεγχόμενο βαθύ κάθισμα Προετοίμασε ομαλή μετάβαση προς: επιστροφή όρθιος με αλτήρες στους ώμους",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "επιστροφή όρθιος με αλτήρες στους ώμους",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή όρθιος με αλτήρες στους ώμους Προετοίμασε ομαλή μετάβαση προς: κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι Προετοίμασε ομαλή μετάβαση προς: επιστροφή όρθιος με αλτήρες στους ώμους",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "επιστροφή όρθιος με αλτήρες στους ώμους",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή όρθιος με αλτήρες στους ώμους Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενο βαθύ κάθισμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "ελεγχόμενο βαθύ κάθισμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ελεγχόμενο βαθύ κάθισμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος κρατώντας δύο αλτήρες",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-nex",
+    "code": "NEX",
+    "name": "Nexari",
+    "greekName": "Υβριδική ακολουθία NEX",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Πλατύς ραχιαίος",
+      "Ρομβοειδείς",
+      "Οπίσθιοι δελτοειδείς",
+      "Δικέφαλοι",
+      "Οπίσθιοι μηριαίοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Αλτήρες"
+    ],
+    "instructions": "1. Αρχή: όρθιος με αλτήρες μπροστά στους μηρούς. 2. Κίνηση 1: κλίση από τα ισχία με ουδέτερη πλάτη. 3. Κίνηση 2: κωπηλατική με αγκώνες πίσω. 4. Κορύφωση: άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο. 5. Επιστροφή 1: κωπηλατική με αγκώνες πίσω. 6. Επιστροφή 2: κλίση από τα ισχία με ουδέτερη πλάτη. 7. Τέλος / Αρχική: όρθιος με αλτήρες μπροστά στους μηρούς.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος με αλτήρες μπροστά στους μηρούς",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "κλίση από τα ισχία με ουδέτερη πλάτη",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "κωπηλατική με αγκώνες πίσω",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "κωπηλατική με αγκώνες πίσω",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "κλίση από τα ισχία με ουδέτερη πλάτη",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος με αλτήρες μπροστά στους μηρούς",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος με αλτήρες μπροστά στους μηρούς",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος με αλτήρες μπροστά στους μηρούς Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία με ουδέτερη πλάτη",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "κλίση από τα ισχία με ουδέτερη πλάτη",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία με ουδέτερη πλάτη Προετοίμασε ομαλή μετάβαση προς: κωπηλατική με αγκώνες πίσω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "κωπηλατική με αγκώνες πίσω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κωπηλατική με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο Προετοίμασε ομαλή μετάβαση προς: κωπηλατική με αγκώνες πίσω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "κωπηλατική με αγκώνες πίσω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κωπηλατική με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία με ουδέτερη πλάτη",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "κλίση από τα ισχία με ουδέτερη πλάτη",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία με ουδέτερη πλάτη",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος με αλτήρες μπροστά στους μηρούς",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-azy",
+    "code": "AZY",
+    "name": "Azyra",
+    "greekName": "Υβριδική ακολουθία AZY",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Τετρακέφαλοι",
+      "Γλουτιαίοι",
+      "Οπίσθιοι μηριαίοι",
+      "Ραχιαίοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Kettlebell"
+    ],
+    "instructions": "1. Αρχή: όρθιος πάνω από kettlebell στο πάτωμα. 2. Κίνηση 1: κλίση από τα ισχία και ασφαλής λαβή. 3. Κίνηση 2: έκταση ισχίων και kettlebell στο στήθος. 4. Κορύφωση: κάθισμα goblet με kettlebell στο στήθος. 5. Επιστροφή 1: έκταση ισχίων και kettlebell στο στήθος. 6. Επιστροφή 2: κλίση από τα ισχία και ασφαλής λαβή. 7. Τέλος / Αρχική: όρθιος πάνω από kettlebell στο πάτωμα.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος πάνω από kettlebell στο πάτωμα",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "κλίση από τα ισχία και ασφαλής λαβή",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "έκταση ισχίων και kettlebell στο στήθος",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "κάθισμα goblet με kettlebell στο στήθος",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "έκταση ισχίων και kettlebell στο στήθος",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "κλίση από τα ισχία και ασφαλής λαβή",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος πάνω από kettlebell στο πάτωμα",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος πάνω από kettlebell στο πάτωμα",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος πάνω από kettlebell στο πάτωμα Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία και ασφαλής λαβή",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "κλίση από τα ισχία και ασφαλής λαβή",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία και ασφαλής λαβή Προετοίμασε ομαλή μετάβαση προς: έκταση ισχίων και kettlebell στο στήθος",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "έκταση ισχίων και kettlebell στο στήθος",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έκταση ισχίων και kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: κάθισμα goblet με kettlebell στο στήθος",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "κάθισμα goblet με kettlebell στο στήθος",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κάθισμα goblet με kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: έκταση ισχίων και kettlebell στο στήθος",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "έκταση ισχίων και kettlebell στο στήθος",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έκταση ισχίων και kettlebell στο στήθος Προετοίμασε ομαλή μετάβαση προς: κλίση από τα ισχία και ασφαλής λαβή",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "κλίση από τα ισχία και ασφαλής λαβή",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κλίση από τα ισχία και ασφαλής λαβή",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος πάνω από kettlebell στο πάτωμα",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-xul",
+    "code": "XUL",
+    "name": "Xulene",
+    "greekName": "Υβριδική ακολουθία XUL",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Εγκάρσιος κοιλιακός",
+      "Ορθός κοιλιακός",
+      "Λοξοί κοιλιακοί",
+      "Καμπτήρες ισχίου",
+      "Σταθεροποιητές κορμού"
+    ],
+    "equipment": [
+      "Στρώμα"
+    ],
+    "instructions": "1. Αρχή: ανάσκελα με γόνατα και ισχία 90 μοιρών. 2. Κίνηση 1: έκταση αντίθετου χεριού και ποδιού. 3. Κίνηση 2: επιστροφή άκρων στο κέντρο. 4. Κορύφωση: έκταση άλλου αντίθετου χεριού και ποδιού. 5. Επιστροφή 1: επιστροφή άκρων στο κέντρο. 6. Επιστροφή 2: έκταση αντίθετου χεριού και ποδιού. 7. Τέλος / Αρχική: ανάσκελα με γόνατα και ισχία 90 μοιρών.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "έκταση αντίθετου χεριού και ποδιού",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "επιστροφή άκρων στο κέντρο",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "έκταση άλλου αντίθετου χεριού και ποδιού",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "επιστροφή άκρων στο κέντρο",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "έκταση αντίθετου χεριού και ποδιού",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. ανάσκελα με γόνατα και ισχία 90 μοιρών Προετοίμασε ομαλή μετάβαση προς: έκταση αντίθετου χεριού και ποδιού",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "έκταση αντίθετου χεριού και ποδιού",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έκταση αντίθετου χεριού και ποδιού Προετοίμασε ομαλή μετάβαση προς: επιστροφή άκρων στο κέντρο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "επιστροφή άκρων στο κέντρο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή άκρων στο κέντρο Προετοίμασε ομαλή μετάβαση προς: έκταση άλλου αντίθετου χεριού και ποδιού",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "έκταση άλλου αντίθετου χεριού και ποδιού",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έκταση άλλου αντίθετου χεριού και ποδιού Προετοίμασε ομαλή μετάβαση προς: επιστροφή άκρων στο κέντρο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "επιστροφή άκρων στο κέντρο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή άκρων στο κέντρο Προετοίμασε ομαλή μετάβαση προς: έκταση αντίθετου χεριού και ποδιού",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "έκταση αντίθετου χεριού και ποδιού",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έκταση αντίθετου χεριού και ποδιού",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-jax",
+    "code": "JAX",
+    "name": "Jaxori",
+    "greekName": "Υβριδική ακολουθία JAX",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Δελτοειδείς",
+      "Ρομβοειδείς",
+      "Στροφείς ώμου"
+    ],
+    "equipment": [
+      "Λάστιχο αντίστασης"
+    ],
+    "instructions": "1. Αρχή: όρθιος με λάστιχο μπροστά στο στήθος. 2. Κίνηση 1: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση. 3. Κίνηση 2: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω. 4. Κορύφωση: σταθερή τελική θέση έξω στροφής ώμων. 5. Επιστροφή 1: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω. 6. Επιστροφή 2: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση. 7. Τέλος / Αρχική: όρθιος με λάστιχο μπροστά στο στήθος.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος με λάστιχο μπροστά στο στήθος",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "σταθερή τελική θέση έξω στροφής ώμων",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος με λάστιχο μπροστά στο στήθος",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος με λάστιχο μπροστά στο στήθος",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος με λάστιχο μπροστά στο στήθος Προετοίμασε ομαλή μετάβαση προς: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση Προετοίμασε ομαλή μετάβαση προς: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω Προετοίμασε ομαλή μετάβαση προς: σταθερή τελική θέση έξω στροφής ώμων",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "σταθερή τελική θέση έξω στροφής ώμων",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. σταθερή τελική θέση έξω στροφής ώμων Προετοίμασε ομαλή μετάβαση προς: αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω Προετοίμασε ομαλή μετάβαση προς: οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος με λάστιχο μπροστά στο στήθος",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-ruv",
+    "code": "RUV",
+    "name": "Ruvexa",
+    "greekName": "Υβριδική ακολουθία RUV",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Τετρακέφαλοι",
+      "Γλουτιαίοι",
+      "Προσαγωγοί",
+      "Μέσος γλουτιαίος",
+      "Κορμός"
+    ],
+    "equipment": [
+      "TRX"
+    ],
+    "instructions": "1. Αρχή: όρθιος κρατώντας τους ιμάντες TRX. 2. Κίνηση 1: πλάγια προβολή αριστερά. 3. Κίνηση 2: επιστροφή στο κέντρο. 4. Κορύφωση: πλάγια προβολή δεξιά. 5. Επιστροφή 1: επιστροφή στο κέντρο. 6. Επιστροφή 2: πλάγια προβολή αριστερά. 7. Τέλος / Αρχική: όρθιος κρατώντας τους ιμάντες TRX.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος κρατώντας τους ιμάντες TRX",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "πλάγια προβολή αριστερά",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "επιστροφή στο κέντρο",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "πλάγια προβολή δεξιά",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "επιστροφή στο κέντρο",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "πλάγια προβολή αριστερά",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος κρατώντας τους ιμάντες TRX",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος κρατώντας τους ιμάντες TRX",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος κρατώντας τους ιμάντες TRX Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή αριστερά",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "πλάγια προβολή αριστερά",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πλάγια προβολή αριστερά Προετοίμασε ομαλή μετάβαση προς: επιστροφή στο κέντρο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "επιστροφή στο κέντρο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή στο κέντρο Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή δεξιά",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "πλάγια προβολή δεξιά",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πλάγια προβολή δεξιά Προετοίμασε ομαλή μετάβαση προς: επιστροφή στο κέντρο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "επιστροφή στο κέντρο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επιστροφή στο κέντρο Προετοίμασε ομαλή μετάβαση προς: πλάγια προβολή αριστερά",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "πλάγια προβολή αριστερά",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πλάγια προβολή αριστερά",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος κρατώντας τους ιμάντες TRX",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-tyk",
+    "code": "TYK",
+    "name": "Tykora",
+    "greekName": "Υβριδική ακολουθία TYK",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Λοξοί κοιλιακοί",
+      "Ώμοι",
+      "Γλουτιαίοι",
+      "Τρικέφαλοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Βάρος σώματος"
+    ],
+    "instructions": "1. Αρχή: θέση beast με γόνατα λίγο πάνω από το πάτωμα. 2. Κίνηση 1: μεταφορά βάρους και στροφή λεκάνης. 3. Κίνηση 2: πέρασμα ποδιού κάτω από το σώμα. 4. Κορύφωση: ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω. 5. Επιστροφή 1: πέρασμα ποδιού κάτω από το σώμα. 6. Επιστροφή 2: μεταφορά βάρους και στροφή λεκάνης. 7. Τέλος / Αρχική: θέση beast με γόνατα λίγο πάνω από το πάτωμα.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "μεταφορά βάρους και στροφή λεκάνης",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "πέρασμα ποδιού κάτω από το σώμα",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "πέρασμα ποδιού κάτω από το σώμα",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "μεταφορά βάρους και στροφή λεκάνης",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. θέση beast με γόνατα λίγο πάνω από το πάτωμα Προετοίμασε ομαλή μετάβαση προς: μεταφορά βάρους και στροφή λεκάνης",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "μεταφορά βάρους και στροφή λεκάνης",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. μεταφορά βάρους και στροφή λεκάνης Προετοίμασε ομαλή μετάβαση προς: πέρασμα ποδιού κάτω από το σώμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "πέρασμα ποδιού κάτω από το σώμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πέρασμα ποδιού κάτω από το σώμα Προετοίμασε ομαλή μετάβαση προς: ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω Προετοίμασε ομαλή μετάβαση προς: πέρασμα ποδιού κάτω από το σώμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "πέρασμα ποδιού κάτω από το σώμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. πέρασμα ποδιού κάτω από το σώμα Προετοίμασε ομαλή μετάβαση προς: μεταφορά βάρους και στροφή λεκάνης",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "μεταφορά βάρους και στροφή λεκάνης",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. μεταφορά βάρους και στροφή λεκάνης",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-bex",
+    "code": "BEX",
+    "name": "Bexali",
+    "greekName": "Υβριδική ακολουθία BEX",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Θωρακικοί",
+      "Τρικέφαλοι",
+      "Πρόσθιοι δελτοειδείς",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Σταθερός πάγκος"
+    ],
+    "instructions": "1. Αρχή: επικλινής σανίδα με παλάμες σε σταθερό πάγκο. 2. Κίνηση 1: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο. 3. Κίνηση 2: ώθηση πίσω σε τεντωμένα χέρια. 4. Κορύφωση: επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης. 5. Επιστροφή 1: ώθηση πίσω σε τεντωμένα χέρια. 6. Επιστροφή 2: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο. 7. Τέλος / Αρχική: επικλινής σανίδα με παλάμες σε σταθερό πάγκο.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "ώθηση πίσω σε τεντωμένα χέρια",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "ώθηση πίσω σε τεντωμένα χέρια",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. επικλινής σανίδα με παλάμες σε σταθερό πάγκο Προετοίμασε ομαλή μετάβαση προς: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο Προετοίμασε ομαλή μετάβαση προς: ώθηση πίσω σε τεντωμένα χέρια",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "ώθηση πίσω σε τεντωμένα χέρια",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ώθηση πίσω σε τεντωμένα χέρια Προετοίμασε ομαλή μετάβαση προς: επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης Προετοίμασε ομαλή μετάβαση προς: ώθηση πίσω σε τεντωμένα χέρια",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "ώθηση πίσω σε τεντωμένα χέρια",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ώθηση πίσω σε τεντωμένα χέρια Προετοίμασε ομαλή μετάβαση προς: κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-dax",
+    "code": "DAX",
+    "name": "Daxune",
+    "greekName": "Υβριδική ακολουθία DAX",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Ρομβοειδείς",
+      "Πλατύς ραχιαίος",
+      "Δικέφαλοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Λάστιχο αντίστασης"
+    ],
+    "instructions": "1. Αρχή: όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά. 2. Κίνηση 1: έλξη προς πλευρά με αγκώνες πίσω. 3. Κίνηση 2: ελεγχόμενη επιστροφή χεριών εμπρός. 4. Κορύφωση: δεύτερη έλξη με μικρή παύση στις ωμοπλάτες. 5. Επιστροφή 1: ελεγχόμενη επιστροφή χεριών εμπρός. 6. Επιστροφή 2: έλξη προς πλευρά με αγκώνες πίσω. 7. Τέλος / Αρχική: όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "έλξη προς πλευρά με αγκώνες πίσω",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "ελεγχόμενη επιστροφή χεριών εμπρός",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "δεύτερη έλξη με μικρή παύση στις ωμοπλάτες",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "ελεγχόμενη επιστροφή χεριών εμπρός",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "έλξη προς πλευρά με αγκώνες πίσω",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά Προετοίμασε ομαλή μετάβαση προς: έλξη προς πλευρά με αγκώνες πίσω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "έλξη προς πλευρά με αγκώνες πίσω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έλξη προς πλευρά με αγκώνες πίσω Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενη επιστροφή χεριών εμπρός",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "ελεγχόμενη επιστροφή χεριών εμπρός",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ελεγχόμενη επιστροφή χεριών εμπρός Προετοίμασε ομαλή μετάβαση προς: δεύτερη έλξη με μικρή παύση στις ωμοπλάτες",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "δεύτερη έλξη με μικρή παύση στις ωμοπλάτες",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. δεύτερη έλξη με μικρή παύση στις ωμοπλάτες Προετοίμασε ομαλή μετάβαση προς: ελεγχόμενη επιστροφή χεριών εμπρός",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "ελεγχόμενη επιστροφή χεριών εμπρός",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. ελεγχόμενη επιστροφή χεριών εμπρός Προετοίμασε ομαλή μετάβαση προς: έλξη προς πλευρά με αγκώνες πίσω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "έλξη προς πλευρά με αγκώνες πίσω",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. έλξη προς πλευρά με αγκώνες πίσω",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  },
+  {
+    "id": "hybrid-uza",
+    "code": "UZA",
+    "name": "Uzaro",
+    "greekName": "Υβριδική ακολουθία UZA",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Τετρακέφαλοι",
+      "Γλουτιαίοι",
+      "Οπίσθιοι μηριαίοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Smith machine"
+    ],
+    "instructions": "1. Αρχή: όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith. 2. Κίνηση 1: αργή κάθοδος σε split squat. 3. Κίνηση 2: άνοδος πιέζοντας το μπροστινό πέλμα. 4. Κορύφωση: σταθερή ψηλή θέση split squat. 5. Επιστροφή 1: άνοδος πιέζοντας το μπροστινό πέλμα. 6. Επιστροφή 2: αργή κάθοδος σε split squat. 7. Τέλος / Αρχική: όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith.",
+    "description": "Πλήρης πρωτότυπη κινητική ακολουθία επτά θέσεων: αρχική, δύο μεταβάσεις, κορύφωση και τρεις θέσεις επιστροφής. Υπό αξιολόγηση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "original-ai-designed-unverified",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
+        "image": "",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Κίνηση 1",
+        "cue": "αργή κάθοδος σε split squat",
+        "image": "",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Κίνηση 2",
+        "cue": "άνοδος πιέζοντας το μπροστινό πέλμα",
+        "image": "",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "σταθερή ψηλή θέση split squat",
+        "image": "",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή 1",
+        "cue": "άνοδος πιέζοντας το μπροστινό πέλμα",
+        "image": "",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή 2",
+        "cue": "αργή κάθοδος σε split squat",
+        "image": "",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Τέλος / Αρχική",
+        "cue": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
+        "image": "",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 1,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+      "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
+      "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση",
+          "poseDescription": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
+          "transitionDescription": "Ξεκίνημα από την αρχική θέση. όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith Προετοίμασε ομαλή μετάβαση προς: αργή κάθοδος σε split squat",
+          "sameImageAs": null
+        },
+        {
+          "frame": 2,
+          "label": "Κίνηση 1",
+          "poseDescription": "αργή κάθοδος σε split squat",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. αργή κάθοδος σε split squat Προετοίμασε ομαλή μετάβαση προς: άνοδος πιέζοντας το μπροστινό πέλμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 3,
+          "label": "Κίνηση 2",
+          "poseDescription": "άνοδος πιέζοντας το μπροστινό πέλμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. άνοδος πιέζοντας το μπροστινό πέλμα Προετοίμασε ομαλή μετάβαση προς: σταθερή ψηλή θέση split squat",
+          "sameImageAs": null
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση",
+          "poseDescription": "σταθερή ψηλή θέση split squat",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. σταθερή ψηλή θέση split squat Προετοίμασε ομαλή μετάβαση προς: άνοδος πιέζοντας το μπροστινό πέλμα",
+          "sameImageAs": null
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή 1",
+          "poseDescription": "άνοδος πιέζοντας το μπροστινό πέλμα",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. άνοδος πιέζοντας το μπροστινό πέλμα Προετοίμασε ομαλή μετάβαση προς: αργή κάθοδος σε split squat",
+          "sameImageAs": null
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή 2",
+          "poseDescription": "αργή κάθοδος σε split squat",
+          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. αργή κάθοδος σε split squat",
+          "sameImageAs": null
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
+          "poseDescription": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
+          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
+          "sameImageAs": 1
+        }
+      ]
+    },
+    "modelProfile": "female",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
+  }
+]
