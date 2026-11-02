@@ -894,35 +894,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Standing upright with both dumbbells at shoulder height, wrists stacked above elbows, ribs down and feet grounded.",
+          "poseDescription": "Όρθια στάση, πέλματα σταθερά, δύο αλτήρες στο ύψος των ώμων, καρποί πάνω από τους αγκώνες, πλευρά πάνω από τη λεκάνη.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Standing upright with both dumbbells at shoulder height, wrists stacked above elbows, ribs down and feet grounded. Προετοίμασε ομαλή μετάβαση προς: Both dumbbells move upward in a controlled shoulder press, wrists neutral, no lumbar hyperextension.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Έναρξη πίεσης",
-          "poseDescription": "Both dumbbells move upward in a controlled shoulder press, wrists neutral, no lumbar hyperextension.",
+          "poseDescription": "Οι αλτήρες έχουν αρχίσει να κινούνται προς τα πάνω· οι αγκώνες εκτείνονται, οι καρποί μένουν ουδέτεροι και ο κορμός δεν υπερεκτείνεται.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Both dumbbells move upward in a controlled shoulder press, wrists neutral, no lumbar hyperextension. Προετοίμασε ομαλή μετάβαση προς: Both dumbbells above shoulders with arms nearly straight, head neutral, shoulders elevated naturally.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Τελική θέση",
-          "poseDescription": "Both dumbbells above shoulders with arms nearly straight, head neutral, shoulders elevated naturally.",
+          "poseDescription": "Οι αλτήρες βρίσκονται πάνω από τους ώμους, οι αγκώνες σχεδόν τεντωμένοι και το κεφάλι ουδέτερο, με τον κορμό σταθερό.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Both dumbbells above shoulders with arms nearly straight, head neutral, shoulders elevated naturally. Προετοίμασε ομαλή μετάβαση προς: Both dumbbells descend symmetrically toward shoulder level while torso remains vertical.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Ελεγχόμενη επαναφορά",
-          "poseDescription": "Both dumbbells descend symmetrically toward shoulder level while torso remains vertical.",
+          "poseDescription": "Οι αλτήρες κατεβαίνουν συμμετρικά προς το ύψος των ώμων· οι αγκώνες λυγίζουν ελεγχόμενα και ο κορμός μένει όρθιος.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Both dumbbells descend symmetrically toward shoulder level while torso remains vertical.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Standing upright with both dumbbells at shoulder height, wrists stacked above elbows, ribs down and feet grounded.",
+          "poseDescription": "Όρθια στάση, πέλματα σταθερά, δύο αλτήρες στο ύψος των ώμων, καρποί πάνω από τους αγκώνες, πλευρά πάνω από τη λεκάνη.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -975,35 +975,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Upright stance, two dumbbells in front of thighs, knees soft, spine neutral.",
+          "poseDescription": "Όρθια στάση με δύο αλτήρες μπροστά στους μηρούς, γόνατα μαλακά και σπονδυλική στήλη ουδέτερη.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Upright stance, two dumbbells in front of thighs, knees soft, spine neutral. Προετοίμασε ομαλή μετάβαση προς: Hips move backward; dumbbells slide close to thighs, knees maintain slight flexion.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Κίνηση από τα ισχία",
-          "poseDescription": "Hips move backward; dumbbells slide close to thighs, knees maintain slight flexion.",
+          "poseDescription": "Τα ισχία έχουν κινηθεί πίσω και ο κορμός έχει γείρει από τα ισχία· οι αλτήρες μένουν κοντά στους μηρούς, τα γόνατα μαλακά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Hips move backward; dumbbells slide close to thighs, knees maintain slight flexion. Προετοίμασε ομαλή μετάβαση προς: Controlled hip hinge with dumbbells close to shins, neutral back, hips behind heels, no spinal rounding.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Κάτω θέση",
-          "poseDescription": "Controlled hip hinge with dumbbells close to shins, neutral back, hips behind heels, no spinal rounding.",
+          "poseDescription": "Κάτω θέση hip hinge με αλτήρες κοντά στις κνήμες, ισχία πίσω, πλάτη ουδέτερη και πέλματα σταθερά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Controlled hip hinge with dumbbells close to shins, neutral back, hips behind heels, no spinal rounding. Προετοίμασε ομαλή μετάβαση προς: Hip extension brings the torso upright, dumbbells finish against thighs.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επιστροφή",
-          "poseDescription": "Hip extension brings the torso upright, dumbbells finish against thighs.",
+          "poseDescription": "Τα ισχία έχουν εκταθεί και ο κορμός είναι ξανά όρθιος· οι αλτήρες ακουμπούν μπροστά στους μηρούς.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Hip extension brings the torso upright, dumbbells finish against thighs.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Upright stance, two dumbbells in front of thighs, knees soft, spine neutral.",
+          "poseDescription": "Όρθια στάση με δύο αλτήρες μπροστά στους μηρούς, γόνατα μαλακά και σπονδυλική στήλη ουδέτερη.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1056,35 +1056,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Standing upright on flat ground with forefingers lightly resting on a sturdy vertical rail.",
+          "poseDescription": "Όρθια στάση σε επίπεδο δάπεδο, πέλματα παράλληλα και ακροδάχτυλα να ακουμπούν ελαφρά σε σταθερό κατακόρυφο στήριγμα.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Standing upright on flat ground with forefingers lightly resting on a sturdy vertical rail. Προετοίμασε ομαλή μετάβαση προς: Both heels rise while forefeet stay on the floor and ankles remain aligned.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Άρση φτερνών",
-          "poseDescription": "Both heels rise while forefeet stay on the floor and ankles remain aligned.",
+          "poseDescription": "Οι φτέρνες έχουν ανασηκωθεί, τα πρόσθια τμήματα των πελμάτων μένουν στο δάπεδο και οι αστράγαλοι ευθυγραμμισμένοι.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Both heels rise while forefeet stay on the floor and ankles remain aligned. Προετοίμασε ομαλή μετάβαση προς: Highest comfortable heel raise with straight but not locked knees and balanced ankles.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Κορύφωση",
-          "poseDescription": "Highest comfortable heel raise with straight but not locked knees and balanced ankles.",
+          "poseDescription": "Στην ψηλότερη ελεγχόμενη θέση ανύψωσης φτερνών, γόνατα τεντωμένα χωρίς βίαιο κλείδωμα και αστράγαλοι σταθεροί.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Highest comfortable heel raise with straight but not locked knees and balanced ankles. Προετοίμασε ομαλή μετάβαση προς: Both heels lower under control until whole feet rest flat on floor.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επαναφορά",
-          "poseDescription": "Both heels lower under control until whole feet rest flat on floor.",
+          "poseDescription": "Οι φτέρνες έχουν κατέβει ελεγχόμενα και ολόκληρα τα πέλματα ακουμπούν ξανά στο δάπεδο.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Both heels lower under control until whole feet rest flat on floor.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Standing upright on flat ground with forefingers lightly resting on a sturdy vertical rail.",
+          "poseDescription": "Όρθια στάση σε επίπεδο δάπεδο, πέλματα παράλληλα και ακροδάχτυλα να ακουμπούν ελαφρά σε σταθερό κατακόρυφο στήριγμα.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1136,35 +1136,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Back and pelvis lightly against a solid flat wall, feet placed forward on stable floor.",
+          "poseDescription": "Όρθια θέση με πλάτη και λεκάνη να ακουμπούν ελαφρά σε σταθερό τοίχο, πέλματα μπροστά σε σταθερό δάπεδο.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Back and pelvis lightly against a solid flat wall, feet placed forward on stable floor. Προετοίμασε ομαλή μετάβαση προς: Back glides down wall, knees bend gradually while feet remain fully grounded.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Κάθοδος",
-          "poseDescription": "Back glides down wall, knees bend gradually while feet remain fully grounded.",
+          "poseDescription": "Η πλάτη ολισθαίνει προς τα κάτω στον τοίχο και τα γόνατα λυγίζουν σταδιακά, ενώ τα πέλματα μένουν πλήρως στο δάπεδο.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Back glides down wall, knees bend gradually while feet remain fully grounded. Προετοίμασε ομαλή μετάβαση προς: Wall sit at comfortable knee angle, torso supported on wall, shins approximately vertical, knees tracking feet.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Ισομετρική θέση",
-          "poseDescription": "Wall sit at comfortable knee angle, torso supported on wall, shins approximately vertical, knees tracking feet.",
+          "poseDescription": "Ισομετρικό κάθισμα στον τοίχο σε άνετο βάθος· κορμός υποστηρίζεται από τον τοίχο, γόνατα ακολουθούν τα πέλματα.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Wall sit at comfortable knee angle, torso supported on wall, shins approximately vertical, knees tracking feet. Προετοίμασε ομαλή μετάβαση προς: Push through feet to slide back up wall without knee collapse.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Ανάβαση",
-          "poseDescription": "Push through feet to slide back up wall without knee collapse.",
+          "poseDescription": "Τα πέλματα πιέζουν το δάπεδο και το σώμα ολισθαίνει προς τα πάνω στον τοίχο χωρίς τα γόνατα να συγκλίνουν.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Push through feet to slide back up wall without knee collapse.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Back and pelvis lightly against a solid flat wall, feet placed forward on stable floor.",
+          "poseDescription": "Όρθια θέση με πλάτη και λεκάνη να ακουμπούν ελαφρά σε σταθερό τοίχο, πέλματα μπροστά σε σταθερό δάπεδο.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1217,35 +1217,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Standing tall with both feet under hips, hands clasped in front of sternum.",
+          "poseDescription": "Όρθια στάση, πέλματα κάτω από τα ισχία και χέρια ενωμένα μπροστά στο στέρνο.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Standing tall with both feet under hips, hands clasped in front of sternum. Προετοίμασε ομαλή μετάβαση προς: A long side step to the right with whole right foot flat and left leg nearly straight.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Πλάγιο βήμα",
-          "poseDescription": "A long side step to the right with whole right foot flat and left leg nearly straight.",
+          "poseDescription": "Το δεξί πόδι έχει πατήσει πλάγια με ολόκληρο το πέλμα στο δάπεδο· το αριστερό παραμένει σχεδόν τεντωμένο.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. A long side step to the right with whole right foot flat and left leg nearly straight. Προετοίμασε ομαλή μετάβαση προς: Right hip shifts backward and right knee bends over the right foot while left leg remains extended.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Κάτω θέση",
-          "poseDescription": "Right hip shifts backward and right knee bends over the right foot while left leg remains extended.",
+          "poseDescription": "Το δεξί ισχίο βρίσκεται πίσω και το δεξί γόνατο λυγισμένο πάνω από το πέλμα· το αριστερό πόδι παραμένει μακρύ.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Right hip shifts backward and right knee bends over the right foot while left leg remains extended. Προετοίμασε ομαλή μετάβαση προς: Push from the right leg to step back to a tall parallel stance.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επιστροφή στο κέντρο",
-          "poseDescription": "Push from the right leg to step back to a tall parallel stance.",
+          "poseDescription": "Το δεξί πόδι έχει πιέσει το δάπεδο και το σώμα επέστρεψε σε όρθια παράλληλη βάση.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Push from the right leg to step back to a tall parallel stance.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Standing tall with both feet under hips, hands clasped in front of sternum.",
+          "poseDescription": "Όρθια στάση, πέλματα κάτω από τα ισχία και χέρια ενωμένα μπροστά στο στέρνο.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1299,35 +1299,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Facing a secure chest-height band anchor, both hands grip band handles, arms almost straight, feet staggered.",
+          "poseDescription": "Στάση αντικριστά σε ασφαλή αγκύρωση λάστιχου στο ύψος του κορμού· δύο χέρια στις λαβές, αγκώνες σχεδόν τεντωμένοι και πέλματα σε σταθερή staggered βάση.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Facing a secure chest-height band anchor, both hands grip band handles, arms almost straight, feet staggered. Προετοίμασε ομαλή μετάβαση προς: Elbows bend and track along sides, band remains anchored and taut.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Έναρξη έλξης",
-          "poseDescription": "Elbows bend and track along sides, band remains anchored and taut.",
+          "poseDescription": "Οι αγκώνες έχουν λυγίσει και κινούνται κοντά στα πλευρά· το λάστιχο παραμένει τεντωμένο και η αγκύρωση σταθερή.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Elbows bend and track along sides, band remains anchored and taut. Προετοίμασε ομαλή μετάβαση προς: Band handles approach lower ribs, shoulder blades retract without trunk arching.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Τελική έλξη",
-          "poseDescription": "Band handles approach lower ribs, shoulder blades retract without trunk arching.",
+          "poseDescription": "Οι λαβές βρίσκονται κοντά στα κάτω πλευρά· οι ωμοπλάτες έχουν κινηθεί προς τα πίσω χωρίς υπερέκταση κορμού.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Band handles approach lower ribs, shoulder blades retract without trunk arching. Προετοίμασε ομαλή μετάβαση προς: Hands extend forward slowly while maintaining light band tension and upright posture.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επαναφορά",
-          "poseDescription": "Hands extend forward slowly while maintaining light band tension and upright posture.",
+          "poseDescription": "Τα χέρια έχουν κινηθεί μπροστά με ελεγχόμενη έκταση αγκώνων, διατηρώντας ήπια τάση στο λάστιχο και όρθιο κορμό.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Hands extend forward slowly while maintaining light band tension and upright posture.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Facing a secure chest-height band anchor, both hands grip band handles, arms almost straight, feet staggered.",
+          "poseDescription": "Στάση αντικριστά σε ασφαλή αγκύρωση λάστιχου στο ύψος του κορμού· δύο χέρια στις λαβές, αγκώνες σχεδόν τεντωμένοι και πέλματα σε σταθερή staggered βάση.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1380,35 +1380,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Side-lying on mat, bottom elbow underneath shoulder, knees bent with knees stacked, pelvis on floor.",
+          "poseDescription": "Πλάγια κατάκλιση στο στρώμα, κάτω αγκώνας κάτω από τον ώμο, γόνατα λυγισμένα και στοιβαγμένα, λεκάνη στο έδαφος.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Side-lying on mat, bottom elbow underneath shoulder, knees bent with knees stacked, pelvis on floor. Προετοίμασε ομαλή μετάβαση προς: Lift pelvis away from floor supported by forearm and knees, avoid twisting.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Άρση λεκάνης",
-          "poseDescription": "Lift pelvis away from floor supported by forearm and knees, avoid twisting.",
+          "poseDescription": "Η λεκάνη έχει ανασηκωθεί από το έδαφος και στηρίζεται στον πήχη και στα γόνατα· ο κορμός δεν στρέφεται.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Lift pelvis away from floor supported by forearm and knees, avoid twisting. Προετοίμασε ομαλή μετάβαση προς: Shoulder, hip and knee form a clear straight line, head aligned with torso and hips elevated.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Ισομετρική θέση",
-          "poseDescription": "Shoulder, hip and knee form a clear straight line, head aligned with torso and hips elevated.",
+          "poseDescription": "Ώμος, ισχίο και γόνατα σχηματίζουν ευθεία· κεφάλι στην προέκταση του κορμού και λεκάνη ψηλά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Shoulder, hip and knee form a clear straight line, head aligned with torso and hips elevated. Προετοίμασε ομαλή μετάβαση προς: Pelvis lowers toward mat while shoulders and knees remain aligned.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Ελεγχόμενη κάθοδος",
-          "poseDescription": "Pelvis lowers toward mat while shoulders and knees remain aligned.",
+          "poseDescription": "Η λεκάνη κατεβαίνει προς το στρώμα, ενώ ώμοι και γόνατα παραμένουν ευθυγραμμισμένα.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Pelvis lowers toward mat while shoulders and knees remain aligned.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Side-lying on mat, bottom elbow underneath shoulder, knees bent with knees stacked, pelvis on floor.",
+          "poseDescription": "Πλάγια κατάκλιση στο στρώμα, κάτω αγκώνας κάτω από τον ώμο, γόνατα λυγισμένα και στοιβαγμένα, λεκάνη στο έδαφος.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1460,35 +1460,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Standing tall, elbows close to torso, two dumbbells at sides, neutral wrists.",
+          "poseDescription": "Όρθια στάση, δύο αλτήρες δίπλα στους μηρούς, αγκώνες κοντά στον κορμό και καρποί ουδέτεροι.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Standing tall, elbows close to torso, two dumbbells at sides, neutral wrists. Προετοίμασε ομαλή μετάβαση προς: Elbows flex to bring dumbbells upward without swinging shoulders or hips.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Κάμψη αγκώνων",
-          "poseDescription": "Elbows flex to bring dumbbells upward without swinging shoulders or hips.",
+          "poseDescription": "Οι αγκώνες έχουν αρχίσει να λυγίζουν και οι αλτήρες κινούνται προς τα πάνω, χωρίς αιώρηση ώμων ή ισχίων.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Elbows flex to bring dumbbells upward without swinging shoulders or hips. Προετοίμασε ομαλή μετάβαση προς: Dumbbells near front of shoulders, elbows fixed at the sides, wrists neutral.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Κορυφή κίνησης",
-          "poseDescription": "Dumbbells near front of shoulders, elbows fixed at the sides, wrists neutral.",
+          "poseDescription": "Οι αλτήρες βρίσκονται κοντά στο μπροστινό μέρος των ώμων· αγκώνες μένουν δίπλα στον κορμό και καρποί ουδέτεροι.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Dumbbells near front of shoulders, elbows fixed at the sides, wrists neutral. Προετοίμασε ομαλή μετάβαση προς: Dumbbells lower to near full elbow extension without trunk rocking.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Αργή έκταση",
-          "poseDescription": "Dumbbells lower to near full elbow extension without trunk rocking.",
+          "poseDescription": "Οι αλτήρες κατεβαίνουν προς τους μηρούς με ελεγχόμενη έκταση αγκώνων και κορμό ακίνητο.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Dumbbells lower to near full elbow extension without trunk rocking.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Standing tall, elbows close to torso, two dumbbells at sides, neutral wrists.",
+          "poseDescription": "Όρθια στάση, δύο αλτήρες δίπλα στους μηρούς, αγκώνες κοντά στον κορμό και καρποί ουδέτεροι.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1541,35 +1541,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Hands on mat slightly wider than shoulders; knees supported; shoulders, hips and knees form a straight line.",
+          "poseDescription": "Γονατιστή σανίδα στο στρώμα, παλάμες λίγο πιο ανοιχτά από τους ώμους, ώμοι–ισχία–γόνατα ευθυγραμμισμένα.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Hands on mat slightly wider than shoulders; knees supported; shoulders, hips and knees form a straight line. Προετοίμασε ομαλή μετάβαση προς: Elbows bend and chest moves toward floor with trunk and hips remaining rigid as a unit.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Κάθοδος",
-          "poseDescription": "Elbows bend and chest moves toward floor with trunk and hips remaining rigid as a unit.",
+          "poseDescription": "Οι αγκώνες έχουν λυγίσει και το στήθος κινείται προς το στρώμα· κορμός και λεκάνη μένουν ενιαία και σταθερά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Elbows bend and chest moves toward floor with trunk and hips remaining rigid as a unit. Προετοίμασε ομαλή μετάβαση προς: Chest near mat, elbows angled diagonally behind torso, no sagging pelvis or craned neck.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Κάτω θέση",
-          "poseDescription": "Chest near mat, elbows angled diagonally behind torso, no sagging pelvis or craned neck.",
+          "poseDescription": "Το στήθος βρίσκεται κοντά στο στρώμα, οι αγκώνες κατευθύνονται διαγώνια πίσω και ο αυχένας παραμένει ουδέτερος.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Chest near mat, elbows angled diagonally behind torso, no sagging pelvis or craned neck. Προετοίμασε ομαλή μετάβαση προς: Push through palms to extend arms and return to straight shoulder–hip–knee alignment.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επιστροφή",
-          "poseDescription": "Push through palms to extend arms and return to straight shoulder–hip–knee alignment.",
+          "poseDescription": "Οι παλάμες πιέζουν το στρώμα, οι αγκώνες εκτείνονται και οι ώμοι, ισχία και γόνατα επιστρέφουν στην ίδια ευθεία.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Push through palms to extend arms and return to straight shoulder–hip–knee alignment.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Hands on mat slightly wider than shoulders; knees supported; shoulders, hips and knees form a straight line.",
+          "poseDescription": "Γονατιστή σανίδα στο στρώμα, παλάμες λίγο πιο ανοιχτά από τους ώμους, ώμοι–ισχία–γόνατα ευθυγραμμισμένα.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1623,35 +1623,35 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Stand with feet hip-width apart, knees softly bent, arms crossed over chest, head neutral.",
+          "poseDescription": "Όρθια βάση με πέλματα στο άνοιγμα των ισχίων, γόνατα μαλακά, χέρια σταυρωμένα στο στήθος και κεφάλι ουδέτερο.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Stand with feet hip-width apart, knees softly bent, arms crossed over chest, head neutral. Προετοίμασε ομαλή μετάβαση προς: Hips slide backward as torso inclines forward at hip joints with stable spinal curves.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Μεταφορά ισχίων πίσω",
-          "poseDescription": "Hips slide backward as torso inclines forward at hip joints with stable spinal curves.",
+          "poseDescription": "Τα ισχία έχουν κινηθεί πίσω και ο κορμός έχει κλίνει εμπρός από τα ισχία, διατηρώντας τις φυσιολογικές καμπύλες της πλάτης.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Hips slide backward as torso inclines forward at hip joints with stable spinal curves. Προετοίμασε ομαλή μετάβαση προς: Controlled forward torso inclination, knees slightly bent, spine neutral, hips back and feet rooted.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Τελική κλίση",
-          "poseDescription": "Controlled forward torso inclination, knees slightly bent, spine neutral, hips back and feet rooted.",
+          "poseDescription": "Ελεγχόμενη κλίση κορμού από τα ισχία, γόνατα ελαφρά λυγισμένα, ισχία πίσω και πέλματα σταθερά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Controlled forward torso inclination, knees slightly bent, spine neutral, hips back and feet rooted. Προετοίμασε ομαλή μετάβαση προς: Extend at hip joints to stand fully tall without leaning backward.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Επιστροφή",
-          "poseDescription": "Extend at hip joints to stand fully tall without leaning backward.",
+          "poseDescription": "Τα ισχία έχουν εκταθεί και το σώμα στέκεται όρθιο χωρίς να γέρνει προς τα πίσω.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Extend at hip joints to stand fully tall without leaning backward.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Stand with feet hip-width apart, knees softly bent, arms crossed over chest, head neutral.",
+          "poseDescription": "Όρθια βάση με πέλματα στο άνοιγμα των ισχίων, γόνατα μαλακά, χέρια σταυρωμένα στο στήθος και κεφάλι ουδέτερο.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
@@ -1841,9 +1841,9 @@
     "equipment": [
       "Kettlebell"
     ],
-    "instructions": "Ξεκίνα με kettlebell ανάμεσα στα πόδια και εκτέλεσε ισχυρή αλλά ελεγχόμενη έκταση ισχίων. Οδήγησε το βάρος ομαλά στη θέση rack χωρίς χτύπημα στον πήχη. Σταθεροποίησε τον κορμό και πίεσε το kettlebell κατακόρυφα πάνω από το κεφάλι. Κατέβασε στο rack και επέστρεψε με έλεγχο.",
+    "instructions": "Εκτέλεσε με ένα kettlebell: από ελεγχόμενο hip hinge οδήγησε το βάρος κοντά στο σώμα σε θέση rack, πίεσε κατακόρυφα πάνω από το κεφάλι και κατέβασε πρώτα στο rack. Επέστρεψε το kettlebell ελεγχόμενα ανάμεσα στα πόδια και σταθεροποιήσου στην αρχική θέση. Η πλευρά εργασίας και ο τρόπος λαβής δεν ορίζονται στα αρχικά δεδομένα και χρειάζονται επιβεβαίωση προπονητή πριν από την οπτικοποίηση.",
     "breathing": "Εισπνοή στην προετοιμασία, εκπνοή στη δυναμική άνοδο και ελεγχόμενη αναπνοή στην πίεση.",
-    "safety": "Απόφυγε υπερβολικό τράβηγμα με το χέρι, χτύπημα στον καρπό, υπερέκταση της μέσης και αστάθεια στον ώμο.",
+    "safety": "Απόφυγε υπερβολικό τράβηγμα με το χέρι, χτύπημα στον καρπό, υπερέκταση της μέσης και αστάθεια στον ώμο. Απαιτείται επιβεβαίωση της πλευράς εργασίας και της λαβής πριν από την οπτικοποίηση.",
     "phases": [
       {
         "label": "Αρχική"
@@ -1872,41 +1872,43 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Ξεκίνα με kettlebell ανάμεσα στα πόδια και εκτέλεσε ισχυρή αλλά ελεγχόμενη έκταση ισχίων.",
+          "poseDescription": "Αρχική θέση hip hinge πάνω από ένα kettlebell στο δάπεδο, γόνατα μαλακά, πλάτη ουδέτερη και το χέρι της πλευράς εργασίας στη λαβή. Η πλευρά και η λαβή χρειάζονται επιβεβαίωση προπονητή.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Ξεκίνα με kettlebell ανάμεσα στα πόδια και εκτέλεσε ισχυρή αλλά ελεγχόμενη έκταση ισχίων. Προετοίμασε ομαλή μετάβαση προς: Οδήγησε το βάρος ομαλά στη θέση rack χωρίς χτύπημα στον πήχη.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Ενδιάμεση μετάβαση",
-          "poseDescription": "Οδήγησε το βάρος ομαλά στη θέση rack χωρίς χτύπημα στον πήχη.",
+          "poseDescription": "Το kettlebell έχει ανέβει κοντά στο σώμα και βρίσκεται σε rack δίπλα στον ώμο· καρπός και κορμός σταθεροί.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Οδήγησε το βάρος ομαλά στη θέση rack χωρίς χτύπημα στον πήχη. Προετοίμασε ομαλή μετάβαση προς: Σταθεροποίησε τον κορμό και πίεσε το kettlebell κατακόρυφα πάνω από το κεφάλι.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Ολοκλήρωση",
-          "poseDescription": "Σταθεροποίησε τον κορμό και πίεσε το kettlebell κατακόρυφα πάνω από το κεφάλι.",
+          "poseDescription": "Το kettlebell βρίσκεται πάνω από τον ώμο με αγκώνα σχεδόν τεντωμένο, καρπό ευθυγραμμισμένο και κορμό σταθερό.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Σταθεροποίησε τον κορμό και πίεσε το kettlebell κατακόρυφα πάνω από το κεφάλι. Προετοίμασε ομαλή μετάβαση προς: Κατέβασε στο rack και επέστρεψε με έλεγχο.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Τελική αρχική θέση",
-          "poseDescription": "Κατέβασε στο rack και επέστρεψε με έλεγχο.",
+          "poseDescription": "Το kettlebell έχει κατέβει ελεγχόμενα από πάνω κεφάλι, περνά από rack και επιστρέφει ανάμεσα στα πόδια· ο ασκούμενος καταλήγει στο ίδιο hip hinge εκκίνησης.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Κατέβασε στο rack και επέστρεψε με έλεγχο.",
           "sameImageAs": null
         },
         {
           "frame": 5,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Ξεκίνα με kettlebell ανάμεσα στα πόδια και εκτέλεσε ισχυρή αλλά ελεγχόμενη έκταση ισχίων.",
+          "poseDescription": "Αρχική θέση hip hinge πάνω από ένα kettlebell στο δάπεδο, γόνατα μαλακά, πλάτη ουδέτερη και το χέρι της πλευράς εργασίας στη λαβή. Η πλευρά και η λαβή χρειάζονται επιβεβαίωση προπονητή.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
       ]
     },
-    "modelProfile": "female"
+    "modelProfile": "female",
+    "requiresCoachReview": true,
+    "reviewStatus": "pending"
   },
   {
     "id": "functional-024",
@@ -1956,28 +1958,28 @@
         {
           "frame": 1,
           "label": "Αρχική θέση",
-          "poseDescription": "Στάσου όρθιος και κατέβασε τα χέρια προς το έδαφος λυγίζοντας ισχία και γόνατα.",
+          "poseDescription": "Όρθια αρχική στάση, πέλματα περίπου στο άνοιγμα των ισχίων, κορμός ουδέτερος και χέρια δίπλα στο σώμα.",
           "transitionDescription": "Ξεκίνημα από την αρχική θέση. Στάσου όρθιος και κατέβασε τα χέρια προς το έδαφος λυγίζοντας ισχία και γόνατα. Προετοίμασε ομαλή μετάβαση προς: Μετέφερε τα πόδια πίσω σε θέση σανίδας, εκτέλεσε μία ελεγχόμενη κάμψη και επανάφερε τα πόδια κοντά στα χέρια.",
           "sameImageAs": null
         },
         {
           "frame": 2,
           "label": "Ενδιάμεση μετάβαση",
-          "poseDescription": "Μετέφερε τα πόδια πίσω σε θέση σανίδας, εκτέλεσε μία ελεγχόμενη κάμψη και επανάφερε τα πόδια κοντά στα χέρια.",
+          "poseDescription": "Χαμηλή θέση push-up στο έδαφος: παλάμες κάτω από τους ώμους, αγκώνες λυγισμένοι, πόδια πίσω και κορμός ενιαίος.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Μετέφερε τα πόδια πίσω σε θέση σανίδας, εκτέλεσε μία ελεγχόμενη κάμψη και επανάφερε τα πόδια κοντά στα χέρια. Προετοίμασε ομαλή μετάβαση προς: Σήκω και ολοκλήρωσε με μικρό κατακόρυφο άλμα εφόσον διατηρείται η σωστή τεχνική.",
           "sameImageAs": null
         },
         {
           "frame": 3,
           "label": "Έκκεντρη επαναφορά",
-          "poseDescription": "Σήκω και ολοκλήρωσε με μικρό κατακόρυφο άλμα εφόσον διατηρείται η σωστή τεχνική.",
+          "poseDescription": "Μετά το push-up, τα πέλματα έχουν έρθει κοντά στις παλάμες· ο ασκούμενος έχει ανασηκωθεί, εκτελεί μικρό κατακόρυφο άλμα και προσγειώνεται με γόνατα μαλακά.",
           "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Σήκω και ολοκλήρωσε με μικρό κατακόρυφο άλμα εφόσον διατηρείται η σωστή τεχνική.",
           "sameImageAs": null
         },
         {
           "frame": 4,
           "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Στάσου όρθιος και κατέβασε τα χέρια προς το έδαφος λυγίζοντας ισχία και γόνατα.",
+          "poseDescription": "Όρθια αρχική στάση, πέλματα περίπου στο άνοιγμα των ισχίων, κορμός ουδέτερος και χέρια δίπλα στο σώμα.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
           "sameImageAs": 1
         }
