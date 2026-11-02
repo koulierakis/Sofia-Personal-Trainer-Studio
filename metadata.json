@@ -1,0 +1,7 @@
+{
+  "name": "Sofia Personal Trainer Studio",
+  "description": "Επαγγελματικό studio personal training με βιβλιοθήκες Functional και Pilates, δομημένα προγράμματα 60 λεπτών, προηγμένες custom ασκήσεις με οπτικοποίηση καρέ και φωνητική αναζήτηση.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -4,15 +4,28 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node server.mjs",
-    "test": "node --test tests/*.test.mjs",
-    "images:audit": "python tools/image-library/library.py audit",
-    "images:validate": "python tools/image-library/library.py validate",
-    "images:import": "python tools/image-library/library.py import",
-    "images:comfy": "python tools/image-library/comfy.py",
-    "images:test": "python -m unittest discover -s tools/image-library -p \"test_*.py\"",
-    "images:review": "python tools/image-library/review.py",
-    "images:bulk": "python tools/image-library/bulk_storyboards.py"
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "lint": "tsc --noEmit",
+    "preview": "vite preview --port 3000",
+    "test": "tsx --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   },
   "engines": {
     "node": ">=20"
