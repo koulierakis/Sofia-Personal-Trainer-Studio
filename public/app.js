@@ -35,7 +35,25 @@ function renderCards(){const arr=filtered(),target=$('cards');target.replaceChil
 
 
 let exercisePlayerCleanup=()=>{};
+let preferredPlayerDelay=1500;
 function stopExercisePlayer(){exercisePlayerCleanup();exercisePlayerCleanup=()=>{};}
+function createExercisePlayer(target,sequence){
+ let index=0,timer=null,delay=preferredPlayerDelay;
+ const player=text('section','','frame-player'),heading=text('h4','Αναπαραγωγή περιγραφών καρέ'),counter=text('p','','frame-player-counter'),pose=text('p','','frame-player-pose'),change=text('p','','frame-player-change');
+ const controls=text('div','','frame-player-controls'),play=button('▶ Αναπαραγωγή',toggle),previous=button('← Προηγούμενο',()=>step(-1)),next=button('Επόμενο →',()=>step(1));
+ const speedLabel=text('label','Ταχύτητα αναπαραγωγής'),speed=document.createElement('select');
+ for(const [label,value] of [['0,5× · πιο αργά','3000'],['0,75× · αργά','2000'],['1× · κανονικά','1500'],['1,5× · γρήγορα','1000'],['2× · πιο γρήγορα','750'],['3× · πολύ γρήγορα','500']])speed.add(new Option(label,value));
+ speed.value=String(delay);speedLabel.append(speed);controls.append(previous,play,next,speedLabel);
+ const progress=document.createElement('progress');progress.max=sequence.frames.length;progress.value=1;progress.setAttribute('aria-label','Πρόοδος αναπαραγωγής καρέ');
+ player.append(heading,counter,progress,pose,change,controls);target.append(player);
+ function paint(){const frame=sequence.frames[index];counter.textContent='Καρέ '+(index+1)+' από '+sequence.frames.length+' · '+frame.label;pose.textContent=frame.poseDescription;change.textContent='Αλλαγή από το προηγούμενο καρέ: '+(frame.changeFromPrevious||frame.transitionDescription);progress.value=index+1;}
+ function pause(){if(timer!==null)window.clearInterval(timer);timer=null;play.textContent='▶ Αναπαραγωγή';}
+ function step(direction){index=Math.max(0,Math.min(sequence.frames.length-1,index+direction));paint();if(index===sequence.frames.length-1)pause();}
+ function advance(){if(index>=sequence.frames.length-1){pause();return;}index++;paint();if(index===sequence.frames.length-1)pause();}
+ function toggle(){if(timer!==null){pause();return;}if(index>=sequence.frames.length-1){index=0;paint();}timer=window.setInterval(advance,delay);play.textContent='Ⅱ Παύση';}
+ speed.addEventListener('change',()=>{delay=Number(speed.value);preferredPlayerDelay=delay;if(timer!==null){pause();toggle();}});
+ paint();exercisePlayerCleanup=()=>{pause();player.remove();};
+}
 
 function viewExercise(x){
  x=ensureVisualization(x);stopExercisePlayer();selected=x.id;$('studio').classList.add('detail-open');
@@ -64,10 +82,11 @@ function renderPrompts(target,exercise){
   text('p',sequence.fixedVisualContext,'muted'),
   text('p','Κλειδωμένη αναφορά μοντέλου/φόντου: '+sequence.referenceImage+' · SHA-256 '+sequence.referenceSha256,'warning'),
   text('p',sequence.promptTemplate,'muted'),
-  text('p','Δεν εμφανίζονται ή αποθηκεύονται φωτογραφίες εκτέλεσης. Κάθε εργαλείο εικόνας χρησιμοποιεί το γραπτό prompt κάθε καρέ και την εγκεκριμένη φωτογραφία αναφοράς. Το τελευταίο καρέ επαναχρησιμοποιεί την αρχική εικόνα.','muted'));
+  text('p','Δεν εμφανίζονται ή αποθηκεύονται φωτογραφίες εκτέλεσης. Ο player αναπαράγει διαδοχικά τις αναλυτικές περιγραφές· για οπτική αναπαραγωγή χρειάζονται εικόνες καρέ. Κάθε εργαλείο εικόνας χρησιμοποιεί το εγκεκριμένο μοντέλο και φόντο. Το τελευταίο καρέ επαναχρησιμοποιεί την αρχική εικόνα.','muted'));
+ createExercisePlayer(section,sequence);
  for(const frame of sequence.frames){
   const details=document.createElement('details'),summary=text('summary','Frame '+frame.frame+' — '+frame.label);
-  details.append(summary,text('p','Στάση σώματος: '+frame.poseDescription),text('p','Μετάβαση: '+frame.transitionDescription));
+  details.append(summary,text('p','Στάση σώματος: '+frame.poseDescription),text('p','Αλλαγή από το προηγούμενο καρέ: '+(frame.changeFromPrevious||frame.transitionDescription)));
   if(frame.sameImageAs)details.append(text('p','Δεν παράγεται νέα εικόνα. Χρησιμοποιείται αυτούσια η εικόνα του Frame '+frame.sameImageAs+'.','warning'));
   const promptDetails=document.createElement('details');promptDetails.append(text('summary','Πλήρες prompt για το AI'),text('p',frame.prompt));details.append(promptDetails);section.append(details);
  }
