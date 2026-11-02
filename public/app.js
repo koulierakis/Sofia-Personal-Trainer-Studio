@@ -35,13 +35,14 @@ function renderCards(){const arr=filtered(),target=$('cards');target.replaceChil
 
 
 let exercisePlayerCleanup=()=>{};
+let preferredPlayerDelay=1500;
 function stopExercisePlayer(){exercisePlayerCleanup();exercisePlayerCleanup=()=>{};}
 function createExercisePlayer(target,sequence){
- let index=0,timer=null,delay=1500;
+ let index=0,timer=null,delay=preferredPlayerDelay;
  const player=text('section','','frame-player'),heading=text('h4','Αναπαραγωγή περιγραφών καρέ'),counter=text('p','','frame-player-counter'),pose=text('p','','frame-player-pose'),change=text('p','','frame-player-change');
  const controls=text('div','','frame-player-controls'),play=button('▶ Αναπαραγωγή',toggle),previous=button('← Προηγούμενο',()=>step(-1)),next=button('Επόμενο →',()=>step(1));
- const speedLabel=text('label','Διάρκεια καρέ'),speed=document.createElement('select');
- for(const [label,value] of [['0,8 δευτ.','800'],['1,5 δευτ.','1500'],['2,5 δευτ.','2500'],['4 δευτ.','4000']])speed.add(new Option(label,value));
+ const speedLabel=text('label','Ταχύτητα αναπαραγωγής'),speed=document.createElement('select');
+ for(const [label,value] of [['0,5× · πιο αργά','3000'],['0,75× · αργά','2000'],['1× · κανονικά','1500'],['1,5× · γρήγορα','1000'],['2× · πιο γρήγορα','750'],['3× · πολύ γρήγορα','500']])speed.add(new Option(label,value));
  speed.value=String(delay);speedLabel.append(speed);controls.append(previous,play,next,speedLabel);
  const progress=document.createElement('progress');progress.max=sequence.frames.length;progress.value=1;progress.setAttribute('aria-label','Πρόοδος αναπαραγωγής καρέ');
  player.append(heading,counter,progress,pose,change,controls);target.append(player);
@@ -50,7 +51,7 @@ function createExercisePlayer(target,sequence){
  function step(direction){index=Math.max(0,Math.min(sequence.frames.length-1,index+direction));paint();if(index===sequence.frames.length-1)pause();}
  function advance(){if(index>=sequence.frames.length-1){pause();return;}index++;paint();if(index===sequence.frames.length-1)pause();}
  function toggle(){if(timer!==null){pause();return;}if(index>=sequence.frames.length-1){index=0;paint();}timer=window.setInterval(advance,delay);play.textContent='Ⅱ Παύση';}
- speed.addEventListener('change',()=>{delay=Number(speed.value);if(timer!==null){pause();toggle();}});
+ speed.addEventListener('change',()=>{delay=Number(speed.value);preferredPlayerDelay=delay;if(timer!==null){pause();toggle();}});
  paint();exercisePlayerCleanup=()=>{pause();player.remove();};
 }
 
