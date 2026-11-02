@@ -974,8 +974,11 @@ export const App: React.FC = () => {
                       Δεν εμφανίζονται ή αποθηκεύονται φωτογραφίες εκτέλεσης. Ο player αναπαράγει διαδοχικά τις αναλυτικές περιγραφές· για οπτική αναπαραγωγή χρειάζονται εικόνες καρέ. Κάθε εργαλείο εικόνας χρησιμοποιεί το εγκεκριμένο μοντέλο και φόντο. Το τελευταίο καρέ επαναχρησιμοποιεί την αρχική εικόνα.
                     </p>
 
-                    {/* Interactive Frame Player */}
-                    <FramePlayer sequence={currentSelectedExercise.visualization} />
+                    {/* Interactive Frame Player with Visual Image Support */}
+                    <FramePlayer
+                      sequence={currentSelectedExercise.visualization}
+                      exerciseId={currentSelectedExercise.id}
+                    />
 
                     {/* Collapsible details for each frame */}
                     <div className="space-y-2 my-6">
