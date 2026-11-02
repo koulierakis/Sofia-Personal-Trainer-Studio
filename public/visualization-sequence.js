@@ -75,7 +75,7 @@ export function buildVisualization(exercise={},sourceFrames=null){
  return {version:1,referenceProfile:profile,referenceImage:reference.url,referenceSha256:reference.sha256,
    promptTemplate:'MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo '+reference.url+' (SHA-256 '+reference.sha256+'). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.',
    fixedVisualContext:'Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.',
-   frameCount:frames.length,closingFrameReuses:1,coachReviewRequired:Boolean(exercise.requiresCoachReview||exercise.newConcept||exercise.id?.startsWith('hybrid-')),
+   frameCount:frames.length,closingFrameReuses:1,coachReviewRequired:Boolean(exercise.requiresCoachReview||exercise.newConcept||exercise.custom),
    frames};
 }
 

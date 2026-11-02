@@ -3,7 +3,7 @@
     "id": "hybrid-zev",
     "code": "ZEV",
     "name": "Zevara",
-    "greekName": "Υβριδική ακολουθία ZEV",
+    "greekName": "Custom sequence ZEV",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -27,43 +27,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "πίσω προβολή με λυγισμένα γόνατα",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "ισορροπία στο ένα πόδι με αντίθετο γόνατο ψηλά",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "άνοδος με μεταφορά του πίσω γονάτου εμπρός",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "πίσω προβολή με λυγισμένα γόνατα",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος με πέλματα στο άνοιγμα των ισχίων",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -137,7 +130,7 @@
     "id": "hybrid-vyx",
     "code": "VYX",
     "name": "Vyxora",
-    "greekName": "Υβριδική ακολουθία VYX",
+    "greekName": "Custom sequence VYX",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -161,43 +154,36 @@
       {
         "label": "Αρχή",
         "cue": "ψηλή σανίδα",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "πλήρης έκταση του ποδιού σε kickthrough",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "πέρασμα του αντίθετου ποδιού κάτω από τον κορμό",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "ψηλή σανίδα",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -271,7 +257,7 @@
     "id": "hybrid-qor",
     "code": "QOR",
     "name": "Qorix",
-    "greekName": "Υβριδική ακολουθία QOR",
+    "greekName": "Custom sequence QOR",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -295,43 +281,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος κρατώντας δύο αλτήρες",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "ελεγχόμενο βαθύ κάθισμα",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "επιστροφή όρθιος με αλτήρες στους ώμους",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "κατακόρυφη πίεση των αλτήρων πάνω από το κεφάλι",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "επιστροφή όρθιος με αλτήρες στους ώμους",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "ελεγχόμενο βαθύ κάθισμα",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος κρατώντας δύο αλτήρες",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -405,7 +384,7 @@
     "id": "hybrid-nex",
     "code": "NEX",
     "name": "Nexari",
-    "greekName": "Υβριδική ακολουθία NEX",
+    "greekName": "Custom sequence NEX",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -430,43 +409,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος με αλτήρες μπροστά στους μηρούς",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "κλίση από τα ισχία με ουδέτερη πλάτη",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "κωπηλατική με αγκώνες πίσω",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "άνοιγμα χεριών σε σχήμα Τ με ελαφρύ φορτίο",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "κωπηλατική με αγκώνες πίσω",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "κλίση από τα ισχία με ουδέτερη πλάτη",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος με αλτήρες μπροστά στους μηρούς",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -540,7 +512,7 @@
     "id": "hybrid-azy",
     "code": "AZY",
     "name": "Azyra",
-    "greekName": "Υβριδική ακολουθία AZY",
+    "greekName": "Custom sequence AZY",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -564,43 +536,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος πάνω από kettlebell στο πάτωμα",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "κλίση από τα ισχία και ασφαλής λαβή",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "έκταση ισχίων και kettlebell στο στήθος",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "κάθισμα goblet με kettlebell στο στήθος",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "έκταση ισχίων και kettlebell στο στήθος",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "κλίση από τα ισχία και ασφαλής λαβή",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος πάνω από kettlebell στο πάτωμα",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -674,7 +639,7 @@
     "id": "hybrid-xul",
     "code": "XUL",
     "name": "Xulene",
-    "greekName": "Υβριδική ακολουθία XUL",
+    "greekName": "Custom sequence XUL",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -698,43 +663,36 @@
       {
         "label": "Αρχή",
         "cue": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "έκταση αντίθετου χεριού και ποδιού",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "επιστροφή άκρων στο κέντρο",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "έκταση άλλου αντίθετου χεριού και ποδιού",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "επιστροφή άκρων στο κέντρο",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "έκταση αντίθετου χεριού και ποδιού",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "ανάσκελα με γόνατα και ισχία 90 μοιρών",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -808,7 +766,7 @@
     "id": "hybrid-jax",
     "code": "JAX",
     "name": "Jaxori",
-    "greekName": "Υβριδική ακολουθία JAX",
+    "greekName": "Custom sequence JAX",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -830,43 +788,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος με λάστιχο μπροστά στο στήθος",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "σταθερή τελική θέση έξω στροφής ώμων",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "αγκώνες δίπλα στα πλευρά και περιστροφή πήχεων έξω",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "οριζόντιο άνοιγμα χεριών με ελεγχόμενη τάση",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος με λάστιχο μπροστά στο στήθος",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -940,7 +891,7 @@
     "id": "hybrid-ruv",
     "code": "RUV",
     "name": "Ruvexa",
-    "greekName": "Υβριδική ακολουθία RUV",
+    "greekName": "Custom sequence RUV",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -964,43 +915,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος κρατώντας τους ιμάντες TRX",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "πλάγια προβολή αριστερά",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "επιστροφή στο κέντρο",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "πλάγια προβολή δεξιά",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "επιστροφή στο κέντρο",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "πλάγια προβολή αριστερά",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος κρατώντας τους ιμάντες TRX",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -1074,7 +1018,7 @@
     "id": "hybrid-tyk",
     "code": "TYK",
     "name": "Tykora",
-    "greekName": "Υβριδική ακολουθία TYK",
+    "greekName": "Custom sequence TYK",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -1098,43 +1042,36 @@
       {
         "label": "Αρχή",
         "cue": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "μεταφορά βάρους και στροφή λεκάνης",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "πέρασμα ποδιού κάτω από το σώμα",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "ανάστροφη στήριξη με ψηλά ισχία και ελεύθερο χέρι πάνω",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "πέρασμα ποδιού κάτω από το σώμα",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "μεταφορά βάρους και στροφή λεκάνης",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "θέση beast με γόνατα λίγο πάνω από το πάτωμα",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -1208,7 +1145,7 @@
     "id": "hybrid-bex",
     "code": "BEX",
     "name": "Bexali",
-    "greekName": "Υβριδική ακολουθία BEX",
+    "greekName": "Custom sequence BEX",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -1231,43 +1168,36 @@
       {
         "label": "Αρχή",
         "cue": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "ώθηση πίσω σε τεντωμένα χέρια",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "επαφή παλάμης στον αντίθετο ώμο χωρίς στροφή λεκάνης",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "ώθηση πίσω σε τεντωμένα χέρια",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "κάμψη αγκώνων και κάθοδος θώρακα προς πάγκο",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "επικλινής σανίδα με παλάμες σε σταθερό πάγκο",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -1341,7 +1271,7 @@
     "id": "hybrid-dax",
     "code": "DAX",
     "name": "Daxune",
-    "greekName": "Υβριδική ακολουθία DAX",
+    "greekName": "Custom sequence DAX",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -1364,43 +1294,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "έλξη προς πλευρά με αγκώνες πίσω",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "ελεγχόμενη επιστροφή χεριών εμπρός",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "δεύτερη έλξη με μικρή παύση στις ωμοπλάτες",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "ελεγχόμενη επιστροφή χεριών εμπρός",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "έλξη προς πλευρά με αγκώνες πίσω",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος με λάστιχο ασφαλώς αγκυρωμένο μπροστά",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
@@ -1474,7 +1397,7 @@
     "id": "hybrid-uza",
     "code": "UZA",
     "name": "Uzaro",
-    "greekName": "Υβριδική ακολουθία UZA",
+    "greekName": "Custom sequence UZA",
     "discipline": "functional",
     "level": "Advanced",
     "category": "Full Body",
@@ -1497,43 +1420,36 @@
       {
         "label": "Αρχή",
         "cue": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
-        "image": "",
         "sequenceIndex": 1
       },
       {
         "label": "Κίνηση 1",
         "cue": "αργή κάθοδος σε split squat",
-        "image": "",
         "sequenceIndex": 2
       },
       {
         "label": "Κίνηση 2",
         "cue": "άνοδος πιέζοντας το μπροστινό πέλμα",
-        "image": "",
         "sequenceIndex": 3
       },
       {
         "label": "Κορύφωση",
         "cue": "σταθερή ψηλή θέση split squat",
-        "image": "",
         "sequenceIndex": 4
       },
       {
         "label": "Επιστροφή 1",
         "cue": "άνοδος πιέζοντας το μπροστινό πέλμα",
-        "image": "",
         "sequenceIndex": 5
       },
       {
         "label": "Επιστροφή 2",
         "cue": "αργή κάθοδος σε split squat",
-        "image": "",
         "sequenceIndex": 6
       },
       {
         "label": "Τέλος / Αρχική",
         "cue": "όρθιος σε split stance κάτω από ασφαλισμένη μπάρα Smith",
-        "image": "",
         "sequenceIndex": 7
       }
     ],
