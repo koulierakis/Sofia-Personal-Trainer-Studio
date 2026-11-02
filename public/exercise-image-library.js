@@ -1,6 +1,5 @@
-// Static repository imagery manifest. Only list files actually committed under public/images/exercises/.
-// Format: {"functional-001":{"status":"pending_visual_review","phases":["/images/exercises/functional-001/01.webp",...]}}.
-// A phase is never mapped by order in the overall library: use the exact exercise ID and phase index.
+// Repository exercise-photo manifest. It is intentionally empty: exercise records contain written prompts only.
+// The two approved athlete/studio references are kept separately for future prompt-guided image generation.
 export async function loadImageLibrary(){
  try{
   const response=await fetch('/data/exercise-images.json',{cache:'no-cache'});
@@ -41,3 +40,4 @@ export function setImageReview(id,index,url,status,storage=globalThis.localStora
  if(!['approved','rejected','pending_visual_review'].includes(status))throw Error('Invalid image review');
  const reviews=readImageReviews(storage);reviews[imageReviewKey(id,index,url)]=status;storage.setItem(REVIEW_KEY,JSON.stringify(reviews));
 }
+

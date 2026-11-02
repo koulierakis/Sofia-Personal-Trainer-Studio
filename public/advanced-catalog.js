@@ -1,3 +1,4 @@
+import {buildVisualization} from './visualization-sequence.js';
 // Αυτοτελής γεννήτρια πρωτότυπων συνδυασμών. Οι εγγραφές είναι προτάσεις υπό αξιολόγηση,
 // ΟΧΙ πιστοποιημένες ασκήσεις ή τεχνικά επαληθευμένες επιδείξεις.
 const STANDING=[
@@ -48,6 +49,50 @@ const FINISH=[
  ['Contralateral Lift','αντίθετη άρση άκρου σε μικρό ασφαλές εύρος'],
  ['Controlled Reach Reset','έκταση χεριού και ελεγχόμενη επαναφορά']
 ];
+const MUSCLES_BY_PATTERN={
+ 'Reverse Lunge to Knee Drive':['Τετρακέφαλοι','Γλουτιαίοι','Οπίσθιοι μηριαίοι','Γαστροκνήμιοι','Κορμός'],
+ 'Lateral Lunge to Balance':['Τετρακέφαλοι','Γλουτιαίοι','Προσαγωγοί','Μέσος γλουτιαίος','Κορμός'],
+ 'Split Squat to Controlled March':['Τετρακέφαλοι','Γλουτιαίοι','Οπίσθιοι μηριαίοι','Γαστροκνήμιοι','Κορμός'],
+ 'Cossack Squat to Rise':['Προσαγωγοί','Γλουτιαίοι','Τετρακέφαλοι','Οπίσθιοι μηριαίοι','Κορμός'],
+ 'Hip Hinge to Single-Leg Balance':['Γλουτιαίοι','Οπίσθιοι μηριαίοι','Ραχιαίοι','Κορμός'],
+ 'Diagonal Step-Back to Stand':['Γλουτιαίοι','Τετρακέφαλοι','Προσαγωγοί','Κορμός'],
+ 'Side Step to Squat Rise':['Γλουτιαίοι','Τετρακέφαλοι','Μέσος γλουτιαίος','Προσαγωγοί','Κορμός'],
+ 'Step-Up to Balance Hold':['Τετρακέφαλοι','Γλουτιαίοι','Οπίσθιοι μηριαίοι','Γαστροκνήμιοι','Κορμός'],
+ 'Single-Leg Hinge to Reverse Step':['Γλουτιαίοι','Οπίσθιοι μηριαίοι','Ραχιαίοι','Κορμός'],
+ 'Sled March to Reset':['Τετρακέφαλοι','Γλουτιαίοι','Γαστροκνήμιοι','Κορμός'],
+ 'Low Lunge to Standing Rotation':['Τετρακέφαλοι','Γλουτιαίοι','Προσαγωγοί','Λοξοί κοιλιακοί','Κορμός'],
+ 'Squat to Lateral Step Hold':['Τετρακέφαλοι','Γλουτιαίοι','Μέσος γλουτιαίος','Προσαγωγοί','Κορμός'],
+ 'Band Anti-Rotation Reach':['Λοξοί κοιλιακοί','Εγκάρσιος κοιλιακός','Σταθεροποιητές ώμου'],
+ 'Band Diagonal Press':['Δελτοειδείς','Τρικέφαλοι','Θωρακικοί','Κορμός'],
+ 'Band High-to-Low Pull':['Πλατύς ραχιαίος','Ρομβοειδείς','Δικέφαλοι','Κορμός'],
+ 'Dumbbell Neutral-Grip Press':['Δελτοειδείς','Τρικέφαλοι','Θωρακικοί','Κορμός'],
+ 'Dumbbell Suitcase Carry Hold':['Λοξοί κοιλιακοί','Πήχεις','Κορμός'],
+ 'Dumbbell Front Rack Hold':['Δελτοειδείς','Ρομβοειδείς','Πήχεις','Κορμός'],
+ 'Kettlebell Goblet Hold':['Δελτοειδείς','Πήχεις','Κορμός'],
+ 'Kettlebell Suitcase Hold':['Λοξοί κοιλιακοί','Πήχεις','Κορμός'],
+ 'Medicine Ball Forward Reach':['Πρόσθιοι δελτοειδείς','Θωρακικοί','Κορμός'],
+ 'Medicine Ball Diagonal Reach':['Δελτοειδείς','Λοξοί κοιλιακοί','Κορμός'],
+ 'Cable Anti-Rotation Press':['Λοξοί κοιλιακοί','Θωρακικοί','Δελτοειδείς','Κορμός'],
+ 'Bodyweight Cross-Body Reach':['Λοξοί κοιλιακοί','Δελτοειδείς','Κορμός'],
+ 'Bear Crawl to Kneeling Reach':['Δελτοειδείς','Τρικέφαλοι','Γλουτιαίοι','Τετρακέφαλοι','Κορμός'],
+ 'Plank Walkout to Shoulder Tap':['Θωρακικοί','Τρικέφαλοι','Δελτοειδείς','Λοξοί κοιλιακοί','Κορμός'],
+ 'Crab Walk to Hip Bridge':['Τρικέφαλοι','Οπίσθιοι δελτοειδείς','Γλουτιαίοι','Οπίσθιοι μηριαίοι','Κορμός'],
+ 'Half-Kneeling Rotation to Stand':['Γλουτιαίοι','Τετρακέφαλοι','Λοξοί κοιλιακοί','Κορμός'],
+ 'Quadruped Reach to Beast Hold':['Δελτοειδείς','Γλουτιαίοι','Τετρακέφαλοι','Κορμός'],
+ 'Side Plank to Bear Reset':['Λοξοί κοιλιακοί','Δελτοειδείς','Γλουτιαίοι','Κορμός'],
+ 'Low Squat to Walkout':['Τετρακέφαλοι','Γλουτιαίοι','Θωρακικοί','Τρικέφαλοι','Δελτοειδείς','Κορμός'],
+ 'Kneeling Get-Up to Lateral Step':['Τετρακέφαλοι','Γλουτιαίοι','Δελτοειδείς','Κορμός'],
+ 'Opposite Reach':['Δελτοειδείς','Κορμός'],
+ 'Shoulder Tap':['Δελτοειδείς','Τρικέφαλοι','Κορμός'],
+ 'Thoracic Open':['Ρομβοειδείς','Οπίσθιοι δελτοειδείς','Λοξοί κοιλιακοί'],
+ 'Balance Pause':['Γλουτιαίοι','Σταθεροποιητές ισχίου','Κορμός'],
+ 'Diagonal Arm Sweep':['Δελτοειδείς','Λοξοί κοιλιακοί','Κορμός'],
+ 'Slow Reverse Transition':['Δελτοειδείς','Γλουτιαίοι','Κορμός'],
+ 'Contralateral Lift':['Ραχιαίοι','Γλουτιαίοι','Κορμός'],
+ 'Controlled Reach Reset':['Δελτοειδείς','Κορμός']
+};
+const musclesFor=(baseName,actionName)=>[...new Set([...(MUSCLES_BY_PATTERN[baseName]||[]),...(MUSCLES_BY_PATTERN[actionName]||[])])];
+
 const fmt=(id,base,action,equip,ground=false)=>{
  const [baseName,baseText]=base,[actionName,actionText]=action;
  const title=baseName+' + '+actionName;
@@ -56,7 +101,19 @@ const fmt=(id,base,action,equip,ground=false)=>{
  const p2='Μετάβαση: '+baseText+'. Εκτέλεσε την κίνηση αργά χωρίς να ξεπερνάς το προσωπικό ελεγχόμενο εύρος.';
  const p3='Συνδυασμός: '+actionText+'. Σταμάτησε στιγμιαία, βεβαιώσου ότι μπορείς να σταθεροποιήσεις λεκάνη και ώμους και συνέχισε μόνο αν διατηρείται ο έλεγχος.';
  const p4='Επαναφορά: Επίστρεψε από την ίδια ασφαλή τροχιά στην αρχική θέση, χωρίς απότομη αλλαγή φοράς. Επανάλαβε και στις δύο πλευρές όταν η ακολουθία είναι μονόπλευρη.';
- return {id:'sofia-original-'+String(id).padStart(3,'0'),name:title,discipline:'functional',level:'Advanced',category:'Full Body',muscles:['Κορμός','Γλουτιαίοι','Τετρακέφαλοι','Σταθεροποιητές ώμων'],equipment:[equip],instructions:[p1,p2,p3,p4].join('\n'),breathing:'Εισπνοή στην προετοιμασία και στην ελεγχόμενη κάθοδο, εκπνοή κατά τη μετάβαση ή την ώθηση. Απόφυγε παρατεταμένη άπνοια.',safety:'Απαιτεί τεχνική κατάρτιση και έλεγχο από τη Sofia πριν δοθεί σε αθλούμενο. Απόφυγε αστάθεια, πόνο, κόπωση που αλλοιώνει την κίνηση και υπερβολικά φορτία. Προσάρμοσε ή αφαίρεσε τις μεταβάσεις όπου δεν υπάρχει επαρκής κινητικότητα.',phases:[p1,p2,p3,p4].map((cue,i)=>({label:['Αρχική','Μεσαία','Επόμενη','Επιστροφή'][i],cue,image:''})),source:'sofia-original-concept',verified:false,requiresCoachReview:true,reviewStatus:'pending',patterns:[baseName,actionName,'Controlled return'],newConcept:true};
+ const exercise={id:'sofia-original-'+String(id).padStart(3,'0'),name:title,discipline:'functional',level:'Advanced',category:'Full Body',muscles:musclesFor(baseName,actionName),custom:true,classification:'Custom',equipment:[equip],instructions:[p1,p2,p3,p4].join('\n'),breathing:'Εισπνοή στην προετοιμασία και στην ελεγχόμενη κάθοδο, εκπνοή κατά τη μετάβαση ή την ώθηση. Απόφυγε παρατεταμένη άπνοια.',safety:'Απαιτεί τεχνική κατάρτιση και έλεγχο από τη Sofia πριν δοθεί σε αθλούμενο. Απόφυγε αστάθεια, πόνο, κόπωση που αλλοιώνει την κίνηση και υπερβολικά φορτία. Προσάρμοσε ή αφαίρεσε τις μεταβάσεις όπου δεν υπάρχει επαρκής κινητικότητα.',phases:[p1,p2,p3,p4].map((cue,i)=>({label:['Αρχική','Μεσαία','Επόμενη','Επιστροφή'][i],cue})),source:'sofia-original-concept',verified:false,requiresCoachReview:true,reviewStatus:'pending',patterns:[baseName,actionName,'Controlled return'],newConcept:true};
+ const start=ground?'Αρχική βάση στο έδαφος ή στο στρώμα, με σημεία στήριξης και αρθρώσεις τοποθετημένα για το πρώτο μοτίβο '+baseName+'.':'Όρθια αρχική θέση με πέλματα σταθερά, κορμό ουδέτερο και τον εξοπλισμό στη θέση που απαιτεί το '+baseName+'.';
+ const sequence=[
+  {label:'Αρχική θέση',sourceCue:start},
+  {label:'Έναρξη πρώτου κινητικού μοτίβου',sourceCue:baseText+'. Ξεκίνησε την κίνηση από τα ισχία ή τα σημεία στήριξης που απαιτεί το μοτίβο, χωρίς να αλλάξεις τη θέση του εξοπλισμού.'},
+  {label:'Ολοκλήρωση πρώτου μοτίβου',sourceCue:'Ολοκλήρωσε με ελεγχόμενο εύρος το '+baseName+' και σταθεροποίησε πέλματα, λεκάνη και κορμό πριν από την επόμενη κίνηση.'},
+  {label:'Μετάβαση στο δεύτερο μοτίβο',sourceCue:'Χωρίς απότομη αλλαγή στήριξης, ξεκίνησε το '+actionName+': '+actionText+'.'},
+  {label:'Κορυφαία θέση σύνθετης κίνησης',sourceCue:'Ολοκλήρωσε το '+actionName+' στο σταθερό, ελεγχόμενο τελικό σημείο: '+actionText+'.'},
+  {label:'Ελεγχόμενη επαναφορά',sourceCue:p4}
+ ];
+ exercise.visualization=buildVisualization(exercise,sequence);
+ exercise.modelProfile=exercise.visualization.referenceProfile;
+ return exercise;
 };
 export function buildOriginalConcepts(){
  const items=[];let id=1;
