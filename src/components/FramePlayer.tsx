@@ -12,7 +12,6 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLooping, setIsLooping] = useState(true);
   const [delay, setDelay] = useState(1500);
-  const isSafeguardVerified = false; // No verified generator reference attachment or identity evidence is available.
   const timerRef = useRef<number | null>(null);
 
   const frames = sequence.frames || [];
@@ -138,18 +137,6 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
       </div>
 
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
-      {false && (
-        <div className="my-4 p-5 rounded-2xl bg-rose-950/90 border-2 border-rose-500 text-rose-100 shadow-2xl text-center space-y-2 animate-pulse">
-          <div className="text-3xl">⛔</div>
-          <h4 className="text-base font-black text-rose-200 uppercase tracking-wide">
-            ΜΠΛΟΚΑΡΙΣΜΑ ΟΠΤΙΚΟΠΟΙΗΣΗΣ — ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ SOFIA STUDIO
-          </h4>
-          <p className="text-xs text-rose-100 max-w-xl mx-auto leading-relaxed">
-            Η οπτικοποίηση έχει μπλοκαριστεί υποχρεωτικά. Κανένας χειριστής δεν επιτρέπεται να αλλάξει το μοντέλο αναφοράς, τα ρούχα, το φωτισμό ή τη γωνία λήψης 45°. Επιβεβαιώστε την τήρηση του κλειδωμένου μοντέλου για να συνεχίσετε.
-          </p>
-        </div>
-      )}
-
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
         <>
