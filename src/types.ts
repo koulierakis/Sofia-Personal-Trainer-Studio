@@ -15,6 +15,7 @@ export interface FrameItem {
   referenceSha256: string;
   sameImageAs: number | null;
   prompt: string;
+  imageUrl?: string;
 }
 
 export interface VisualizationSequence {

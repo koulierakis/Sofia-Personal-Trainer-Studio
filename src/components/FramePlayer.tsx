@@ -233,14 +233,130 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             )}
           </div>
 
-          <div className="frame-player-pose">
-            <span className="font-semibold text-sky-300 block mb-1">Στάση σώματος:</span>
-            {currentFrame.poseDescription}
-          </div>
+          {/* ΟΠΤΙΚΟΠΟΙΗΣΗ ΚΑΡΕ ΜΕ ΤΟ ΕΓΚΕΚΡΙΜΕΝΟ ΜΟΝΤΕΛΟ */}
+          <div className="my-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+            {/* ΚΥΡΙΑ ΕΙΚΟΝΑ ΚΑΡΕ */}
+            <div className="md:col-span-5 flex flex-col items-center">
+              <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
+                {/* Κλειδωμένη φωτογραφία μοντέλου αναφοράς ενσωματωμένη στην άσκηση */}
+                <img
+                  src={currentFrame.imageUrl || referenceData.url}
+                  alt={`${currentFrame.label} - Καρέ ${index + 1}`}
+                  className="w-full h-full object-cover object-top transition-all duration-300"
+                />
 
-          <div className="frame-player-change text-slate-300 text-sm mt-2">
-            <span className="font-medium text-slate-400">Αλλαγή από το προηγούμενο καρέ: </span>
-            {currentFrame.changeFromPrevious || currentFrame.transitionDescription || 'Αρχική τοποθέτηση'}
+                {/* Overlays */}
+                <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
+                  <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-sky-600/90 text-white backdrop-blur-md shadow-md border border-sky-400/50">
+                    Καρέ {index + 1} / {frames.length}
+                  </span>
+                  {currentFrame.sameImageAs && (
+                    <span className="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-emerald-600/90 text-white backdrop-blur-md uppercase">
+                      Επαναχρηση Καρέ 1
+                    </span>
+                  )}
+                </div>
+
+                <div className="absolute top-2 right-2 z-10">
+                  <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-black/80 text-amber-300 border border-amber-500/60 shadow">
+                    📐 45° λοξά 3/4
+                  </span>
+                </div>
+
+                <div className="absolute bottom-0 inset-x-0 p-3 bg-gradient-to-t from-black via-black/85 to-transparent z-10">
+                  <p className="text-xs font-bold text-white truncate drop-shadow">
+                    {currentFrame.label}
+                  </p>
+                  <p className="text-[10px] text-amber-300 font-medium truncate">
+                    👤 Μοντέλο: {referenceData.athleteTitleGreek}
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-[11px] text-slate-300 text-center mt-2 flex flex-wrap items-center justify-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-300 font-semibold">
+                  👤 Ενσωματωμένο Μοντέλο Άσκησης
+                </span>
+                <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-sky-300 font-semibold">
+                  📐 Σταθερή Λήψη 45°
+                </span>
+              </div>
+            </div>
+
+            {/* ΠΕΡΙΓΡΑΦΗ & ΚΙΝΗΣΙΟΛΟΓΙΚΕΣ ΛΕΠΤΟΜΕΡΕΙΕΣ */}
+            <div className="md:col-span-7 flex flex-col justify-between space-y-3">
+              {/* ΕΠΙΒΕΒΑΙΩΣΗ ΚΙΝΗΣΙΟΛΟΓΙΑΣ ΖΕΒΑΡΑ / ΜΟΝΟΠΟΔΙΚΗΣ ΣΤΗΡΙΞΗΣ */}
+              {(exerciseId === 'hybrid-zev' || sequence.frames?.length === 7) && (
+                <div className="p-3 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border border-sky-500/60 text-xs shadow-md">
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <span className="text-base">🎯</span>
+                    <strong className="text-sky-300 font-bold uppercase tracking-wide">
+                      Επαληθευμένη Κινησιολογία Ποδιών &amp; Στήριξης
+                    </strong>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-200">
+                    <div className="bg-black/30 p-2 rounded-lg border border-sky-800/40">
+                      <span className="text-amber-300 font-bold block mb-0.5">🦶 ΜΟΝΙΜΗ ΣΤΗΡΙΞΗ:</span>
+                      <span><strong>Αριστερό πόδι</strong> — πατάει ακλόνητο και σταθερό με ολόκληρο το πέλμα στο δάπεδο.</span>
+                    </div>
+                    <div className="bg-black/30 p-2 rounded-lg border border-sky-800/40">
+                      <span className="text-emerald-300 font-bold block mb-0.5">🦵 ΚΙΝΟΥΜΕΝΟ ΠΟΔΙ:</span>
+                      <span><strong>Δεξί πόδι</strong> — κάνει το βήμα πίσω, και <strong>ΤΟ ΙΔΙΟ δεξί πόδι</strong> εκτινάσσεται εμπρός και ψηλά στις 90°.</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              <div className="frame-player-pose">
+                <span className="font-semibold text-sky-300 block mb-1">
+                  📍 Αναλυτική στάση σώματος καρέ {index + 1}:
+                </span>
+                <p className="leading-relaxed text-slate-100 text-sm">
+                  {currentFrame.poseDescription}
+                </p>
+              </div>
+
+              <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-700/70 text-slate-300 text-xs">
+                <span className="font-semibold text-amber-300 block mb-1">
+                  🔄 Μετατόπιση μελών σώματος:
+                </span>
+                <p className="leading-relaxed text-slate-200">
+                  {currentFrame.changeFromPrevious || currentFrame.transitionDescription || 'Αρχική σταθερή τοποθέτηση.'}
+                </p>
+              </div>
+
+              {/* THUMBNAIL STRIP ΓΙΑ ΟΛΑ ΤΑ ΚΑΡΕ ΜΕ ΤΟ ΕΓΚΕΚΡΙΜΕΝΟ ΜΟΝΤΕΛΟ */}
+              <div className="pt-2">
+                <div className="text-[11px] font-bold text-slate-400 mb-1.5 flex items-center justify-between">
+                  <span>Αλληλουχία κίνησης ({frames.length} καρέ):</span>
+                  <span className="text-sky-300">Κλικ σε καρέ για άμεση μετάβαση</span>
+                </div>
+                <div className="grid grid-cols-7 gap-1.5">
+                  {frames.map((f, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => handleSelectFrame(i)}
+                      className={`relative aspect-[3/4] rounded-lg overflow-hidden border p-0 transition-all ${
+                        index === i
+                          ? 'border-sky-400 ring-2 ring-sky-400 scale-105 z-10 shadow-lg'
+                          : 'border-slate-700 opacity-70 hover:opacity-100 hover:border-slate-500'
+                      }`}
+                      title={`Καρέ ${i + 1}: ${f.label}`}
+                    >
+                      <img
+                        src={f.imageUrl || referenceData.url}
+                        alt={`Καρέ ${i + 1}`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute bottom-0 inset-x-0 bg-black/85 text-[9px] font-extrabold text-white text-center py-0.5">
+                        {i + 1}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="frame-player-controls mt-4 flex flex-wrap items-center gap-3">
