@@ -2,7 +2,7 @@ import React,{useState,useRef,useEffect} from 'react';
 // @ts-ignore JS validation module has no TS declarations
 import {evaluate,correctionPrompt} from '../services/motion-validator.mjs';
 declare global {interface Window {Pose?: any}}
-type Frame={frame:number;poseDescription:string;changeFromPrevious?:string;label:string;sameImageAs?:number};
+type Frame={frame:number;poseDescription:string;changeFromPrevious?:string;label:string;sameImageAs?:number|null};
 export const MotionValidation:React.FC<{frames:Frame[];exerciseId:string}>=({frames,exerciseId})=>{
  const [index,setIndex]=useState(0),[image,setImage]=useState(''),[result,setResult]=useState<any>(null),[error,setError]=useState(''),[busy,setBusy]=useState(false),[attempts,setAttempts]=useState(0),[approved,setApproved]=useState(false);
  const canvas=useRef<HTMLCanvasElement>(null),img=useRef<HTMLImageElement>(null),previous=useRef<any>(null),pose=useRef<any>(null);
