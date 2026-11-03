@@ -98,7 +98,7 @@ test('Every exercise (all 320 across catalogs) has descriptions, initial positio
     // 2. Must have visualization sequence
     assert.ok(exercise.visualization, `Exercise ${exercise.id} must have visualization`);
     const frames = exercise.visualization.frames;
-    assert.ok(Array.isArray(frames) && frames.length >= 4, `Exercise ${exercise.id} must have at least 4 frames`);
+    assert.ok(Array.isArray(frames) && frames.length >= 3 && frames.length <= 15, `Exercise ${exercise.id} must have 3 to 15 frames`);
 
     // 3. First frame must be initial position (Αρχική θέση)
     const firstFrame = frames[0];

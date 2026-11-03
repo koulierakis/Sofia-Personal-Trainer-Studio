@@ -4,343 +4,382 @@ import { VISUAL_REFERENCES, modelProfileFor, lockedVisualPrompt } from './visual
 const COMPLETE_BODY =
   'Πλήρες σώμα μέσα στο κάδρο. Δείξε καθαρά πέλματα και σημεία στήριξης, προσανατολισμό των γονάτων, θέση ισχίων και κορμού, αυχένα, ώμους, αγκώνες, καρπούς και λαβή. Δείξε τη διαδρομή και τον προσανατολισμό του εξοπλισμού. Ακολούθησε μόνο τις γωνίες και τις θέσεις που τεκμηριώνει η περιγραφή· μην επινοήσεις αριθμητικές γωνίες ή τεχνική.';
 
-const MANUAL_STARTS: Record<string, string> = {
-  'functional-001': 'Όρθια θέση, πέλματα περίπου στο άνοιγμα των ώμων, ολόκληρα στο έδαφος, κορμός ουδέτερος και χέρια μπροστά για ισορροπία.',
-  'functional-002': 'Όρθια θέση με πέλματα στο άνοιγμα ισχίων, λεκάνη στραμμένη μπροστά και κορμός σταθερός.',
-  'functional-003': 'Όρθια θέση με πέλματα στο άνοιγμα ισχίων, κορμός ενεργός και βλέμμα μπροστά.',
-  'functional-004': 'Κεκλιμένη σανίδα με παλάμες σε σταθερό, μη ολισθηρό πάγκο λίγο πιο ανοιχτά από τους ώμους· πόδια πίσω και σώμα σε ευθεία.',
-  'functional-005': 'Ύπτια θέση, γόνατα λυγισμένα, πέλματα επίπεδα στο έδαφος και χέρια χαλαρά δίπλα στο σώμα.',
-  'functional-006': 'Γονατιστή προετοιμασία στο στρώμα, πήχεις κάτω από τους ώμους, γόνατα στο έδαφος και αυχένας ουδέτερος.',
-  'functional-007': 'Ύπτια θέση, χέρια προς την οροφή και ισχία και γόνατα περίπου στις 90 μοίρες· λεκάνη σταθερή.',
-  'functional-008': 'Τετραποδική θέση, παλάμες κάτω από ώμους, γόνατα κάτω από ισχία, πλάτη ουδέτερη και βλέμμα προς το έδαφος.',
-  'functional-009': 'Όρθια θέση μπροστά από χαμηλό και σταθερό step, πέλματα στο έδαφος και κορμός σταθερός.',
-  'functional-010': 'Όρθια θέση με έναν αλτήρα σε κάθε χέρι, λαβές ουδέτερες, πέλματα σταθερά και ώμοι χαλαροί.',
-};
-
 const clean = (s: any): string => String(s ?? '').replace(/\s+/g, ' ').trim();
 const norm = (s: any): string =>
   clean(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('el-GR');
 const sentences = (s: any): string[] =>
   String(s ?? '').split(/(?<=[.!?])\s+|\n+/).map(clean).filter(Boolean);
 
-function movementCue(frame: any): string {
-  return clean(frame?.sourceCue || frame?.cue || frame?.poseDescription || frame?.label || frame?.description);
+export type MovementComplexity = 'simple' | 'moderate' | 'complex';
+
+/**
+ * Καθορίζει την κινησιολογική πολυπλοκότητα της άσκησης βάσει του μοτίβου κίνησης.
+ * - simple: Μονοδιάστατη / βασική άσκηση (π.χ. Squat, Push-up, Biceps Curl, Plank) -> 3 καρέ.
+ * - moderate: Μονοποδική ή ασύμμετρη κίνηση (π.χ. Lunge, Bird Dog, Step-up, Pallof Press) -> 4-5 καρέ.
+ * - complex: Σύνθετη ροή ή συνδυασμός μοτίβων (π.χ. Zevara, Combo + Reach, Burpee, Walkout) -> 6-8 καρέ (μέγιστο 15).
+ */
+export function classifyExerciseComplexity(exercise: Partial<Exercise>): MovementComplexity {
+  const text = norm([
+    exercise.name,
+    exercise.title,
+    exercise.patterns?.join?.(' '),
+    exercise.instructions,
+    exercise.description,
+  ].filter(Boolean).join(' '));
+
+  // Complex multi-pattern combo markers
+  if (
+    /\b(to|and|\+|walkout|get-up|get up|burpee|man maker|flow|complex|kickthrough|clean|snatch)\b/.test(text) ||
+    /συνδυασμ|ροή|πολυαρθρωτικ|άλμα και|σανίδα σε/i.test(text)
+  ) {
+    return 'complex';
+  }
+
+  // Moderate unilateral, stepped, or asymmetrical movements
+  if (
+    /lunge|split squat|προβολ|step-up|step up|bird dog|dead bug|pallof|cossack|single-leg|μονοποδικ|rotation|twist|περιστροφ|diagonal|reach|tap/.test(text)
+  ) {
+    return 'moderate';
+  }
+
+  // Simple basic movements (Squats, Pushups, Hinges, Rows, Curls, Presses, Bridges, Planks)
+  return 'simple';
 }
 
-function techniqueDetails(exercise: Partial<Exercise>, cue: string, label: string = ''): string {
-  const legacy = String(exercise.id || '').startsWith('hybrid-') ? exercise.instructions : '';
-  const name = norm([exercise.name, exercise.title, exercise.patterns?.join?.(' '), cue, legacy].filter(Boolean).join(' '));
-  const phase = norm(label + ' ' + cue);
-  const notes: string[] = [];
+/**
+ * Αναλυτικές προπονητικές οδηγίες για αρχάριους ανά φάση της κίνησης με υψηλή κινησιολογική ακρίβεια.
+ */
+function getPhaseSpecificCoaching(
+  exercise: Partial<Exercise>,
+  phaseType: 'initial' | 'descent' | 'apex' | 'ascent' | 'final',
+  rawCue: string = ''
+): { pose: string; change: string } {
+  const name = norm([exercise.name, exercise.title, exercise.patterns?.join?.(' ')].filter(Boolean).join(' '));
+  const isSquat = /squat|καθισ|goblet|thrust/.test(name);
+  const isLunge = /lunge|split|προβολ/.test(name);
+  const isHinge = /hinge|deadlift|rdl|άρση/.test(name);
+  const isPush = /push|press|πίεσ|κάμψ/.test(name);
+  const isPull = /pull|row|έλξ|κωπηλα/.test(name);
+  const isPlank = /plank|σανίδ|bear|beast|quadruped/.test(name);
 
-  if (/squat|thruster|καθισ|goblet/.test(name)) {
-    notes.push('Πέλματα ολόκληρα στο δάπεδο με πίεση σε φτέρνα, βάση μεγάλου δακτύλου και βάση μικρού δακτύλου· γόνατα ακολουθούν την κατεύθυνση των δακτύλων. Κάμψη ισχίων και γονάτων μαζί, λεκάνη ελεγχόμενη και θώρακας στοιβαγμένος πάνω από τη λεκάνη.');
+  if (phaseType === 'initial') {
+    let specific = 'Όρθια στάση με πέλματα παράλληλα στο άνοιγμα των ισχίων ή των ώμων. Το βάρος μοιράζεται ισόποσα στο τρίγωνο κάθε πέλματος (φτέρνα, βάση μεγάλου δακτύλου, βάση μικρού δακτύλου).';
+    if (isSquat) {
+      specific = 'Όρθια στάση, πέλματα στο άνοιγμα των ώμων με ελαφριά εξωτερική στροφή 10-15 μοιρών. Πέλματα ολόκληρα σε επαφή με το δάπεδο, γόνατα μαλακά, λεκάνη ουδέτερη και θώρακας περήφανος πάνω από τη λεκάνη. Χέρια μπροστά στο στήθος για αντίβαρο και ισορροπία.';
+    } else if (isLunge) {
+      specific = 'Όρθια σταθερή στάση, πέλματα στο άνοιγμα των ισχίων σαν σε δύο παράλληλες ράγες. Λεκάνη οριζόντια και στραμμένη ευθεία μπροστά, κορμός μακρύς και χέρια στη μέση ή μπροστά.';
+    } else if (isHinge) {
+      specific = 'Όρθια θέση, πέλματα στο άνοιγμα των ισχίων, γόνατα με μαλακή κάμψη (όχι κλειδωμένα). Ώμοι κάτω και πίσω, ωμοπλάτες σταθερές και ο εξοπλισμός σταθερός κοντά στους μηρούς.';
+    } else if (isPlank) {
+      specific = 'Σταθερή βάση στήριξης στο στρώμα: παλάμες ή πήχεις ακριβώς κάτω από τους ώμους, δάχτυλα ανοιχτά, πέλματα στο άνοιγμα των ισχίων, αυχένας μακρύς σε ευθεία με τη σπονδυλική στήλη.';
+    } else if (isPush) {
+      specific = 'Αρχική θέση ώθησης: ώμοι μακριά από τα αυτιά, καρποί σε ουδέτερη ευθεία με τους πήχεις, κορμός σταθερός και ενεργός χωρίς λόρδωση στη μέση.';
+    } else if (isPull) {
+      specific = 'Αρχική θέση έλξης: σταθερή βάση στήριξης, χέρια τεντωμένα με έλεγχο, ώμοι σταθεροποιημένοι, βλέμμα σταθερό στην τροχιά της κίνησης.';
+    }
+
+    return {
+      pose: `Αρχική θέση προετοιμασίας: ${specific} Η σπονδυλική στήλη διατηρεί τα φυσικά της κυρτώματα, ο αυχένας είναι ουδέτερος και το βλέμμα εστιασμένο οριζόντια μπροστά. ${rawCue ? `[Οδηγία άσκησης: ${clean(rawCue)}]` : ''}`,
+      change: 'Αρχική τοποθέτηση του σώματος πριν από την έναρξη της επανάληψης. Όλα τα μέλη του σώματος είναι σταθεροποιημένα στην ουδέτερη βάση.',
+    };
   }
-  if (/lunge|split squat|προβολ|step-back|knee drive/.test(name)) {
-    notes.push('Στην προβολή, κράτησε τα πέλματα σε δύο σταθερές τροχιές, τη λεκάνη στραμμένη μπροστά και το μπροστινό γόνατο στην κατεύθυνση των δακτύλων. Κατέβασε το πίσω γόνατο ελεγχόμενα· στην άνοδο πίεσε όλο το μπροστινό πέλμα και σταθεροποίησε πριν από άρση γονάτου ή αλλαγή στήριξης.');
+
+  if (phaseType === 'descent') {
+    let specific = 'Ελεγχόμενη έναρξη της κίνησης: μετακίνησε ελεγχόμενα τις κύριες αρθρώσεις, διατηρώντας ακλόνητα τα σημεία στήριξης.';
+    if (isSquat) {
+      specific = 'Έναρξη καθόδου: τα ισχία ξεκινούν να κινούνται προς τα πίσω και κάτω, ενώ τα γόνατα λυγίζουν ταυτόχρονα και ανοίγουν προς την κατεύθυνση των δακτύλων. Τα πέλματα παραμένουν κολλημένα στο δάπεδο, ο κορμός γέρνει ελαφρά εμπρός διατηρώντας ίσια πλάτη, και τα χέρια παραμένουν προτεταμένα για ισορροπία.';
+    } else if (isLunge) {
+      specific = 'Βήμα πίσω σε προβολή: το πίσω πόδι πατά στα δάχτυλα με τη φτέρνα ψηλά, η λεκάνη μένει οριζόντια και χαμηλώνει κατακόρυφα, ενώ το μπροστινό γόνατο παραμένει ακριβώς πάνω από τον αστράγαλο χωρίς να συγκλίνει προς τα μέσα.';
+    } else if (isHinge) {
+      specific = 'Κάμψη ισχίων (hip hinge): στείλε τη λεκάνη ευθεία πίσω σαν να κλείνεις μια πόρτα με τους γλουτούς. Τα γόνατα διατηρούν ελαφρά σταθερή κάμψη, ο κορμός κλίνει από τα ισχία ως ενιαίο μπλοκ και το βάρος μένει κοντά στα πόδια.';
+    } else if (isPlank) {
+      specific = 'Μετάβαση ελέγχου: μετατόπισε ελαφρά το βάρος διατηρώντας τη λεκάνη απολύτως παράλληλη με το έδαφος, χωρίς βύθιση της μέσης ή ανασήκωμα των γλουτών.';
+    }
+
+    return {
+      pose: `Φάση καθόδου / προετοιμασίας: ${specific} Τα κινούμενα τμήματα μετακινούνται ομαλά, ενώ ο πυρήνας και η σπονδυλική στήλη παραμένουν ενεργά σταθερά. ${rawCue ? `[Οδηγία: ${clean(rawCue)}]` : ''}`,
+      change: 'Μετάβαση από την αρχική όρθια θέση προς το βάθος της κίνησης. Οι αρθρώσεις κάμπτονται προοδευτικά χωρίς απότομες μετατοπίσεις ή απώλεια ισορροπίας.',
+    };
   }
-  if (/hinge|deadlift|rdl|hip thrust|swing/.test(name)) {
-    notes.push('Η άρθρωση ξεκινά από τα ισχία: μετακίνησε τη λεκάνη πίσω, κράτησε μικρή μαλακή κάμψη στα γόνατα και ουδέτερη σπονδυλική στήλη. Το φορτίο μένει κοντά στα πόδια ή στο σώμα· δεν υπερεκτείνεται η μέση στην κορυφή.');
+
+  if (phaseType === 'apex') {
+    let specific = 'Βασική θέση / κορυφαίο σημείο της κίνησης: ολοκλήρωσε το πλήρες ελεγχόμενο εύρος της άσκησης.';
+    if (isSquat) {
+      specific = 'Βασική θέση βαθύ καθίσματος (Squat Apex): οι μηροί φτάνουν παράλληλοι με το δάπεδο (ή στο μέγιστο άνετο εύρος). Τα γόνατα είναι σταθερά πάνω από τα δάχτυλα, οι φτέρνες πατούν σταθερά στο έδαφος χωρίς ανασήκωμα, η μέση παραμένει ουδέτερη χωρίς κύρτωση, και το στήθος παραμένει ψηλό με το βλέμμα ευθεία.';
+    } else if (isLunge) {
+      specific = 'Κύρια θέση προβολής (Lunge Depth): και τα δύο γόνατα σχηματίζουν γωνία περίπου 90 μοιρών. Το πίσω γόνατο βρίσκεται λίγο πάνω από το δάπεδο, η λεκάνη είναι ευθυγραμμισμένη και το μπροστινό πέλμα δέχεται ομοιόμορφα το φορτίο.';
+    } else if (isHinge) {
+      specific = 'Μέγιστη κάμψη ισχίων: ο κορμός έχει κλίση περίπου 45-60 μοιρών με την πλάτη απόλυτα ευθεία. Οι οπίσθιοι μηριαίοι φορτίζονται ενεργά, ο αυχένας παραμένει σε ευθεία με τον θώρακα και η λεκάνη βρίσκεται στο μέγιστο πίσω σημείο.';
+    } else if (isPush) {
+      specific = 'Τελικό σημείο πίεσης: οι αγκώνες φτάνουν στην προβλεπόμενη θέση χωρίς κλείδωμα, οι ώμοι μένουν σταθεροί και το στήθος παραμένει ανοιχτό.';
+    } else if (isPull) {
+      specific = 'Κορυφαία σύσπαση έλξης: οι αγκώνες έχουν οδηγηθεί πίσω κοντά στα πλευρά, οι ωμοπλάτες πλησιάζουν ελεγχόμενα χωρίς ανύψωση των τραπεζοειδών.';
+    } else if (isPlank) {
+      specific = 'Κύρια θέση στήριξης / αιώρησης: το σώμα σχηματίζει συμπαγή ευθεία γραμμή από την κορυφή του κεφαλιού έως τις φτέρνες. Κοιλιακοί και γλουτοί είναι σε ισομετρική σύσπαση.';
+    }
+
+    return {
+      pose: `Βασική θέση της κίνησης: ${specific} Στιγμιαία παύση ελέγχου στο σημείο μέγιστης φόρτισης πριν από την εκκίνηση της επιστροφής. ${rawCue ? `[Στόχος: ${clean(rawCue)}]` : ''}`,
+      change: 'Ολοκλήρωση της κύριας φάσης της κίνησης. Οι μοχλοί του σώματος έχουν φτάσει στο μέγιστο λειτουργικό εύρος και προετοιμάζονται για την επιστροφή.',
+    };
   }
-  if (/row|pull|κωπηλα|έλξ/.test(name)) {
-    notes.push('Στην έλξη, κράτησε τον αυχένα μακρύ και τους ώμους μακριά από τα αυτιά. Οδήγησε τον αγκώνα προς τα πίσω στη διαδρομή που ορίζει η άσκηση, χωρίς τίναγμα ή στροφή του κορμού· επέστρεψε το φορτίο ελεγχόμενα.');
+
+  if (phaseType === 'ascent') {
+    let specific = 'Φάση επιστροφής / ανόδου: πίεσε από τα σημεία στήριξης για να επαναφέρεις το σώμα κατά μήκος της αντίστροφης τροχιάς.';
+    if (isSquat) {
+      specific = 'Άνοδος από το κάθισμα: πίεσε δυναμικά ολόκληρο το πέλμα στο δάπεδο (εστιάζοντας σε φτέρνα και μέσο πέλμα). Τα ισχία και τα γόνατα εκτείνονται ταυτόχρονα με τον ίδιο ρυθμό, διατηρώντας τον θώρακα ανοιχτό μέχρι την πλήρη έκταση.';
+    } else if (isLunge) {
+      specific = 'Ώθηση επιστροφής: πίεσε από το μπροστινό πέλμα, φέρε το πίσω πόδι μπροστά και σταθεροποίησε τη λεκάνη καθώς επανασυνδέεσαι με την αρχική στάση.';
+    } else if (isHinge) {
+      specific = 'Έκταση ισχίων: σφίξε τους γλουτούς και οδήγησε τη λεκάνη εμπρός στην αρχική όρθια θέση, χωρίς να υπερεκτείνεις τη μέση στην κορυφή.';
+    }
+
+    return {
+      pose: `Φάση επιστροφής: ${specific} Η κίνηση εκτελείται αντίστροφα με απόλυτο κινησιολογικό έλεγχο και σταθερή αναπνοή.`,
+      change: 'Επιστροφή από το τελικό σημείο προς τη βάση. Οι αρθρώσεις επανέρχονται ομαλά στην ουδέτερη θέση εκκίνησης.',
+    };
   }
-  if (/press|push-up|push up|κάμψ|πιέσ|thruster/.test(name)) {
-    notes.push('Στην ώθηση, κράτησε καρπούς και αγκώνες ευθυγραμμισμένους με τη διαδρομή του φορτίου, πλευρά πάνω από λεκάνη και αυχένα ουδέτερο. Μην ανασηκώνεις τους ώμους και μην αντισταθμίζεις με υπερέκταση της μέσης.');
-  }
-  if (/plank|bear|crawl|bird dog|side plank|σανίδ|τετραποδ/.test(name)) {
-    notes.push('Στη στήριξη, πίεσε ενεργά το έδαφος, κράτησε τις ωμοπλάτες σταθερές, την κοιλιά ενεργή και τη λεκάνη χωρίς βύθιση ή στροφή. Ο αυχένας συνεχίζει τη γραμμή της σπονδυλικής στήλης και τα σημεία στήριξης παραμένουν σαφή.');
-  }
-  if (/bear crawl|bear hold|beast/.test(name)) {
-    notes.push('Τοποθέτησε παλάμες κάτω από ώμους και γόνατα κάτω από ισχία, δίπλωσε τα δάχτυλα των ποδιών και αιώρησε τα γόνατα λίγο πάνω από το έδαφος. Σε κάθε βήμα μετακίνησε αντίθετο χέρι και πόδι μικρή απόσταση, κρατώντας τη λεκάνη χαμηλή και σταθερή.');
-  }
-  if (/side plank/.test(name)) {
-    notes.push('Στήριξε τον αγκώνα ακριβώς κάτω από τον ώμο, στοίβαξε τους ώμους και κράτησε το σώμα σε ευθεία από κεφάλι έως φτέρνες. Ανύψωσε τη λεκάνη χωρίς να κυλήσεις προς τα εμπρός ή πίσω.');
-  }
-  if (/bird dog|quadruped reach/.test(name)) {
-    notes.push('Από τετραποδική θέση, έκτεινε αντίθετο χέρι και πόδι μέχρι να ευθυγραμμιστούν με τον κορμό, χωρίς να σηκώσεις τη λεκάνη ή να στρίψεις την πλάτη. Επέστρεψε παλάμη και γόνατο κάτω από τους αντίστοιχους ώμους και ισχίο.');
-  }
-  if (/hip thrust|glute bridge|hip bridge|γέφυρα/.test(name)) {
-    notes.push('Στήριξε τις ωμοπλάτες στον πάγκο ή την πλάτη στο στρώμα, πέλματα σταθερά και γόνατα στην ίδια κατεύθυνση με τα δάχτυλα. Ανύψωσε τη λεκάνη με σύσπαση γλουτών μέχρι ο κορμός να ευθυγραμμιστεί, χωρίς να καμπυλώσεις τη μέση.');
-  }
-  if (/kettlebell swing/.test(name)) {
-    notes.push('Κράτησε το kettlebell με δύο χέρια και ώμους ενεργούς. Οδήγησε το βάρος πίσω ανάμεσα στους μηρούς με hip hinge και ώθησε τα ισχία μπροστά για να αιωρηθεί· τα χέρια καθοδηγούν, δεν σηκώνουν το βάρος με τους ώμους.');
-  }
-  if (/jump|bound|burpee|άλμα|πλειομετρ/.test(name)) {
-    notes.push('Πριν από άλμα, φόρτισε ισχία και γόνατα χωρίς να καταρρεύσουν προς τα μέσα. Προσγειώσου με τα δύο πέλματα στο προβλεπόμενο σημείο, απορρόφησε την πρόσκρουση και σταθεροποίησε πριν συνεχίσεις.');
-    notes.push('Στην προσγείωση, προσγειώσου ήσυχα στο μέσο του πέλματος και απορρόφησε την πρόσκρουση με αστράγαλο, γόνατο και ισχίο στην ίδια κατεύθυνση. Σταθεροποίησε πλήρως πριν από την επόμενη επανάληψη.');
-  }
-  if (/carry|farmer|suitcase/.test(name)) {
-    notes.push('Κράτησε κορμό ψηλό, λεκάνη οριζόντια, ώμους ισότιμους και καρπό ουδέτερο. Το φορτίο μένει δίπλα στο σώμα χωρίς να σε τραβά σε πλάγια κλίση ή στροφή.');
-  }
-  if (/calf raise|γάμπ|ανυψώσεις? γαμπ/.test(name)) {
-    notes.push('Στήριξε το βάρος ισότιμα στο μεγάλο και μικρό δάκτυλο και κράτησε τα γόνατα σταθερά. Ανύψωσε τις φτέρνες όσο ελέγχεις, χωρίς αναπήδηση ή κύλισμα των αστραγάλων, και κατέβασε αργά μέχρι την αρχική θέση.');
-  }
-  if (/wall sit|ισομετρικ.*καθισ|κάθισμα στον τοίχο/.test(name)) {
-    notes.push('Ακούμπησε την πλάτη στον τοίχο, κράτησε τα πέλματα ολόκληρα στο δάπεδο και τα γόνατα στην κατεύθυνση των δακτύλων. Μοίρασε το βάρος και στα δύο πόδια, κράτησε τον κορμό σταθερό και μην πιέζεις βαθύτερη θέση από αυτήν που ελέγχεις.');
-  }
-  if (/biceps curl|hammer curl|δικεφάλ|κάμψη αγκώ/.test(name)) {
-    notes.push('Κράτησε τους αγκώνες κοντά στα πλευρά και τους βραχίονες σταθερούς. Κάμψε τους αγκώνες χωρίς αιώρηση κορμού ή μετακίνηση ώμων, κράτησε τους καρπούς ευθείς και χαμήλωσε το βάρος αργά.');
-  }
-  if (/dead bug/.test(name)) {
-    notes.push('Ξάπλωσε ανάσκελα, κράτησε τα γόνατα πάνω από τα ισχία και τα χέρια προς την οροφή. Κατέβασε αντίθετο χέρι και πόδι μόνο όσο η λεκάνη μένει σταθερή και η μέση δεν αποκολλάται από το στρώμα· επέστρεψε και άλλαξε πλευρά.');
-  }
-  if (/rotation|twist|rotat|περιστροφ/.test(name)) {
-    notes.push('Η στροφή είναι ελεγχόμενη και ξεκινά από τον θώρακα, με πέλματα σταθερά και λεκάνη χωρίς ανεξέλεγκτη περιστροφή. Μην εξαναγκάζεις την οσφυϊκή μοίρα στο τελικό εύρος.');
-  }
-  if (/anti.?rotation/.test(name)) {
-    notes.push('Στάσου πλάγια ως προς το σημείο αγκύρωσης, κράτησε το λάστιχο ή τη λαβή μπροστά από το στέρνο με δύο χέρια και πίεσε ευθεία μπροστά μόνο όταν η λεκάνη και ο θώρακας μένουν στραμμένοι εμπρός. Στην επαναφορά φέρε τα χέρια ξανά στο στέρνο χωρίς να σε περιστρέψει το λάστιχο.');
-  }
-  if (/band diagonal press|διαγώνια πίεση/.test(name)) {
-    notes.push('Κράτησε το λάστιχο με ασφαλή λαβή κοντά στον ώμο και πίεσέ το διαγώνια εμπρός-πάνω, ακολουθώντας την αντίσταση χωρίς να γυρίσουν λεκάνη και γόνατα. Ο καρπός μένει σε ευθεία με τον πήχη.');
-  }
-  if (/high.to.low pull|υψηλή.*χαμηλή/.test(name)) {
-    notes.push('Με το λάστιχο αγκυρωμένο ψηλότερα από τον ώμο, ξεκίνα με τα χέρια ψηλά και τράβηξε προς την αντίθετη πλευρά του ισχίου με αγκώνα ελαφρά λυγισμένο. Κράτησε τον θώρακα σταθερό και μην τραβάς με τη μέση.');
-  }
-  if (/diagonal reach|diagonal arm sweep|diagonal/.test(name)) {
-    notes.push('Οδήγησε το χέρι ή την μπάλα σε ελεγχόμενη διαγώνια τροχιά, με ώμο χαμηλό και αγκώνα μαλακό. Η λεκάνη παραμένει σταθερή· η θωρακική στροφή είναι μικρή και ανώδυνη.');
-  }
-  if (/forward reach|cross.body reach|opposite reach|controlled reach|contralateral lift|shoulder tap/.test(name)) {
-    notes.push('Μετέφερε μόνο το άκρο που περιγράφει η φάση. Κράτησε τα υπόλοιπα σημεία στήριξης ακίνητα και τη λεκάνη οριζόντια· μην αφήσεις τη μεταφορά βάρους να προκαλέσει πτώση ή στροφή του κορμού.');
-  }
-  if (/step.up|step up|step to|lateral step|side step|sled march|march/.test(name)) {
-    notes.push('Τοποθέτησε ολόκληρο το πέλμα στο step ή στο δάπεδο πριν μεταφέρεις βάρος. Πίεσε από το πόδι που οδηγεί, κράτησε γόνατο στην κατεύθυνση των δακτύλων και ολοκλήρωσε με ισορροπία πριν κατεβάσεις ή αλλάξεις πλευρά.');
-  }
-  if (/cossack/.test(name)) {
-    notes.push('Ξεκίνα σε πλατιά βάση. Κάθισε προς το ένα ισχίο λυγίζοντας το γόνατο της πλευράς αυτής, ενώ το άλλο πόδι μένει μακρύ με πέλμα σε επαφή με το έδαφος. Κράτησε τη λεκάνη ελεγχόμενη και ανέβασε πιέζοντας από το λυγισμένο πόδι.');
-  }
-  if (/crab/.test(name)) {
-    notes.push('Στη θέση crab, στήριξε παλάμες πίσω από τον κορμό και πέλματα στο έδαφος, με δάχτυλα χεριών στραμμένα όπως επιτρέπει άνετα ο καρπός. Πίεσε παλάμες και πέλματα για να σηκώσεις τη λεκάνη χωρίς να συμπιέζεις τον αυχένα.');
-  }
-  if (/half.kneeling|kneeling|get.up|γονάτισ/.test(name)) {
-    notes.push('Στο μισό γονάτισμα κράτησε το μπροστινό πέλμα ολόκληρο κάτω, το πίσω γόνατο σε μαλακή στήριξη και τη λεκάνη στραμμένη μπροστά. Για να σηκωθείς, πίεσε από το μπροστινό πέλμα και πέρασε σε σταθερή όρθια βάση χωρίς να στρίψεις το γόνατο.');
-  }
-  if (/walkout|walk out/.test(name)) {
-    notes.push('Από όρθια θέση, λύγισε ισχία και γόνατα όσο χρειάζεται ώστε οι παλάμες να ακουμπήσουν στο έδαφος. Περπάτησε τα χέρια μπροστά με μικρά βήματα μέχρι ψηλή σανίδα, διατήρησε κορμό και λεκάνη σταθερά και επέστρεψε με την ίδια σειρά.');
-  }
-  if (/quadruped|beast/.test(name)) {
-    notes.push('Σε τετραποδική βάση, παλάμες κάτω από ώμους και γόνατα κάτω από ισχία. Για αιώρηση beast, πίεσε τις παλάμες, ενεργοποίησε κοιλιά και σήκωσε τα γόνατα λίγο από το στρώμα χωρίς να στρογγυλέψεις ή να βυθίσεις τη μέση.');
-  }
-  if (/balance|ισορροπ/.test(name)) {
-    notes.push('Στην ισορροπία, κράτησε το πέλμα στήριξης σταθερό, το γόνατο μαλακό και τη λεκάνη οριζόντια. Το ελεύθερο πόδι αιωρείται χωρίς να ακουμπά και ο κορμός δεν γέρνει για αντιστάθμιση.');
-  }
-  if (/sled/.test(name)) {
-    notes.push('Πιάσε τις λαβές του sled με δύο χέρια, κορμό σταθερό και ώμους μακριά από τα αυτιά. Κάνε μικρά ελεγχόμενα βήματα και πίεσε το sled χωρίς να καμπουριάζεις ή να κλειδώνεις τους αγκώνες.');
-  }
-  if (/καθοδο|lower|descend|χαμήλω|κατέβα|επιστροφ|return|reset/.test(phase)) {
-    notes.push('Αυτή είναι ελεγχόμενη φάση επιστροφής: χαμήλωσε ή επανάφερε το σώμα και τον εξοπλισμό στην αντίστροφη τροχιά, χωρίς πτώση, αναπήδηση ή αλλαγή στήριξης.');
-  } else if (/άνοδο|rise|press|drive|ώθη|push|pull|έλξη|κορυφ|hold|ισορροπ|τελικό/.test(phase)) {
-    notes.push('Στο τελικό σημείο ολοκλήρωσε τη συγκεκριμένη κίνηση χωρίς να κλειδώνεις βίαια τις αρθρώσεις· κράτησε ισορροπία και έλεγχο πριν από την επόμενη φάση.');
-  } else if (!notes.length) {
-    notes.push('Πριν κινηθείς, έλεγξε ότι η βάση στήριξης είναι σταθερή, ο εξοπλισμός βρίσκεται στη θέση που ορίζουν οι οδηγίες και ο κορμός παραμένει ελεγχόμενος.');
-  }
-  return notes.join(' ');
+
+  // Final return to initial position
+  const initial = getPhaseSpecificCoaching(exercise, 'initial', rawCue);
+  return {
+    pose: initial.pose,
+    change: 'Πλήρης ολοκλήρωση της επανάληψης και επαναφορά στην αρχική θέση. Η σωματική στάση, τα σημεία στήριξης, η ευθυγράμμιση και η λαβή είναι απόλυτα ταυτόσημα με το Καρέ 1.',
+  };
 }
 
-function detailedCue(exercise: Partial<Exercise>, cue: string, label: string = ''): string {
-  const detail = techniqueDetails(exercise, cue, label);
-  return `${clean(cue)} Τεχνική σώματος: ${detail}`;
-}
-
-function bridgeCount(exercise: Partial<Exercise>, phaseCount: number): number {
-  const identity = norm([exercise.name, exercise.instructions, exercise.patterns?.join?.(' ')].filter(Boolean).join(' '));
-  if (/man maker|burpee|snatch|clean|box jump|wall ball|walkout|crawl|turkish get.up|complex|flow/.test(identity)) return 5;
-  if (exercise.custom || /\+| to | and |thruster|windmill|woodchop|kickthrough/.test(identity) || phaseCount >= 6) return 4;
-  return 3;
-}
-
-function changeBetween(exercise: Partial<Exercise>, from: string, to: string, step: number, total: number): string {
-  const legacy = String(exercise.id || '').startsWith('hybrid-') ? exercise.instructions : '';
-  const identity = norm([exercise.name, exercise.patterns?.join?.(' '), from, to, legacy].filter(Boolean).join(' '));
-  const stage = step === 1 ? 'Πρώτη μικρή μετατόπιση' : step === total ? 'Τελική προσέγγιση στην επόμενη στάση' : 'Ενδιάμεση μετατόπιση';
-  let change = 'Μετακίνησε μόνο τα μέρη του σώματος που απαιτεί η επόμενη φάση. Κράτησε σταθερά τα υπόλοιπα σημεία στήριξης, τον κορμό και τη θέση του εξοπλισμού· μην προσθέσεις νέο βήμα ή αλλαγή λαβής.';
-
-  if (/squat|κάθισ|καθισ|thruster|goblet/.test(identity)) {
-    change = 'Μετακίνησε τη λεκάνη σταδιακά πίσω και κάτω, λύγισε ισχία και γόνατα μαζί και άφησε τις κνήμες να κινηθούν όσο επιτρέπει η ισορροπία. Τα πέλματα μένουν ολόκληρα κάτω, τα γόνατα ακολουθούν τα δάκτυλα και ο κορμός γέρνει ως ενιαίο, ουδέτερο σύνολο.';
-  } else if (/lunge|split squat|προβολ|step.back|knee drive/.test(identity)) {
-    change = 'Μετακίνησε το πόδι που περιγράφει η φάση προς τα εμπρός ή πίσω και πάτησε ολόκληρο το πέλμα πριν μεταφέρεις βάρος. Έπειτα λύγισε σταδιακά τα γόνατα ή ξεκίνα την άνοδο, με λεκάνη στραμμένη μπροστά και γόνατο στην κατεύθυνση των δακτύλων.';
-  } else if (/hinge|deadlift|rdl|άρση|swing/.test(identity)) {
-    change = 'Στείλε τη λεκάνη προς τα πίσω, κράτησε τα γόνατα μαλακά και κλίνε τον κορμό από τα ισχία σαν ενιαίο σύνολο. Τα χέρια και το φορτίο ακολουθούν κοντά στους μηρούς· μην καμπουριάσεις και μην αλλάξεις την καμπύλη της μέσης.';
-  } else if (/row|κωπηλα|pull|έλξ/.test(identity)) {
-    change = 'Κράτησε ακίνητο τον κορμό και μετακίνησε τους βραχίονες: οι αγκώνες οδηγούν προς τα πίσω κοντά στα πλευρά, οι ωμοπλάτες συγκλίνουν χωρίς ανασήκωμα ώμων και το φορτίο ακολουθεί την ίδια τροχιά.';
-  } else if (/press|push.up|push up|πιέσ|ώθησ|thruster/.test(identity)) {
-    change = 'Οδήγησε παλάμες ή φορτίο προοδευτικά προς την κατεύθυνση της πίεσης. Οι αγκώνες εκτείνονται ομαλά, οι καρποί παραμένουν ευθείς πάνω από τους πήχεις και πλευρά/λεκάνη μένουν στοιβαγμένες χωρίς υπερέκταση της μέσης.';
-  } else if (/curl|δικέφα|κάμψη αγκώ/.test(identity)) {
-    change = 'Κράτησε τον βραχίονα δίπλα στον κορμό και κάμψε τον αγκώνα σταδιακά ώστε το φορτίο να πλησιάσει τον ώμο. Ο καρπός μένει ουδέτερος, ο ώμος δεν προχωρά μπροστά και ο κορμός δεν αιωρείται.';
-  } else if (/plank|σανίδ|bear|crawl|beast|bird dog|quadruped|kickthrough/.test(identity)) {
-    change = 'Μετέφερε ελεγχόμενα το άκρο ή το σημείο στήριξης που ορίζει η φάση. Πίεσε το έδαφος με τις υπόλοιπες παλάμες και τα πέλματα, κράτησε λεκάνη και θώρακα χωρίς πτώση ή στροφή και διατήρησε τον αυχένα στην ίδια γραμμή.';
-  } else if (/rotation|rotat|twist|περιστροφ|woodchop/.test(identity)) {
-    change = 'Άρχισε μικρή, ελεγχόμενη στροφή από τον θώρακα προς την κατεύθυνση της επόμενης στάσης. Τα πέλματα παραμένουν σταθερά, η λεκάνη δεν στρίβει απότομα και ο εξοπλισμός κινείται μαζί με τα χέρια χωρίς να τραβά τη μέση.';
-  } else if (/jump|bound|άλμα|burpee|slam/.test(identity)) {
-    change = 'Φόρτισε τα ισχία και τα γόνατα προοδευτικά ή ξεκίνησε την ώθηση όπως ορίζει η φάση. Κράτησε γόνατα στην κατεύθυνση των δακτύλων· αν ακολουθεί προσγείωση, απορρόφησέ την με αστράγαλο, γόνατο και ισχίο πριν συνεχίσεις.';
-  } else if (/step.up|step up|lateral step|side step|march|βάδισμα/.test(identity)) {
-    change = 'Μετακίνησε πρώτα το πόδι που οδηγεί και τοποθέτησε όλο το πέλμα στο νέο σημείο στήριξης. Έπειτα μετέφερε σταδιακά το βάρος, κράτησε γόνατο και δάκτυλα στην ίδια κατεύθυνση και σταθεροποίησε πριν σηκώσεις το άλλο πόδι.';
-  } else if (/calf raise|γάμπ/.test(identity)) {
-    change = 'Ανύψωσε τις φτέρνες σταδιακά χωρίς να μετακινηθούν τα γόνατα ή να κυλήσουν οι αστράγαλοι προς τα έξω ή μέσα. Η πίεση μένει μοιρασμένη στη βάση του μεγάλου και του μικρού δακτύλου.';
-  } else if (/hip thrust|glute bridge|γέφυρα/.test(identity)) {
-    change = 'Πίεσε τα πέλματα στο έδαφος και ανύψωσε τη λεκάνη από τους γλουτούς. Κράτησε πλευρά και λεκάνη ελεγχόμενες και σταμάτησε πριν η μέση υπερεκταθεί.';
-  }
-
-  return `${stage} (${step}/${total} της διαδρομής προς το επόμενο καρέ): ${change}`;
-}
-
-function uniqueFrames(source: any[]): { label: string; cue: string }[] {
-  const result: { label: string; cue: string }[] = [];
-  let previous = '';
-  for (const frame of source || []) {
-    const cue = movementCue(frame);
-    if (!cue) continue;
-    const key = norm(cue);
-    if (key === previous) continue;
-    previous = key;
-    result.push({
-      label: clean(frame.label || frame.labelEl || frame.phaseLabel) || 'Κίνηση',
-      cue,
-    });
-  }
-  return result;
-}
-
-function deriveStart(exercise: Partial<Exercise>, cues: any[]): string {
-  if (exercise.id && MANUAL_STARTS[exercise.id]) return MANUAL_STARTS[exercise.id];
-  const first = movementCue(cues?.[0]);
-  if (first) return first;
-  const lead = sentences(exercise.instructions || exercise.description)[0];
-  if (lead) return 'Πριν από την πρώτη επανάληψη: ' + lead;
-  return 'Σταθερή αρχική θέση πριν από την κίνηση «' + (exercise.name || exercise.title || 'άσκηση') + '», με τον εξοπλισμό τοποθετημένο όπως ορίζουν οι οδηγίες.';
-}
-
-function derivedSource(exercise: Partial<Exercise>): { label: string; sourceCue: string }[] {
-  const lines = sentences(exercise.instructions || exercise.description);
-  if (!lines.length) {
-    return [{ label: 'Εκτέλεση', sourceCue: 'Ακολούθησε αποκλειστικά τις καταχωρισμένες οδηγίες και διατήρησε ελεγχόμενη στάση.' }];
-  }
-  return lines.map((sourceCue, i) => ({
-    label: i === 0 ? 'Προετοιμασία' : 'Φάση κίνησης ' + i,
-    sourceCue,
-  }));
-}
-
+/**
+ * Δημιουργεί το πλήρες prompt εικόνας για κάθε καρέ διατηρώντας απαρέγκλιτα το visual reference lock.
+ */
 function promptFor(
   exercise: Partial<Exercise>,
   profile: 'female' | 'male',
   phase: { label: string; poseDescription: string; changeFromPrevious?: string },
   index: number,
-  total: number,
-  previous?: string,
-  next?: string
+  total: number
 ): string {
-  const phaseCue = phase.poseDescription;
-  const transition = `Προηγούμενο καρέ: ${previous || 'αρχική προετοιμασία'}. Επόμενο καρέ: ${next || 'ολοκλήρωση της επανάληψης'}.`;
   return [
-    lockedVisualPrompt(exercise, phaseCue, profile),
+    lockedVisualPrompt(exercise, phase.poseDescription, profile),
     `Frame ${index + 1} of ${total}. ${phase.label}.`,
-    `Ακριβής στάση του σώματος σε αυτό το στιγμιότυπο: ${phaseCue}`,
+    `Ακριβής στάση του σώματος σε αυτό το στιγμιότυπο: ${phase.poseDescription}`,
     `Αλλαγή από το προηγούμενο καρέ: ${phase.changeFromPrevious}`,
     COMPLETE_BODY,
-    `Συνέχεια της κίνησης: ${transition}`,
     `Οδηγίες άσκησης: ${clean(exercise.instructions || exercise.description)}`,
-    `Μυϊκές ομάδες: ${(exercise.muscles || exercise.primaryMuscles || []).join?.(', ') || exercise.muscles || 'σύμφωνα με την περιγραφή'}.`,
-    'Μία μόνο φωτογραφική στάση, χωρίς κολάζ, βέλη, λεζάντες ή πρόσθετα άκρα. Αν η πηγή δεν καθορίζει ασφαλή στάση, σταμάτησε και ζήτησε έλεγχο προπονητή.',
+    `Μυϊκές ομάδες: ${(exercise.muscles || exercise.primaryMuscles || []).join?.(', ') || 'σύμφωνα με την περιγραφή'}.`,
+    'Μία μόνο φωτογραφική στάση, χωρίς κολάζ, βέλη, λεζάντες ή πρόσθετα άκρα.',
   ]
     .filter(Boolean)
     .join(' ');
 }
 
+/**
+ * Κατασκευάζει την ολοκληρωμένη κινησιολογική αλληλουχία καρέ (VisualizationSequence)
+ * διασφαλίζοντας:
+ * 1. Ελάχιστο αριθμό καρέ ανάλογα με την πραγματική πολυπλοκότητα (3 καρέ για squat/απλές).
+ * 2. Αυστηρό εύρος 3 έως 15 καρέ (καμία άσκηση > 15 καρέ).
+ * 3. Πρώτο και τελευταίο καρέ με ταυτόσημη σωματική στάση (sameImageAs: 1).
+ * 4. Καμία τεχνητή παραγωγή περιττών επαναλαμβανόμενων bridge frames.
+ */
 export function buildVisualization(
   exercise: Partial<Exercise> = {},
   sourceFrames: any[] | null = null
 ): VisualizationSequence {
   const profile = modelProfileFor(exercise);
   const reference = VISUAL_REFERENCES[profile];
-  const raw = Array.isArray(sourceFrames) && sourceFrames.length ? sourceFrames : derivedSource(exercise);
-  const cues = uniqueFrames(raw);
-  const start = deriveStart(exercise, raw);
-  const interior = cues.filter((x) => norm(x.cue) !== norm(start));
+  const complexity = classifyExerciseComplexity(exercise);
 
-  if (!interior.length) {
-    const fallback = sentences(exercise.instructions || exercise.description).slice(1);
-    for (const cue of fallback) interior.push({ label: 'Εκτέλεση', cue });
+  interface RawPhase {
+    label: string;
+    poseDescription: string;
+    changeFromPrevious: string;
+    phaseType: 'initial' | 'descent' | 'apex' | 'ascent' | 'final';
   }
 
-  const distinct = interior.slice(0, 18);
-  const base: { label: string; poseDescription: string }[] = [
-    { label: 'Αρχική θέση', poseDescription: detailedCue(exercise, start, 'Αρχική θέση') },
-    ...distinct.map((x, i) => ({
-      label: x.label || `Φάση ${i + 1}`,
-      poseDescription: detailedCue(exercise, x.cue, x.label),
-    })),
-  ];
+  const generatedPhases: RawPhase[] = [];
 
-  if (base.length === 1) {
-    base.push({
-      label: 'Κύρια στάση',
-      poseDescription: detailedCue(
-        exercise,
-        'Εκτέλεσε την περιγραφόμενη κίνηση μέχρι το ελεγχόμενο τελικό σημείο: ' +
-          clean(exercise.instructions || exercise.description),
-        'Κύρια στάση'
-      ),
-    });
-  }
+  if (complexity === 'simple') {
+    // Απλή άσκηση (όπως squat): Ακριβώς 3 καρέ:
+    // 1) Αρχική θέση
+    // 2) Βασική θέση της κίνησης (apex/depth)
+    // 3) Επιστροφή στην αρχική θέση (ταυτόσημη με το καρέ 1)
+    const init = getPhaseSpecificCoaching(exercise, 'initial');
+    const apex = getPhaseSpecificCoaching(exercise, 'apex');
+    const reset = getPhaseSpecificCoaching(exercise, 'final');
 
-  const expanded: { label: string; poseDescription: string; changeFromPrevious: string }[] = [];
-  const startPhase = {
-    ...base[0],
-    changeFromPrevious:
-      'Αρχική θέση της επανάληψης. Δεν έχει προηγηθεί κίνηση. Σταθεροποίησε πρώτα πέλματα ή σημεία στήριξης, κορμό και λαβή εξοπλισμού.',
-  };
-  expanded.push(startPhase);
+    generatedPhases.push(
+      {
+        label: 'Αρχική θέση',
+        poseDescription: init.pose,
+        changeFromPrevious: init.change,
+        phaseType: 'initial',
+      },
+      {
+        label: 'Βασική θέση της κίνησης',
+        poseDescription: apex.pose,
+        changeFromPrevious: apex.change,
+        phaseType: 'apex',
+      },
+      {
+        label: 'Επιστροφή στην αρχική θέση',
+        poseDescription: reset.pose,
+        changeFromPrevious: reset.change,
+        phaseType: 'final',
+      }
+    );
+  } else if (complexity === 'moderate') {
+    // Μέτρια πολυπλοκότητα: 4 έως 5 καρέ (προετοιμασία -> κάθοδος/μετάβαση -> κύρια στάση -> επαναφορά -> αρχική)
+    const init = getPhaseSpecificCoaching(exercise, 'initial');
+    const descent = getPhaseSpecificCoaching(exercise, 'descent');
+    const apex = getPhaseSpecificCoaching(exercise, 'apex');
+    const ascent = getPhaseSpecificCoaching(exercise, 'ascent');
+    const reset = getPhaseSpecificCoaching(exercise, 'final');
 
-  const bridgeBudget = Math.max(1, Math.floor((99 - base.length) / Math.max(1, base.length - 1)));
-  const bridges = Math.min(bridgeCount(exercise, base.length), bridgeBudget);
+    generatedPhases.push(
+      {
+        label: 'Αρχική θέση',
+        poseDescription: init.pose,
+        changeFromPrevious: init.change,
+        phaseType: 'initial',
+      },
+      {
+        label: 'Φάση καθόδου / προετοιμασίας',
+        poseDescription: descent.pose,
+        changeFromPrevious: descent.change,
+        phaseType: 'descent',
+      },
+      {
+        label: 'Κύρια θέση της κίνησης',
+        poseDescription: apex.pose,
+        changeFromPrevious: apex.change,
+        phaseType: 'apex',
+      },
+      {
+        label: 'Φάση επιστροφής',
+        poseDescription: ascent.pose,
+        changeFromPrevious: ascent.change,
+        phaseType: 'ascent',
+      },
+      {
+        label: 'Επιστροφή στην αρχική θέση',
+        poseDescription: reset.pose,
+        changeFromPrevious: reset.change,
+        phaseType: 'final',
+      }
+    );
+  } else {
+    // Σύνθετη άσκηση (complex flow / combo):
+    // Εξαγωγή των πραγματικών διακριτών σταδίων χωρίς τεχνητά bridge frames
+    const sourceList = Array.isArray(sourceFrames) && sourceFrames.length > 0 ? sourceFrames : [];
 
-  for (let i = 1; i < base.length; i++) {
-    const prev = base[i - 1];
-    const nxt = base[i];
-    for (let step = 1; step <= bridges; step++) {
-      const delta = changeBetween(exercise, prev.poseDescription, nxt.poseDescription, step, bridges);
-      const cue = `${delta} Η στάση μετακινείται ομαλά από το προηγούμενο καρέ προς την επόμενη καταγεγραμμένη θέση.`;
-      expanded.push({
-        label: `${prev.label} → ${nxt.label} · ενδιάμεσο ${step}/${bridges}`,
-        poseDescription: detailedCue(exercise, cue, `${prev.label} ${nxt.label}`),
-        changeFromPrevious: delta,
+    if (sourceList.length >= 3 && sourceList.length <= 14) {
+      // Καθαρισμός από τυχόν παλιά bridge labels ("ενδιάμεσο")
+      const cleanList = sourceList.filter(
+        (f) => !norm(f.label || '').includes('ενδιαμεσο') && !norm(f.label || '').includes('ενδιάμεσο')
+      );
+
+      const init = getPhaseSpecificCoaching(exercise, 'initial', cleanList[0]?.poseDescription || cleanList[0]?.sourceCue);
+      generatedPhases.push({
+        label: 'Αρχική θέση',
+        poseDescription: init.pose,
+        changeFromPrevious: init.change,
+        phaseType: 'initial',
+      });
+
+      const intermediates = cleanList.slice(1, cleanList.length - 1);
+      // Περιορισμός ενδιάμεσων ώστε το σύνολο να μην ξεπερνά τα 14 (συν το τελικό = 15)
+      const allowedIntermediates = intermediates.slice(0, 13);
+
+      for (let i = 0; i < allowedIntermediates.length; i++) {
+        const item = allowedIntermediates[i];
+        const cue = clean(item.poseDescription || item.sourceCue || item.cue || item.label);
+        const apexCoach = getPhaseSpecificCoaching(exercise, 'apex', cue);
+
+        generatedPhases.push({
+          label: clean(item.label) || `Στάδιο κίνησης ${i + 1}`,
+          poseDescription: `${cue}. ${apexCoach.pose}`,
+          changeFromPrevious: `Μετάβαση στο στάδιο ${i + 1}: ${apexCoach.change}`,
+          phaseType: 'apex',
+        });
+      }
+
+      const reset = getPhaseSpecificCoaching(exercise, 'final');
+      generatedPhases.push({
+        label: 'Επιστροφή στην αρχική θέση',
+        poseDescription: reset.pose,
+        changeFromPrevious: reset.change,
+        phaseType: 'final',
+      });
+    } else {
+      // Εξαγωγή από περιγραφή ή φάσεις του exercise
+      const rawSentences = sentences(exercise.instructions || exercise.description).filter(
+        (s) => s.length > 15 && !norm(s).includes('αποφυγετε') && !norm(s).includes('προσοχη')
+      );
+      const intermediateSentences = rawSentences.slice(1, Math.min(rawSentences.length, 6));
+
+      const init = getPhaseSpecificCoaching(exercise, 'initial', rawSentences[0]);
+      generatedPhases.push({
+        label: 'Αρχική θέση',
+        poseDescription: init.pose,
+        changeFromPrevious: init.change,
+        phaseType: 'initial',
+      });
+
+      if (intermediateSentences.length === 0) {
+        const apex = getPhaseSpecificCoaching(exercise, 'apex');
+        generatedPhases.push({
+          label: 'Κορυφαία θέση σύνθετης κίνησης',
+          poseDescription: apex.pose,
+          changeFromPrevious: apex.change,
+          phaseType: 'apex',
+        });
+      } else {
+        intermediateSentences.forEach((sentence, i) => {
+          const coach = getPhaseSpecificCoaching(exercise, i === intermediateSentences.length - 1 ? 'apex' : 'descent', sentence);
+          generatedPhases.push({
+            label: `Στάδιο κίνησης ${i + 1}`,
+            poseDescription: `${sentence}. ${coach.pose}`,
+            changeFromPrevious: `Μετάβαση προς το στάδιο ${i + 1}: ${coach.change}`,
+            phaseType: 'apex',
+          });
+        });
+      }
+
+      const reset = getPhaseSpecificCoaching(exercise, 'final');
+      generatedPhases.push({
+        label: 'Επιστροφή στην αρχική θέση',
+        poseDescription: reset.pose,
+        changeFromPrevious: reset.change,
+        phaseType: 'final',
       });
     }
-    expanded.push({
-      ...nxt,
-      changeFromPrevious: changeBetween(exercise, prev.poseDescription, nxt.poseDescription, bridges, bridges),
-    });
   }
 
-  const total = expanded.length + 1;
-  const frames: FrameItem[] = expanded.map((phase, i) => ({
-    frame: i + 1,
-    label: phase.label,
-    poseDescription: phase.poseDescription,
-    changeFromPrevious: phase.changeFromPrevious,
-    transitionDescription: phase.changeFromPrevious,
-    referenceProfile: profile,
-    referenceImage: reference.url,
-    referenceSha256: reference.sha256,
-    sameImageAs: null,
-    prompt: promptFor(exercise, profile, phase, i, total, base[i - 1]?.poseDescription, base[i + 1]?.poseDescription),
-  }));
+  // Αυστηρός έλεγχος διασφάλισης εύρους: 3 έως 15 καρέ
+  while (generatedPhases.length > 15) {
+    // Αφαίρεση περιττών ενδιάμεσων καρέ αν ξεπερνούν τα 15
+    generatedPhases.splice(Math.floor(generatedPhases.length / 2), 1);
+  }
 
-  frames.push({
-    frame: total,
-    label: 'Τελική επαναφορά — ίδια με την αρχική θέση',
-    poseDescription: frames[0].poseDescription,
-    changeFromPrevious:
-      'Ολοκλήρωσε την αντίστροφη τροχιά και επέστρεψε ακριβώς στην αρχική θέση, με τα ίδια σημεία στήριξης, λαβή, εξοπλισμό και ουδέτερη στάση.',
-    transitionDescription:
-      'Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.',
-    referenceProfile: profile,
-    referenceImage: reference.url,
-    referenceSha256: reference.sha256,
-    sameImageAs: 1,
-    prompt:
-      'REUSE THE EXACT IMAGE FILE GENERATED FOR FRAME 1. Do not generate or alter another model, pose, camera, equipment or background.',
+  const total = generatedPhases.length;
+
+  const frames: FrameItem[] = generatedPhases.map((phase, i) => {
+    const isFirst = i === 0;
+    const isLast = i === total - 1;
+
+    return {
+      frame: i + 1,
+      label: phase.label,
+      poseDescription: phase.poseDescription,
+      changeFromPrevious: phase.changeFromPrevious,
+      transitionDescription: phase.changeFromPrevious,
+      referenceProfile: profile,
+      referenceImage: reference.url,
+      referenceSha256: reference.sha256,
+      sameImageAs: isLast ? 1 : null,
+      prompt: isLast
+        ? 'REUSE THE EXACT IMAGE FILE GENERATED FOR FRAME 1. Do not generate or alter another model, pose, camera, equipment or background.'
+        : promptFor(exercise, profile, phase, i, total),
+    };
   });
 
   return {
@@ -353,7 +392,7 @@ export function buildVisualization(
       reference.url +
       ' (SHA-256 ' +
       reference.sha256 +
-      '). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.',
+      '). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. The final frame with sameImageAs must reuse the source image file exactly.',
     fixedVisualContext:
       'Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.',
     frameCount: frames.length,
@@ -365,13 +404,17 @@ export function buildVisualization(
 
 export function ensureVisualization(exercise: Partial<Exercise> = {}): Exercise {
   const current = exercise.visualization;
-  const complete =
+  // Ελέγχουμε αν υπάρχει ήδη έγκυρη ακολουθία έκδοσης 2 με 3 έως 15 καρέ
+  const isValid =
     current?.version === 2 &&
     Array.isArray(current.frames) &&
     current.frames.length >= 3 &&
-    current.frames.every((frame) => frame.prompt && frame.referenceImage && frame.referenceSha256 && 'sameImageAs' in frame);
+    current.frames.length <= 15 &&
+    current.frames[current.frames.length - 1].sameImageAs === 1 &&
+    current.frames.every((frame) => frame.prompt && frame.referenceImage && frame.referenceSha256);
 
-  if (complete) return exercise as Exercise;
+  if (isValid) return exercise as Exercise;
+
   if (current && Array.isArray(current.frames) && current.frames.length >= 2) {
     return { ...exercise, visualization: buildVisualization(exercise, current.frames) } as Exercise;
   }
