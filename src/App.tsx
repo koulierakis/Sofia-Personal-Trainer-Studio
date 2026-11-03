@@ -11,6 +11,7 @@ import {
   reviewCounts,
 } from './services/review-system';
 import { FramePlayer } from './components/FramePlayer';
+import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 
 const STORE_KEY = 'sofia_personal_trainer_v3';
 
@@ -580,6 +581,24 @@ export const App: React.FC = () => {
         </div>
       )}
 
+      {/* STRICT VISUAL REFERENCE LOCK BANNER */}
+      <aside className="my-3 p-4 rounded-xl bg-gradient-to-r from-amber-950/80 via-slate-900/90 to-amber-950/80 border-2 border-amber-500 shadow-xl text-amber-100 text-xs">
+        <div className="flex items-start gap-3">
+          <span className="text-2xl select-none">🔒</span>
+          <div>
+            <h3 className="text-amber-300 font-extrabold uppercase tracking-wider text-sm mb-1">
+              ΑΥΣΤΗΡΟΣ ΚΑΝΟΝΑΣ ΑΠΟΛΥΤΟΥ ΟΠΤΙΚΟΥ ΚΛΕΙΔΩΜΑΤΟΣ &amp; ΛΗΨΗΣ 45° (SOFIA VISUAL LOCK)
+            </h3>
+            <p className="leading-relaxed text-slate-100 font-semibold text-xs">
+              Όποιος χειρίζεται την εφαρμογή <strong className="text-white font-extrabold uppercase">Sofia Personal Trainer Studio</strong> και κάνει την οποιαδήποτε αλλαγή ή οπτικοποίηση, υποχρεούται <strong className="text-amber-300 font-black uppercase underline decoration-amber-400">ΑΥΣΤΗΡΑ ΚΑΙ ΑΠΟΚΛΕΙΣΤΙΚΑ</strong> να τηρεί:
+              (1) <strong className="text-amber-300 font-black uppercase">ΜΟΝΟ ΕΝΑ ΑΠΟ ΤΑ ΔΥΟ ΕΓΚΕΚΡΙΜΕΝΑ ΜΟΝΤΕΛΑ</strong> (Athletico Female &amp; Athletico Male Reference), και στις συνδυαστικές και τα δύο,
+              (2) <strong className="text-amber-200 font-bold">ΤΑ ΙΔΙΑ ΡΟΥΧΑ, ΤΑ ΙΔΙΑ ΠΑΠΟΥΤΣΙΑ</strong> και <strong className="text-amber-200 font-bold">ΤΟ ΙΔΙΟ ΠΕΡΙΒΑΛΛΟΝ / ΙΔΙΑ ΦΩΤΕΙΝΟΤΗΤΑ</strong> του studio ATHLETICO,
+              (3) <strong className="text-amber-300 font-black uppercase">ΣΤΑΘΕΡΗ ΛΗΨΗ ΣΤΙΣ 45 ΜΟΙΡΕΣ</strong> (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) σε όλες τις ασκήσεις για ιδανική οπτική γωνία. <strong className="text-rose-300 font-extrabold uppercase">Απαγορεύεται ρητά οποιαδήποτε αλλαγή χαρακτηριστικών, μοντέλου ή γωνίας λήψης.</strong>
+            </p>
+          </div>
+        </div>
+      </aside>
+
       <main className="mt-2">
         {/* WELCOME SECTION */}
         {!mode && (
@@ -809,25 +828,52 @@ export const App: React.FC = () => {
                   {filteredExercises.slice(0, limit).map((x) => {
                     const equipStr = getEquipmentList(x).join(' · ') || 'Βάρος σώματος';
                     const isPendingReview = x.custom && x.requiresCoachReview;
+                    const cardProfile = modelProfileFor(x);
+                    const cardAthleteRef = VISUAL_REFERENCES[cardProfile];
                     return (
-                      <article key={x.id} className="card">
-                        <span className={`badge ${isPendingReview ? 'warning-badge' : ''}`}>
-                          {x.custom ? 'CUSTOM · ADVANCED' : x.requiresCoachReview ? 'ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ' : x.level || '—'}
-                        </span>
-                        <h3>{getExerciseName(x)}</h3>
-                        <p>{x.custom ? (x.category || 'Full Body') + ' · ' : ''}{equipStr}</p>
-                        {isPendingReview && (
-                          <small className="warning text-xs text-amber-300 font-medium">
-                            Υπό αξιολόγηση προπονητή
-                          </small>
-                        )}
+                      <article key={x.id} className="card flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-center justify-between gap-1 mb-1">
+                            <span className={`badge ${isPendingReview ? 'warning-badge' : ''}`}>
+                              {x.custom ? 'CUSTOM · ADVANCED' : x.requiresCoachReview ? 'ΥΠΟ ΑΞΙΟΛΟΓΗΣΗ' : x.level || '—'}
+                            </span>
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-950 text-sky-300 border border-sky-800">
+                              45° λοξά
+                            </span>
+                          </div>
+                          <h3>{getExerciseName(x)}</h3>
+                          <p>{x.custom ? (x.category || 'Full Body') + ' · ' : ''}{equipStr}</p>
+                          {isPendingReview && (
+                            <small className="warning text-xs text-amber-300 font-medium block my-1">
+                              Υπό αξιολόγηση προπονητή
+                            </small>
+                          )}
+
+                          {/* ΕΝΣΩΜΑΤΩΜΕΝΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ */}
+                          <div className="flex items-center gap-2 my-2 p-1.5 rounded-lg bg-[#0c1626] border border-sky-900/60 shadow-sm">
+                            <img
+                              src={cardAthleteRef.url}
+                              alt={cardAthleteRef.athleteTitleGreek}
+                              className="w-8 h-10 rounded object-cover object-top border border-amber-400 shrink-0 shadow"
+                            />
+                            <div className="text-[11px] leading-tight text-slate-300">
+                              <span className="text-amber-300 font-bold block truncate">
+                                {cardAthleteRef.athleteTitleGreek}
+                              </span>
+                              <span className="text-slate-400 text-[10px] block">
+                                Υποχρεωτικό Μοντέλο Αναφοράς
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
                         <button
                           type="button"
                           onClick={() => {
                             setSelectedExerciseId(x.id);
                             window.scrollTo({ top: 0, behavior: 'instant' });
                           }}
-                          className="mt-auto"
+                          className="mt-3 w-full"
                         >
                           Προβολή άσκησης
                         </button>
@@ -951,34 +997,89 @@ export const App: React.FC = () => {
                 )}
 
                 {/* Visualization Sequence and Frame Player */}
-                {currentSelectedExercise.visualization && (
-                  <section className="visualization-sequence mt-6 pt-6 border-t border-[#293d59]">
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
-                    </h3>
+                {currentSelectedExercise.visualization && (() => {
+                  const rawProf = currentSelectedExercise.visualization.referenceProfile;
+                  const detailProfile: 'female' | 'male' =
+                    rawProf === 'male' || rawProf === 'female' ? rawProf : modelProfileFor(currentSelectedExercise);
+                  const detailAthleteRef = VISUAL_REFERENCES[detailProfile];
 
-                    <p className="muted text-xs text-slate-400 mb-1">
-                      {currentSelectedExercise.visualization.fixedVisualContext}
-                    </p>
+                  return (
+                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#293d59]">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 className="text-lg font-bold text-white">
+                          Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
+                        </h3>
+                        <span className="px-2.5 py-1 text-xs font-black rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500 uppercase tracking-wider">
+                          🔒 Υποχρεωτικό Μοντέλο: {detailAthleteRef.athleteTitleGreek}
+                        </span>
+                      </div>
 
-                    <p className="warning text-xs text-amber-300 font-mono mb-2">
-                      Κλειδωμένη αναφορά μοντέλου/φόντου: {currentSelectedExercise.visualization.referenceImage} · SHA-256{' '}
-                      {currentSelectedExercise.visualization.referenceSha256}
-                    </p>
+                      {/* ΕΝΣΩΜΑΤΩΜΕΝΗ ΚΑΡΤΑ ΑΝΑΦΟΡΑΣ ΜΟΝΤΕΛΟΥ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
+                      <div className="my-4 p-4 rounded-2xl bg-gradient-to-r from-[#0c182c] via-[#12243d] to-[#0c182c] border-2 border-amber-500 shadow-2xl">
+                        <div className="flex flex-col md:flex-row items-center gap-5">
+                          <div className="relative shrink-0 w-36 h-48 rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl bg-black">
+                            <img
+                              src={detailAthleteRef.url}
+                              alt={detailAthleteRef.athleteTitleGreek}
+                              className="w-full h-full object-cover object-top"
+                            />
+                            <div className="absolute top-1 left-1 right-1 bg-black/90 text-[10px] text-amber-300 font-extrabold px-1.5 py-0.5 rounded text-center tracking-wider uppercase">
+                              Επίσημη Αναφορά
+                            </div>
+                            <div className="absolute bottom-1 left-1 right-1 bg-black/85 text-[10px] text-sky-200 font-bold px-1 py-0.5 rounded text-center">
+                              📐 Λήψη 45°
+                            </div>
+                          </div>
 
-                    <p className="muted text-xs text-slate-400 mb-2">
-                      {currentSelectedExercise.visualization.promptTemplate}
-                    </p>
+                          <div className="flex-1 space-y-2 text-left">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className="px-2 py-0.5 text-xs font-bold rounded bg-amber-950 text-amber-200 border border-amber-600">
+                                {detailAthleteRef.athleteName}
+                              </span>
+                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-sky-950 text-sky-200 border border-sky-700">
+                                Studio ATHLETICO
+                              </span>
+                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-emerald-950 text-emerald-200 border border-emerald-600">
+                                45° Λοξή Οπτική Γωνία
+                              </span>
+                            </div>
 
-                    <p className="muted text-xs text-slate-400 mb-4 italic">
-                      Ο player αναπαράγει διαδοχικά τα αναγκαία καρέ της επανάληψης (3–15 καρέ βάσει πολυπλοκότητας) με πλήρεις κινησιολογικές οδηγίες για αρχαρίους. Το πρώτο και το τελευταίο καρέ αντιστοιχούν στην ίδια αρχική θέση σώματος.
-                    </p>
+                            <p className="text-xs text-slate-200 leading-relaxed font-medium">
+                              <strong className="text-amber-300 font-extrabold uppercase">ΥΠΟΧΡΕΩΤΙΚΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ:</strong> Στην άσκηση αυτή έχει ανατεθεί ως σημείο αναφοράς αποκλειστικά το συγκεκριμένο μοντέλο ({detailProfile === 'male' ? 'Άνδρας Αθλητής' : 'Γυναίκα Αθλήτρια'}). Οποιοσδήποτε χειριστής επιχειρήσει ή εξουσιοδοτηθεί να προβεί σε αλλαγές ή παραγωγή εικόνων, υποχρεούται αυστηρά να χρησιμοποιήσει αποκλειστικά αυτό το μοντέλο, με τα ίδια ρούχα ({detailAthleteRef.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με σταθερή λήψη 45 μοιρών (στη μέση λοξά).
+                            </p>
 
-                    {/* Interactive Frame Player with Visual Image Support */}
-                    <FramePlayer
-                      sequence={currentSelectedExercise.visualization}
-                      exerciseId={currentSelectedExercise.id}
-                    />
+                            <div className="p-2.5 rounded-lg bg-black/40 border border-amber-500/40 text-[11px] text-amber-200 font-semibold flex items-center gap-2">
+                              <span className="text-base select-none">🛡️</span>
+                              <span>
+                                <strong>Ασφαλιστική Δικλείδα:</strong> Εάν δεν τηρείται αυτό το μοντέλο και τα παραπάνω χαρακτηριστικά, η εφαρμογή μπλοκάρει υποχρεωτικά τη συνέχεια της οπτικοποίησης.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="muted text-xs text-slate-400 mb-1">
+                        {currentSelectedExercise.visualization.fixedVisualContext}
+                      </p>
+
+                      <p className="warning text-xs text-amber-300 font-mono mb-2">
+                        Κλειδωμένη αναφορά μοντέλου/φόντου: {currentSelectedExercise.visualization.referenceImage} · SHA-256{' '}
+                        {currentSelectedExercise.visualization.referenceSha256}
+                      </p>
+
+                      <p className="muted text-xs text-slate-400 mb-2">
+                        {currentSelectedExercise.visualization.promptTemplate}
+                      </p>
+
+                      <p className="muted text-xs text-slate-400 mb-4 italic">
+                        Ο player αναπαράγει διαδοχικά τα αναγκαία καρέ της επανάληψης (3–15 καρέ βάσει πολυπλοκότητας) με πλήρεις κινησιολογικές οδηγίες για αρχαρίους. Το πρώτο και το τελευταίο καρέ αντιστοιχούν στην ίδια αρχική θέση σώματος.
+                      </p>
+
+                      {/* Interactive Frame Player with Visual Image Support */}
+                      <FramePlayer
+                        sequence={currentSelectedExercise.visualization}
+                        exerciseId={currentSelectedExercise.id}
+                      />
 
                     {/* Collapsible details for each frame */}
                     <div className="space-y-2 my-6">
@@ -1019,7 +1120,8 @@ export const App: React.FC = () => {
                       Λήψη prompts όλων των καρέ (.txt)
                     </button>
                   </section>
-                )}
+                );
+              })()}
               </article>
             )}
 
