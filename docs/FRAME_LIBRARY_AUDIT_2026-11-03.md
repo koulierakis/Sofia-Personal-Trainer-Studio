@@ -26,3 +26,14 @@ Source: the user-provided Sofia Personal Trainer Studio ZIP, inspected locally. 
 6. Run automated tests, build, and a real Zevara pilot. No claim of completion before these pass.
 
 The per-exercise CSV audit was generated as a downloadable conversation artifact; it is not yet committed to the repository.
+
+
+## Prompt-level inspection — follow-up
+A rule-based scan of the 112 source exercise records found:
+- **133 unique frame pose descriptions** starting with imperative verbs (e.g., "Μετακίνησε", "Χαμήλωσε", "Πίεσε"). Such instructions describe motion rather than a frozen body configuration; review individually, not automatic failures.
+- **86 frame pose descriptions** containing explicit 45° or 90° angles. Check for unjustified universal angles; these can be correct in some movements (e.g., dead bug).
+- **494 non-reused frame records** with no `imageUrl` attached to their frame objects.
+
+Example: Bodyweight Squat frame 2 says "Μετακίνησε ισχία ελαφρά πίσω και λύγισε σταδιακά γόνατα". A static image prompt should instead state the *resulting* knee/hip flexion, foot contact, trunk orientation and arm position, without inventing exact joint angles. This example is flagged for coach review, not auto-rewritten.
+
+Run `node scripts/audit-frame-poses.mjs` to regenerate detailed per-frame issues locally. The audit is structural and heuristic; it does not certify pose safety.
