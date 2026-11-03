@@ -12,7 +12,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLooping, setIsLooping] = useState(true);
   const [delay, setDelay] = useState(1500);
-  const [isSafeguardVerified, setIsSafeguardVerified] = useState(true);
+  const isSafeguardVerified = false; // No verified generator reference attachment or identity evidence is available.
   const timerRef = useRef<number | null>(null);
 
   const frames = sequence.frames || [];
@@ -28,7 +28,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   }, [sequence, exerciseId]);
 
   useEffect(() => {
-    if (isPlaying && isSafeguardVerified) {
+    if (isPlaying) {
       timerRef.current = window.setInterval(() => {
         setIndex((prev) => {
           if (prev >= frames.length - 1) {
@@ -54,12 +54,9 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
         timerRef.current = null;
       }
     };
-  }, [isPlaying, delay, frames.length, isLooping, isSafeguardVerified]);
+  }, [isPlaying, delay, frames.length, isLooping]);
 
   const togglePlay = () => {
-    if (!isSafeguardVerified) {
-      return;
-    }
     if (isPlaying) {
       setIsPlaying(false);
     } else {
@@ -71,7 +68,6 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   };
 
   const handleStep = (direction: number) => {
-    if (!isSafeguardVerified) return;
     setIsPlaying(false);
     setIndex((prev) => {
       const next = prev + direction;
@@ -82,7 +78,6 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   };
 
   const handleSelectFrame = (targetIndex: number) => {
-    if (!isSafeguardVerified) return;
     setIsPlaying(false);
     setIndex(Math.max(0, Math.min(frames.length - 1, targetIndex)));
   };
@@ -134,30 +129,16 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
               <strong className="text-amber-200 font-bold">Υποχρεωτικός Κανόνας:</strong> Για την οπτικοποίηση αυτής της άσκησης απαιτείται <strong className="text-white font-extrabold uppercase underline decoration-amber-400">αυστηρά και αποκλειστικά</strong> η χρήση του συγκεκριμένου μοντέλου, με την ίδια ενδυμασία ({referenceData.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με λήψη σταθερά στις 45 μοίρες (στη μέση λοξά).
             </p>
 
-            {/* ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ TOGGLE */}
-            <div className="mt-2 pt-2 border-t border-slate-700/60 flex items-center justify-between gap-3">
-              <label className="text-xs text-slate-300 flex items-center gap-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={isSafeguardVerified}
-                  onChange={(e) => setIsSafeguardVerified(e.target.checked)}
-                  className="rounded w-4 h-4 accent-amber-500 cursor-pointer"
-                />
-                <span className="text-slate-200 font-medium">
-                  🛡️ <strong>Ασφαλιστική Δικλείδα:</strong> Επιβεβαιώνω ότι χρησιμοποιείται αποκλειστικά το ανατεθειμένο μοντέλο και η γωνία 45°
-                </span>
-              </label>
-
-              <span className={`text-[11px] font-extrabold uppercase px-2 py-0.5 rounded ${isSafeguardVerified ? 'bg-emerald-900/80 text-emerald-300 border border-emerald-500' : 'bg-rose-950 text-rose-300 border border-rose-600'}`}>
-                {isSafeguardVerified ? '✓ ΕΝΕΡΓΗ / ΣΥΜΜΟΡΦΗ' : '⛔ ΜΠΛΟΚΑΡΙΣΜΕΝΗ'}
-              </span>
+            {/* Reference assignment is NOT proof of generation compliance. */}
+            <div className="mt-2 pt-2 border-t border-slate-700/60 text-xs text-amber-200" role="status">
+              🛡️ Μοντέλο αναφοράς ανατεθειμένο — ΜΗ ΕΠΑΛΗΘΕΥΜΕΝΟ. Δεν έχει αποδειχθεί ότι ο generator έλαβε τη φωτογραφία αναφοράς ή διατήρησε την ταυτότητα.
             </div>
           </div>
         </div>
       </div>
 
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
-      {!isSafeguardVerified && (
+      {false && (
         <div className="my-4 p-5 rounded-2xl bg-rose-950/90 border-2 border-rose-500 text-rose-100 shadow-2xl text-center space-y-2 animate-pulse">
           <div className="text-3xl">⛔</div>
           <h4 className="text-base font-black text-rose-200 uppercase tracking-wide">
@@ -170,7 +151,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
       )}
 
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
-      {isSafeguardVerified && (
+      {(
         <>
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
             <h4 className="font-semibold text-lg text-white">
@@ -240,7 +221,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
               <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
                 {/* Κλειδωμένη φωτογραφία μοντέλου αναφοράς ενσωματωμένη στην άσκηση */}
                 <img
-                  src={currentFrame.imageUrl || referenceData.url}
+                  src={currentFrame.imageUrl || ''}
                   alt={`${currentFrame.label} - Καρέ ${index + 1}`}
                   className="w-full h-full object-cover object-top transition-all duration-300"
                 />
@@ -345,7 +326,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                       title={`Καρέ ${i + 1}: ${f.label}`}
                     >
                       <img
-                        src={f.imageUrl || referenceData.url}
+                        src={f.imageUrl || ''}
                         alt={`Καρέ ${i + 1}`}
                         className="w-full h-full object-cover object-top"
                       />
