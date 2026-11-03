@@ -26,7 +26,7 @@ for(const ex of records){
       add(ex,f.frame,'DUPLICATE_ADJACENT_POSE','Adjacent frames have identical pose text');
   }
 }
-const byCode=Object.entries(Object.groupBy(issues,x=>x.code)).map(([code,items])=>({code,count:items.length})).sort((a,b)=>b.count-a.count);
+const byCode=Object.entries(issues.reduce((acc,x)=>{acc[x.code]=(acc[x.code]||0)+1;return acc;},{})).map(([code,count])=>({code,count})).sort((a,b)=>b.count-a.count);
 const report={exerciseCount:records.length,frameCount:records.reduce((n,e)=>n+(e.visualization?.frames?.length||0),0),issueCount:issues.length,byCode,issues};
 const output=process.argv[2]||'frame-audit-results.json';
 fs.writeFileSync(output,JSON.stringify(report,null,2)+'\n');
