@@ -11,6 +11,7 @@ import {
   reviewCounts,
 } from './services/review-system';
 import { FramePlayer } from './components/FramePlayer';
+import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 
 const STORE_KEY = 'sofia_personal_trainer_v3';
@@ -1080,6 +1081,7 @@ export const App: React.FC = () => {
                         sequence={currentSelectedExercise.visualization}
                         exerciseId={currentSelectedExercise.id}
                       />
+                      <MotionValidation frames={currentSelectedExercise.visualization.frames} exerciseId={currentSelectedExercise.id} />
 
                     {/* Collapsible details for each frame */}
                     <div className="space-y-2 my-6">
