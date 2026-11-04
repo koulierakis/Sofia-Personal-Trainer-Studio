@@ -33,7 +33,14 @@ const templates = [
   ]}
 ];
 
-function familyLaterality(exercise, frame) {\n  const text = tidy([exercise?.name, exercise?.title, exercise?.gr, exercise?.greekName].join(' '));\n  if (/reverse lunge|backward lunge|πισω προβολ|οπισθια προβ/.test(text)) return 'Η αριστερή πλευρά είναι η μπροστινή/στηρικτική και η δεξιά το πόδι που κινείται προς τα πίσω, σύμφωνα με την παραδοχή της ανάλυσης.';\n  if (/squat|καθισμα|glute bridge|hip bridge|γεφυρα|calf raise|heel raise|deadlift|hip hinge|rdl|push.?up|καμψεις/.test(text)) return 'Αριστερό και δεξί άκρο κινούνται συμμετρικά όπως περιγράφεται· οι δύο πλευρές διατηρούν ίδιες επαφές και γωνίες. Ποτέ κατοπτρισμός.';\n  return 'Διατήρησε ρητά την ανατομική αριστερή και δεξιά πλευρά· ποτέ κατοπτρισμός.';\n}\n\nfunction promptFor(frame, index, exercise, identityLock) {
+function familyLaterality(exercise, frame) {
+  const text = tidy([exercise?.name, exercise?.title, exercise?.gr, exercise?.greekName].join(' '));
+  if (/reverse lunge|backward lunge|πισω προβολ|οπισθια προβ/.test(text)) return 'Η αριστερή πλευρά είναι η μπροστινή/στηρικτική και η δεξιά το πόδι που κινείται προς τα πίσω, σύμφωνα με την παραδοχή της ανάλυσης.';
+  if (/squat|καθισμα|glute bridge|hip bridge|γεφυρα|calf raise|heel raise|deadlift|hip hinge|rdl|push.?up|καμψεις/.test(text)) return 'Αριστερό και δεξί άκρο κινούνται συμμετρικά όπως περιγράφεται· οι δύο πλευρές διατηρούν ίδιες επαφές και γωνίες. Ποτέ κατοπτρισμός.';
+  return 'Διατήρησε ρητά την ανατομική αριστερή και δεξιά πλευρά· ποτέ κατοπτρισμός.';
+}
+
+function promptFor(frame, index, exercise, identityLock) {
   const unchanged = index === 0 ? 'Καμία προηγούμενη στάση.' : 'Κεφάλι, βλέμμα, αυχένας, κορμός, λεκάνη και τα μέλη που δεν αναφέρονται ως κινητά διατηρούν την περιγραφόμενη ουδέτερη ευθυγράμμιση.';
   const sideNote = familyLaterality(exercise, frame);
   return [
