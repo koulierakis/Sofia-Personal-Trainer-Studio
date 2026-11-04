@@ -836,7 +836,7 @@ body {
     width: 54px;
     height: 54px;
     border-radius: 13px;
-    ring-color: rgba(159, 184, 216, 0.9);
+    --tw-ring-color: rgba(159, 184, 216, 0.9);
   }
   #appHeader .brand h1 {
     font-size: 23px;
