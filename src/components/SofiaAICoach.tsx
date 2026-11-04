@@ -12,7 +12,7 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
   const [input, setInput] = useState('');
   const [mode, setMode] = useState<'image' | 'video'>('image');
   const [plan, setPlan] = useState<any>(null);
-  const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', text: 'Είμαι η Sofia AI Coach. Μπορώ να αναλύσω την επιλεγμένη άσκηση και να φτιάξω prompts καρέ. Η συνομιλία χρησιμοποιεί προαιρετικά τοπικό Ollama, χωρίς εξωτερικό API.' }]);
+  const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', text: 'Είμαι η Μπέμπα μου AI Coach. Μπορώ να αναλύσω την επιλεγμένη άσκηση και να φτιάξω prompts καρέ. Η συνομιλία χρησιμοποιεί προαιρετικά τοπικό Ollama, χωρίς εξωτερικό API.' }]);
   const [busy, setBusy] = useState(false);
   const [ollamaUrl, setOllamaUrl] = useState(() => localStorage.getItem('sofia_ollama_url') || 'http://localhost:11434');
   const [ollamaModel, setOllamaModel] = useState(() => localStorage.getItem('sofia_ollama_model') || 'qwen2.5:3b');
@@ -24,7 +24,7 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
     referenceProfile: profile,
     referenceImage: reference.url,
     referenceSha256: reference.sha256,
-    promptTemplate: 'Sofia AI Coach precision motion prompt',
+    promptTemplate: 'Μπέμπα μου AI Coach precision motion prompt',
     fixedVisualContext: identityLock,
     frameCount: plan.frames.length,
     closingFrameReuses: plan.frames.some((frame: any) => frame.sameImageAs === 1) ? 1 : 0,
@@ -54,7 +54,7 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
       const response = await fetch(ollamaUrl.replace(/\/$/, '') + '/api/chat', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ model: ollamaModel, stream: false, messages: [
-          { role: 'system', content: 'Είσαι η Sofia AI Coach, μιλάς πάντα ελληνικά. Βοηθάς με προπονητική και κινησιολογική περιγραφή, δεν διαγιγνώσκεις και δεν πιστοποιείς ασφάλεια. Επιλεγμένη άσκηση: ' + (exercise.greekName || exercise.gr || exercise.name || exercise.title) + '. Περιγραφή: ' + (exercise.instructions || exercise.description || 'δεν υπάρχει') + '. Μην επινοείς κινήσεις που δεν προκύπτουν.' },
+          { role: 'system', content: 'Είσαι η Μπέμπα μου AI Coach, μιλάς πάντα ελληνικά. Βοηθάς με προπονητική και κινησιολογική περιγραφή, δεν διαγιγνώσκεις και δεν πιστοποιείς ασφάλεια. Επιλεγμένη άσκηση: ' + (exercise.greekName || exercise.gr || exercise.name || exercise.title) + '. Περιγραφή: ' + (exercise.instructions || exercise.description || 'δεν υπάρχει') + '. Μην επινοείς κινήσεις που δεν προκύπτουν.' },
           ...messages.slice(-8).map((message) => ({ role: message.role, content: message.text })),
           { role: 'user', content: question }
         ] })
@@ -91,9 +91,9 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
     const anchor = document.createElement('a'); anchor.href = url; anchor.download = exercise.id + '-motion-prompts.json'; anchor.click(); URL.revokeObjectURL(url);
   };
 
-  return <section className="my-6 p-4 rounded-2xl border border-violet-700 bg-[#101c30] space-y-4" aria-label="Sofia AI Coach">
+  return <section className="my-6 p-4 rounded-2xl border border-violet-700 bg-[#101c30] space-y-4" aria-label="Μπέμπα μου AI Coach">
     <div className="flex flex-wrap items-center justify-between gap-2">
-      <div><h3 className="text-xl font-bold text-violet-200">SOFIA AI COACH · MOTION ENGINE</h3><p className="text-xs text-slate-300">Επιλεγμένο εγκεκριμένο reference: {reference.athleteTitleGreek} · {reference.file}</p></div>
+      <div><h3 className="text-xl font-bold text-violet-200">ΜΠΕΜΠΑ ΜΟΥ AI COACH · MOTION ENGINE</h3><p className="text-xs text-slate-300">Επιλεγμένο εγκεκριμένο reference: {reference.athleteTitleGreek} · {reference.file}</p></div>
       <div className="flex gap-2"><button type="button" onClick={() => analyze('image')} className="px-3 py-2 rounded bg-violet-800">IMAGE MODE</button><button type="button" onClick={() => analyze('video')} className="px-3 py-2 rounded bg-cyan-800">VIDEO MODE</button></div>
     </div>
     <div className="grid gap-2 md:grid-cols-2">
@@ -104,7 +104,7 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
     <div className="max-h-56 overflow-auto space-y-2 rounded bg-slate-950/60 p-3" aria-live="polite">
       {messages.map((message, index) => <div key={index} className={message.role === 'user' ? 'text-right text-sky-200' : 'text-left text-slate-200'}><span className="inline-block max-w-[95%] rounded-lg bg-slate-800 px-3 py-2 text-sm whitespace-pre-wrap">{message.text}</span>{message.role === 'assistant' && <button type="button" onClick={() => speak(message.text)} className="ml-2 text-xs text-violet-300">🔊</button>}</div>)}
     </div>
-    <form onSubmit={send} className="flex gap-2"><input aria-label="Μήνυμα προς Sofia AI Coach" className="min-w-0 flex-1 rounded bg-slate-800 p-2 text-white" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ρώτησε για την άσκηση…" /><button type="button" onClick={dictate} className="rounded bg-slate-700 px-3">🎙️</button><button disabled={busy} className="rounded bg-violet-700 px-4">{busy ? '…' : 'Αποστολή'}</button></form>
+    <form onSubmit={send} className="flex gap-2"><input aria-label="Μήνυμα προς Μπέμπα μου AI Coach" className="min-w-0 flex-1 rounded bg-slate-800 p-2 text-white" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ρώτησε για την άσκηση…" /><button type="button" onClick={dictate} className="rounded bg-slate-700 px-3">🎙️</button><button disabled={busy} className="rounded bg-violet-700 px-4">{busy ? '…' : 'Αποστολή'}</button></form>
     {plan && <div className="space-y-3 border-t border-slate-700 pt-4">
       <div className="flex items-center justify-between"><h4 className="font-bold text-white">{plan.exercise} · {plan.status}</h4><button type="button" onClick={download} className="rounded bg-slate-700 px-3 py-1 text-sm">Εξαγωγή JSON</button></div>
       {plan.issues.map((issue: string, index: number) => <p key={index} className="text-sm text-amber-200">⚠️ {issue}</p>)}

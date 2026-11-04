@@ -1,4 +1,4 @@
-# Sofia AI Coach and Precision Motion Engine
+# Μπέμπα μου AI Coach και Precision Motion Engine
 
 ## What ships
 - The selected exercise detail view mounts a Greek text and voice coach.
