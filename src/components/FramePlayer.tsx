@@ -207,11 +207,19 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             <div className="md:col-span-5 flex flex-col items-center">
               <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
                 {/* Κλειδωμένη φωτογραφία μοντέλου αναφοράς ενσωματωμένη στην άσκηση */}
-                <img
-                  src={currentFrame.imageUrl || ''}
-                  alt={`${currentFrame.label} - Καρέ ${index + 1}`}
-                  className="w-full h-full object-cover object-top transition-all duration-300"
-                />
+                {currentFrame.imageUrl ? (
+                  <img
+                    src={currentFrame.imageUrl}
+                    alt={`${currentFrame.label} - Καρέ ${index + 1}`}
+                    className="w-full h-full object-cover object-top transition-all duration-300"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6 text-center text-slate-200">
+                    <span className="text-4xl" aria-hidden="true">🖼️</span>
+                    <strong className="text-sm">Εικόνα καρέ δεν έχει παραχθεί</strong>
+                    <span className="text-xs text-slate-400">Το prompt είναι έτοιμο. Πρόσθεσε και έλεγξε την πραγματική εικόνα πριν από έγκριση.</span>
+                  </div>
+                )}
 
                 {/* Overlays */}
                 <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
