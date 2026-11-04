@@ -722,3 +722,43 @@ details summary {
     font-size: 9px;
   }
 }
+
+
+
+/* Bring legacy motion panels and status chips into the same restrained palette */
+#app [class*="bg-violet-"],
+#app [class*="bg-cyan-"],
+#app [class*="bg-sky-"],
+#app [class*="bg-blue-"],
+#app [class*="bg-emerald-"],
+#app [class*="bg-slate-800"],
+#app [class*="bg-slate-900"],
+#app [class*="bg-slate-950"],
+#app [class*="bg-[#101c30]"],
+#app [class*="bg-[#111c2e]"],
+#app [class*="from-blue-"],
+#app [class*="from-[#0c192c]"] {
+  color: #ece7dc !important;
+  background-color: #292a2c !important;
+  background-image: linear-gradient(145deg, #303133, #232426) !important;
+}
+#app [class*="border-violet-"],
+#app [class*="border-cyan-"],
+#app [class*="border-sky-"],
+#app [class*="border-blue-"],
+#app [class*="border-emerald-"] {
+  border-color: rgba(197, 164, 105, 0.38) !important;
+}
+#app [class*="text-violet-"],
+#app [class*="text-cyan-"],
+#app [class*="text-sky-"],
+#app [class*="text-blue-"],
+#app [class*="text-emerald-"] {
+  color: #d8c49b !important;
+}
+#app .frame-player,
+#app [class*="visualization-sequence"],
+#app [aria-label="Motion Validation"] {
+  border-color: rgba(197, 164, 105, 0.38) !important;
+  box-shadow: 0 9px 22px rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 255, 255, 0.04);
+}
