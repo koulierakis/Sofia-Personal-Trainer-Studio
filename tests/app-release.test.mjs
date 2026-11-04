@@ -31,7 +31,9 @@ test('mobile app has a distinct installation identity and standalone launch', as
   assert.match(await read('../mobile.html'), /apple-touch-icon" sizes="180x180" href="\/images\/bemba-mou-app-icon-180\.png/);
   for (const icon of [...desktop.icons, ...mobile.icons]) {
     assert.equal(icon.type, 'image/png');
-    await readFile(new URL(`../public${icon.src}`, import.meta.url));
+    const image = await readFile(new URL(`../public${icon.src}`, import.meta.url));
+    assert.deepEqual([...image.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+    assert.ok(image.byteLength > 10_000, `icon file is truncated: ${icon.src}`);
   }
   assert.match(await read('../mobile.html'), /href="\/manifest-mobile.webmanifest"/);
   const deploy = JSON.parse(await read('../vercel.json'));
