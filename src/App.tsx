@@ -14,6 +14,7 @@ import { FramePlayer } from './components/FramePlayer';
 import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 import { SofiaAICoach } from './components/SofiaAICoach';
+import { HomeAICoachPanel } from './components/HomeAICoachPanel';
 
 const STORE_KEY = 'sofia_personal_trainer_v3';
 
@@ -590,28 +591,20 @@ export const App: React.FC = () => {
         </div>
       )}
 
-      {/* STRICT VISUAL REFERENCE LOCK BANNER */}
-      <aside className="my-3 p-4 rounded-xl bg-gradient-to-r from-amber-950/80 via-slate-900/90 to-amber-950/80 border-2 border-amber-500 shadow-xl text-amber-100 text-xs">
-        <div className="flex items-start gap-3">
-          <span className="text-2xl select-none">🔒</span>
-          <div>
-            <h3 className="text-amber-300 font-extrabold uppercase tracking-wider text-sm mb-1">
-              ΚΛΕΙΔΩΜΑ ΕΓΚΕΚΡΙΜΕΝΟΥ ATHLETICO REFERENCE &amp; ΛΗΨΗΣ 45°
-            </h3>
-            <p className="leading-relaxed text-slate-100 font-semibold text-xs">
-              Όποιος χειρίζεται την εφαρμογή <strong className="text-white font-extrabold uppercase">Μπέμπα μου Personal AI Studio</strong> και κάνει την οποιαδήποτε αλλαγή ή οπτικοποίηση, υποχρεούται <strong className="text-amber-300 font-black uppercase underline decoration-amber-400">ΑΥΣΤΗΡΑ ΚΑΙ ΑΠΟΚΛΕΙΣΤΙΚΑ</strong> να τηρεί:
-              (1) <strong className="text-amber-300 font-black uppercase">ΜΟΝΟ ΕΝΑ ΑΠΟ ΤΑ ΔΥΟ ΕΓΚΕΚΡΙΜΕΝΑ ΜΟΝΤΕΛΑ</strong> (Athletico Female &amp; Athletico Male Reference), και στις συνδυαστικές και τα δύο,
-              (2) <strong className="text-amber-200 font-bold">ΤΑ ΙΔΙΑ ΡΟΥΧΑ, ΤΑ ΙΔΙΑ ΠΑΠΟΥΤΣΙΑ</strong> και <strong className="text-amber-200 font-bold">ΤΟ ΙΔΙΟ ΠΕΡΙΒΑΛΛΟΝ / ΙΔΙΑ ΦΩΤΕΙΝΟΤΗΤΑ</strong> του studio ATHLETICO,
-              (3) <strong className="text-amber-300 font-black uppercase">ΣΤΑΘΕΡΗ ΛΗΨΗ ΣΤΙΣ 45 ΜΟΙΡΕΣ</strong> (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) σε όλες τις ασκήσεις για ιδανική οπτική γωνία. <strong className="text-rose-300 font-extrabold uppercase">Απαγορεύεται ρητά οποιαδήποτε αλλαγή χαρακτηριστικών, μοντέλου ή γωνίας λήψης.</strong>
-            </p>
-          </div>
+      {/* Compact global reference lock notice */}
+      <details className="reference-lock-notice">
+        <summary><span aria-hidden="true">🔒</span><span>ATHLETICO reference · 45°</span><span className="reference-lock-state">Ενεργό</span></summary>
+        <div className="reference-lock-details">
+          <strong>Κλειδωμένη οπτική αναφορά</strong>
+          <p>Χρησιμοποίησε αποκλειστικά το εγκεκριμένο μοντέλο ATHLETICO για κάθε άσκηση, με τα ίδια χαρακτηριστικά, ρούχα, παπούτσια, studio, φωτισμό και κάμερα 45°. Στις συνδυαστικές ασκήσεις χρησιμοποιούνται και τα δύο εγκεκριμένα μοντέλα.</p>
         </div>
-      </aside>
+      </details>
 
       <main className="mt-2">
         {/* WELCOME SECTION */}
         {!mode && (
           <section id="welcome" className="py-4">
+            <HomeAICoachPanel />
             <h2 className="text-2xl font-bold text-white mb-1">Επίλεξε προπόνηση</h2>
             <p className="muted text-slate-400 mb-6">
               Δύο ξεχωριστές βιβλιοθήκες. Οι ασκήσεις εμφανίζονται μόνο μετά από αναζήτηση.
