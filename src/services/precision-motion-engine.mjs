@@ -33,9 +33,9 @@ const templates = [
   ]}
 ];
 
-function promptFor(frame, index, exercise, identityLock) {
+function familyLaterality(exercise, frame) {\n  const text = tidy([exercise?.name, exercise?.title, exercise?.gr, exercise?.greekName].join(' '));\n  if (/reverse lunge|backward lunge|πισω προβολ|οπισθια προβ/.test(text)) return 'Η αριστερή πλευρά είναι η μπροστινή/στηρικτική και η δεξιά το πόδι που κινείται προς τα πίσω, σύμφωνα με την παραδοχή της ανάλυσης.';\n  if (/squat|καθισμα|glute bridge|hip bridge|γεφυρα|calf raise|heel raise|deadlift|hip hinge|rdl|push.?up|καμψεις/.test(text)) return 'Αριστερό και δεξί άκρο κινούνται συμμετρικά όπως περιγράφεται· οι δύο πλευρές διατηρούν ίδιες επαφές και γωνίες. Ποτέ κατοπτρισμός.';\n  return 'Διατήρησε ρητά την ανατομική αριστερή και δεξιά πλευρά· ποτέ κατοπτρισμός.';\n}\n\nfunction promptFor(frame, index, exercise, identityLock) {
   const unchanged = index === 0 ? 'Καμία προηγούμενη στάση.' : 'Κεφάλι, βλέμμα, αυχένας, κορμός, λεκάνη και τα μέλη που δεν αναφέρονται ως κινητά διατηρούν την περιγραφόμενη ουδέτερη ευθυγράμμιση.';
-  const sideNote = frame.label.includes('προβολ') || frame.label.includes('Βήμα') ? 'Η αριστερή πλευρά είναι η μπροστινή/στηρικτική και η δεξιά το πόδι που κινείται προς τα πίσω, σύμφωνα με την παραδοχή της ανάλυσης.' : 'Διατήρησε ρητά την ανατομική αριστερή και δεξιά πλευρά· ποτέ κατοπτρισμός.';
+  const sideNote = familyLaterality(exercise, frame);
   return [
     'FRAME ' + (index + 1) + ' — ' + frame.label + '.',
     'Άσκηση: ' + titleOf(exercise) + '. Στατική εικόνα μίας χρονικής στιγμής.',
@@ -63,7 +63,7 @@ export function analyzeExercise(exercise, { identityLock = '', mode = 'image' } 
 
   const specs = family.frames;
   const frames = specs.map((entry, index) => ({
-    frame: index + 1, label: entry[0], phase: index === 0 ? 'initial' : (index === 1 ? 'eccentric_or_transition' : 'end_range'),
+    frame: index + 1, label: entry[0], phase: index === 0 ? 'initial' : (family.id === 'hip-bridge' || family.id === 'calf-raise' ? 'concentric' : family.id === 'plank' ? 'isometric' : 'eccentric_or_transition'),
     pose: entry[1], support: entry[2], angles: entry[3],
     change: index === 0 ? 'Αφετηρία.' : (index === specs.length - 1 ? 'Αλλαγή κατεύθυνσης ή κορυφαία θέση της κίνησης.' : 'Εμφανίζεται το επόμενο διακριτό κινητικό γεγονός.'),
     poseSpec: { phase: index === 0 ? 'initial' : 'key_position', laterality: 'left_right_explicit', posture: entry[1], support: entry[2], targetAngles: entry[3], equipment: equipmentText(exercise), uncertainty: 'Angle targets are approximate and must be adapted to individual anatomy.' }
@@ -78,7 +78,7 @@ export function analyzeExercise(exercise, { identityLock = '', mode = 'image' } 
     'Σειρά στάσεων: ' + uniqueFrames.map((f) => f.label).join(' → ') + '.',
     ...uniqueFrames.map((f) => f.label + ': ' + f.pose + ' Στήριξη: ' + f.support),
     'Κίνηση ομαλή και ανατομικά συνεχής, με σαφή φορά και ελεγχόμενη αντιστροφή κατεύθυνσης. Καμία τηλεμεταφορά, ανταλλαγή αριστερού/δεξιού άκρου ή μετακίνηση σταθερού εξοπλισμού.',
-    'Κλείσε την επανάληψη στην αρχική στάση. Κλείδωσε ταυτότητα, ρουχισμό, χώρο, φωτισμό και κάμερα σύμφωνα με το επισυναπτόμενο εγκεκριμένο reference.',
+    'Κλείσε την επανάληψη στην αρχική στάση. GLOBAL IDENTITY LOCK: ' + (identityLock || 'επισύναψε εγκεκριμένο reference και κλείδωσε πρόσωπο, σώμα, ρουχισμό, εξοπλισμό, studio, φωτισμό και κάμερα.') ,
     'Χρόνος: μη καθορισμένος· να προσαρμοστεί στο tempo του coach. Μην επινοήσεις ρυθμό ή εύρος κίνησης.'
   ].join('\n');
 
