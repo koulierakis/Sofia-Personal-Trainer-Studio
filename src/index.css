@@ -821,3 +821,67 @@ body {
   color: #d7e5f5;
   text-shadow: 0 1px 0 #f7faff, 0 2px 0 #71869f, 0 4px 8px rgba(0, 0, 0, .58);
 }
+
+
+/* Mobile readability and visible S monogram */
+@media (max-width: 650px) {
+  body,
+  #app {
+    font-size: 16px;
+  }
+  #appHeader .brand {
+    gap: 10px;
+  }
+  #appHeader .brand img {
+    width: 54px;
+    height: 54px;
+    border-radius: 13px;
+    ring-color: rgba(159, 184, 216, 0.9);
+  }
+  #appHeader .brand h1 {
+    font-size: 23px;
+    line-height: 1.2;
+  }
+  #appHeader .brand small {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+  }
+  button,
+  .file-btn {
+    font-size: 14px;
+  }
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+  label,
+  .card p,
+  .muted,
+  .home-ai-heading p:not(.home-ai-eyebrow),
+  .home-ai-settings p,
+  .home-ai-note,
+  .home-ai-message,
+  .home-ai-form label,
+  .home-ai-settings-grid label {
+    font-size: 14px;
+  }
+  .home-ai-heading h2 {
+    font-size: 23px;
+    line-height: 1.25;
+  }
+  .home-ai-actions button,
+  .home-ai-chat-form button,
+  .home-ai-result-title button {
+    font-size: 13px;
+  }
+  .home-ai-chat-form input {
+    font-size: 16px !important;
+  }
+  .app-experience {
+    font-size: 13px;
+  }
+  .card h3 {
+    font-size: 16px;
+  }
+}
