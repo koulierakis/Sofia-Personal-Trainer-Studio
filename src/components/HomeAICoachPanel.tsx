@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+// @ts-ignore JavaScript motion engine is tested independently.
 import { analyzeExercise, localCoachReply } from '../services/precision-motion-engine.mjs';
 import { lockedVisualPrompt, VISUAL_REFERENCES } from '../services/visual-reference-lock';
 
@@ -108,7 +109,7 @@ export const HomeAICoachPanel: React.FC = () => {
   return <section id="home-ai-studio" className="home-ai-panel" aria-labelledby="home-ai-title">
     <div className="home-ai-heading">
       <div>
-        <p className="home-ai-eyebrow">SOFIA · PERSONAL AI STUDIO</p>
+        <p className="home-ai-eyebrow">BEMBA MOU · PERSONAL AI STUDIO</p>
         <h2 id="home-ai-title">Μπέμπα μου AI Coach &amp; Prompt Generator</h2>
         <p>Περιέγραψε την άσκηση, συζήτησέ την με το chat και δημιούργησε prompts καρέ ή video mode.</p>
       </div>
