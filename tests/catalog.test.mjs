@@ -25,7 +25,12 @@ test('React application files and HTML metadata exist and are correctly structur
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   const app = await readFile(new URL('../src/App.tsx', import.meta.url), 'utf8');
   assert.match(html, /<div id="root">/);
-  assert.match(html, /Sofia Personal Trainer Studio/);
+  assert.match(html, /<title>Μπέμπα μου Personal AI Studio<\/title>/);
+  assert.match(html, /rel="manifest" href="\/manifest\.webmanifest"/);
+  const manifest = JSON.parse(await readFile(new URL('../public/manifest.webmanifest', import.meta.url), 'utf8'));
+  assert.equal(manifest.name, 'Μπέμπα μου AI Studio');
+  assert.equal(manifest.short_name, 'Μπέμπα μου');
+  assert.deepEqual(manifest.icons.map((icon) => icon.sizes), ['192x192', '512x512']);
   assert.match(app, /buildOriginalConcepts/);
   assert.match(app, /functional/);
   assert.match(app, /pilates/);
