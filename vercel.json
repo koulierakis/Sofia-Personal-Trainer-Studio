@@ -8,6 +8,10 @@
       "destination": "/mobile.html"
     },
     {
+      "source": "/mobile/",
+      "destination": "/mobile.html"
+    },
+    {
       "source": "/mobile/:path*",
       "destination": "/mobile.html"
     }
@@ -24,6 +28,15 @@
     },
     {
       "source": "/mobile",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/mobile/",
       "headers": [
         {
           "key": "Cache-Control",
