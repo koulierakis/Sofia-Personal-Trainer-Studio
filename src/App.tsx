@@ -13,6 +13,7 @@ import {
 import { FramePlayer } from './components/FramePlayer';
 import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
+import { SofiaAICoach } from './components/SofiaAICoach';
 
 const STORE_KEY = 'sofia_personal_trainer_v3';
 
@@ -996,6 +997,8 @@ export const App: React.FC = () => {
                     )}
                   </div>
                 )}
+
+                <SofiaAICoach exercise={currentSelectedExercise} />
 
                 {/* Visualization Sequence and Frame Player */}
                 {currentSelectedExercise.visualization && (() => {
