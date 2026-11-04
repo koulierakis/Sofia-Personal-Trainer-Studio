@@ -25,7 +25,14 @@ test('mobile app has a distinct installation identity and standalone launch', as
   assert.equal(mobile.start_url, '/mobile/');
   assert.equal(mobile.scope, '/mobile/');
   assert.equal(mobile.display, 'standalone');
-  assert.match(mobile.name, /Mpempa/);
+  assert.equal(mobile.name, 'Μπέμπα μου AI Studio');
+  assert.equal(mobile.short_name, 'Μπέμπα μου');
+  assert.deepEqual(mobile.icons.map(icon => [icon.sizes, icon.type]), [['192x192', 'image/png'], ['512x512', 'image/png']]);
+  assert.match(await read('../mobile.html'), /apple-touch-icon" sizes="180x180" href="\/images\/bemba-mou-app-icon-180\.png/);
+  for (const icon of [...desktop.icons, ...mobile.icons]) {
+    assert.equal(icon.type, 'image/png');
+    await readFile(new URL(`../public${icon.src}`, import.meta.url));
+  }
   assert.match(await read('../mobile.html'), /href="\/manifest-mobile.webmanifest"/);
   const deploy = JSON.parse(await read('../vercel.json'));
   assert.ok(deploy.rewrites.some(rule => rule.source === '/mobile/:path*' && rule.destination === '/mobile.html'));
