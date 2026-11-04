@@ -1,6 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { Exercise } from '../types';
 import { VISUAL_REFERENCES, modelProfileFor, lockedVisualPrompt } from '../services/visual-reference-lock';
+import { FramePlayer } from './FramePlayer';
+import { MotionValidation } from './MotionValidation';
 // @ts-ignore JavaScript motion engine is tested independently.
 import { analyzeExercise, localCoachReply } from '../services/precision-motion-engine.mjs';
 
@@ -17,6 +19,22 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
   const profile = modelProfileFor(exercise);
   const reference = VISUAL_REFERENCES[profile];
   const identityLock = useMemo(() => lockedVisualPrompt(exercise, '', profile), [exercise, profile]);
+  const playerSequence = plan?.frames?.length ? {
+    version: 1,
+    referenceProfile: profile,
+    referenceImage: reference.url,
+    referenceSha256: reference.sha256,
+    promptTemplate: 'Sofia AI Coach precision motion prompt',
+    fixedVisualContext: identityLock,
+    frameCount: plan.frames.length,
+    closingFrameReuses: plan.frames.some((frame: any) => frame.sameImageAs === 1) ? 1 : 0,
+    coachReviewRequired: true,
+    frames: plan.frames.map((frame: any) => ({
+      frame: frame.frame, label: frame.label, poseDescription: frame.pose, changeFromPrevious: frame.change,
+      transitionDescription: frame.phase, referenceProfile: profile, referenceImage: reference.url,
+      referenceSha256: reference.sha256, sameImageAs: frame.sameImageAs || null, prompt: frame.prompt
+    }))
+  } : null;
 
   const analyze = (nextMode = mode) => {
     setMode(nextMode);
@@ -92,6 +110,7 @@ export const SofiaAICoach: React.FC<{ exercise: Exercise }> = ({ exercise }) => 
       {plan.issues.map((issue: string, index: number) => <p key={index} className="text-sm text-amber-200">⚠️ {issue}</p>)}
       <p className="text-xs text-slate-300">Έλεγχοι: {JSON.stringify(plan.validation)}. Η παραγωγή prompt δεν ισοδυναμεί με επαλήθευση εικόνας ή έγκριση προπονητή.</p>
       {mode === 'video' ? <pre className="whitespace-pre-wrap rounded bg-slate-950 p-3 text-xs text-slate-200">{plan.videoPrompt}</pre> : plan.frames.map((frame: any) => <details key={frame.frame} className="rounded bg-slate-950 p-3"><summary className="cursor-pointer text-sky-200">Frame {frame.frame} · {frame.label}{frame.sameImageAs ? ' · επαναχρησιμοποιεί Frame 1' : ''}</summary><p className="my-2 text-xs text-slate-300">{frame.pose}</p><p className="text-xs text-slate-400">Στήριξη: {frame.support} · {frame.angles}</p><pre className="mt-2 whitespace-pre-wrap text-xs text-white">{frame.prompt}</pre><pre className="mt-2 whitespace-pre-wrap text-xs text-emerald-200">{JSON.stringify(frame.poseSpec, null, 2)}</pre></details>)}
+      {mode === 'image' && playerSequence && <><FramePlayer sequence={playerSequence} exerciseId={exercise.id} /><MotionValidation frames={plan.frames.map((frame: any) => ({ frame: frame.frame, label: frame.label, poseDescription: frame.pose, changeFromPrevious: frame.change, sameImageAs: frame.sameImageAs || null }))} exerciseId={exercise.id + '-motion-engine'} /></>}
     </div>}
   </section>;
 };
