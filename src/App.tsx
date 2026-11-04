@@ -15,6 +15,7 @@ import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 import { SofiaAICoach } from './components/SofiaAICoach';
 import { HomeAICoachPanel } from './components/HomeAICoachPanel';
+import { AppExperience } from './components/AppExperience';
 
 const STORE_KEY = 'sofia_personal_trainer_v3';
 
@@ -540,7 +541,7 @@ export const App: React.FC = () => {
   return (
     <div id="app" className="max-w-[1250px] mx-auto p-4 md:p-6 w-full">
       {/* Top Header */}
-      <header id="appHeader" className="flex items-center justify-between gap-4 border-b border-[#25334d] pb-4 mb-4">
+      <header id="appHeader" className="flex items-center justify-between gap-4 border-b border-[#323232] pb-4 mb-4">
         <div className="brand flex min-w-0 cursor-pointer items-center gap-3" onClick={handleBackToHome} title="Μπέμπα μου Personal AI Studio">
           <img
             src="/images/bemba-mou-app-icon-192.jpg"
@@ -550,7 +551,7 @@ export const App: React.FC = () => {
             className="h-12 w-12 shrink-0 rounded-xl object-cover ring-1 ring-amber-300/70"
           />
           <div className="min-w-0">
-            <small className="tracking-widest text-[#8da7c9] font-medium uppercase text-xs">PERSONAL AI STUDIO</small>
+            <small className="tracking-widest text-[#a4a4a4] font-medium uppercase text-xs">MPEMPA MOU · AI STUDIO</small>
             <h1 className="truncate font-extrabold text-white">Μπέμπα μου</h1>
           </div>
         </div>
@@ -572,12 +573,14 @@ export const App: React.FC = () => {
             type="button"
             title="Φωνητική αναζήτηση"
             onClick={handleVoiceSearch}
-            className="flex items-center gap-1.5 bg-[#1b3457] border-[#3e6899] text-white hover:border-[#83b8ff]"
+            className="flex items-center gap-1.5 bg-[#313131] border-[#636363] text-white hover:border-[#b2b2b2]"
           >
             <span aria-hidden="true">🎙</span><span className="hidden sm:inline"> Αναζήτηση με φωνή</span>
           </button>
         </div>
       </header>
+
+      <AppExperience />
 
       {/* Notice Message Area */}
       {notice && (
@@ -585,7 +588,7 @@ export const App: React.FC = () => {
           id="notice"
           role="status"
           aria-live="polite"
-          className="p-3 my-3 bg-[#112338] border border-[#2b4c73] rounded-xl text-[#94d4b2] text-sm font-medium transition-all"
+          className="p-3 my-3 bg-[#212121] border border-[#484848] rounded-xl text-[#c4c4c4] text-sm font-medium transition-all"
         >
           {notice}
         </div>
@@ -693,7 +696,7 @@ export const App: React.FC = () => {
 
                 {/* Functional Concept Review Toggles */}
                 {mode === 'functional' && (
-                  <div className="bg-[#121e31] border border-[#2a3c57] rounded-xl p-3 mb-5 space-y-2">
+                  <div className="bg-[#1d1d1d] border border-[#3a3a3a] rounded-xl p-3 mb-5 space-y-2">
                     <label id="conceptsLabel" className="flex items-center gap-2 cursor-pointer text-sm text-slate-200">
                       <input
                         id="concepts"
@@ -729,7 +732,7 @@ export const App: React.FC = () => {
                     </label>
 
                     {activeReviewCounts.pending > 0 && (
-                      <p id="reviewCounts" className="muted text-xs text-[#a3c3e8] pt-1" role="status">
+                      <p id="reviewCounts" className="muted text-xs text-[#bfbfbf] pt-1" role="status">
                         Custom ασκήσεις: {activeReviewCounts.pending} σε αναμονή · {activeReviewCounts.approved} εγκεκριμένες · {activeReviewCounts.rejected} απορρίφθηκαν
                       </p>
                     )}
@@ -738,7 +741,7 @@ export const App: React.FC = () => {
 
                 {/* Search & Filter Panel (for exercises & stretches) */}
                 {(tab === 'exercises' || tab === 'stretches') && (
-                  <section id="searchPanel" className="bg-[#132034] p-4 rounded-xl border border-[#2f4360] mb-6">
+                  <section id="searchPanel" className="bg-[#1f1f1f] p-4 rounded-xl border border-[#414141] mb-6">
                     <div className="filters grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
                       <label className="text-xs text-slate-300 font-medium">
                         Μυϊκή ομάδα
@@ -749,7 +752,7 @@ export const App: React.FC = () => {
                             setSelectedMuscle(e.target.value);
                             setLimit(20);
                           }}
-                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#0e1726] border border-[#374c6b] text-white text-sm"
+                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#161616] border border-[#4a4a4a] text-white text-sm"
                         >
                           <option value="">Όλες</option>
                           {availableMuscles.map((m) => (
@@ -769,7 +772,7 @@ export const App: React.FC = () => {
                             setSelectedEquipment(e.target.value);
                             setLimit(20);
                           }}
-                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#0e1726] border border-[#374c6b] text-white text-sm"
+                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#161616] border border-[#4a4a4a] text-white text-sm"
                         >
                           <option value="">Όλος ο εξοπλισμός</option>
                           {availableEquipment.map((eq) => (
@@ -789,7 +792,7 @@ export const App: React.FC = () => {
                             setSelectedLevel(e.target.value);
                             setLimit(20);
                           }}
-                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#0e1726] border border-[#374c6b] text-white text-sm"
+                          className="w-full mt-1.5 p-2.5 rounded-lg bg-[#161616] border border-[#4a4a4a] text-white text-sm"
                         >
                           <option value="">Όλα</option>
                           <option value="Beginner">Beginner</option>
@@ -810,7 +813,7 @@ export const App: React.FC = () => {
                           setSearchQuery(e.target.value);
                           setLimit(20);
                         }}
-                        className="w-full mt-1.5 p-3 rounded-lg bg-[#0e1726] border border-[#374c6b] text-white text-sm"
+                        className="w-full mt-1.5 p-3 rounded-lg bg-[#161616] border border-[#4a4a4a] text-white text-sm"
                       />
                     </label>
 
@@ -852,18 +855,18 @@ export const App: React.FC = () => {
                           )}
 
                           {/* ΕΝΣΩΜΑΤΩΜΕΝΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ */}
-                          <div className="flex items-center gap-2 my-2 p-1.5 rounded-lg bg-[#0c1626] border border-sky-900/60 shadow-sm">
+                          <div className="athlete-reference">
                             <img
                               src={cardAthleteRef.url}
                               alt={cardAthleteRef.athleteTitleGreek}
-                              className="w-8 h-10 rounded object-cover object-top border border-amber-400 shrink-0 shadow"
+                              className="athlete-reference-image"
                             />
-                            <div className="text-[11px] leading-tight text-slate-300">
-                              <span className="text-amber-300 font-bold block truncate">
-                                {cardAthleteRef.athleteTitleGreek}
+                            <div className="athlete-reference-copy">
+                              <span className="athlete-reference-title" title={cardAthleteRef.athleteTitleGreek}>
+                                {cardProfile === 'female' ? 'Αθλήτρια ATHLETICO' : 'Αθλητής ATHLETICO'}
                               </span>
-                              <span className="text-slate-400 text-[10px] block">
-                                Υποχρεωτικό Μοντέλο Αναφοράς
+                              <span className="athlete-reference-caption">
+                                Επίσημη αναφορά
                               </span>
                             </div>
                           </div>
@@ -889,7 +892,7 @@ export const App: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setLimit((prev) => prev + 20)}
-                      className="px-6 py-3 font-medium bg-[#1d3557] border-[#456b9c]"
+                      className="px-6 py-3 font-medium bg-[#323232] border-[#666666]"
                     >
                       Περισσότερες ασκήσεις
                     </button>
@@ -897,7 +900,7 @@ export const App: React.FC = () => {
                 )}
 
                 {filteredExercises.length === 0 && (
-                  <div className="p-8 text-center bg-[#132034] rounded-xl border border-[#27384e] text-slate-300">
+                  <div className="p-8 text-center bg-[#1f1f1f] rounded-xl border border-[#363636] text-slate-300">
                     Δεν βρέθηκαν ασκήσεις. Αλλάξτε κριτήρια ή εισαγάγετε αρχείο JSON.
                   </div>
                 )}
@@ -906,14 +909,14 @@ export const App: React.FC = () => {
 
             {/* DETAILED EXERCISE VIEW */}
             {selectedExerciseId && currentSelectedExercise && (
-              <article id="detail" className="card max-w-[980px] mx-auto p-6 bg-[#142136] border border-[#314560] rounded-2xl">
+              <article id="detail" className="card max-w-[980px] mx-auto p-6 bg-[#202020] border border-[#434343] rounded-2xl">
                 <button
                   type="button"
                   onClick={() => {
                     setSelectedExerciseId(null);
                     window.scrollTo({ top: 0, behavior: 'instant' });
                   }}
-                  className="sticky top-4 z-10 bg-[#28558b] hover:bg-[#346cb0] border-[#6ea1dc] text-white font-medium mb-6"
+                  className="sticky top-4 z-10 bg-[#4f4f4f] hover:bg-[#656565] border-[#9a9a9a] text-white font-medium mb-6"
                 >
                   ← Επιστροφή στις ασκήσεις
                 </button>
@@ -1008,7 +1011,7 @@ export const App: React.FC = () => {
                   const detailAthleteRef = VISUAL_REFERENCES[detailProfile];
 
                   return (
-                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#293d59]">
+                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#3b3b3b]">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <h3 className="text-lg font-bold text-white">
                           Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
@@ -1019,7 +1022,7 @@ export const App: React.FC = () => {
                       </div>
 
                       {/* ΕΝΣΩΜΑΤΩΜΕΝΗ ΚΑΡΤΑ ΑΝΑΦΟΡΑΣ ΜΟΝΤΕΛΟΥ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
-                      <div className="my-4 p-4 rounded-2xl bg-gradient-to-r from-[#0c182c] via-[#12243d] to-[#0c182c] border-2 border-amber-500 shadow-2xl">
+                      <div className="my-4 p-4 rounded-2xl bg-gradient-to-r from-[#171717] via-[#222222] to-[#171717] border-2 border-amber-500 shadow-2xl">
                         <div className="flex flex-col md:flex-row items-center gap-5">
                           <div className="relative shrink-0 w-36 h-48 rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl bg-black">
                             <img
@@ -1109,7 +1112,7 @@ export const App: React.FC = () => {
                               Δεν παράγεται νέα εικόνα. Χρησιμοποιείται αυτούσια η εικόνα του Frame {frame.sameImageAs}.
                             </p>
                           )}
-                          <details className="mt-2 bg-[#0c1421] border-[#1e2f47]">
+                          <details className="mt-2 bg-[#131313] border-[#2d2d2d]">
                             <summary className="text-xs text-sky-300">Πλήρες prompt για το AI</summary>
                             <p className="text-xs font-mono text-slate-300 whitespace-pre-wrap">{frame.prompt}</p>
                           </details>
@@ -1120,7 +1123,7 @@ export const App: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => handleExportPrompts(currentSelectedExercise)}
-                      className="bg-[#1e3b63] border-[#4873ab] text-white hover:border-sky-300"
+                      className="bg-[#383838] border-[#6e6e6e] text-white hover:border-sky-300"
                     >
                       Λήψη prompts όλων των καρέ (.txt)
                     </button>
@@ -1164,11 +1167,11 @@ export const App: React.FC = () => {
                   </div>
                 ) : (
                   currentSelectedProgram && (
-                    <article id="programDetail" className="card max-w-[900px] mx-auto p-6 bg-[#142136]">
+                    <article id="programDetail" className="card max-w-[900px] mx-auto p-6 bg-[#202020]">
                       <button
                         type="button"
                         onClick={() => setSelectedProgramId(null)}
-                        className="bg-[#28558b] hover:bg-[#346cb0] text-white mb-6"
+                        className="bg-[#4f4f4f] hover:bg-[#656565] text-white mb-6"
                       >
                         ← Επιστροφή στα προγράμματα
                       </button>
@@ -1185,14 +1188,14 @@ export const App: React.FC = () => {
                           const matchedId = b.activity.match(/\bfunctional-\d{3}\b/)?.[0];
                           const refExercise = matchedId ? savedExercises.find((x) => x.id === matchedId) : null;
                           return (
-                            <li key={idx} className="p-3 bg-[#111c2e] rounded-lg border border-[#22354e]">
+                            <li key={idx} className="p-3 bg-[#1b1b1b] rounded-lg border border-[#333333]">
                               <span className="font-semibold text-sky-300">{b.minutes}′</span> — {b.activity}
                               {refExercise && (
                                 <div className="mt-2 pl-4">
                                   <button
                                     type="button"
                                     onClick={() => jumpToExerciseFromProgram(refExercise.id)}
-                                    className="text-xs py-1.5 px-3 bg-[#193557] border-[#386296] text-sky-200 hover:text-white"
+                                    className="text-xs py-1.5 px-3 bg-[#323232] border-[#5d5d5d] text-sky-200 hover:text-white"
                                   >
                                     Προβολή άσκησης και περιγραφών καρέ ({refExercise.name})
                                   </button>
@@ -1210,7 +1213,7 @@ export const App: React.FC = () => {
 
             {/* DATA PANEL (IMPORT / EXPORT) */}
             {tab === 'data' && (
-              <section id="dataPanel" className="bg-[#142136] border border-[#2f4360] rounded-2xl p-6 max-w-[700px] mx-auto">
+              <section id="dataPanel" className="bg-[#202020] border border-[#414141] rounded-2xl p-6 max-w-[700px] mx-auto">
                 <h3 className="text-xl font-bold text-white mb-3">Διαχείριση Δεδομένων & Αντιγράφων</h3>
                 <p className="text-slate-300 text-sm leading-relaxed mb-6">
                   Εισαγωγή του αρχείου με τις 100 ασκήσεις και τα 10 προγράμματα. Συγχώνευση βάσει ID, χωρίς διαγραφή υπαρχόντων.
@@ -1221,12 +1224,12 @@ export const App: React.FC = () => {
                     id="export"
                     type="button"
                     onClick={handleExportJson}
-                    className="bg-[#1f4270] hover:bg-[#28558b] text-white font-medium"
+                    className="bg-[#3e3e3e] hover:bg-[#4f4f4f] text-white font-medium"
                   >
                     Εξαγωγή αντιγράφου JSON
                   </button>
 
-                  <label className="file-btn inline-flex items-center gap-2 cursor-pointer bg-[#182641] hover:border-[#83b8ff]">
+                  <label className="file-btn inline-flex items-center gap-2 cursor-pointer bg-[#252525] hover:border-[#b2b2b2]">
                     <span>Εισαγωγή JSON</span>
                     <input
                       ref={fileInputRef}
@@ -1250,3 +1253,4 @@ export const App: React.FC = () => {
     </div>
   );
 };
+
