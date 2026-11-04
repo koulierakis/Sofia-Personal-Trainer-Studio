@@ -26,15 +26,17 @@ body {
 
 .brand h1 {
   margin: 0;
-  font-size: 32px;
-  letter-spacing: 0.2em;
+  font-size: clamp(21px, 2.8vw, 30px);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
   font-weight: 800;
 }
 
 .brand small {
   color: #8da7c9;
-  letter-spacing: 0.2em;
-  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-size: 10px;
+  line-height: 1.2;
   display: block;
 }
 
@@ -252,6 +254,31 @@ details p {
 }
 
 @media (max-width: 650px) {
+  #appHeader {
+    gap: 8px;
+  }
+  #appHeader .brand {
+    gap: 8px;
+  }
+  #appHeader .brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+  #appHeader .brand h1 {
+    font-size: 21px;
+  }
+  #appHeader .brand small {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+  }
+  #voice {
+    padding: 9px 11px;
+    white-space: nowrap;
+  }
+  #voice span:last-child {
+    display: none;
+  }
   .homegrid {
     grid-template-columns: 1fr;
     gap: 14px;
