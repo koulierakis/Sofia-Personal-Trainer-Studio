@@ -539,12 +539,19 @@ export const App: React.FC = () => {
   return (
     <div id="app" className="max-w-[1250px] mx-auto p-4 md:p-6 w-full">
       {/* Top Header */}
-      <header className="flex items-center justify-between gap-4 border-b border-[#25334d] pb-4 mb-4">
-        <div className="brand cursor-pointer" onClick={handleBackToHome}>
-          <small className="tracking-widest text-[#8da7c9] font-medium uppercase text-xs">
-            PERSONAL TRAINER STUDIO
-          </small>
-          <h1 className="text-3xl font-extrabold tracking-widest text-white">SOFIA</h1>
+      <header id="appHeader" className="flex items-center justify-between gap-4 border-b border-[#25334d] pb-4 mb-4">
+        <div className="brand flex min-w-0 cursor-pointer items-center gap-3" onClick={handleBackToHome} title="Μπέμπα μου Personal AI Studio">
+          <img
+            src="/images/bemba-mou-app-icon-192.jpg"
+            alt=""
+            width="48"
+            height="48"
+            className="h-12 w-12 shrink-0 rounded-xl object-cover ring-1 ring-amber-300/70"
+          />
+          <div className="min-w-0">
+            <small className="tracking-widest text-[#8da7c9] font-medium uppercase text-xs">PERSONAL AI STUDIO</small>
+            <h1 className="truncate font-extrabold text-white">Μπέμπα μου</h1>
+          </div>
         </div>
 
         <div className="flex items-center gap-3">
@@ -566,7 +573,7 @@ export const App: React.FC = () => {
             onClick={handleVoiceSearch}
             className="flex items-center gap-1.5 bg-[#1b3457] border-[#3e6899] text-white hover:border-[#83b8ff]"
           >
-            🎙 Αναζήτηση με φωνή
+            <span aria-hidden="true">🎙</span><span className="hidden sm:inline"> Αναζήτηση με φωνή</span>
           </button>
         </div>
       </header>
@@ -589,10 +596,10 @@ export const App: React.FC = () => {
           <span className="text-2xl select-none">🔒</span>
           <div>
             <h3 className="text-amber-300 font-extrabold uppercase tracking-wider text-sm mb-1">
-              ΑΥΣΤΗΡΟΣ ΚΑΝΟΝΑΣ ΑΠΟΛΥΤΟΥ ΟΠΤΙΚΟΥ ΚΛΕΙΔΩΜΑΤΟΣ &amp; ΛΗΨΗΣ 45° (SOFIA VISUAL LOCK)
+              ΚΛΕΙΔΩΜΑ ΕΓΚΕΚΡΙΜΕΝΟΥ ATHLETICO REFERENCE &amp; ΛΗΨΗΣ 45°
             </h3>
             <p className="leading-relaxed text-slate-100 font-semibold text-xs">
-              Όποιος χειρίζεται την εφαρμογή <strong className="text-white font-extrabold uppercase">Sofia Personal Trainer Studio</strong> και κάνει την οποιαδήποτε αλλαγή ή οπτικοποίηση, υποχρεούται <strong className="text-amber-300 font-black uppercase underline decoration-amber-400">ΑΥΣΤΗΡΑ ΚΑΙ ΑΠΟΚΛΕΙΣΤΙΚΑ</strong> να τηρεί:
+              Όποιος χειρίζεται την εφαρμογή <strong className="text-white font-extrabold uppercase">Μπέμπα μου Personal AI Studio</strong> και κάνει την οποιαδήποτε αλλαγή ή οπτικοποίηση, υποχρεούται <strong className="text-amber-300 font-black uppercase underline decoration-amber-400">ΑΥΣΤΗΡΑ ΚΑΙ ΑΠΟΚΛΕΙΣΤΙΚΑ</strong> να τηρεί:
               (1) <strong className="text-amber-300 font-black uppercase">ΜΟΝΟ ΕΝΑ ΑΠΟ ΤΑ ΔΥΟ ΕΓΚΕΚΡΙΜΕΝΑ ΜΟΝΤΕΛΑ</strong> (Athletico Female &amp; Athletico Male Reference), και στις συνδυαστικές και τα δύο,
               (2) <strong className="text-amber-200 font-bold">ΤΑ ΙΔΙΑ ΡΟΥΧΑ, ΤΑ ΙΔΙΑ ΠΑΠΟΥΤΣΙΑ</strong> και <strong className="text-amber-200 font-bold">ΤΟ ΙΔΙΟ ΠΕΡΙΒΑΛΛΟΝ / ΙΔΙΑ ΦΩΤΕΙΝΟΤΗΤΑ</strong> του studio ATHLETICO,
               (3) <strong className="text-amber-300 font-black uppercase">ΣΤΑΘΕΡΗ ΛΗΨΗ ΣΤΙΣ 45 ΜΟΙΡΕΣ</strong> (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) σε όλες τις ασκήσεις για ιδανική οπτική γωνία. <strong className="text-rose-300 font-extrabold uppercase">Απαγορεύεται ρητά οποιαδήποτε αλλαγή χαρακτηριστικών, μοντέλου ή γωνίας λήψης.</strong>
