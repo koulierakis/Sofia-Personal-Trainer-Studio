@@ -50,7 +50,7 @@
           "referenceImage": "/images/athletes/athletico-female-reference.jpg",
           "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
-          "imageUrl": "/images/exercises/bodyweight-squat/01-start.png",
+          "imageUrl": "/images/exercises/bodyweight-squat/01-start.jpg",
           "prompt": "Εικόνα καρέ 1 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Το μοντέλο στέκεται όρθιο με πέλματα σταθερά στο έδαφος, έτοιμο να αρχίσει το squat.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
@@ -63,7 +63,7 @@
           "referenceImage": "/images/athletes/athletico-female-reference.jpg",
           "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
-          "imageUrl": "/images/exercises/bodyweight-squat/02-descent.png",
+          "imageUrl": "/images/exercises/bodyweight-squat/02-descent.jpg",
           "prompt": "Εικόνα καρέ 2 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Ισχία προς τα πίσω και κάτω, γόνατα λυγισμένα, κορμός σταθερός και πέλματα σε επαφή με το δάπεδο.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
@@ -76,7 +76,7 @@
           "referenceImage": "/images/athletes/athletico-female-reference.jpg",
           "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
-          "imageUrl": "/images/exercises/bodyweight-squat/03-bottom.png",
+          "imageUrl": "/images/exercises/bodyweight-squat/03-bottom.jpg",
           "prompt": "Εικόνα καρέ 3 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Κατώτατη θέση squat με γόνατα και ισχία λυγισμένα, πέλματα σταθερά και κορμό ελεγχόμενο.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
@@ -89,7 +89,7 @@
           "referenceImage": "/images/athletes/athletico-female-reference.jpg",
           "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
-          "imageUrl": "/images/exercises/bodyweight-squat/04-return.png",
+          "imageUrl": "/images/exercises/bodyweight-squat/04-return.jpg",
           "prompt": "Εικόνα καρέ 4 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Ολοκλήρωση της ανόδου και πλήρης επιστροφή σε όρθια θέση.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         }
