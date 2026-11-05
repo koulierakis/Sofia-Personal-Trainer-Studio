@@ -606,7 +606,6 @@ export function buildVisualization(
       'Μοντέλο, ρούχα, παπούτσια, φωτεινότητα, περιβάλλον και γωνία λήψης 45 μοιρών (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) παραμένουν ακριβώς απαράλλαχτα όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η αναλυτική στάση και η μετατόπιση των μελών του σώματος που περιγράφεται σε κάθε καρέ.',
     frameCount: frames.length,
     closingFrameReuses: frames.filter((frame) => frame.sameImageAs === 1).length,
-    reverseFrameReuses: frames.filter((frame) => frame.sameImageAs !== null).length,
     coachReviewRequired: Boolean(exercise.requiresCoachReview || exercise.newConcept || exercise.custom),
     frames,
   };
