@@ -83,14 +83,14 @@
         {
           "frame": 4,
           "label": "Επιστροφή στην όρθια θέση",
-          "poseDescription": "Ολοκλήρωση της ανόδου και πλήρης επιστροφή σε όρθια θέση.",
-          "transitionDescription": "Πίεση από όλο το πέλμα και ελεγχόμενη επιστροφή στην όρθια θέση.",
+          "poseDescription": "Το μοντέλο στέκεται όρθιο με πέλματα σταθερά στο έδαφος, έτοιμο να αρχίσει το squat.",
+          "transitionDescription": "Ολοκλήρωση της επανάληψης και πλήρης επιστροφή στην ίδια ακριβώς αρχική όρθια στάση.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/athletico-female-reference.jpg",
           "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
-          "sameImageAs": null,
-          "imageUrl": "/images/exercises/bodyweight-squat/04-return.jpg",
-          "prompt": "Εικόνα καρέ 4 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Ολοκλήρωση της ανόδου και πλήρης επιστροφή σε όρθια θέση.",
+          "sameImageAs": 1,
+          "imageUrl": "/images/exercises/bodyweight-squat/01-start.jpg",
+          "prompt": "REUSE FRAME 1 EXACTLY. The fourth frame uses the identical image file from frame 1; do not use or generate a separate image.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         }
       ]
