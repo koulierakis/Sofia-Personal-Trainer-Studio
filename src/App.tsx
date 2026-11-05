@@ -183,7 +183,8 @@ export const App: React.FC = () => {
     };
     if (!saveUserState(nextState)) return;
     setMode(normalized.discipline === 'pilates' || normalized.trainingType === 'reformer' ? 'pilates' : 'functional');
-    setTab('exercises');
+    const stretchText = norm([normalized.category, normalized.name, normalized.goal].join(' '));
+    setTab(/stretch|mobility|διατα|κινητικο/.test(stretchText) ? 'stretches' : 'exercises');
     setSelectedProgramId(null);
     setQueueOnly(false);
     setShowConcepts(true);
@@ -563,7 +564,7 @@ export const App: React.FC = () => {
   return (
     <div id="app" className="max-w-[1250px] mx-auto p-4 md:p-6 w-full">
       {/* Top Header */}
-      <header id="appHeader" className="flex items-center justify-between gap-4 border-b border-[#323232] pb-4 mb-4">
+      <header id="appHeader" className={selectedExerciseId ? 'hidden' : 'flex items-center justify-between gap-4 border-b border-[#323232] pb-4 mb-4'}>
         <div className="brand flex min-w-0 cursor-pointer items-center gap-3" onClick={handleBackToHome} title="Μπέμπα μου Personal AI Studio">
           <img
             src="/images/bemba-mou-app-icon-192.jpg"
@@ -602,10 +603,10 @@ export const App: React.FC = () => {
         </div>
       </header>
 
-      <AppExperience />
+      {!selectedExerciseId && <AppExperience />}
 
       {/* Notice Message Area */}
-      {notice && (
+      {notice && !selectedExerciseId && (
         <div
           id="notice"
           role="status"
@@ -617,13 +618,13 @@ export const App: React.FC = () => {
       )}
 
       {/* Compact global reference lock notice */}
-      <details className="reference-lock-notice">
+      {!selectedExerciseId && <details className="reference-lock-notice">
         <summary><span aria-hidden="true">🔒</span><span>ATHLETICO reference · 45°</span><span className="reference-lock-state">Ενεργό</span></summary>
         <div className="reference-lock-details">
           <strong>Κλειδωμένη οπτική αναφορά</strong>
           <p>Χρησιμοποίησε αποκλειστικά το εγκεκριμένο μοντέλο ATHLETICO για κάθε άσκηση, με τα ίδια χαρακτηριστικά, ρούχα, παπούτσια, studio, φωτισμό και κάμερα 45°. Στις συνδυαστικές ασκήσεις χρησιμοποιούνται και τα δύο εγκεκριμένα μοντέλα.</p>
         </div>
-      </details>
+      </details>}
 
       <main className="mt-2">
         {/* WELCOME SECTION */}
@@ -932,26 +933,6 @@ export const App: React.FC = () => {
             {/* DETAILED EXERCISE VIEW */}
             {selectedExerciseId && currentSelectedExercise && (
               <article id="detail" className="card max-w-[980px] mx-auto p-6 bg-[#202020] border border-[#434343] rounded-2xl">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setSelectedExerciseId(null);
-                    window.scrollTo({ top: 0, behavior: 'instant' });
-                  }}
-                  className="sticky top-4 z-10 bg-[#4f4f4f] hover:bg-[#656565] border-[#9a9a9a] text-white font-medium mb-6"
-                >
-                  ← Επιστροφή στις ασκήσεις
-                </button>
-
-                <h2 className="text-2xl font-bold text-white mb-1">
-                  {getExerciseName(currentSelectedExercise)}
-                </h2>
-
-                <p className="text-slate-300 text-sm mb-4">
-                  {currentSelectedExercise.custom ? 'Custom · ' : ''}
-                  {currentSelectedExercise.level || ''} · {currentSelectedExercise.category || 'Functional'}
-                </p>
-
                 {/* Visualization Sequence and Frame Player */}
                 {currentSelectedExercise.visualization && (() => {
                   const rawProf = currentSelectedExercise.visualization.referenceProfile;
@@ -960,21 +941,17 @@ export const App: React.FC = () => {
                   const detailAthleteRef = VISUAL_REFERENCES[detailProfile];
 
                   return (
-                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#3b3b3b]">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <h3 className="text-lg font-bold text-white">
-                          Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
-                        </h3>
-                        <span className="px-2.5 py-1 text-xs font-black rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500 uppercase tracking-wider">
-                          🔒 Υποχρεωτικό Μοντέλο: {detailAthleteRef.athleteTitleGreek}
-                        </span>
-                      </div>
+                    <section className="visualization-sequence mt-0">
+
 
                       {/* Interactive Frame Player with Visual Image Support */}
                       <FramePlayer
                         sequence={currentSelectedExercise.visualization}
                         exerciseId={currentSelectedExercise.id}
                       />
+                      <button type="button" onClick={() => { setSelectedExerciseId(null); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="bg-[#4f4f4f] hover:bg-[#656565] border-[#9a9a9a] text-white font-medium my-3">
+                        ← Επιστροφή στις ασκήσεις
+                      </button>
                     {/* Collapsible details for each frame */}
                     <div className="space-y-2 my-6">
                       <h4 className="text-sm font-semibold text-slate-200 uppercase tracking-wide">
@@ -1070,7 +1047,7 @@ export const App: React.FC = () => {
                       </p>
 
                       <p className="muted text-xs text-slate-400 mb-4 italic">
-                        Ο player αναπαράγει διαδοχικά τα αναγκαία καρέ της επανάληψης (3–15 καρέ βάσει πολυπλοκότητας) με πλήρεις κινησιολογικές οδηγίες για αρχαρίους. Το πρώτο και το τελευταίο καρέ αντιστοιχούν στην ίδια αρχική θέση σώματος.
+                        Ο player αναπαράγει έως 30 βήματα, με έως 15 μοναδικές εικόνες. Η επιστροφή επαναχρησιμοποιεί τα καρέ ανάποδα και το τελευταίο βήμα δείχνει την ίδια αρχική θέση.
                       </p>
 
                       <MotionValidation frames={currentSelectedExercise.visualization.frames} exerciseId={currentSelectedExercise.id} />
@@ -1079,6 +1056,17 @@ export const App: React.FC = () => {
                   </section>
                 );
               })()}
+
+                <h2 className="text-2xl font-bold text-white mb-1">
+                  {getExerciseName(currentSelectedExercise)}
+                </h2>
+
+                <p className="text-slate-300 text-sm mb-4">
+                  {currentSelectedExercise.custom ? 'Custom · ' : ''}
+                  {currentSelectedExercise.level || ''} · {currentSelectedExercise.category || 'Functional'}
+                </p>
+
+
               
 
                 <div className="space-y-4 my-4">

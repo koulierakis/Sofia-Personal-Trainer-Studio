@@ -7,6 +7,7 @@ type ChatMessage = { role: 'user' | 'assistant'; text: string };
 type MotionMode = 'image' | 'video';
 type Profile = 'female' | 'male';
 type Discipline = 'functional' | 'pilates';
+type ExerciseKind = 'strength' | 'stretching' | 'pilates';
 type Intent = 'analyze' | 'create';
 
 interface HomeAICoachPanelProps {
@@ -16,20 +17,19 @@ interface HomeAICoachPanelProps {
 const normalizeText = (value: unknown) =>
   String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('el-GR').replace(/\s+/g, ' ').trim();
 
-const systemPrompt = (referenceLock: string, intent: Intent) => [
+const systemPrompt = (referenceLock: string, intent: Intent, exerciseKind: ExerciseKind) => [
   'Είσαι ο κινησιολογικός generator του Sofia Personal Training Studio.',
-  'Στόχος: να μετατρέπεις την περιγραφή σε ακριβή, διαδοχικά, αυτοτελή prompts εικόνας για μία ολοκληρωμένη επανάληψη ή ροή άσκησης.',
-  'Επέστρεψε ΑΥΣΤΗΡΑ ένα JSON object χωρίς markdown ή κείμενο εκτός JSON.',
-  'Μην επινοείς πηγές και μην ισχυρίζεσαι ότι άνοιξες συνδέσμους. Χρησιμοποίησε μόνο το κείμενο/σημειώσεις πηγών που σου δόθηκαν.',
-  'Αν λείπει κρίσιμη πληροφορία για αρχική θέση, σειρά κινήσεων, πλευρά, σημεία στήριξης ή επιστροφή, status=NEEDS_CLARIFICATION και γράψε συγκεκριμένα τι λείπει. Μην προσποιηθείς βεβαιότητα.',
-  'Για νέα άσκηση, μπορείς να προτείνεις πρωτότυπο συνδυασμό μόνο με τον εξοπλισμό που ζητήθηκε. Δήλωσέ την ως μη επαληθευμένη και υπό έγκριση προπονητή.',
-  'Δέξου βάρος σώματος, μονόζυγο, κρίκους, λάστιχα, αλτήρες, μπάρα, kettlebell, τροχαλίες, TRX, stretching και Pilates Reformer. Στο Reformer περιέγραψε ακριβώς το carriage, τις λαβές, footbar, straps και σημεία επαφής που τεκμηριώνονται. Μην εφευρίσκεις ρυθμίσεις ελατηρίων ή ιατρικές οδηγίες.',
-  'Διάλεξε τον μικρότερο αριθμό καρέ που αποτυπώνει κάθε ουσιαστική αλλαγή στήριξης, άρθρωσης, κατεύθυνσης ή εξοπλισμού. 2–14 περιγραφές κίνησης· η εφαρμογή θα προσθέσει το κλείσιμο ως ίδιο ακριβώς με το αρχικό, σύνολο 3–15.',
-  'Κάθε καρέ: μία στατική στιγμή, πλήρες σώμα, συγκεκριμένη ανατομική αριστερά/δεξιά, θέση κεφαλιού/κορμού/λεκάνης/άκρων, σημεία στήριξης, επαφές με εξοπλισμό, και σαφής μεταβολή από το προηγούμενο καρέ. Όχι ενδιάμεσα καρέ που επαναλαμβάνουν την ίδια στάση.',
-  'Τα prompts πρέπει να είναι ανεξάρτητα και να κλειδώνουν το ίδιο εγκεκριμένο μοντέλο, ρούχα, χώρο, φως, κάμερα και εξοπλισμό. Αλλάζει μόνο η στάση. Χωρίς κείμενο, collage ή έξτρα άκρα.',
+  'Δημιούργησε τεχνικά ολοκληρωμένη περιγραφή, καρέ και prompts για την άσκηση/ροή. Χρησιμοποίησε αποκλειστικά ΕΝΑ από τα δύο εγκεκριμένα ATHLETICO μοντέλα που επιλέχθηκε και το ίδιο μοντέλο σε κάθε καρέ.',
+  'Επέστρεψε αυστηρά ένα JSON object χωρίς markdown ή κείμενο εκτός JSON. Μην εφευρίσκεις πηγές ή ισχυρίζεσαι ότι άνοιξες συνδέσμους. Χρησιμοποίησε μόνο σημειώσεις που δόθηκαν.',
+  'Αν λείπει κρίσιμη πληροφορία για αρχική θέση, σειρά, πλευρά, στήριξη ή επιστροφή, βάλε status=NEEDS_CLARIFICATION και εξήγησε τι λείπει.',
+  'Για νέα άσκηση σχεδίασε μία συνεκτική άσκηση με τον εξοπλισμό που ζητήθηκε, πλήρη περιγραφή, κύριες μυϊκές ομάδες, αναπνοή, προφυλάξεις και κατηγορία. Δήλωσέ την ως μη επαληθευμένη και υπό έγκριση προπονητή.',
+  'Κατηγορία χρήστη: ' + exerciseKind + '. Μην αλλάξεις κατηγορία: strength=Functional/δύναμη, stretching=Stretching στην καρτέλα διατάσεων, pilates=Pilates Reformer. Στο Reformer δήλωσε carriage, footbar, straps, λαβές και σημεία επαφής μόνο όταν τεκμηριώνονται· μη μαντεύεις ρυθμίσεις ελατηρίων.',
+  'Χώρισε τη ροή σε αρχική θέση και ένα ή περισσότερα μονοπάτια που ξεκινούν από το κέντρο. Για κάθε μονοπάτι παρήγαγε μόνο τα νέα καρέ κίνησης προς μία κατεύθυνση. Η επιστροφή στο κέντρο επαναχρησιμοποιεί ακριβώς τα ίδια καρέ σε αντίστροφη σειρά, χωρίς νέες εικόνες. Για άλλη πλευρά δημιούργησε νέα, ειδικά καρέ· ποτέ κατοπτρισμό ή αντιγραφή των εικόνων της πρώτης πλευράς. Επέστρεψε από κάθε πλευρά με τα δικά της καρέ ανάποδα. Πρώτο και τελευταίο καρέ δείχνουν την ίδια αρχική εικόνα.',
+  'Έως 15 μοναδικές στάσεις/εικόνες συνολικά μαζί με την αρχική και έως 30 βήματα αναπαραγωγής. Επίλεξε τα λιγότερα καρέ που δείχνουν κάθε ουσιαστική αλλαγή. Κάθε καρέ περιγράφει μία στατική στιγμή, πλήρες σώμα, ανατομική αριστερά/δεξιά, κεφάλι, κορμό, λεκάνη, άκρα, στήριξη, επαφές εξοπλισμού και αλλαγή από προηγούμενο.',
+  'Κλείδωσε το ίδιο επιλεγμένο μοντέλο, ρούχα, studio ATHLETICO, φως, εξοπλισμό και κάμερα 45°. Αλλάζει μόνο η στάση. Χωρίς κείμενο, collage ή πρόσθετα άκρα.',
   'Κλειδωμένη οπτική αναφορά: ' + referenceLock,
-  'Σχήμα JSON: {"status":"READY|NEEDS_CLARIFICATION","exercise":{"name":"...","greekName":"...","discipline":"functional|pilates","level":"...","category":"...","muscles":["..."],"equipment":["..."],"instructions":"...","breathing":"...","safety":"..."},"sources":["μόνο πηγές που δόθηκαν"],"assumptions":["..."],"clarifications":["..."],"frames":[{"label":"...","poseDescription":"...","transitionDescription":"...","support":"...","angles":"...","prompt":"..."}],"videoPrompt":"..."}.',
-  intent === 'create' ? 'Λειτουργία: Σχεδίασε νέα άσκηση από την ιδέα του χρήστη και δώσε πλήρη περιγραφή, εξοπλισμό, μυϊκές ομάδες και κινητική ακολουθία.' : 'Λειτουργία: Ανάλυσε την υπάρχουσα/περιγραφόμενη άσκηση χωρίς να αλλάξεις την ταυτότητα της κίνησης.'
+  'JSON: {"status":"READY|NEEDS_CLARIFICATION","exercise":{"name":"...","greekName":"...","discipline":"functional|pilates","level":"...","category":"...","muscles":["..."],"equipment":["..."],"instructions":"...","breathing":"...","safety":"..."},"initialFrame":{"label":"...","poseDescription":"...","transitionDescription":"...","support":"...","angles":"...","prompt":"..."},"paths":[{"direction":"...","frames":[{"label":"...","poseDescription":"...","transitionDescription":"...","support":"...","angles":"...","prompt":"..."}],"returnMode":"reverse"}],"sources":["μόνο δοσμένες πηγές"],"assumptions":["..."],"clarifications":["..."],"videoPrompt":"..."}. Τα paths περιέχουν μόνο την κίνηση προς τα έξω· η εφαρμογή δημιουργεί τα reverse aliases.',
+  intent === 'create' ? 'Λειτουργία: σχεδίασε νέα άσκηση μέσα στην επιλεγμένη κατηγορία και πλήρη οπτικοποίησή της.' : 'Λειτουργία: ανάλυσε την περιγραφόμενη άσκηση χωρίς να αλλάξεις την ταυτότητά της.'
 ].join('\n');
 
 export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExercise }) => {
@@ -37,7 +37,8 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
   const [description, setDescription] = useState('');
   const [equipment, setEquipment] = useState('Βάρος σώματος');
   const [sourceNotes, setSourceNotes] = useState('');
-  const [discipline, setDiscipline] = useState<Discipline>('functional');
+  const [exerciseKind, setExerciseKind] = useState<ExerciseKind>('strength');
+  const discipline: Discipline = exerciseKind === 'pilates' ? 'pilates' : 'functional';
   const [intent, setIntent] = useState<Intent>('analyze');
   const [mode, setMode] = useState<MotionMode>('image');
   const [profile, setProfile] = useState<Profile>('female');
@@ -81,111 +82,119 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
   };
 
   const buildPlan = (data: any, nextMode: MotionMode) => {
-    const rawFrames = Array.isArray(data.frames) ? data.frames : [];
-    if (String(data.status || '').toUpperCase() === 'NEEDS_CLARIFICATION' || rawFrames.length < 2) {
+    const status = String(data.status || '').toUpperCase();
+    const rawInitial = data.initialFrame || (Array.isArray(data.frames) ? data.frames[0] : null);
+    const rawPaths = Array.isArray(data.paths)
+      ? data.paths
+      : [{ direction: 'Κύρια κατεύθυνση', frames: (Array.isArray(data.frames) ? data.frames : []).slice(1), returnMode: 'reverse' }];
+    const paths = rawPaths.filter((path: any) => Array.isArray(path?.frames) && path.frames.length > 0);
+    if (status === 'NEEDS_CLARIFICATION' || !rawInitial || paths.length === 0) {
       return {
         status: 'NEEDS_CLARIFICATION',
         confidence: 'needs clarification',
         exercise: data.exercise?.name || exerciseName || 'Νέα άσκηση',
         issues: [...(data.clarifications || []), ...(data.assumptions || [])],
-        frames: [],
-        videoPrompt: data.videoPrompt || '',
-        masterPrompt: '',
+        frames: [], videoPrompt: data.videoPrompt || '', masterPrompt: '',
         validation: { anatomy: 'NOT_ASSESSED', visualContinuity: 'NOT_VERIFIED', imageEvidence: 'NOT_PROVIDED', coachApproval: 'REQUIRED' },
-        exerciseDraft: data.exercise || null,
-        sources: data.sources || []
+        exerciseDraft: data.exercise || null, sources: data.sources || []
       };
     }
 
-    let movementFrames = rawFrames.slice(0, 14);
-    const firstPose = normalizeText(movementFrames[0]?.poseDescription);
-    if (movementFrames.length > 2 && (
-      movementFrames[movementFrames.length - 1]?.sameImageAs === 1 ||
-      normalizeText(movementFrames[movementFrames.length - 1]?.poseDescription) === firstPose
-    )) movementFrames = movementFrames.slice(0, -1);
-
-    const fixedFrames = movementFrames.map((frame: any, index: number) => {
-      const label = String(frame.label || 'Θέση ' + (index + 1)).trim();
-      const poseDescription = String(frame.poseDescription || '').trim();
-      const transitionDescription = String(frame.transitionDescription || frame.changeFromPrevious || '').trim();
-      const support = String(frame.support || 'Να δηλωθεί ρητά το πραγματικό σημείο στήριξης.').trim();
-      const angles = String(frame.angles || 'Χωρίς αριθμητική γωνία αν δεν τεκμηριώνεται.').trim();
-      const prompt = [
-        String(frame.prompt || '').trim(),
-        'Άσκηση: ' + (data.exercise?.name || exerciseName) + ' · Καρέ ' + (index + 1) + '.',
-        'Ακριβής στάση: ' + poseDescription,
-        'Μετάβαση: ' + transitionDescription,
-        'Στήριξη και σημεία επαφής: ' + support,
-        'Γωνίες/εύρος: ' + angles,
-        'Εξοπλισμός: ' + equipment + '. Διατήρησε ακριβώς τα σημεία επαφής και τη θέση του εξοπλισμού.',
-        'Κλείδωμα αναφοράς: ' + identityLock,
-        'Μόνο η στάση του σώματος αλλάζει. Ένα μοντέλο, μία εικόνα, ολόκληρο σώμα, ίδια κάμερα/φόντο/ρούχα/φως. Χωρίς κείμενο, πλαίσια, collage, επιπλέον άκρα ή εξοπλισμό.'
-      ].filter(Boolean).join('\n');
+    const timeline: any[] = [];
+    let uniqueImageCount = 1;
+    let generatedUnique = 0;
+    const makeFrame = (source: any, frameNumber: number, phaseLabel: string) => {
+      const label = String(source.label || phaseLabel + ' ' + frameNumber).trim();
+      const poseDescription = String(source.poseDescription || '').trim();
+      const transitionDescription = String(source.transitionDescription || source.changeFromPrevious || '').trim();
+      const support = String(source.support || 'Να δηλωθεί ρητά το πραγματικό σημείο στήριξης.').trim();
+      const angles = String(source.angles || 'Χωρίς αριθμητική γωνία αν δεν τεκμηριώνεται.').trim();
       return {
-        frame: index + 1,
-        label,
-        poseDescription,
-        transitionDescription,
-        changeFromPrevious: transitionDescription,
-        support,
-        angles,
-        referenceProfile: profile,
-        referenceImage: reference.url,
-        referenceSha256: reference.sha256,
+        frame: frameNumber, label, poseDescription, transitionDescription,
+        changeFromPrevious: transitionDescription, support, angles,
+        referenceProfile: profile, referenceImage: reference.url, referenceSha256: reference.sha256,
         sameImageAs: null,
-        prompt,
-        poseSpec: { laterality: 'explicit', pose: poseDescription, support, angles, equipment }
+        prompt: [
+          String(source.prompt || '').trim(),
+          'Άσκηση: ' + (data.exercise?.name || exerciseName) + ' · ' + label + '.',
+          'Ακριβής στάση: ' + poseDescription,
+          'Μετάβαση: ' + transitionDescription,
+          'Στήριξη και σημεία επαφής: ' + support,
+          'Γωνίες/εύρος: ' + angles,
+          'Εξοπλισμός: ' + equipment + '. Διατήρησε ακριβώς τα σημεία επαφής και τη θέση του εξοπλισμού.',
+          'Κλείδωμα αναφοράς: ' + identityLock,
+          'Μόνο η στάση αλλάζει. Ένα επιλεγμένο μοντέλο ATHLETICO, πλήρες σώμα, ίδια κάμερα 45°, φόντο, ρούχα και φως. Χωρίς κείμενο, collage ή επιπλέον άκρα.'
+        ].filter(Boolean).join('\n')
       };
-    }).filter((frame: any) => frame.poseDescription);
-
-    if (fixedFrames.length < 2) {
-      return { status: 'NEEDS_CLARIFICATION', confidence: 'low', exercise: exerciseName, issues: ['Δεν προέκυψαν δύο διαφορετικές στάσεις για να περιγραφεί κίνηση.'], frames: [], videoPrompt: '', masterPrompt: '', validation: { imageEvidence: 'NOT_PROVIDED', coachApproval: 'REQUIRED' } };
-    }
-
-    const closing = {
-      ...fixedFrames[0],
-      frame: fixedFrames.length + 1,
-      label: 'Τελική επαναφορά — ίδια ακριβώς με την αρχική',
-      transitionDescription: 'Επιστροφή στην ίδια ακριβώς αρχική θέση. Το τελικό καρέ επαναχρησιμοποιεί το αρχείο εικόνας του καρέ 1.',
-      changeFromPrevious: 'Πλήρης ελεγχόμενη επιστροφή στην αρχική στάση.',
-      sameImageAs: 1,
-      prompt: 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 1. Στάση: ' + fixedFrames[0].poseDescription
     };
-    const frames = [...fixedFrames, closing].slice(0, 15);
+    const initial = makeFrame(rawInitial, 1, 'Αρχική θέση');
+    timeline.push(initial);
+    for (const path of paths) {
+      if (generatedUnique >= 14 || timeline.length >= 29) break;
+      const outbound = path.frames.slice(0, 14 - generatedUnique).map((source: any) => {
+        const frame = makeFrame(source, timeline.length + 1, String(path.direction || 'Κίνηση προς την κατεύθυνση'));
+        timeline.push(frame);
+        generatedUnique += 1;
+        uniqueImageCount += 1;
+        return frame;
+      });
+      for (let i = outbound.length - 2; i >= 0; i -= 1) {
+        const source = outbound[i];
+        timeline.push({
+          ...source, frame: timeline.length + 1, label: 'Επιστροφή · ' + source.label,
+          transitionDescription: 'Επιστροφή με το ίδιο ακριβώς καρέ σε αντίστροφη σειρά.',
+          changeFromPrevious: 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + source.frame + '.',
+          sameImageAs: source.frame,
+          prompt: 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ ' + source.frame + '. Ακολούθησε αντίστροφη σειρά, χωρίς κατοπτρισμό.'
+        });
+      }
+      timeline.push({
+        ...initial, frame: timeline.length + 1, label: 'Επιστροφή στο κέντρο',
+        transitionDescription: 'Επιστροφή στο κέντρο με την ίδια εικόνα αρχικής θέσης.',
+        changeFromPrevious: 'Επιστροφή στην ίδια αρχική στάση.',
+        sameImageAs: 1,
+        prompt: 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 1.'
+      });
+    }
+    if (timeline.length < 3) {
+      return { status: 'NEEDS_CLARIFICATION', confidence: 'needs clarification', exercise: data.exercise?.name || exerciseName, issues: ['Χρειάζεται τουλάχιστον ένα καρέ κίνησης μετά την αρχική θέση.'], frames: [], videoPrompt: '', masterPrompt: '', validation: { anatomy: 'NOT_ASSESSED', visualContinuity: 'NOT_VERIFIED', imageEvidence: 'NOT_PROVIDED', coachApproval: 'REQUIRED' }, exerciseDraft: null, sources: data.sources || [] };
+    }
+    timeline[timeline.length - 1] = {
+      ...timeline[timeline.length - 1], label: 'Τελική επαναφορά — ίδια ακριβώς με την αρχική',
+      sameImageAs: 1,
+      prompt: 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 1.'
+    };
+    const frames = timeline.slice(0, 30);
     const draft = {
       name: data.exercise?.name || exerciseName.trim() || 'Νέα άσκηση',
       greekName: data.exercise?.greekName || data.exercise?.name || exerciseName.trim() || 'Νέα άσκηση',
-      discipline: data.exercise?.discipline === 'pilates' ? 'pilates' : discipline,
+      discipline: exerciseKind === 'pilates' ? 'pilates' : 'functional',
+      trainingType: exerciseKind === 'pilates' ? 'reformer' : 'functional',
       level: data.exercise?.level || 'Advanced',
-      category: data.exercise?.category || (discipline === 'pilates' ? 'Reformer' : 'Full Body'),
+      category: exerciseKind === 'stretching' ? 'Stretching' : exerciseKind === 'pilates' ? 'Reformer' : data.exercise?.category || 'Full Body',
       muscles: Array.isArray(data.exercise?.muscles) ? data.exercise.muscles : [],
       equipment: Array.isArray(data.exercise?.equipment) ? data.exercise.equipment : exercise.equipment,
       instructions: data.exercise?.instructions || description,
       breathing: data.exercise?.breathing || 'Σταθερή αναπνοή· μην κρατάς την αναπνοή.',
-      safety: data.exercise?.safety || 'Μη επαληθευμένη πρόταση. Προσαρμογή και έγκριση προπονητή απαιτούνται.',
+      safety: data.exercise?.safety || 'Μη επαληθευμένη πρόταση. Απαιτείται έλεγχος προπονητή.',
       sources: Array.isArray(data.sources) ? data.sources : []
     };
     const videoPrompt = data.videoPrompt || [
-      'Μία συνεχής πλήρης επανάληψη: ' + draft.name + '.',
-      ...frames.map((frame: any) => frame.label + ': ' + frame.poseDescription + ' Στήριξη: ' + frame.support),
-      'Κίνηση ομαλή, συνεχής και ελεγχόμενη. Ίδιο μοντέλο, χώρος, ρούχα, εξοπλισμός και κάμερα. Επιστροφή ακριβώς στην αρχική στάση.'
+      'Μία πλήρης ακολουθία: ' + draft.name + '.',
+      ...frames.map((frame: any) => frame.label + ': ' + frame.poseDescription),
+      'Η επιστροφή χρησιμοποιεί τα ίδια καρέ με αντίστροφη σειρά. Κάθε πλευρά έχει δικά της καρέ. Πρώτο και τελευταίο καρέ είναι ίδια εικόνα.'
     ].join('\n');
     return {
-      status: 'READY',
-      confidence: 'AI draft · coach review required',
-      exercise: draft.name,
-      family: data.exercise?.discipline || discipline,
-      mode: nextMode,
-      issues: [...(data.assumptions || []), 'Οι πηγές δεν αναζητήθηκαν αυτόματα. Επιβεβαίωσε τα βίντεο/σημειώσεις που επικόλλησες πριν από έγκριση.'],
-      frames,
-      videoPrompt,
+      status: 'READY', confidence: 'AI draft · coach review required',
+      exercise: draft.name, family: exerciseKind, mode: nextMode,
+      uniqueImageCount, playbackFrameCount: frames.length,
+      issues: [...(data.assumptions || []), 'Οι πηγές δεν αναζητήθηκαν αυτόματα. Οι εικόνες/ανατομία χρειάζονται έλεγχο προπονητή.'],
+      frames, videoPrompt,
       masterPrompt: frames.filter((frame: any) => !frame.sameImageAs).map((frame: any) => frame.prompt).join('\n\n'),
       validation: { anatomy: 'AI_DRAFT_NOT_VERIFIED', order: 'STRUCTURALLY_COMPLETE', visualContinuity: 'NOT_VERIFIED', imageEvidence: 'NOT_PROVIDED', coachApproval: 'REQUIRED' },
-      exerciseDraft: draft,
-      sources: draft.sources
+      exerciseDraft: draft, sources: draft.sources
     };
   };
-
   const generate = async (nextMode: MotionMode, nextIntent: Intent = intent) => {
     setMode(nextMode);
     setIntent(nextIntent);
@@ -202,6 +211,9 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
       description: description.trim(),
       equipment: exercise.equipment,
       discipline,
+      exerciseKind,
+      requiredModelCount: 1,
+      placement: exerciseKind === 'stretching' ? 'Stretching tab' : exerciseKind === 'pilates' ? 'Pilates Reformer exercises' : 'Functional exercises',
       referenceProfile: profile,
       sourceLinksAndNotes: sourceNotes.trim() || 'Δεν δόθηκαν ακόμη. Μην ισχυριστείς ότι έγινε διαδικτυακή αναζήτηση.'
     });
@@ -215,7 +227,7 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
           format: 'json',
           options: { temperature: 0.2 },
           messages: [
-            { role: 'system', content: systemPrompt(identityLock, nextIntent) },
+            { role: 'system', content: systemPrompt(identityLock, nextIntent, exerciseKind) },
             { role: 'user', content: userInput }
           ]
         })
@@ -279,7 +291,7 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
       description: 'AI draft από την ιδέα/περιγραφή του χρήστη. Απαιτείται έλεγχος προπονητή.',
       breathing: plan.exerciseDraft.breathing,
       safety: plan.exerciseDraft.safety,
-      phases: vizFrames.filter((frame: any) => !frame.sameImageAs).map((frame: any, index: number) => ({ label: frame.label, cue: frame.poseDescription, sequenceIndex: index + 1 })),
+      phases: vizFrames.map((frame: any, index: number) => ({ label: frame.label, cue: frame.poseDescription, sequenceIndex: index + 1, sameImageAs: frame.sameImageAs || null })),
       custom: true,
       newConcept: true,
       source: 'ai-generated-unverified',
@@ -400,9 +412,10 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
         <label>Εξοπλισμός
           <input value={equipment} onChange={(event) => setEquipment(event.target.value)} placeholder="Βάρος σώματος, μονόζυγο, TRX, Reformer..." />
         </label>
-        <label>Ενότητα
-          <select value={discipline} onChange={(event) => setDiscipline(event.target.value as Discipline)}>
-            <option value="functional">Functional / calisthenics / stretching</option>
+        <label>Κατηγορία άσκησης
+          <select value={exerciseKind} onChange={(event) => setExerciseKind(event.target.value as ExerciseKind)}>
+            <option value="strength">Functional · Δύναμη / σύνθετη άσκηση</option>
+            <option value="stretching">Stretching · Διάταση</option>
             <option value="pilates">Pilates Reformer</option>
           </select>
         </label>
@@ -426,7 +439,7 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
         <button type="button" disabled={busy} onClick={() => generate('video', intent)}>VIDEO MODE · Prompt κίνησης</button>
         <button type="button" disabled={busy} onClick={() => generate('image', 'create')}>Σχεδίασε νέα άσκηση + καρέ</button>
       </div>
-      <p className="home-ai-note">Το Studio δημιουργεί δομημένα καρέ και prompts μέσω του συνδεδεμένου Ollama. Η αναζήτηση ανοίγει Web/YouTube/Instagram σε νέα καρτέλα· επικόλλησε εδώ τα ευρήματα. Το Studio δεν παράγει από μόνο του τελικά αρχεία εικόνας/βίντεο και δεν διαβάζει περιεχόμενο Reel από έναν σύνδεσμο.</p>
+      <p className="home-ai-note">Το Studio οργανώνει έως 15 μοναδικές εικόνες σε έως 30 βήματα αναπαραγωγής. Οι επιστροφές επαναχρησιμοποιούν τα ίδια καρέ ανάποδα και κάθε πλευρά έχει δικά της καρέ. Η αναζήτηση ανοίγει Web/YouTube/Instagram σε νέα καρτέλα· επικόλλησε εδώ τα ευρήματα. Το Studio δεν παράγει από μόνο του τελικά αρχεία εικόνας/βίντεο και δεν διαβάζει περιεχόμενο Reel από έναν σύνδεσμο.</p>
     </div>
 
     <details className="home-ai-settings">
@@ -452,7 +465,7 @@ export const HomeAICoachPanel: React.FC<HomeAICoachPanelProps> = ({ onSaveExerci
 
     {plan && <div className="home-ai-results">
       <div className="home-ai-result-title">
-        <h3>{plan.exercise} · {plan.status}</h3>
+        <h3>{plan.exercise} · {plan.status} · {plan.playbackFrameCount || plan.frames?.length || 0} βήματα / {plan.uniqueImageCount || 0} μοναδικές εικόνες</h3>
         <button type="button" onClick={exportPlan}>Εξαγωγή άσκησης/pose JSON</button>
       </div>
       {plan.issues?.map((issue: string, index: number) => <p className="home-ai-warning" key={index}>⚠️ {issue}</p>)}

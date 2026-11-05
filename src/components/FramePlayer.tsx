@@ -94,53 +94,11 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   if (!frames || frames.length === 0) return null;
 
   return (
-    <section className="frame-player" aria-label="Αναπαραγωγή περιγραφών καρέ">
-      {/* ΕΝΣΩΜΑΤΩΜΕΝΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
-      <div className="mb-5 p-4 rounded-2xl bg-gradient-to-br from-[#0c192c] via-[#10223d] to-[#0a1526] border-2 border-sky-500/60 shadow-2xl">
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <div className="relative shrink-0 w-32 h-44 rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl bg-black">
-            <img
-              src={referenceData.url}
-              alt={referenceData.athleteTitleGreek}
-              className="w-full h-full object-cover object-top"
-            />
-            <div className="absolute top-1 left-1 right-1 bg-black/85 text-[10px] text-amber-300 font-extrabold px-1.5 py-0.5 rounded text-center tracking-wider uppercase">
-              Κλειδωμενο Μοντελο
-            </div>
-            <div className="absolute bottom-1 left-1 right-1 bg-black/80 text-[9px] text-sky-200 font-bold px-1 py-0.5 rounded text-center">
-              📐 Λήψη 45° (λοξά)
-            </div>
-          </div>
-
-          <div className="flex-1 text-left space-y-2">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-1 text-xs font-black rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/50 uppercase tracking-wide">
-                Επίσημη Αναφορά: {referenceData.athleteTitleGreek}
-              </span>
-              <span className="px-2 py-0.5 text-[11px] font-semibold rounded bg-sky-950 text-sky-300 border border-sky-800">
-                Studio ATHLETICO
-              </span>
-              <span className="px-2 py-0.5 text-[11px] font-semibold rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
-                γωνία 45 μοίρες
-              </span>
-            </div>
-
-            <p className="text-xs text-slate-200 leading-relaxed">
-              <strong className="text-amber-200 font-bold">Υποχρεωτικός Κανόνας:</strong> Για την οπτικοποίηση αυτής της άσκησης απαιτείται <strong className="text-white font-extrabold uppercase underline decoration-amber-400">αυστηρά και αποκλειστικά</strong> η χρήση του συγκεκριμένου μοντέλου, με την ίδια ενδυμασία ({referenceData.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με λήψη σταθερά στις 45 μοίρες (στη μέση λοξά).
-            </p>
-
-            {/* Reference assignment is NOT proof of generation compliance. */}
-            <div className="mt-2 pt-2 border-t border-slate-700/60 text-xs text-amber-200" role="status">
-              🛡️ Μοντέλο αναφοράς ανατεθειμένο — ΜΗ ΕΠΑΛΗΘΕΥΜΕΝΟ. Δεν έχει αποδειχθεί ότι ο generator έλαβε τη φωτογραφία αναφοράς ή διατήρησε την ταυτότητα.
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <section className="frame-player flex flex-col" aria-label="Αναπαραγωγή περιγραφών καρέ">
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
-        <>
+        <div className="order-1">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
             <h4 className="font-semibold text-lg text-white">
               Αναπαραγωγή καρέ επανάληψης (1–{frames.length})
@@ -229,7 +187,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                   </span>
                   {currentFrame.sameImageAs && (
                     <span className="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-emerald-600/90 text-white backdrop-blur-md uppercase">
-                      Επαναχρηση Καρέ 1
+                      Επαναχρησιμοποίηση Καρέ {currentFrame.sameImageAs}
                     </span>
                   )}
                 </div>
@@ -378,11 +336,53 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
               </select>
             </label>
           </div>
-        </>
+        </div>
       )}
 
+      {/* ΕΝΣΩΜΑΤΩΜΕΝΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
+      <div className="order-2 mt-5 p-4 rounded-2xl bg-gradient-to-br from-[#0c192c] via-[#10223d] to-[#0a1526] border-2 border-sky-500/60 shadow-2xl">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <div className="relative shrink-0 w-32 h-44 rounded-xl overflow-hidden border-2 border-amber-400 shadow-xl bg-black">
+            <img
+              src={referenceData.url}
+              alt={referenceData.athleteTitleGreek}
+              className="w-full h-full object-cover object-top"
+            />
+            <div className="absolute top-1 left-1 right-1 bg-black/85 text-[10px] text-amber-300 font-extrabold px-1.5 py-0.5 rounded text-center tracking-wider uppercase">
+              Κλειδωμενο Μοντελο
+            </div>
+            <div className="absolute bottom-1 left-1 right-1 bg-black/80 text-[9px] text-sky-200 font-bold px-1 py-0.5 rounded text-center">
+              📐 Λήψη 45° (λοξά)
+            </div>
+          </div>
+
+          <div className="flex-1 text-left space-y-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-2.5 py-1 text-xs font-black rounded-md bg-amber-500/20 text-amber-300 border border-amber-500/50 uppercase tracking-wide">
+                Επίσημη Αναφορά: {referenceData.athleteTitleGreek}
+              </span>
+              <span className="px-2 py-0.5 text-[11px] font-semibold rounded bg-sky-950 text-sky-300 border border-sky-800">
+                Studio ATHLETICO
+              </span>
+              <span className="px-2 py-0.5 text-[11px] font-semibold rounded bg-emerald-950 text-emerald-300 border border-emerald-800">
+                γωνία 45 μοίρες
+              </span>
+            </div>
+
+            <p className="text-xs text-slate-200 leading-relaxed">
+              <strong className="text-amber-200 font-bold">Υποχρεωτικός Κανόνας:</strong> Για την οπτικοποίηση αυτής της άσκησης απαιτείται <strong className="text-white font-extrabold uppercase underline decoration-amber-400">αυστηρά και αποκλειστικά</strong> η χρήση του συγκεκριμένου μοντέλου, με την ίδια ενδυμασία ({referenceData.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με λήψη σταθερά στις 45 μοίρες (στη μέση λοξά).
+            </p>
+
+            {/* Reference assignment is NOT proof of generation compliance. */}
+            <div className="mt-2 pt-2 border-t border-slate-700/60 text-xs text-amber-200" role="status">
+              🛡️ Μοντέλο αναφοράς ανατεθειμένο — ΜΗ ΕΠΑΛΗΘΕΥΜΕΝΟ. Δεν έχει αποδειχθεί ότι ο generator έλαβε τη φωτογραφία αναφοράς ή διατήρησε την ταυτότητα.
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ΑΥΣΤΗΡΟ ΚΛΕΙΔΩΜΑ ΜΟΝΤΕΛΩΝ - ΕΝΤΟΝΗ ΕΠΙΣΗΜΑΝΣΗ */}
-      <div className="mt-4 p-3 rounded-xl bg-amber-950/70 border-2 border-amber-500 text-xs text-amber-200 leading-relaxed shadow-lg">
+      <div className="order-3 mt-4 p-3 rounded-xl bg-amber-950/70 border-2 border-amber-500 text-xs text-amber-200 leading-relaxed shadow-lg">
         <strong className="text-amber-300 font-extrabold uppercase tracking-wide block mb-1 text-sm">
           🔒 ΑΥΣΤΗΡΟ ΚΛΕΙΔΩΜΑ ΜΟΝΤΕΛΩΝ & ΧΩΡΟΥ (SOFIA VISUAL LOCK):
         </strong>
