@@ -1094,7 +1094,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 1 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 1 — Αρχική bear hover: Ολόκληρο το σώμα φαίνεται στο ίδιο σταθερό κάδρο 45° λοξά. Παλάμες κάτω από τους ώμους, δάχτυλα ανοιχτά και πιεσμένα στο έδαφος. Πέλματα στα δάχτυλα, γόνατα λυγισμένα και αιωρούνται 2–3 cm από το πάτωμα ακριβώς κάτω από τα ισχία. Κορμός παράλληλος με το έδαφος, πλάτη ουδέτερη, αυχένας στη συνέχεια της σπονδυλικής στήλης, λεκάνη τετράγωνη προς το πάτωμα. Στήριξη μοιρασμένη και στα δύο χέρια και στα δύο πέλματα. Τεχνική σώματος: σταθερή τετραποδική βάση, κοιλιά ενεργή, γόνατα χαμηλά αλλά χωρίς να ακουμπούν. Transition: Από το bear hover, μετακίνησε ελεγχόμενα το βάρος προς την αριστερή παλάμη και το αριστερό πέλμα, ξεκινώντας άνοιγμα της λεκάνης προς τα δεξιά.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/01-start.jpg"
         },
         {
           "frame": 2,
@@ -1105,7 +1106,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 2 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 2 — Μεταφορά στήριξης: Η αριστερή παλάμη παραμένει σταθερά κάτω από τον αριστερό ώμο και το αριστερό πέλμα στηρίζει στο έδαφος. Το δεξί γόνατο παραμένει λυγισμένο και χαμηλά, ενώ το δεξί πέλμα ετοιμάζεται να περάσει κάτω από τον κορμό. Η λεκάνη και ο θώρακας αρχίζουν να περιστρέφονται προς τα δεξιά· ο κορμός παραμένει ενεργός και ελεγχόμενος. Το δεξί χέρι αρχίζει να αποφορτίζεται από το πάτωμα, χωρίς απότομη αιώρηση. Τεχνική σώματος: η στήριξη μεταφέρεται σταδιακά, χωρίς να βυθίζεται ο ώμος της αριστερής πλευράς. Transition: Μεταφορά βάρους στην αριστερή παλάμη και στο αριστερό πέλμα, με ελεγχόμενη περιστροφή της λεκάνης και αποφόρτιση του δεξιού χεριού για να ελευθερωθεί η διαδρομή του δεξιού ποδιού.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/02-transfer.jpg"
         },
         {
           "frame": 3,
@@ -1116,7 +1118,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 3 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 3 — Thread-through: Το δεξί πόδι περνά λυγισμένο κάτω από τον κορμό προς την αριστερή πλευρά, με το γόνατο να κινείται μπροστά και έξω από τον κορμό. Η αριστερή παλάμη και το αριστερό πέλμα παραμένουν σταθερά σημεία στήριξης· η λεκάνη περιστρέφεται προς τα δεξιά και ο θώρακας ακολουθεί χωρίς να καταρρέει. Το δεξί χέρι έχει αποκολληθεί από το έδαφος και ανοίγει προς τα πάνω για ισορροπία. Τεχνική σώματος: το πόδι περνά κάτω από τον κορμό χωρίς να ακουμπήσει το γόνατο στο πάτωμα, με ελεγχόμενη στροφή και σταθερό αριστερό ώμο. Transition: Συνέχισε τη στροφή και οδήγησε το δεξί γόνατο κάτω από τον κορμό προς την αριστερή πλευρά, αφήνοντας το δεξί χέρι να ανοίξει καθώς η αριστερή παλάμη μένει σταθερή.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/03-thread.jpg"
         },
         {
           "frame": 4,
@@ -1127,7 +1130,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 4 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 4 — Κορύφωση kick-through: Το δεξί πόδι έχει περάσει κάτω από τον κορμό και εκτείνεται στο πλάι προς τα αριστερά, με το πέλμα να ακουμπά ελαφρά στο έδαφος και το γόνατο σχεδόν τεντωμένο. Η λεκάνη είναι στραμμένη στο πλάι και ανυψωμένη· ο κορμός ανοίγει προς τα δεξιά. Η αριστερή παλάμη και το αριστερό πέλμα είναι τα βασικά σημεία στήριξης. Το δεξί χέρι εκτείνεται ψηλά προς την οροφή, χωρίς να αλλάξει η γωνία λήψης. Τεχνική σώματος: ισχία ψηλά, αριστερός ώμος σταθερός πάνω από την παλάμη, αυχένας ουδέτερος και κίνηση χωρίς απότομη υπερέκταση της μέσης. Transition: Ολοκλήρωσε το πέρασμα του δεξιού ποδιού και σταθεροποίησε για μία στιγμή την ανάστροφη πλευρική στήριξη, με ισχία ψηλά και δεξί χέρι πάνω.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/04-peak.jpg"
         },
         {
           "frame": 5,
@@ -1138,7 +1142,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 5 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 5 — Έναρξη επιστροφής: Το δεξί γόνατο λυγίζει και αρχίζει να επιστρέφει κάτω από τον κορμό. Τα ισχία χαμηλώνουν ελεγχόμενα από την ανάστροφη στήριξη. Το δεξί χέρι κατεβαίνει προς το έδαφος ενώ η αριστερή παλάμη και το αριστερό πέλμα συνεχίζουν να στηρίζουν. Ο κορμός αρχίζει να γυρίζει προς το πάτωμα. Τεχνική σώματος: ομαλή αντίστροφη διαδρομή του ίδιου δεξιού ποδιού, χωρίς να πέφτει απότομα η λεκάνη ή να στρίβει βίαια ο ώμος. Transition: Λύγισε το δεξί γόνατο, φέρε το δεξί πόδι πίσω κάτω από τον κορμό, χαμήλωσε τη λεκάνη και επανάφερε το δεξί χέρι προς το πάτωμα.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/05-return.jpg"
         },
         {
           "frame": 6,
@@ -1149,7 +1154,8 @@
           "prompt": "Create exactly one standalone exercise image for Tykora, frame 6 of 7. Use only the locked ATHLETICO male reference model and studio photo specified above. Preserve identity, clothing, footwear, studio, lighting, camera angle, camera height, distance, framing and background exactly. Show the full body and the exact pose in this frame description; change only the body's movement. No text, labels, arrows, collage, split panels, extra people or props. Θέση 6 — Επαναφορά βάσης: Το δεξί πέλμα επιστρέφει στα δάχτυλα κάτω από το δεξί ισχίο και η δεξιά παλάμη πατά ξανά κάτω από τον δεξί ώμο. Η λεκάνη και ο θώρακας στρέφονται προς το πάτωμα. Και τα δύο γόνατα λυγίζουν και αιωρούνται ξανά 2–3 cm από το δάπεδο. Οι παλάμες και τα πέλματα είναι πάλι τα τέσσερα σημεία στήριξης. Τεχνική σώματος: ουδέτερη πλάτη, κοιλιά ενεργή και ελεγχόμενη επιστροφή στη σταθερή bear hover. Transition: Τοποθέτησε ξανά τη δεξιά παλάμη και το δεξί πέλμα στα αρχικά σημεία, στρέψε τον κορμό προς το πάτωμα και σταθεροποίησε και τα δύο γόνατα αιωρούμενα.",
           "sameImageAs": null,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/06-reset.jpg"
         },
         {
           "frame": 7,
@@ -1160,7 +1166,8 @@
           "prompt": "DO NOT GENERATE A NEW IMAGE. Reuse Frame 1 image byte-for-byte as the closing frame; same person, pose, outfit, background, camera and crop. Ολοκλήρωση μίας επανάληψης. Το τελικό καρέ είναι η ίδια ακριβώς αρχική στάση και επαναχρησιμοποιεί αυτούσια την εικόνα του Καρέ 1.",
           "sameImageAs": 1,
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
-          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5"
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora/01-start.jpg"
         }
       ]
     },
