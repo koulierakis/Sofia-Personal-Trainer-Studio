@@ -885,3 +885,79 @@ body {
     font-size: 16px;
   }
 }
+
+
+/* Exercise detail: show the demonstration image and essential player controls first. */
+.frame-player .order-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.frame-player-layout,
+.frame-player-visual {
+  display: contents !important;
+}
+
+.frame-player-image {
+  order: 1;
+  width: min(100%, 520px);
+  max-width: 520px !important;
+  margin: 0 auto;
+}
+
+.frame-player-primary-controls {
+  order: 2;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+
+.frame-player-primary-controls label {
+  margin-left: 0;
+}
+
+.frame-player-primary-controls button:nth-of-type(3) { order: 1; }
+.frame-player-primary-controls label { order: 2; }
+.frame-player-primary-controls button:nth-of-type(2) { order: 3; }
+.frame-player-primary-controls button:nth-of-type(1) { order: 4; }
+.frame-player-primary-controls button:nth-of-type(4) { order: 5; }
+
+.frame-player-image-tags { order: 3; }
+.frame-player-details { order: 4; width: 100%; }
+.frame-player-phase { order: 5; }
+.frame-player-meta { order: 6; }
+.frame-player-counter-row { order: 7; }
+.frame-player-progress { order: 8; }
+
+@media (max-width: 650px) {
+  #detail {
+    padding: 8px !important;
+  }
+
+  .frame-player {
+    margin: 4px 0;
+    padding: 8px;
+  }
+
+  .frame-player-primary-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .frame-player-primary-controls button,
+  .frame-player-primary-controls label {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  .frame-player-primary-controls button:nth-of-type(3),
+  .frame-player-primary-controls label {
+    grid-column: span 2;
+  }
+
+  .frame-player-primary-controls label select {
+    width: 100%;
+  }
+}
