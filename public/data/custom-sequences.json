@@ -1553,5 +1553,168 @@
     "custom": true,
     "classification": "Custom",
     "newConcept": true
+  },
+  {
+    "id": "hybrid-tyk-left",
+    "code": "TYK-L",
+    "name": "Bear Hover Left-Leg Kick-Through",
+    "greekName": "Bear Hover με πέρασμα αριστερού ποδιού",
+    "discipline": "functional",
+    "level": "Advanced",
+    "category": "Full Body",
+    "muscles": [
+      "Λοξοί κοιλιακοί",
+      "Ώμοι",
+      "Γλουτιαίοι",
+      "Τρικέφαλοι",
+      "Κορμός"
+    ],
+    "equipment": [
+      "Βάρος σώματος"
+    ],
+    "instructions": "1. Αρχή: bear hover με στήριξη και στα δύο χέρια και πέλματα, γόνατα 2–3 cm πάνω από το έδαφος. 2. Μεταφορά: στήριξη στο αριστερό χέρι και δεξί πέλμα, δεξί χέρι σηκώνεται. 3. Πέρασμα: το αριστερό πόδι περνά κάτω από τον κορμό. 4. Κορύφωση: έκταση αριστερού ποδιού, με στήριξη στο αριστερό χέρι και δεξί πέλμα. 5–7. Ελεγχόμενη επιστροφή από τα ίδια καρέ με αντίστροφη σειρά: 3, 2, 1.",
+    "description": "Custom παραλλαγή kick-through με αριστερό πόδι και αντίθετη διαγώνια στήριξη. Αναπαραγωγή 7 σταδίων: 1→2→3→4→3→2→1. Υπό έγκριση προπονητή.",
+    "breathing": "Σταθερή αναπνοή, εκπνοή στο απαιτητικό τμήμα και εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Προσαρμόστε εύρος, φορτίο και ρυθμό στην ικανότητα του ασκούμενου· σταματήστε σε πόνο. Απαιτείται επιβεβαίωση τεχνικής από προπονητή.",
+    "requiresCoachReview": true,
+    "source": "coach-corrected-custom-tykora-left-leg",
+    "phases": [
+      {
+        "label": "Αρχή",
+        "cue": "Bear hover με τετραποδική στήριξη",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Μεταφορά",
+        "cue": "στήριξη αριστερό χέρι και δεξί πέλμα· σηκώνεται το δεξί χέρι",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Πέρασμα",
+        "cue": "το αριστερό πόδι περνά κάτω από τον κορμό",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Κορύφωση",
+        "cue": "έκταση αριστερού ποδιού με στήριξη αριστερό χέρι και δεξί πέλμα",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Επιστροφή",
+        "cue": "επανάληψη των καρέ 3, 2, 1 με αντίστροφη σειρά",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Επιστροφή",
+        "cue": "επανάληψη του καρέ 2",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Αρχική θέση",
+        "cue": "επανάληψη του καρέ 1",
+        "sequenceIndex": 7
+      }
+    ],
+    "visualization": {
+      "version": 3,
+      "referenceProfile": "male",
+      "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+      "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+      "promptTemplate": "MANDATORY ATHLETICO male reference lock: /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Preserve the same model, clothing, shoes, ATHLETICO studio, lighting, camera and framing. Exercise laterality is fixed: left hand and right foot are the support base; right hand lifts; the left leg is the moving leg. The left leg threads under the torso and extends. Never mirror or swap limbs. Generate only unique outward frames 1–4. Return reuses exact images 3, 2, 1 in reverse order; frame 7 is byte-for-byte frame 1.",
+      "fixedVisualContext": "Σε όλα τα καρέ παραμένουν ακριβώς τα ίδια εγκεκριμένα ανδρικά μοντέλο ATHLETICO, πρόσωπο, μαλλιά, αναλογίες σώματος, ρούχα, παπούτσια, studio, φωτισμός, κάμερα, απόσταση, κάδρο και λήψη 45° λοξά. Δεν προστίθεται εξοπλισμός ή άλλο πρόσωπο. Αλλάζει μόνο η στάση/κίνηση του σώματος που περιγράφεται στο συγκεκριμένο καρέ.",
+      "frameCount": 7,
+      "closingFrameReuses": 1,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Αρχική θέση — bear hover",
+          "poseDescription": "Τετραποδική bear hover: στήριξη και στις δύο παλάμες και στα δύο πέλματα, γόνατα λυγισμένα και αιωρούμενα 2–3 cm, πλάτη ουδέτερη και λεκάνη σταθερή.",
+          "transitionDescription": "Μετατόπισε ελεγχόμενα το βάρος στο αριστερό χέρι και δεξί πέλμα, σηκώνοντας το δεξί χέρι και ελευθερώνοντας το αριστερό πόδι.",
+          "changeFromPrevious": "Αφετηρία της επανάληψης.",
+          "prompt": "Create exactly one standalone full-body exercise image for frame 1 of Bear Hover Left-Leg Kick-Through. Use only the ATHLETICO male model reference /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Preserve the same male identity, face, hair, black shirt, gray shorts, white shoes, ATHLETICO studio, lighting, camera angle, distance and landscape framing. Anatomical left/right must not be mirrored. Τετραποδική bear hover: στήριξη και στις δύο παλάμες και στα δύο πέλματα, γόνατα λυγισμένα και αιωρούμενα 2–3 cm, πλάτη ουδέτερη και λεκάνη σταθερή. No text, labels, arrows, borders, collage, extra people or equipment.",
+          "sameImageAs": null,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/01-start.jpg"
+        },
+        {
+          "frame": 2,
+          "label": "Μεταφορά στήριξης — αρχή περάσματος αριστερού ποδιού",
+          "poseDescription": "Το αριστερό χέρι και το δεξί πέλμα είναι τα σημεία στήριξης. Το δεξί χέρι έχει σηκωθεί. Το αριστερό γόνατο ξεκολλά και ξεκινά να περνά μπροστά και κάτω από τον κορμό. Ο κορμός παραμένει ενεργός και η λεκάνη περιστρέφεται ελεγχόμενα.",
+          "transitionDescription": "Συνέχισε το πέρασμα του αριστερού ποδιού κάτω από τον κορμό, διατηρώντας στήριξη στο αριστερό χέρι και δεξί πέλμα.",
+          "changeFromPrevious": "Αποφόρτιση δεξιού χεριού και αριστερού ποδιού· στήριξη στο αριστερό χέρι και δεξί πέλμα.",
+          "prompt": "Create exactly one standalone full-body exercise image for frame 2 of Bear Hover Left-Leg Kick-Through. Use only the ATHLETICO male model reference /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Preserve the same male identity, face, hair, black shirt, gray shorts, white shoes, ATHLETICO studio, lighting, camera angle, distance and landscape framing. Anatomical left/right must not be mirrored. Το αριστερό χέρι και το δεξί πέλμα είναι τα σημεία στήριξης. Το δεξί χέρι έχει σηκωθεί. Το αριστερό γόνατο ξεκολλά και ξεκινά να περνά μπροστά και κάτω από τον κορμό. Ο κορμός παραμένει ενεργός και η λεκάνη περιστρέφεται ελεγχόμενα. No text, labels, arrows, borders, collage, extra people or equipment.",
+          "sameImageAs": null,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/02-transfer.jpg"
+        },
+        {
+          "frame": 3,
+          "label": "Πέρασμα αριστερού ποδιού κάτω από τον κορμό",
+          "poseDescription": "Στήριξη στο αριστερό χέρι και δεξί πέλμα. Το δεξί χέρι παραμένει σηκωμένο. Το αριστερό πόδι περνά κάτω από τον κορμό και κινείται προς την πλευρά έκτασης· η λεκάνη ανοίγει, χωρίς να βυθίζεται ο ώμος ή να υπερεκτείνεται η μέση.",
+          "transitionDescription": "Ολοκλήρωσε ελεγχόμενα το kick-through του αριστερού ποδιού στην τελική πλευρική θέση.",
+          "changeFromPrevious": "Το αριστερό πόδι περνά κάτω από τον κορμό, ενώ τα δύο σημεία στήριξης μένουν σταθερά.",
+          "prompt": "Create exactly one standalone full-body exercise image for frame 3 of Bear Hover Left-Leg Kick-Through. Use only the ATHLETICO male model reference /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Preserve the same male identity, face, hair, black shirt, gray shorts, white shoes, ATHLETICO studio, lighting, camera angle, distance and landscape framing. Anatomical left/right must not be mirrored. Στήριξη στο αριστερό χέρι και δεξί πέλμα. Το δεξί χέρι παραμένει σηκωμένο. Το αριστερό πόδι περνά κάτω από τον κορμό και κινείται προς την πλευρά έκτασης· η λεκάνη ανοίγει, χωρίς να βυθίζεται ο ώμος ή να υπερεκτείνεται η μέση. No text, labels, arrows, borders, collage, extra people or equipment.",
+          "sameImageAs": null,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/03-thread.jpg"
+        },
+        {
+          "frame": 4,
+          "label": "Κορύφωση — έκταση αριστερού ποδιού",
+          "poseDescription": "Τελική θέση kick-through με το αριστερό πόδι εκτεταμένο προς την πλευρά, μετά το πέρασμα κάτω από τον κορμό. Στήριξη στο αριστερό χέρι και δεξί πέλμα· το δεξί χέρι είναι ελεύθερο και ανοικτό για ισορροπία. Λεκάνη στραμμένη και ανυψωμένη με έλεγχο, αυχένας ουδέτερος.",
+          "transitionDescription": "Λύγισε και επανάφερε το αριστερό πόδι από την ίδια διαδρομή, ακολουθώντας τα καρέ 3, 2 και 1 ανάποδα.",
+          "changeFromPrevious": "Το αριστερό πόδι ολοκληρώνει την έκταση· το δεξί πόδι παραμένει πόδι στήριξης.",
+          "prompt": "Create exactly one standalone full-body exercise image for frame 4 of Bear Hover Left-Leg Kick-Through. Use only the ATHLETICO male model reference /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Preserve the same male identity, face, hair, black shirt, gray shorts, white shoes, ATHLETICO studio, lighting, camera angle, distance and landscape framing. Anatomical left/right must not be mirrored. Τελική θέση kick-through με το αριστερό πόδι εκτεταμένο προς την πλευρά, μετά το πέρασμα κάτω από τον κορμό. Στήριξη στο αριστερό χέρι και δεξί πέλμα· το δεξί χέρι είναι ελεύθερο και ανοικτό για ισορροπία. Λεκάνη στραμμένη και ανυψωμένη με έλεγχο, αυχένας ουδέτερος. No text, labels, arrows, borders, collage, extra people or equipment.",
+          "sameImageAs": null,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/04-peak.jpg"
+        },
+        {
+          "frame": 5,
+          "label": "Επιστροφή — πέρασμα αριστερού ποδιού",
+          "poseDescription": "Στήριξη στο αριστερό χέρι και δεξί πέλμα. Το δεξί χέρι παραμένει σηκωμένο. Το αριστερό πόδι περνά κάτω από τον κορμό και κινείται προς την πλευρά έκτασης· η λεκάνη ανοίγει, χωρίς να βυθίζεται ο ώμος ή να υπερεκτείνεται η μέση.",
+          "transitionDescription": "Επαναχρησιμοποίησε το ίδιο ακριβώς καρέ της εξόδου, χωρίς κατοπτρισμό.",
+          "changeFromPrevious": "Επιστροφή με ακριβή επαναχρησιμοποίηση του καρέ 3.",
+          "prompt": "ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε ακριβώς το αρχείο εικόνας του καρέ 3, χωρίς κατοπτρισμό.",
+          "sameImageAs": 3,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/03-thread.jpg"
+        },
+        {
+          "frame": 6,
+          "label": "Επιστροφή — μεταφορά στήριξης",
+          "poseDescription": "Το αριστερό χέρι και το δεξί πέλμα είναι τα σημεία στήριξης. Το δεξί χέρι έχει σηκωθεί. Το αριστερό γόνατο ξεκολλά και ξεκινά να περνά μπροστά και κάτω από τον κορμό. Ο κορμός παραμένει ενεργός και η λεκάνη περιστρέφεται ελεγχόμενα.",
+          "transitionDescription": "Επαναχρησιμοποίησε το ίδιο ακριβώς καρέ της εξόδου, χωρίς κατοπτρισμό.",
+          "changeFromPrevious": "Επιστροφή με ακριβή επαναχρησιμοποίηση του καρέ 2.",
+          "prompt": "ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε ακριβώς το αρχείο εικόνας του καρέ 2, χωρίς κατοπτρισμό.",
+          "sameImageAs": 2,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/02-transfer.jpg"
+        },
+        {
+          "frame": 7,
+          "label": "Τελική επιστροφή — ίδια με την αρχική",
+          "poseDescription": "Τετραποδική bear hover: στήριξη και στις δύο παλάμες και στα δύο πέλματα, γόνατα λυγισμένα και αιωρούμενα 2–3 cm, πλάτη ουδέτερη και λεκάνη σταθερή.",
+          "transitionDescription": "Επαναχρησιμοποίησε ακριβώς την εικόνα του καρέ 1 για να κλείσει η επανάληψη.",
+          "changeFromPrevious": "Επιστροφή με ακριβή επαναχρησιμοποίηση του καρέ 1.",
+          "prompt": "ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε ακριβώς το αρχείο εικόνας του καρέ 1, χωρίς κατοπτρισμό.",
+          "sameImageAs": 1,
+          "referenceImage": "/images/athletes/athletico-male-reference.jpg",
+          "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
+          "imageUrl": "/images/exercises/tykora-left/01-start.jpg"
+        }
+      ],
+      "coachReviewRequired": true
+    },
+    "modelProfile": "male",
+    "custom": true,
+    "classification": "Custom",
+    "newConcept": true
   }
 ]
