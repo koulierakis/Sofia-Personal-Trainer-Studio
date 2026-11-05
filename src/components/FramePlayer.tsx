@@ -196,7 +196,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             )}
             {index === frames.length - 1 && (
               <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-emerald-950/80 border border-emerald-500 text-emerald-200">
-                ✅ Τελική θέση — Πλήρης επαναφορά στην αρχική θέση (Καρέ {frames.length} = Καρέ 1)
+                ✅ Τελική θέση — Ολοκλήρωση της επανάληψης
               </span>
             )}
           </div>
