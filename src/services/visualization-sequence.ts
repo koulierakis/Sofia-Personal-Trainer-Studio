@@ -551,7 +551,7 @@ export function buildVisualization(
     }).slice(0, 15);
 
     playbackPhases = [...outbound];
-    for (let i = outbound.length - 2; i >= 0; i -= 1) {
+    for (let i = outbound.length - 2; i >= 1; i -= 1) {
       playbackPhases.push(aliasFrame(outbound[i], i + 1, outbound[i].label));
     }
     if (outbound.length > 0) {
