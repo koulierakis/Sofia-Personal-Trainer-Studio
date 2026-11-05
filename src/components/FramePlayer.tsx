@@ -99,7 +99,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
         <div className="order-1">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <div className="frame-player-meta flex flex-wrap items-center justify-between gap-2 mb-2">
             <h4 className="font-semibold text-lg text-white">
               Αναπαραγωγή καρέ επανάληψης (1–{frames.length})
             </h4>
@@ -131,18 +131,18 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             </div>
           </div>
 
-          <p className="frame-player-counter font-bold text-sky-200">
+          <p className="frame-player-counter frame-player-counter-row font-bold text-sky-200">
             Καρέ {index + 1} από {frames.length} · {currentFrame.label}
           </p>
 
           <progress
-            className="w-full h-3 my-3 rounded"
+            className="frame-player-progress w-full h-3 my-3 rounded"
             max={frames.length}
             value={index + 1}
             aria-label="Πρόοδος αναπαραγωγής καρέ"
           />
 
-          <div className="flex flex-wrap items-center gap-2 mb-2">
+          <div className="frame-player-phase flex flex-wrap items-center gap-2 mb-2">
             {index === 0 && (
               <span className="px-2.5 py-1 text-xs font-semibold rounded-md bg-blue-900/80 border border-blue-500 text-blue-200">
                 🎯 Αρχική θέση επανάληψης (Καρέ 1) — Σταθερή λήψη 45°
@@ -161,10 +161,10 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
           </div>
 
           {/* ΟΠΤΙΚΟΠΟΙΗΣΗ ΚΑΡΕ ΜΕ ΤΟ ΕΓΚΕΚΡΙΜΕΝΟ ΜΟΝΤΕΛΟ */}
-          <div className="my-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+          <div className="frame-player-layout my-4 grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
             {/* ΚΥΡΙΑ ΕΙΚΟΝΑ ΚΑΡΕ */}
-            <div className="md:col-span-5 flex flex-col items-center">
-              <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
+            <div className="frame-player-visual md:col-span-5 flex flex-col items-center">
+              <div className="frame-player-image relative w-full max-w-[520px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
                 {/* Κλειδωμένη φωτογραφία μοντέλου αναφοράς ενσωματωμένη στην άσκηση */}
                 {currentImageUrl ? (
                   <img
@@ -208,7 +208,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                 </div>
               </div>
 
-              <div className="text-[11px] text-slate-300 text-center mt-2 flex flex-wrap items-center justify-center gap-2">
+              <div className="frame-player-image-tags text-[11px] text-slate-300 text-center mt-2 flex flex-wrap items-center justify-center gap-2">
                 <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-amber-300 font-semibold">
                   👤 Ενσωματωμένο Μοντέλο Άσκησης
                 </span>
@@ -219,7 +219,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             </div>
 
             {/* ΠΕΡΙΓΡΑΦΗ & ΚΙΝΗΣΙΟΛΟΓΙΚΕΣ ΛΕΠΤΟΜΕΡΕΙΕΣ */}
-            <div className="md:col-span-7 flex flex-col justify-between space-y-3">
+            <div className="frame-player-details md:col-span-7 flex flex-col justify-between space-y-3">
               {/* ΕΠΙΒΕΒΑΙΩΣΗ ΚΙΝΗΣΙΟΛΟΓΙΑΣ ΖΕΒΑΡΑ / ΜΟΝΟΠΟΔΙΚΗΣ ΣΤΗΡΙΞΗΣ */}
               {(exerciseId === 'hybrid-zev' || sequence.frames?.length === 7) && (
                 <div className="p-3 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border border-sky-500/60 text-xs shadow-md">
@@ -294,7 +294,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             </div>
           </div>
 
-          <div className="frame-player-controls mt-4 flex flex-wrap items-center gap-3">
+          <div className="frame-player-controls frame-player-primary-controls mt-4 flex flex-wrap items-center gap-3">
             <button
               type="button"
               onClick={() => handleStep(-1)}
@@ -304,6 +304,15 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
               ← Προηγούμενο
             </button>
 
+            <button
+              type="button"
+              onClick={() => { setIsPlaying(false); setIndex(0); }}
+              className="font-semibold bg-[#3b2525] border-[#8b4545] hover:bg-[#512f2f]"
+              aria-label="Διακοπή και επιστροφή στην αρχή"
+              title="Διακοπή και επιστροφή στην αρχή"
+            >
+              ⏹ Stop
+            </button>
             <button
               type="button"
               onClick={togglePlay}
