@@ -169,6 +169,28 @@ export const App: React.FC = () => {
     }
   };
 
+  const handleGeneratedExerciseSave = (exercise: Exercise) => {
+    const normalized = ensureVisualization({
+      ...exercise,
+      custom: true,
+      newConcept: true,
+      requiresCoachReview: true,
+      reviewStatus: 'pending',
+    });
+    const nextState: AppState = {
+      ...userState,
+      exercises: [...userState.exercises.filter((item) => item.id !== normalized.id), normalized],
+    };
+    if (!saveUserState(nextState)) return;
+    setMode(normalized.discipline === 'pilates' || normalized.trainingType === 'reformer' ? 'pilates' : 'functional');
+    setTab('exercises');
+    setSelectedProgramId(null);
+    setQueueOnly(false);
+    setShowConcepts(true);
+    setSelectedExerciseId(normalized.id);
+    showNotice('Η νέα άσκηση αποθηκεύτηκε σε αναμονή έγκρισης, με τα καρέ και τα prompts της.');
+  };
+
   // Sync reviews to localStorage
   const saveReviews = (nextReviews: ReviewMap): boolean => {
     try {
@@ -607,7 +629,7 @@ export const App: React.FC = () => {
         {/* WELCOME SECTION */}
         {!mode && (
           <section id="welcome" className="py-4">
-            <HomeAICoachPanel />
+            <HomeAICoachPanel onSaveExercise={handleGeneratedExerciseSave} />
             <h2 className="text-2xl font-bold text-white mb-1">Επίλεξε προπόνηση</h2>
             <p className="muted text-slate-400 mb-6">
               Δύο ξεχωριστές βιβλιοθήκες. Οι ασκήσεις εμφανίζονται μόνο μετά από αναζήτηση.
@@ -930,6 +952,135 @@ export const App: React.FC = () => {
                   {currentSelectedExercise.level || ''} · {currentSelectedExercise.category || 'Functional'}
                 </p>
 
+                {/* Visualization Sequence and Frame Player */}
+                {currentSelectedExercise.visualization && (() => {
+                  const rawProf = currentSelectedExercise.visualization.referenceProfile;
+                  const detailProfile: 'female' | 'male' =
+                    rawProf === 'male' || rawProf === 'female' ? rawProf : modelProfileFor(currentSelectedExercise);
+                  const detailAthleteRef = VISUAL_REFERENCES[detailProfile];
+
+                  return (
+                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#3b3b3b]">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <h3 className="text-lg font-bold text-white">
+                          Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
+                        </h3>
+                        <span className="px-2.5 py-1 text-xs font-black rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500 uppercase tracking-wider">
+                          🔒 Υποχρεωτικό Μοντέλο: {detailAthleteRef.athleteTitleGreek}
+                        </span>
+                      </div>
+
+                      {/* Interactive Frame Player with Visual Image Support */}
+                      <FramePlayer
+                        sequence={currentSelectedExercise.visualization}
+                        exerciseId={currentSelectedExercise.id}
+                      />
+                    {/* Collapsible details for each frame */}
+                    <div className="space-y-2 my-6">
+                      <h4 className="text-sm font-semibold text-slate-200 uppercase tracking-wide">
+                        Αναλυτικά καρέ & Prompts
+                      </h4>
+                      {currentSelectedExercise.visualization.frames.map((frame) => (
+                        <details key={frame.frame}>
+                          <summary>
+                            Frame {frame.frame} — {frame.label}
+                          </summary>
+                          <p>
+                            <strong>Στάση σώματος: </strong>
+                            {frame.poseDescription}
+                          </p>
+                          <p>
+                            <strong>Αλλαγή από το προηγούμενο καρέ: </strong>
+                            {frame.changeFromPrevious || frame.transitionDescription}
+                          </p>
+                          {frame.sameImageAs && (
+                            <p className="text-amber-300 font-medium">
+                              Δεν παράγεται νέα εικόνα. Χρησιμοποιείται αυτούσια η εικόνα του Frame {frame.sameImageAs}.
+                            </p>
+                          )}
+                          <details className="mt-2 bg-[#131313] border-[#2d2d2d]">
+                            <summary className="text-xs text-sky-300">Πλήρες prompt για το AI</summary>
+                            <p className="text-xs font-mono text-slate-300 whitespace-pre-wrap">{frame.prompt}</p>
+                          </details>
+                        </details>
+                      ))}
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => handleExportPrompts(currentSelectedExercise)}
+                      className="bg-[#383838] border-[#6e6e6e] text-white hover:border-sky-300"
+                    >
+                      Λήψη prompts όλων των καρέ (.txt)
+                    </button>                      {/* ΕΝΣΩΜΑΤΩΜΕΝΗ ΚΑΡΤΑ ΑΝΑΦΟΡΑΣ ΜΟΝΤΕΛΟΥ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
+                      <div className="my-4 p-4 rounded-2xl bg-gradient-to-r from-[#171717] via-[#222222] to-[#171717] border-2 border-amber-500 shadow-2xl">
+                        <div className="flex flex-col md:flex-row items-center gap-5">
+                          <div className="relative shrink-0 w-36 h-48 rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl bg-black">
+                            <img
+                              src={detailAthleteRef.url}
+                              alt={detailAthleteRef.athleteTitleGreek}
+                              className="w-full h-full object-cover object-top"
+                            />
+                            <div className="absolute top-1 left-1 right-1 bg-black/90 text-[10px] text-amber-300 font-extrabold px-1.5 py-0.5 rounded text-center tracking-wider uppercase">
+                              Επίσημη Αναφορά
+                            </div>
+                            <div className="absolute bottom-1 left-1 right-1 bg-black/85 text-[10px] text-sky-200 font-bold px-1 py-0.5 rounded text-center">
+                              📐 Λήψη 45°
+                            </div>
+                          </div>
+
+                          <div className="flex-1 space-y-2 text-left">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <span className="px-2 py-0.5 text-xs font-bold rounded bg-amber-950 text-amber-200 border border-amber-600">
+                                {detailAthleteRef.athleteName}
+                              </span>
+                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-sky-950 text-sky-200 border border-sky-700">
+                                Studio ATHLETICO
+                              </span>
+                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-emerald-950 text-emerald-200 border border-emerald-600">
+                                45° Λοξή Οπτική Γωνία
+                              </span>
+                            </div>
+
+                            <p className="text-xs text-slate-200 leading-relaxed font-medium">
+                              <strong className="text-amber-300 font-extrabold uppercase">ΥΠΟΧΡΕΩΤΙΚΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ:</strong> Στην άσκηση αυτή έχει ανατεθεί ως σημείο αναφοράς αποκλειστικά το συγκεκριμένο μοντέλο ({detailProfile === 'male' ? 'Άνδρας Αθλητής' : 'Γυναίκα Αθλήτρια'}). Οποιοσδήποτε χειριστής επιχειρήσει ή εξουσιοδοτηθεί να προβεί σε αλλαγές ή παραγωγή εικόνων, υποχρεούται αυστηρά να χρησιμοποιήσει αποκλειστικά αυτό το μοντέλο, με τα ίδια ρούχα ({detailAthleteRef.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με σταθερή λήψη 45 μοιρών (στη μέση λοξά).
+                            </p>
+
+                            <div className="p-2.5 rounded-lg bg-black/40 border border-amber-500/40 text-[11px] text-amber-200 font-semibold flex items-center gap-2">
+                              <span className="text-base select-none">🛡️</span>
+                              <span>
+                                <strong>Ασφαλιστική Δικλείδα:</strong> Εάν δεν τηρείται αυτό το μοντέλο και τα παραπάνω χαρακτηριστικά, η εφαρμογή μπλοκάρει υποχρεωτικά τη συνέχεια της οπτικοποίησης.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p className="muted text-xs text-slate-400 mb-1">
+                        {currentSelectedExercise.visualization.fixedVisualContext}
+                      </p>
+
+                      <p className="warning text-xs text-amber-300 font-mono mb-2">
+                        Κλειδωμένη αναφορά μοντέλου/φόντου: {currentSelectedExercise.visualization.referenceImage} · SHA-256{' '}
+                        {currentSelectedExercise.visualization.referenceSha256}
+                      </p>
+
+                      <p className="muted text-xs text-slate-400 mb-2">
+                        {currentSelectedExercise.visualization.promptTemplate}
+                      </p>
+
+                      <p className="muted text-xs text-slate-400 mb-4 italic">
+                        Ο player αναπαράγει διαδοχικά τα αναγκαία καρέ της επανάληψης (3–15 καρέ βάσει πολυπλοκότητας) με πλήρεις κινησιολογικές οδηγίες για αρχαρίους. Το πρώτο και το τελευταίο καρέ αντιστοιχούν στην ίδια αρχική θέση σώματος.
+                      </p>
+
+                      <MotionValidation frames={currentSelectedExercise.visualization.frames} exerciseId={currentSelectedExercise.id} />
+
+
+                  </section>
+                );
+              })()}
+              
+
                 <div className="space-y-4 my-4">
                   <div>
                     <h3 className="text-base font-semibold text-sky-200 mb-1">Περιγραφή άσκησης</h3>
@@ -1003,134 +1154,7 @@ export const App: React.FC = () => {
 
                 <SofiaAICoach exercise={currentSelectedExercise} />
 
-                {/* Visualization Sequence and Frame Player */}
-                {currentSelectedExercise.visualization && (() => {
-                  const rawProf = currentSelectedExercise.visualization.referenceProfile;
-                  const detailProfile: 'female' | 'male' =
-                    rawProf === 'male' || rawProf === 'female' ? rawProf : modelProfileFor(currentSelectedExercise);
-                  const detailAthleteRef = VISUAL_REFERENCES[detailProfile];
-
-                  return (
-                    <section className="visualization-sequence mt-6 pt-6 border-t border-[#3b3b3b]">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <h3 className="text-lg font-bold text-white">
-                          Οπτικοποίηση με περιγραφή καρέ · {currentSelectedExercise.visualization.frameCount} καρέ
-                        </h3>
-                        <span className="px-2.5 py-1 text-xs font-black rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500 uppercase tracking-wider">
-                          🔒 Υποχρεωτικό Μοντέλο: {detailAthleteRef.athleteTitleGreek}
-                        </span>
-                      </div>
-
-                      {/* ΕΝΣΩΜΑΤΩΜΕΝΗ ΚΑΡΤΑ ΑΝΑΦΟΡΑΣ ΜΟΝΤΕΛΟΥ & ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
-                      <div className="my-4 p-4 rounded-2xl bg-gradient-to-r from-[#171717] via-[#222222] to-[#171717] border-2 border-amber-500 shadow-2xl">
-                        <div className="flex flex-col md:flex-row items-center gap-5">
-                          <div className="relative shrink-0 w-36 h-48 rounded-xl overflow-hidden border-2 border-amber-400 shadow-2xl bg-black">
-                            <img
-                              src={detailAthleteRef.url}
-                              alt={detailAthleteRef.athleteTitleGreek}
-                              className="w-full h-full object-cover object-top"
-                            />
-                            <div className="absolute top-1 left-1 right-1 bg-black/90 text-[10px] text-amber-300 font-extrabold px-1.5 py-0.5 rounded text-center tracking-wider uppercase">
-                              Επίσημη Αναφορά
-                            </div>
-                            <div className="absolute bottom-1 left-1 right-1 bg-black/85 text-[10px] text-sky-200 font-bold px-1 py-0.5 rounded text-center">
-                              📐 Λήψη 45°
-                            </div>
-                          </div>
-
-                          <div className="flex-1 space-y-2 text-left">
-                            <div className="flex flex-wrap items-center gap-2">
-                              <span className="px-2 py-0.5 text-xs font-bold rounded bg-amber-950 text-amber-200 border border-amber-600">
-                                {detailAthleteRef.athleteName}
-                              </span>
-                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-sky-950 text-sky-200 border border-sky-700">
-                                Studio ATHLETICO
-                              </span>
-                              <span className="px-2 py-0.5 text-xs font-semibold rounded bg-emerald-950 text-emerald-200 border border-emerald-600">
-                                45° Λοξή Οπτική Γωνία
-                              </span>
-                            </div>
-
-                            <p className="text-xs text-slate-200 leading-relaxed font-medium">
-                              <strong className="text-amber-300 font-extrabold uppercase">ΥΠΟΧΡΕΩΤΙΚΟ ΜΟΝΤΕΛΟ ΑΝΑΦΟΡΑΣ:</strong> Στην άσκηση αυτή έχει ανατεθεί ως σημείο αναφοράς αποκλειστικά το συγκεκριμένο μοντέλο ({detailProfile === 'male' ? 'Άνδρας Αθλητής' : 'Γυναίκα Αθλήτρια'}). Οποιοσδήποτε χειριστής επιχειρήσει ή εξουσιοδοτηθεί να προβεί σε αλλαγές ή παραγωγή εικόνων, υποχρεούται αυστηρά να χρησιμοποιήσει αποκλειστικά αυτό το μοντέλο, με τα ίδια ρούχα ({detailAthleteRef.outfitGreek}), στον ίδιο χώρο studio ATHLETICO και με σταθερή λήψη 45 μοιρών (στη μέση λοξά).
-                            </p>
-
-                            <div className="p-2.5 rounded-lg bg-black/40 border border-amber-500/40 text-[11px] text-amber-200 font-semibold flex items-center gap-2">
-                              <span className="text-base select-none">🛡️</span>
-                              <span>
-                                <strong>Ασφαλιστική Δικλείδα:</strong> Εάν δεν τηρείται αυτό το μοντέλο και τα παραπάνω χαρακτηριστικά, η εφαρμογή μπλοκάρει υποχρεωτικά τη συνέχεια της οπτικοποίησης.
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <p className="muted text-xs text-slate-400 mb-1">
-                        {currentSelectedExercise.visualization.fixedVisualContext}
-                      </p>
-
-                      <p className="warning text-xs text-amber-300 font-mono mb-2">
-                        Κλειδωμένη αναφορά μοντέλου/φόντου: {currentSelectedExercise.visualization.referenceImage} · SHA-256{' '}
-                        {currentSelectedExercise.visualization.referenceSha256}
-                      </p>
-
-                      <p className="muted text-xs text-slate-400 mb-2">
-                        {currentSelectedExercise.visualization.promptTemplate}
-                      </p>
-
-                      <p className="muted text-xs text-slate-400 mb-4 italic">
-                        Ο player αναπαράγει διαδοχικά τα αναγκαία καρέ της επανάληψης (3–15 καρέ βάσει πολυπλοκότητας) με πλήρεις κινησιολογικές οδηγίες για αρχαρίους. Το πρώτο και το τελευταίο καρέ αντιστοιχούν στην ίδια αρχική θέση σώματος.
-                      </p>
-
-                      {/* Interactive Frame Player with Visual Image Support */}
-                      <FramePlayer
-                        sequence={currentSelectedExercise.visualization}
-                        exerciseId={currentSelectedExercise.id}
-                      />
-                      <MotionValidation frames={currentSelectedExercise.visualization.frames} exerciseId={currentSelectedExercise.id} />
-
-                    {/* Collapsible details for each frame */}
-                    <div className="space-y-2 my-6">
-                      <h4 className="text-sm font-semibold text-slate-200 uppercase tracking-wide">
-                        Αναλυτικά καρέ & Prompts
-                      </h4>
-                      {currentSelectedExercise.visualization.frames.map((frame) => (
-                        <details key={frame.frame}>
-                          <summary>
-                            Frame {frame.frame} — {frame.label}
-                          </summary>
-                          <p>
-                            <strong>Στάση σώματος: </strong>
-                            {frame.poseDescription}
-                          </p>
-                          <p>
-                            <strong>Αλλαγή από το προηγούμενο καρέ: </strong>
-                            {frame.changeFromPrevious || frame.transitionDescription}
-                          </p>
-                          {frame.sameImageAs && (
-                            <p className="text-amber-300 font-medium">
-                              Δεν παράγεται νέα εικόνα. Χρησιμοποιείται αυτούσια η εικόνα του Frame {frame.sameImageAs}.
-                            </p>
-                          )}
-                          <details className="mt-2 bg-[#131313] border-[#2d2d2d]">
-                            <summary className="text-xs text-sky-300">Πλήρες prompt για το AI</summary>
-                            <p className="text-xs font-mono text-slate-300 whitespace-pre-wrap">{frame.prompt}</p>
-                          </details>
-                        </details>
-                      ))}
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() => handleExportPrompts(currentSelectedExercise)}
-                      className="bg-[#383838] border-[#6e6e6e] text-white hover:border-sky-300"
-                    >
-                      Λήψη prompts όλων των καρέ (.txt)
-                    </button>
-                  </section>
-                );
-              })()}
-              </article>
+</article>
             )}
 
             {/* PROGRAMS PANEL */}
