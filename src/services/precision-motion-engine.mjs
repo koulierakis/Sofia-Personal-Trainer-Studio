@@ -75,16 +75,31 @@ export function analyzeExercise(exercise, { identityLock = '', mode = 'image' } 
     change: index === 0 ? 'Αφετηρία.' : (index === specs.length - 1 ? 'Αλλαγή κατεύθυνσης ή κορυφαία θέση της κίνησης.' : 'Εμφανίζεται το επόμενο διακριτό κινητικό γεγονός.'),
     poseSpec: { phase: index === 0 ? 'initial' : 'key_position', laterality: 'left_right_explicit', posture: entry[1], support: entry[2], targetAngles: entry[3], equipment: equipmentText(exercise), uncertainty: 'Angle targets are approximate and must be adapted to individual anatomy.' }
   }));
-  const start = frames[0];
-  const closing = { frame: frames.length + 1, label: 'Επιστροφή στην αρχική θέση', phase: 'return', pose: start.pose, support: start.support, angles: start.angles, change: 'Ελεγχόμενη επιστροφή στην αρχική θέση· κλείσιμο μίας πλήρους επανάληψης.', poseSpec: { ...start.poseSpec, phase: 'return_to_start', reusedImage: 1 } };
-  const uniqueFrames = [...frames, { ...closing, sameImageAs: 1 }];
-  for (let i = 0; i < uniqueFrames.length; i++) uniqueFrames[i].prompt = uniqueFrames[i].sameImageAs ? 'Reuse Frame 1 image byte-for-byte for the matching closing pose; do not generate a new image.' : promptFor(uniqueFrames[i], i, exercise, identityLock);
+  const uniqueFrames = [...frames];
+  for (let i = frames.length - 2; i >= 0; i -= 1) {
+    const source = frames[i];
+    uniqueFrames.push({
+      ...source,
+      frame: uniqueFrames.length + 1,
+      label: 'Επιστροφή · ' + source.label,
+      phase: 'return',
+      change: 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + source.frame + '.',
+      sameImageAs: source.frame,
+      poseSpec: { ...source.poseSpec, phase: 'reverse_return', reusedImage: source.frame }
+    });
+  }
+  for (let i = 0; i < uniqueFrames.length; i++) {
+    const frame = uniqueFrames[i];
+    frame.prompt = frame.sameImageAs
+      ? 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ ' + frame.sameImageAs + '. Ακολούθησε την επιστροφή με τα ίδια καρέ σε αντίστροφη σειρά, χωρίς κατοπτρισμό.'
+      : promptFor(frame, i, exercise, identityLock);
+  }
 
   const videoPrompt = [
     'VIDEO MODE — μία συνεχής, πλήρης επανάληψη: ' + titleOf(exercise) + '.',
     'Σειρά στάσεων: ' + uniqueFrames.map((f) => f.label).join(' → ') + '.',
     ...uniqueFrames.map((f) => f.label + ': ' + f.pose + ' Στήριξη: ' + f.support),
-    'Κίνηση ομαλή και ανατομικά συνεχής, με σαφή φορά και ελεγχόμενη αντιστροφή κατεύθυνσης. Καμία τηλεμεταφορά, ανταλλαγή αριστερού/δεξιού άκρου ή μετακίνηση σταθερού εξοπλισμού.',
+    'Κίνηση ομαλή και ανατομικά συνεχής. Η επιστροφή επαναχρησιμοποιεί ακριβώς τα ίδια καρέ της εξόδου σε αντίστροφη σειρά· δεν παράγονται νέες εικόνες για την επιστροφή. Καμία τηλεμεταφορά, ανταλλαγή αριστερού/δεξιού άκρου ή μετακίνηση σταθερού εξοπλισμού.',
     'Κλείσε την επανάληψη στην αρχική στάση. GLOBAL IDENTITY LOCK: ' + (identityLock || 'επισύναψε εγκεκριμένο reference και κλείδωσε πρόσωπο, σώμα, ρουχισμό, εξοπλισμό, studio, φωτισμό και κάμερα.') ,
     'Χρόνος: μη καθορισμένος· να προσαρμοστεί στο tempo του coach. Μην επινοήσεις ρυθμό ή εύρος κίνησης.'
   ].join('\n');
