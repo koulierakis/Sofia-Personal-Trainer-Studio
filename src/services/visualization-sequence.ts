@@ -563,7 +563,7 @@ export function ensureVisualization(exercise: Partial<Exercise> = {}): Exercise 
     current?.version === 2 &&
     Array.isArray(current.frames) &&
     current.frames.length >= 3 &&
-    current.frames.length <= 15 &&
+    current.frames.length <= 30 &&
     (current.frames[current.frames.length - 1].sameImageAs === 1 ||
       (current.frames.length === 4 && current.frames.every((frame) => frame.imageUrl))) &&
     current.frames.every((frame) => frame.prompt && frame.referenceImage && frame.referenceSha256);
