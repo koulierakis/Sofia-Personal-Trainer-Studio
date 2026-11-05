@@ -16,6 +16,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
 
   const frames = sequence.frames || [];
   const currentFrame = frames[index] || frames[0];
+  const currentImageUrl = currentFrame?.imageUrl || (currentFrame?.sameImageAs ? frames.find((frame) => frame.frame === currentFrame.sameImageAs)?.imageUrl : undefined);
 
   const profile: 'female' | 'male' = sequence.referenceProfile === 'male' ? 'male' : 'female';
   const referenceData = VISUAL_REFERENCES[profile] || VISUAL_REFERENCES.female;
@@ -207,9 +208,9 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
             <div className="md:col-span-5 flex flex-col items-center">
               <div className="relative w-full max-w-[340px] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-sky-500/80 bg-slate-950 shadow-2xl group">
                 {/* Κλειδωμένη φωτογραφία μοντέλου αναφοράς ενσωματωμένη στην άσκηση */}
-                {currentFrame.imageUrl ? (
+                {currentImageUrl ? (
                   <img
-                    src={currentFrame.imageUrl}
+                    src={currentImageUrl}
                     alt={`${currentFrame.label} - Καρέ ${index + 1}`}
                     className="w-full h-full object-cover object-top transition-all duration-300"
                   />
@@ -321,7 +322,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                       title={`Καρέ ${i + 1}: ${f.label}`}
                     >
                       <img
-                        src={f.imageUrl || ''}
+                        src={f.imageUrl || (f.sameImageAs ? frames.find((source) => source.frame === f.sameImageAs)?.imageUrl : undefined) || ''}
                         alt={`Καρέ ${i + 1}`}
                         className="w-full h-full object-cover object-top"
                       />
