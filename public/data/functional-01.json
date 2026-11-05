@@ -19,66 +19,79 @@
     "safety": "Απόφυγε την ανύψωση των φτερνών, την ανεξέλεγκτη σύγκλιση των γονάτων και την απώλεια ισορροπίας. Μην επιβάλλεις βάθος που προκαλεί πόνο.",
     "phases": [
       {
-        "label": "Αρχική"
+        "label": "Αρχική όρθια στάση"
       },
       {
-        "label": "Μεσαία"
+        "label": "Ελεγχόμενη κάθοδος"
       },
       {
-        "label": "Επόμενη"
+        "label": "Κατώτατη ελεγχόμενη θέση"
       },
       {
-        "label": "Επιστροφή"
+        "label": "Επιστροφή στην όρθια θέση"
       }
     ],
     "source": "original-functional-txt",
     "visualization": {
-      "version": 1,
+      "version": 2,
       "referenceProfile": "female",
       "referenceImage": "/images/athletes/athletico-female-reference.jpg",
       "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
       "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the same identity, facial features, hair, proportions, clothes, shoes, camera, framing and studio in every frame. Generate one image for one frame from its poseDescription; never invent another model or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
       "fixedVisualContext": "Μοντέλο και περιβάλλον/φόντο παραμένουν ακριβώς όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η στάση και η φάση της άσκησης που περιγράφεται σε κάθε καρέ.",
-      "frameCount": 5,
-      "closingFrameReuses": 1,
+      "frameCount": 4,
       "frames": [
         {
           "frame": 1,
-          "label": "Αρχική θέση",
-          "poseDescription": "Όρθια θέση, πέλματα περίπου στο άνοιγμα των ώμων, ολόκληρα στο έδαφος, κορμός ουδέτερος και χέρια μπροστά για ισορροπία.",
-          "transitionDescription": "Ξεκίνημα από την αρχική θέση. Όρθια θέση, πέλματα περίπου στο άνοιγμα των ώμων, ολόκληρα στο έδαφος, κορμός ουδέτερος και χέρια μπροστά για ισορροπία. Προετοίμασε ομαλή μετάβαση προς: Μετακίνησε ισχία ελαφρά πίσω και λύγισε σταδιακά γόνατα, διατηρώντας όλο το πέλμα σε επαφή με το έδαφος.",
-          "sameImageAs": null
+          "label": "Αρχική όρθια στάση",
+          "poseDescription": "Το μοντέλο στέκεται όρθιο με πέλματα σταθερά στο έδαφος, έτοιμο να αρχίσει το squat.",
+          "transitionDescription": "Αρχή της επανάληψης.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+          "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
+          "sameImageAs": null,
+          "imageUrl": "/images/exercises/bodyweight-squat/01-start.png",
+          "prompt": "Εικόνα καρέ 1 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Το μοντέλο στέκεται όρθιο με πέλματα σταθερά στο έδαφος, έτοιμο να αρχίσει το squat.",
+          "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
         {
           "frame": 2,
-          "label": "Έναρξη καθόδου",
-          "poseDescription": "Μερικό κάθισμα: ισχία μετατοπισμένα πίσω, γόνατα ελαφρά λυγισμένα στην κατεύθυνση των δακτύλων, φτέρνες και μετατάρσια στο έδαφος, κορμός σταθερός με φυσική κλίση εμπρός, χέρια μπροστά για ισορροπία.",
-          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Μετακίνησε ισχία ελαφρά πίσω και λύγισε σταδιακά γόνατα, διατηρώντας όλο το πέλμα σε επαφή με το έδαφος. Προετοίμασε ομαλή μετάβαση προς: Χαμήλωσε τη λεκάνη στο διαθέσιμο εύρος· γόνατα ακολουθούν την κατεύθυνση των δακτύλων και η σπονδυλική στήλη παραμένει ελεγχόμενη.",
+          "label": "Ελεγχόμενη κάθοδος",
+          "poseDescription": "Ισχία προς τα πίσω και κάτω, γόνατα λυγισμένα, κορμός σταθερός και πέλματα σε επαφή με το δάπεδο.",
+          "transitionDescription": "Ομαλή κάθοδος από την όρθια θέση.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+          "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
+          "imageUrl": "/images/exercises/bodyweight-squat/02-descent.png",
+          "prompt": "Εικόνα καρέ 2 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Ισχία προς τα πίσω και κάτω, γόνατα λυγισμένα, κορμός σταθερός και πέλματα σε επαφή με το δάπεδο.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
         {
           "frame": 3,
           "label": "Κατώτατη ελεγχόμενη θέση",
-          "poseDescription": "Κατώτατο άνετο βάθος καθίσματος: ισχία και γόνατα λυγισμένα, γόνατα στην κατεύθυνση των δακτύλων, πέλματα ολόκληρα στο έδαφος, ουδέτερη ελεγχόμενη σπονδυλική στήλη, χέρια μπροστά.",
-          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Χαμήλωσε τη λεκάνη στο διαθέσιμο εύρος· γόνατα ακολουθούν την κατεύθυνση των δακτύλων και η σπονδυλική στήλη παραμένει ελεγχόμενη. Προετοίμασε ομαλή μετάβαση προς: Πίεσε το έδαφος και έκτεινε ισχία και γόνατα με σταθερό κορμό μέχρι να επανέλθεις όρθιος.",
+          "poseDescription": "Κατώτατη θέση squat με γόνατα και ισχία λυγισμένα, πέλματα σταθερά και κορμό ελεγχόμενο.",
+          "transitionDescription": "Η κάθοδος ολοκληρώνεται στο χαμηλότερο ελεγχόμενο σημείο.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+          "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
+          "imageUrl": "/images/exercises/bodyweight-squat/03-bottom.png",
+          "prompt": "Εικόνα καρέ 3 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Κατώτατη θέση squat με γόνατα και ισχία λυγισμένα, πέλματα σταθερά και κορμό ελεγχόμενο.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
         },
         {
           "frame": 4,
-          "label": "Άνοδος",
-          "poseDescription": "Μερική άνοδος από το κάθισμα: ισχία ψηλότερα από την κατώτατη θέση, ισχία και γόνατα με μικρότερη κάμψη, πέλματα πλήρως στηριγμένα, κορμός σταθερός, χέρια μπροστά.",
-          "transitionDescription": "Ακολούθησε την προηγούμενη στάση. Πίεσε το έδαφος και έκτεινε ισχία και γόνατα με σταθερό κορμό μέχρι να επανέλθεις όρθιος.",
+          "label": "Επιστροφή στην όρθια θέση",
+          "poseDescription": "Ολοκλήρωση της ανόδου και πλήρης επιστροφή σε όρθια θέση.",
+          "transitionDescription": "Πίεση από όλο το πέλμα και ελεγχόμενη επιστροφή στην όρθια θέση.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/athletico-female-reference.jpg",
+          "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
           "sameImageAs": null,
+          "imageUrl": "/images/exercises/bodyweight-squat/04-return.png",
+          "prompt": "Εικόνα καρέ 4 του Bodyweight Squat. Διατηρούνται το ίδιο μοντέλο, τα ρούχα, το ATHLETICO studio και η γωνία λήψης. Στάση: Ολοκλήρωση της ανόδου και πλήρης επιστροφή σε όρθια θέση.",
           "poseReviewStatus": "PENDING_COACH_AND_IMAGE_VALIDATION"
-        },
-        {
-          "frame": 5,
-          "label": "Τελική επαναφορά — ίδια με την αρχική θέση",
-          "poseDescription": "Όρθια θέση, πέλματα περίπου στο άνοιγμα των ώμων, ολόκληρα στο έδαφος, κορμός ουδέτερος και χέρια μπροστά για ισορροπία.",
-          "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
-          "sameImageAs": 1
         }
       ]
     },
