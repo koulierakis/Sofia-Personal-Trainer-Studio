@@ -208,6 +208,7 @@ export function buildVisualization(
     changeFromPrevious: string;
     phaseType: 'initial' | 'descent' | 'apex' | 'ascent' | 'final';
     imageUrl?: string;
+    reuseFrame?: number;
   }
 
   const generatedPhases: RawPhase[] = [];
@@ -509,17 +510,68 @@ export function buildVisualization(
     }
   }
 
-  // Αυστηρός έλεγχος διασφάλισης εύρους: 3 έως 15 καρέ
-  while (generatedPhases.length > 15) {
-    generatedPhases.splice(Math.floor(generatedPhases.length / 2), 1);
+  // Κρατάμε τις μοναδικές εικόνες μόνο στην έξοδο της κίνησης και φτιάχνουμε
+  // την επιστροφή ως aliases των ίδιων καρέ, με ανάποδη σειρά.
+  const aliasFrame = (source: RawPhase, targetFrame: number, label: string): RawPhase => ({
+    ...source,
+    label: 'Επιστροφή · ' + label,
+    changeFromPrevious: 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + targetFrame + '.',
+    reuseFrame: targetFrame,
+  });
+
+  let playbackPhases: RawPhase[];
+  if (isZevara && generatedPhases.length >= 7) {
+    const outbound = generatedPhases.slice(0, 4);
+    playbackPhases = [
+      ...outbound,
+      aliasFrame(outbound[2], 3, outbound[2].label),
+      aliasFrame(outbound[1], 2, outbound[1].label),
+      aliasFrame(outbound[0], 1, 'Αρχική θέση'),
+    ];
+  } else if (isRuvexa && generatedPhases.length >= 7) {
+    const phases = generatedPhases;
+    playbackPhases = [
+      phases[0],
+      phases[1],
+      aliasFrame(phases[0], 1, 'Επιστροφή στο κέντρο'),
+      phases[3],
+      aliasFrame(phases[0], 1, 'Επιστροφή στο κέντρο'),
+      aliasFrame(phases[1], 2, phases[1].label),
+      aliasFrame(phases[0], 1, 'Τελική αρχική θέση'),
+    ];
+  } else {
+    const outbound = generatedPhases.filter((phase, index) => {
+      if (index === 0) return true;
+      const label = norm(phase.label);
+      return phase.phaseType !== 'final' &&
+        phase.phaseType !== 'ascent' &&
+        !label.includes('επιστροφ') &&
+        !label.includes('return') &&
+        !label.includes('επαναφορα');
+    }).slice(0, 15);
+
+    playbackPhases = [...outbound];
+    for (let i = outbound.length - 2; i >= 1; i -= 1) {
+      playbackPhases.push(aliasFrame(outbound[i], i + 1, outbound[i].label));
+    }
+    if (outbound.length > 0) {
+      playbackPhases.push(aliasFrame(outbound[0], 1, 'Τελική αρχική θέση'));
+    }
   }
 
-  const total = generatedPhases.length;
+  // Το πολύ 15 μοναδικές εικόνες και έως 29 βήματα αναπαραγωγής.
+  while (playbackPhases.length > 29) {
+    const removable = playbackPhases.findIndex((phase, index) =>
+      index > 0 && index < playbackPhases.length - 1 && !phase.reuseFrame
+    );
+    if (removable < 0) break;
+    playbackPhases.splice(removable, 1);
+  }
 
-  const frames: FrameItem[] = generatedPhases.map((phase, i) => {
-    const isFirst = i === 0;
-    const isLast = i === total - 1;
+  const total = playbackPhases.length;
 
+  const frames: FrameItem[] = playbackPhases.map((phase, i) => {
+    const sameImageAs = phase.reuseFrame || null;
     return {
       frame: i + 1,
       label: phase.label,
@@ -529,16 +581,18 @@ export function buildVisualization(
       referenceProfile: profile,
       referenceImage: reference.url,
       referenceSha256: reference.sha256,
-      sameImageAs: isLast ? 1 : null,
-      imageUrl: isLast ? (generatedPhases[0]?.imageUrl || phase.imageUrl) : phase.imageUrl,
-      prompt: isLast
-        ? 'REUSE THE EXACT IMAGE FILE GENERATED FOR FRAME 1. Do not generate or alter another model, pose, camera, equipment or background.'
+      sameImageAs,
+      imageUrl: sameImageAs
+        ? (playbackPhases[sameImageAs - 1]?.imageUrl || phase.imageUrl)
+        : phase.imageUrl,
+      prompt: sameImageAs
+        ? 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ ' + sameImageAs + '. Χωρίς κατοπτρισμό.'
         : promptFor(exercise, profile, phase, i, total),
     };
   });
 
   return {
-    version: 2,
+    version: 3,
     referenceProfile: profile,
     referenceImage: reference.url,
     referenceSha256: reference.sha256,
@@ -547,11 +601,11 @@ export function buildVisualization(
       reference.url +
       ' (SHA-256 ' +
       reference.sha256 +
-      '). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (neither straight-on front nor fully side profile). Generate one image for one frame from its poseDescription; never invent another model, lighting or background. The final frame with sameImageAs must reuse the source image file exactly.',
+      '). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (neither straight-on front nor fully side profile). Generate one image for one frame from its poseDescription; never invent another model, lighting or background. Generate new images only for unique outward movement frames. Every return phase must reuse the same outward frame images in reverse order via sameImageAs; never generate a new return image. The final frame must reuse Frame 1 exactly.',
     fixedVisualContext:
       'Μοντέλο, ρούχα, παπούτσια, φωτεινότητα, περιβάλλον και γωνία λήψης 45 μοιρών (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) παραμένουν ακριβώς απαράλλαχτα όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η αναλυτική στάση και η μετατόπιση των μελών του σώματος που περιγράφεται σε κάθε καρέ.',
     frameCount: frames.length,
-    closingFrameReuses: 1,
+    closingFrameReuses: frames.filter((frame) => frame.sameImageAs === 1).length,
     coachReviewRequired: Boolean(exercise.requiresCoachReview || exercise.newConcept || exercise.custom),
     frames,
   };
@@ -560,7 +614,7 @@ export function buildVisualization(
 export function ensureVisualization(exercise: Partial<Exercise> = {}): Exercise {
   const current = exercise.visualization;
   const isValid =
-    current?.version === 2 &&
+    current?.version === 3 &&
     Array.isArray(current.frames) &&
     current.frames.length >= 3 &&
     current.frames.length <= 30 &&
