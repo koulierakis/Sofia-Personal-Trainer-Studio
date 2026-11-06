@@ -84,7 +84,7 @@ test('All built-in data files load and all 10 programs equal 60 minutes', async 
   }
 });
 
-test('Every exercise (all 320 across catalogs) has descriptions, initial position, intermediate movements, and final reset frame', async () => {
+test('Every exercise (all 321 across catalogs) has descriptions, initial position, intermediate movements, and final reset frame', async () => {
   const f1 = JSON.parse(await readFile(new URL('../public/data/functional-01.json', import.meta.url), 'utf8'));
   const f2 = JSON.parse(await readFile(new URL('../public/data/functional-02.json', import.meta.url), 'utf8'));
   const f3 = JSON.parse(await readFile(new URL('../public/data/functional-03.json', import.meta.url), 'utf8'));
@@ -93,7 +93,7 @@ test('Every exercise (all 320 across catalogs) has descriptions, initial positio
   const concepts = buildOriginalConcepts();
 
   const allExercises = [...f1, ...f2, ...f3, ...f4, ...custom, ...concepts].map(ensureVisualization);
-  assert.equal(allExercises.length, 320);
+  assert.equal(allExercises.length, 321);
 
   for (const exercise of allExercises) {
     // 1. Must have instructions/description

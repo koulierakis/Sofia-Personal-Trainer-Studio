@@ -81,7 +81,7 @@ export function analyzeExercise(exercise, { identityLock = '', mode = 'image' } 
     uniqueFrames.push({
       ...source,
       frame: uniqueFrames.length + 1,
-      label: 'Επιστροφή · ' + source.label,
+      label: i === 0 ? 'Επιστροφή στην αρχική θέση' : 'Επιστροφή · ' + source.label,
       phase: 'return',
       change: 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + source.frame + '.',
       sameImageAs: source.frame,

@@ -514,8 +514,10 @@ export function buildVisualization(
   // την επιστροφή ως aliases των ίδιων καρέ, με ανάποδη σειρά.
   const aliasFrame = (source: RawPhase, targetFrame: number, label: string): RawPhase => ({
     ...source,
-    label: 'Επιστροφή · ' + label,
-    changeFromPrevious: 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + targetFrame + '.',
+    label: targetFrame === 1 ? 'Επιστροφή στην αρχική θέση (επαναφορά)' : 'Επιστροφή · ' + label,
+    changeFromPrevious: targetFrame === 1
+      ? 'Επιστροφή στην αρχική θέση με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ 1.'
+      : 'Επιστροφή με επαναχρησιμοποίηση του ίδιου ακριβώς καρέ ' + targetFrame + '.',
     reuseFrame: targetFrame,
   });
 
@@ -586,7 +588,7 @@ export function buildVisualization(
         ? (playbackPhases[sameImageAs - 1]?.imageUrl || phase.imageUrl)
         : phase.imageUrl,
       prompt: sameImageAs
-        ? 'ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ ' + sameImageAs + '. Χωρίς κατοπτρισμό.'
+        ? `REUSE THE EXACT IMAGE FILE from frame ${sameImageAs}. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ ${sameImageAs}. Χωρίς κατοπτρισμό.`
         : promptFor(exercise, profile, phase, i, total),
     };
   });
