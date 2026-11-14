@@ -11,6 +11,7 @@ import {
   reviewCounts,
 } from './services/review-system';
 import { FramePlayer } from './components/FramePlayer';
+import { PendingVisualBatch } from './components/PendingVisualBatch';
 import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 import { SofiaAICoach } from './components/SofiaAICoach';
@@ -716,6 +717,14 @@ export const App: React.FC = () => {
                     Εισαγωγή / Εξαγωγή JSON
                   </button>
                 </nav>
+
+                {mode === 'functional' && tab === 'exercises' && (
+                  <PendingVisualBatch
+                    concepts={conceptExercises}
+                    reviews={reviews}
+                    onOpenExercise={jumpToExerciseFromProgram}
+                  />
+                )}
 
                 {/* Functional Concept Review Toggles */}
                 {mode === 'functional' && (
