@@ -1,46 +1,33 @@
-import { Exercise, FrameItem, ReviewMap, VisualizationSequence } from '../types';
+import { Exercise, ReviewMap, VisualizationSequence } from '../types';
 import { reviewStatus } from './review-system';
 
 /**
- * A visual frame is generated only on the outward half. The return frames
- * are byte-for-byte aliases of approved images, NEVER separate AI requests.
- * This is an opt-in preview plan: nothing is published or approved here.
+ * Important: visualization-sequence.ts ALREADY supplies the complete canonical
+ * outward + exact reverse-alias sequence. Never re-generate, shorten, re-label,
+ * replace or reinterpret any exercise's frame prompts here.
  */
 export function mirrorExerciseSequence(sequence: VisualizationSequence): VisualizationSequence {
-  const original = sequence.frames ?? [];
-  if (original.length < 3) return sequence;
-  // Stop BEFORE the first return phase; complex movements can have several
-  // outward poses and just one generic closing frame, so midpoint is wrong.
-  const returnIndex = original.findIndex((frame, i) =>
-    i > 0 && /επιστροφ|επαναφορ|return|reverse|reset/i.test(
-      (frame.label ?? '') + ' ' + (frame.transitionDescription ?? '')
-    )
-  );
-  const peak = returnIndex > 1
-    ? returnIndex - 1
-    : Math.floor((original.length - 1) / 2);
-  const outward = original.slice(0, peak + 1);
-  const forward: FrameItem[] = outward.map((frame, i) => ({
-    ...frame,
-    frame: i + 1,
-    sameImageAs: null,
-  }));
-  const back: FrameItem[] = outward.slice(0, -1).reverse().map((source, i) => ({
-    ...source,
-    frame: forward.length + i + 1,
-    label: `Επιστροφή — ίδιο με καρέ ${source.frame}`,
-    sameImageAs: source.frame,
-    imageUrl: undefined,
-    prompt: source.prompt, // no second render; record the source prompt for traceability
-  }));
-  const frames = [...forward, ...back];
-  return {
-    ...sequence,
-    frames,
-    frameCount: frames.length,
-    closingFrameReuses: 1,
-    coachReviewRequired: true,
-  };
+  const frames = sequence.frames ?? [];
+  if (frames.length < 3) throw new Error('Exercise has too few canonical frames');
+  if (frames[frames.length - 1].sameImageAs !== 1) {
+    throw new Error('Canonical exercise is missing last-frame alias to frame 1');
+  }
+  for (const [index, frame] of frames.entries()) {
+    if (frame.frame !== index + 1) {
+      throw new Error('Invalid canonical frame numbering');
+    }
+    if (!frame.prompt?.trim()) {
+      throw new Error('Missing original frame prompt at ' + frame.frame);
+    }
+    if (frame.sameImageAs !== null && frame.sameImageAs !== undefined) {
+      const source = frames[frame.sameImageAs - 1];
+      if (!source || source.frame >= frame.frame || source.sameImageAs != null) {
+        throw new Error('Invalid source-frame alias at ' + frame.frame);
+      }
+    }
+  }
+  // Return the original sequence untouched so the exact stored prompts survive.
+  return sequence;
 }
 
 export interface PendingExerciseRenderPlan {
@@ -50,15 +37,11 @@ export interface PendingExerciseRenderPlan {
   referenceImage: string;
   referenceSha256: string;
   generate: Array<{ frame: number; label: string; prompt: string }>;
-  aliases: Array<{ frame: number; sameImageAs: number }>;
+  aliases: Array<{ frame: number; sameImageAs: number; prompt: string }>;
   sequence: VisualizationSequence;
 }
 
-/**
- * Select the FIRST ten concept exercises currently in pending review status.
- * Browser-local coach review decisions are supplied at runtime; never assume
- * repository defaults override a coach's local approvals/rejections.
- */
+/** Review decisions saved in the user's browser take precedence. */
 export function firstPendingVisualPlans(
   concepts: Exercise[],
   reviews: ReviewMap,
@@ -80,7 +63,7 @@ export function firstPendingVisualPlans(
           frame: f.frame, label: f.label, prompt: f.prompt,
         })),
         aliases: sequence.frames.filter(f => f.sameImageAs != null).map(f => ({
-          frame: f.frame, sameImageAs: f.sameImageAs!,
+          frame: f.frame, sameImageAs: f.sameImageAs!, prompt: f.prompt,
         })),
         sequence,
       };
