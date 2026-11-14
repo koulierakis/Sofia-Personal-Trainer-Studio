@@ -7,7 +7,7 @@ export function sanitizeReviews(source: any): ReviewMap {
   const out: ReviewMap = {};
   if (!source || typeof source !== 'object' || Array.isArray(source)) return out;
   for (const [id, r] of Object.entries(source) as [string, any][]) {
-    if (!/^(sofia-original-\d{3}|hybrid-[a-z]{3})$/.test(id) || !r || typeof r !== 'object') continue;
+    if (!/^(sofia-original-\d{3}|hybrid-[a-z]{3}(?:-left)?|sofia-hiit-2026-\d{2})$/.test(id) || !r || typeof r !== 'object') continue;
     if (!['pending', 'approved', 'rejected'].includes(r.status)) continue;
     const imageStatus = IMAGE_STATES.includes(r.imageStatus) ? r.imageStatus : 'not_generated';
     out[id] = {
@@ -29,7 +29,7 @@ export function reviewConcept(
   reviews: ReviewMap,
   now = new Date().toISOString()
 ): ReviewMap {
-  if (!/^(sofia-original-\d{3}|hybrid-[a-z]{3})$/.test(id)) {
+  if (!/^(sofia-original-\d{3}|hybrid-[a-z]{3}(?:-left)?|sofia-hiit-2026-\d{2})$/.test(id)) {
     throw new Error('Unknown concept ID: ' + id);
   }
   if (!['approved', 'rejected', 'pending'].includes(status)) {

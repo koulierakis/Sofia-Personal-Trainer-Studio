@@ -59,6 +59,7 @@ export interface Exercise {
   requiresCoachReview?: boolean;
   reviewStatus?: 'pending' | 'approved' | 'rejected';
   approvedBySofia?: boolean;
+  approvalState?: 'pending_approval' | 'approved' | 'rejected';
   imageStatus?: string;
   newConcept?: boolean;
   patterns?: string[];

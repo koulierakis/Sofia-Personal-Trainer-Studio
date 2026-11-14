@@ -140,14 +140,26 @@ export const App: React.FC = () => {
         } catch {
           originalExercises = [];
         }
+        // User-authored 50 HIIT / Functional exercises are bundled separately:
+        // no overwrites or changes to existing approved exercise records.
+        const hiitResponse = await fetch('/data/hiit-50-pending.json', { cache: 'no-cache' });
+        if (!hiitResponse.ok) throw new Error('HIIT 50 HTTP ' + hiitResponse.status);
+        const hiitExercises: Exercise[] = await hiitResponse.json();
+        if (!Array.isArray(hiitExercises) || hiitExercises.length !== 50 ||
+            hiitExercises.some((exercise) =>
+              !exercise.id.startsWith('sofia-hiit-2026-') ||
+              !exercise.visualization ||
+              exercise.visualization.frames.length !== exercise.visualization.frameCount)) {
+          throw new Error('Μη έγκυρη παρτίδα 50 HIIT ασκήσεων');
+        }
 
         const exercises: Exercise[] = (data.slice(0, 4).flat() as Exercise[]).map(ensureVisualization);
         const programs: Program[] = data[4];
 
-        setBaseExercises([...exercises, ...originalExercises.map(ensureVisualization)]);
+        setBaseExercises([...exercises, ...originalExercises.map(ensureVisualization), ...hiitExercises.map(ensureVisualization)]);
         setBasePrograms(programs);
 
-        const totalCustom = originalExercises.length + 208;
+        const totalCustom = originalExercises.length + hiitExercises.length + 208;
         showNotice(
           `Φορτώθηκαν 100 κανονικές ασκήσεις, ${totalCustom} Custom ασκήσεις και τα 10 προγράμματα των 60 λεπτών.`
         );
@@ -724,6 +736,16 @@ export const App: React.FC = () => {
                     concepts={[...baseExercises.filter((ex) => ex.id.startsWith('hybrid-')), ...conceptExercises.filter((ex) => ['sofia-original-001', 'sofia-original-002'].includes(ex.id))]}
                     reviews={reviews}
                     onOpenExercise={jumpToExerciseFromProgram}
+                  />
+                )}
+
+                {mode === 'functional' && tab === 'exercises' && (
+                  <PendingVisualBatch
+                    concepts={baseExercises.filter((ex) => ex.id.startsWith('sofia-hiit-2026-'))}
+                    reviews={reviews}
+                    onOpenExercise={jumpToExerciseFromProgram}
+                    max={50}
+                    label="SOFIA HIIT 50 — Custom / Advanced (Προς Έγκριση)"
                   />
                 )}
 

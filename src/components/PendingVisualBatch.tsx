@@ -6,14 +6,16 @@ interface Props {
   concepts: Exercise[];
   reviews: ReviewMap;
   onOpenExercise: (id: string) => void;
+  max?: number;
+  label?: string;
 }
 
-export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenExercise }) => {
-  const plans = useMemo(() => firstPendingVisualPlans(concepts, reviews, 15), [concepts, reviews]);
+export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenExercise, max = 15, label }) => {
+  const plans = useMemo(() => firstPendingVisualPlans(concepts, reviews, max), [concepts, reviews, max]);
 
   const downloadManifest = () => {
     const payload = {
-      purpose: 'SOFIA — first 15 pending Custom / Advanced exercises',
+      purpose: label || 'SOFIA — pending Custom / Advanced exercises',
       status: 'draft_only_not_generated_or_approved',
       rendering: 'Only generate[] frames with the approved locked model-and-studio image; return frames are exact local file copies.',
       plans,
@@ -22,7 +24,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'sofia-custom-first-15-render-plan.json';
+    link.download = `sofia-custom-${max}-render-plan.json`;
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -31,7 +33,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
   return (
     <details className="mb-5 rounded-xl border border-sky-700 bg-slate-950/80 p-4 text-white">
       <summary className="cursor-pointer font-bold text-sky-200">
-        Οπτικοποίηση — 15 πρώτες Custom / Advanced ασκήσεις σε αναμονή έγκρισης
+        {label || `Οπτικοποίηση — ${max} πρώτες Custom / Advanced ασκήσεις σε αναμονή έγκρισης`}
       </summary>
       <p className="mt-2 text-xs text-amber-200">
         Προετοιμασία prompts μόνο. Οι φωτογραφίες δεν έχουν παραχθεί και καμία άσκηση δεν έχει εγκριθεί.
@@ -57,7 +59,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
       </div>
       <button type="button" onClick={downloadManifest}
         className="mt-3 rounded-lg bg-sky-700 px-4 py-2 font-semibold text-sm text-white">
-        Λήψη των 15 πλάνων + μοναδικών prompts (JSON)
+        Λήψη των {max} πλάνων + μοναδικών prompts (JSON)
       </button>
     </details>
   );
