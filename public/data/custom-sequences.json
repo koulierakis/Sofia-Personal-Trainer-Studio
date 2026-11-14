@@ -192,66 +192,77 @@
       "referenceProfile": "female",
       "referenceImage": "/images/athletes/athletico-female-reference.jpg",
       "referenceSha256": "59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6",
-      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (neither straight-on front nor fully side profile). Generate one image for one frame from its poseDescription; never invent another model, lighting or background. If the reference image cannot be attached, stop. The final frame with sameImageAs must reuse the source image file exactly and must not be generated again.",
-      "fixedVisualContext": "Μοντέλο, ρούχα, παπούτσια, φωτεινότητα, περιβάλλον και γωνία λήψης 45 μοιρών (στη μέση λοξά, ούτε τελείως πλάγια ούτε από μπροστά) παραμένουν ακριβώς απαράλλαχτα όπως στην εγκεκριμένη φωτογραφία αναφοράς. Αλλάζει μόνο η αναλυτική στάση και η μετατόπιση των μελών του σώματος που περιγράφεται σε κάθε καρέ.",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Strict 45-degree oblique angle, same female ATHLETICO model, exact face, clothes, shoes, lighting and camera distance, full-body single athlete, two arms/two legs, no extra limbs, text or arrows.\n\nCRITICAL CAMERA & DIRECTION LOCK:\n- Maintain the EXACT same camera angle and background framing in all panels.\n- The athlete's head and torso MUST remain oriented toward the RIGHT side of the frame throughout the entire sequence (DO NOT flip or mirror the athlete's direction to the left).\n- Include the black gym mat on the floor beneath the athlete in every frame.",
+      "fixedVisualContext": "CRITICAL CAMERA & DIRECTION LOCK: Maintain the EXACT same camera angle and background framing in all frames. Athlete's head and torso remain oriented toward the RIGHT (never flip or mirror left). Black gym mat is visible under the athlete in every frame. All four outward frames are now complete. All return frames are EXACT REUSE aliases, not new images.",
       "frameCount": 7,
       "closingFrameReuses": 1,
       "frames": [
         {
           "frame": 1,
-          "label": "Αρχική θέση (Αρχή) — Ψηλή σανίδα",
-          "poseDescription": "Αρχική θέση (Θέση 1): Σταθερή λήψη στις 45 μοίρες (λοξά). Κεφάλι και αυχένας σε ευθεία γραμμή με τη σπονδυλική στήλη, βλέμμα στραμμένο στο στρώμα ανάμεσα στα χέρια. Χέρια τεντωμένα με έλεγχο, παλάμες ακριβώς κάτω από τους ώμους με τα δάχτυλα ανοιχτά στο έδαφος. Κορμός, στήθος και κοιλιά σε απόλυτη ευθεία γραμμή σαν σανίδα, ώμοι τραβηγμένοι πίσω και κάτω, κοιλιά και γλουτοί ενεργοποιημένοι χωρίς βύθιση της μέσης. Λεκάνη παράλληλη με το πάτωμα. Πόδια τεντωμένα πίσω, στηριζόμενα στα δάχτυλα των πελμάτων στο άνοιγμα των ισχίων.",
+          "label": "High plank — RIGHT facing",
+          "poseDescription": "Frame 1 (Start): High plank on the black gym mat, body facing RIGHT. Both hands planted on the mat under shoulders, feet together on toes toward the left side of the frame.",
           "transitionDescription": "Αρχική σταθεροποίηση του σώματος σε ψηλή σανίδα από λοξή οπτική γωνία 45 μοιρών. Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και μεταφορά βάρους στο ένα χέρι.",
-          "sameImageAs": null
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Strict 45-degree oblique angle, same female ATHLETICO model, exact face, clothes, shoes, lighting and camera distance, full-body single athlete, two arms/two legs, no extra limbs, text or arrows.\n\nCRITICAL CAMERA & DIRECTION LOCK:\n- Maintain the EXACT same camera angle and background framing in all panels.\n- The athlete's head and torso MUST remain oriented toward the RIGHT side of the frame throughout the entire sequence (DO NOT flip or mirror the athlete's direction to the left).\n- Include the black gym mat on the floor beneath the athlete in every frame.\n\nFrame 1 (Start): High plank on the black gym mat, body facing RIGHT. Both hands planted on the mat under shoulders, feet together on toes toward the left side of the frame."
         },
         {
           "frame": 2,
-          "label": "Κίνηση 1 — Στροφή λεκάνης & μεταφορά βάρους",
-          "poseDescription": "Κίνηση 1 (Θέση 2): Λήψη στις 45 μοίρες. Κεφάλι ευθυγραμμισμένο, βλέμμα στραμμένο διαγώνια. Το βάρος του σώματος μεταφέρεται σταθερά στο δεξί χέρι, του οποίου η παλάμη πιέζει ακλόνητα το έδαφος, ενώ το αριστερό χέρι αρχίζει να ελαφρώνει και να σηκώνεται. Η λεκάνη περιστρέφεται ελεγχόμενα προς τα αριστερά, το δεξί πόδι γυρίζει ελαφρώς στο πλάι πατώντας στην εξωτερική πλευρά του πέλματος, και το αριστερό γόνατο αρχίζει να λυγίζει.",
+          "label": "Transition — LEFT hand anchored",
+          "poseDescription": "Frame 2 (Transition): Body still facing RIGHT. The athlete's LEFT hand stays firmly planted on the mat supporting weight. Right hand lifts off the mat with elbow bent near chest. Both knees bend slightly hovering 5 cm off the mat while the hips rotate open toward the camera, threading the LEFT leg underneath the body toward the right.",
           "transitionDescription": "Μεταφορά του βάρους στο δεξί χέρι και περιστροφή της λεκάνης στο πλάι, με το αριστερό χέρι να ξεκολλάει από το πάτωμα. Προετοίμασε ομαλή μετάβαση προς: πέρασμα του ποδιού κάτω από τον κορμό.",
-          "sameImageAs": null
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Strict 45-degree oblique angle, same female ATHLETICO model, exact face, clothes, shoes, lighting and camera distance, full-body single athlete, two arms/two legs, no extra limbs, text or arrows.\n\nCRITICAL CAMERA & DIRECTION LOCK:\n- Maintain the EXACT same camera angle and background framing in all panels.\n- The athlete's head and torso MUST remain oriented toward the RIGHT side of the frame throughout the entire sequence (DO NOT flip or mirror the athlete's direction to the left).\n- Include the black gym mat on the floor beneath the athlete in every frame.\n\nFrame 2 (Transition): Body still facing RIGHT. The athlete's LEFT hand stays firmly planted on the mat supporting weight. Right hand lifts off the mat with elbow bent near chest. Both knees bend slightly hovering 5 cm off the mat while the hips rotate open toward the camera, threading the LEFT leg underneath the body toward the right."
         },
         {
           "frame": 3,
-          "label": "Κίνηση 2 — Πέρασμα ποδιού κάτω από τον κορμό",
-          "poseDescription": "Κίνηση 2 (Θέση 3): Λήψη στις 45 μοίρες. Κεφάλι ψηλά, βλέμμα ακολουθεί την κατεύθυνση της κίνησης. Το δεξί χέρι στηρίζει ακλόνητα το πάνω μέρος του σώματος, το αριστερό χέρι σηκώνεται μπροστά στο στήθος με λυγισμένο αγκώνα. Το αριστερό γόνατο λυγίζει έντονα και περνάει κάτω από το στήθος και τη λεκάνη οδηγούμενο προς τα δεξιά. Ο κορμός διατηρείται σταθερός χωρίς να καταρρέει ο ώμος στήριξης.",
+          "label": "Mid-Kick — LEFT leg extended halfway",
+          "poseDescription": "Frame 3 (Mid-Kick): Body still facing RIGHT. Left hand remains planted on the mat, right foot pivots flat on the mat for balance. Right arm begins lifting upward, while the LEFT leg extends halfway forward toward the right side of the frame, hovering above the mat.",
           "transitionDescription": "Ομαλό πέρασμα του λυγισμένου αριστερού ποδιού κάτω από τον κορμό, ενώ το αριστερό χέρι υψώνεται για ισορροπία. Προετοίμασε ομαλή μετάβαση προς: πλήρης έκταση σε kickthrough.",
-          "sameImageAs": null
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Strict 45-degree oblique angle, same female ATHLETICO model, exact face, clothes, shoes, lighting and camera distance, full-body single athlete, two arms/two legs, no extra limbs, text or arrows.\n\nCRITICAL CAMERA & DIRECTION LOCK:\n- Maintain the EXACT same camera angle and background framing in all panels.\n- The athlete's head and torso MUST remain oriented toward the RIGHT side of the frame throughout the entire sequence (DO NOT flip or mirror the athlete's direction to the left).\n- Include the black gym mat on the floor beneath the athlete in every frame.\n\nFrame 3 (Mid-Kick): Body still facing RIGHT. Left hand remains planted on the mat, right foot pivots flat on the mat for balance. Right arm begins lifting upward, while the LEFT leg extends halfway forward toward the right side of the frame, hovering above the mat."
         },
         {
           "frame": 4,
-          "label": "Κορύφωση — Πλήρης έκταση ποδιού σε kickthrough",
-          "poseDescription": "Κορύφωση (Θέση 4): Λήψη στις 45 μοίρες. Κεφάλι στητό, βλέμμα ευθεία προς το τεντωμένο πόδι. Το αριστερό πόδι εκτείνεται πλήρως στον αέρα προς τα δεξιά, παράλληλο με το πάτωμα, χωρίς να ακουμπάει κάτω. Το δεξί χέρι στηρίζει σταθερά το σώμα στο έδαφος με ενεργό τον ώμο. Το αριστερό χέρι παραμένει ψηλά λυγισμένο δίπλα στο πρόσωπο σαν ασπίδα. Το δεξί πόδι πατάει σταθερά με λυγισμένο γόνατο στις 90 μοίρες στηρίζοντας τη λεκάνη ψηλά.",
+          "label": "Peak Hold — RIGHT facing, LEFT hand + RIGHT foot support",
+          "poseDescription": "Frame 4 (Peak Hold): Body facing RIGHT/camera in full side-facing kick-through balance. Weight supported solely on the planted LEFT hand and planted RIGHT foot. Right arm is extended vertically toward the ceiling. Left leg is fully extended straight out toward the right side of the frame, hovering parallel to the mat without touching it.",
           "transitionDescription": "Πλήρης έκταση του αριστερού ποδιού στον αέρα σε κορυφαία θέση kickthrough με σταθερή στήριξη στο δεξί χέρι και πόδι. Προετοίμασε ομαλή μετάβαση προς: μάζεμα ποδιού κάτω από τον κορμό.",
-          "sameImageAs": null
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-female-reference.jpg (SHA-256 59c9c2fc50bf64bc9e7e462084b068d2bf2272741b84e0138426b63b4df081c6). Strict 45-degree oblique angle, same female ATHLETICO model, exact face, clothes, shoes, lighting and camera distance, full-body single athlete, two arms/two legs, no extra limbs, text or arrows.\n\nCRITICAL CAMERA & DIRECTION LOCK:\n- Maintain the EXACT same camera angle and background framing in all panels.\n- The athlete's head and torso MUST remain oriented toward the RIGHT side of the frame throughout the entire sequence (DO NOT flip or mirror the athlete's direction to the left).\n- Include the black gym mat on the floor beneath the athlete in every frame.\n\nFrame 4 (Peak Hold): Body facing RIGHT/camera in full side-facing kick-through balance. Weight supported solely on the planted LEFT hand and planted RIGHT foot. Right arm is extended vertically toward the ceiling. Left leg is fully extended straight out toward the right side of the frame, hovering parallel to the mat without touching it."
         },
         {
           "frame": 5,
-          "label": "Επιστροφή 1 — Μάζεμα ποδιού κάτω από τον κορμό",
+          "label": "REUSE — Frame 3",
           "poseDescription": "Επιστροφή 1 (Θέση 5): Λήψη στις 45 μοίρες. Κεφάλι ευθυγραμμισμένο, βλέμμα προς το έδαφος. Το τεντωμένο αριστερό πόδι λυγίζει στο γόνατο και επιστρέφει ελεγχόμενα πίσω κάτω από τον κορμό. Το αριστερό χέρι αρχίζει να κατεβαίνει προς το στρώμα, ενώ η λεκάνη αρχίζει να περιστρέφεται πίσω προς την οριζόντια θέση.",
           "transitionDescription": "Ελεγχόμενο λύγισμα και μάζεμα του ποδιού κάτω από το σώμα, προετοιμάζοντας την επαναφορά των χεριών στο στρώμα. Προετοίμασε ομαλή μετάβαση προς: στροφή λεκάνης και τοποθέτηση χεριού.",
-          "sameImageAs": null
+          "sameImageAs": 3,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
         },
         {
           "frame": 6,
-          "label": "Επιστροφή 2 — Επαναφορά λεκάνης & τοποθέτηση χεριού",
+          "label": "REUSE — Frame 2",
           "poseDescription": "Επιστροφή 2 (Θέση 6): Λήψη στις 45 μοίρες. Κεφάλι και αυχένας ίσια, βλέμμα στο πάτωμα. Η αριστερή παλάμη ακουμπάει ξανά σταθερά στο στρώμα κάτω από τον ώμο. Η λεκάνη ισιώνει και γίνεται ξανά απόλυτα παράλληλη με το έδαφος. Το αριστερό πόδι εκτείνεται πίσω δίπλα στο δεξί, με τα δάχτυλα των ποδιών να πατούν στο στρώμα.",
           "transitionDescription": "Επανατοποθέτηση της παλάμης στο πάτωμα, ευθυγράμμιση της λεκάνης και τοποθέτηση των ποδιών πίσω σε ευθεία. Προετοίμασε ομαλή μετάβαση προς: πλήρη επαναφορά στην αρχική ψηλή σανίδα.",
-          "sameImageAs": null
+          "sameImageAs": 2,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
         },
         {
           "frame": 7,
-          "label": "Τελική επαναφορά — ίδια με την αρχική θέση (επαναφορά στην αρχική θέση)",
+          "label": "REUSE — Frame 1",
           "poseDescription": "Τέλος / Αρχική (Θέση 7): Σταθερή λήψη στις 45 μοίρες. Κεφάλι και αυχένας σε ευθεία, βλέμμα στο στρώμα. Χέρια τεντωμένα με παλάμες κάτω από τους ώμους, δάχτυλα ανοιχτά. Στήθος ανοιχτό, ώμοι πίσω και κάτω, κοιλιά και γλουτοί ενεργοποιημένοι σε απόλυτη ευθεία γραμμή. Λεκάνη παράλληλη με το πάτωμα. Πόδια τεντωμένα πίσω στηριζόμενα στα δάχτυλα των πελμάτων. Στάση απόλυτα ταυτόσημη με το Καρέ 1.",
           "transitionDescription": "Επανάφερε το σώμα ακριβώς στην αρχική θέση ψηλής σανίδας. Δεν δημιουργείται νέα εικόνα· χρησιμοποιείται αυτούσια η εικόνα του Frame 1.",
-          "sameImageAs": 1
+          "sameImageAs": 1,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
         }
-      ]
+      ],
+      "coachReviewRequired": true
     },
     "modelProfile": "female",
     "custom": true,
     "classification": "Custom",
-    "newConcept": true
+    "newConcept": true,
+    "reviewStatus": "pending",
+    "approvedBySofia": false,
+    "imageStatus": "not_generated"
   },
   {
     "id": "hybrid-qor",
