@@ -240,6 +240,8 @@ export const App: React.FC = () => {
       items.set(x.id, { ...items.get(x.id), ...x });
     }
     return [...items.values()]
+      // A stale browser-local copy must never resurrect the deleted Zevara entry.
+      .filter((x) => x.id !== 'hybrid-zev')
       .filter((x) => !x.requiresCoachReview || reviewStatus(x.id, reviews) !== 'rejected')
       .map((x) =>
         x.requiresCoachReview
