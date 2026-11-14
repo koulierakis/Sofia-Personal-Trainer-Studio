@@ -13,7 +13,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
 
   const downloadManifest = () => {
     const payload = {
-      purpose: 'SOFIA — first 10 pending coach review exercises',
+      purpose: 'SOFIA — first 10 pending Custom hybrid exercises',
       status: 'draft_only_not_generated_or_approved',
       rendering: 'Only generate[] frames with the approved locked model-and-studio image; return frames are exact local file copies.',
       plans,
@@ -22,7 +22,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'sofia-pending-first-10-render-plan.json';
+    link.download = 'sofia-hybrid-first-10-render-plan.json';
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -31,7 +31,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
   return (
     <details className="mb-5 rounded-xl border border-sky-700 bg-slate-950/80 p-4 text-white">
       <summary className="cursor-pointer font-bold text-sky-200">
-        Οπτικοποίηση — 10 πρώτες ασκήσεις σε αναμονή έγκρισης
+        Οπτικοποίηση — 10 πρώτες Custom ασκήσεις σε αναμονή έγκρισης
       </summary>
       <p className="mt-2 text-xs text-amber-200">
         Προετοιμασία prompts μόνο. Οι φωτογραφίες δεν έχουν παραχθεί και καμία άσκηση δεν έχει εγκριθεί.
