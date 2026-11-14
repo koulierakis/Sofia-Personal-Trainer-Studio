@@ -9,11 +9,11 @@ interface Props {
 }
 
 export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenExercise }) => {
-  const plans = useMemo(() => firstPendingVisualPlans(concepts, reviews, 10), [concepts, reviews]);
+  const plans = useMemo(() => firstPendingVisualPlans(concepts, reviews, 15), [concepts, reviews]);
 
   const downloadManifest = () => {
     const payload = {
-      purpose: 'SOFIA — first 10 pending Custom hybrid exercises',
+      purpose: 'SOFIA — first 15 pending Custom / Advanced exercises',
       status: 'draft_only_not_generated_or_approved',
       rendering: 'Only generate[] frames with the approved locked model-and-studio image; return frames are exact local file copies.',
       plans,
@@ -22,7 +22,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'sofia-hybrid-first-10-render-plan.json';
+    link.download = 'sofia-custom-first-15-render-plan.json';
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -31,7 +31,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
   return (
     <details className="mb-5 rounded-xl border border-sky-700 bg-slate-950/80 p-4 text-white">
       <summary className="cursor-pointer font-bold text-sky-200">
-        Οπτικοποίηση — 10 πρώτες Custom ασκήσεις σε αναμονή έγκρισης
+        Οπτικοποίηση — 15 πρώτες Custom / Advanced ασκήσεις σε αναμονή έγκρισης
       </summary>
       <p className="mt-2 text-xs text-amber-200">
         Προετοιμασία prompts μόνο. Οι φωτογραφίες δεν έχουν παραχθεί και καμία άσκηση δεν έχει εγκριθεί.
@@ -57,7 +57,7 @@ export const PendingVisualBatch: React.FC<Props> = ({ concepts, reviews, onOpenE
       </div>
       <button type="button" onClick={downloadManifest}
         className="mt-3 rounded-lg bg-sky-700 px-4 py-2 font-semibold text-sm text-white">
-        Λήψη των 10 πλάνων + μοναδικών prompts (JSON)
+        Λήψη των 15 πλάνων + μοναδικών prompts (JSON)
       </button>
     </details>
   );

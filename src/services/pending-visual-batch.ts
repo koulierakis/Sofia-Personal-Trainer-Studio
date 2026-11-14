@@ -73,7 +73,7 @@ export function firstPendingVisualPlans(
   max = 10,
 ): PendingExerciseRenderPlan[] {
   return concepts
-    .filter(ex => ex.id.startsWith('hybrid-') && reviewStatus(ex.id, reviews) === 'pending')
+    .filter(ex => (ex.id.startsWith('hybrid-') || ex.id === 'sofia-original-001' || ex.id === 'sofia-original-002') && reviewStatus(ex.id, reviews) === 'pending')
     .slice(0, max)
     .filter(ex => !!ex.visualization?.frames?.length)
     .map(ex => {
