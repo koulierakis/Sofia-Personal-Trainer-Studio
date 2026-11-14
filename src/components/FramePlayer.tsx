@@ -83,14 +83,14 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
     setIndex(Math.max(0, Math.min(frames.length - 1, targetIndex)));
   };
 
-  const speedOptions = [0.25, 0.5, 0.75, 1, 1.5, 2, 2.5];
+  const speedOptions = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
   const speed = 1500 / delay;
-  const speedLabel = (value: number) => `${String(value).replace('.', ',')}×`;
+  const speedLabel = (value: number) => `${value}x`;
 
   if (!frames || frames.length === 0) return null;
 
   return (
-    <section className="frame-player flex flex-col" aria-label="Αναπαραγωγή περιγραφών καρέ">
+    <section className="frame-player flex flex-col" aria-label="SOFIA Motion Player — αριθμημένα καρέ άσκησης">
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
@@ -179,12 +179,14 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                 {/* Overlays */}
                 <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
                   <span className="px-2.5 py-0.5 rounded-full text-[11px] font-black bg-sky-600/90 text-white backdrop-blur-md shadow-md border border-sky-400/50">
-                    Καρέ {index + 1} / {frames.length}
+                    FRAME {index + 1} / {frames.length}
                   </span>
-                  {currentFrame.sameImageAs && (
+                  {currentFrame.sameImageAs ? (
                     <span className="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-emerald-600/90 text-white backdrop-blur-md uppercase">
-                      Επαναχρησιμοποίηση Καρέ {currentFrame.sameImageAs}
+                      REUSE — Καρέ {currentFrame.sameImageAs}
                     </span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded-md text-[9px] font-extrabold bg-blue-700/90 text-white">Μοναδική εικόνα</span>
                   )}
                 </div>
 
