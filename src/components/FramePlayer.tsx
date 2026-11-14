@@ -243,28 +243,6 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
 
             {/* ΠΕΡΙΓΡΑΦΗ & ΚΙΝΗΣΙΟΛΟΓΙΚΕΣ ΛΕΠΤΟΜΕΡΕΙΕΣ */}
             <div className="frame-player-details md:col-span-7 flex flex-col justify-between space-y-3">
-              {/* ΕΠΙΒΕΒΑΙΩΣΗ ΚΙΝΗΣΙΟΛΟΓΙΑΣ ΖΕΒΑΡΑ / ΜΟΝΟΠΟΔΙΚΗΣ ΣΤΗΡΙΞΗΣ */}
-              {(exerciseId === 'hybrid-zev' || sequence.frames?.length === 7) && (
-                <div className="p-3 rounded-xl bg-gradient-to-r from-blue-950/80 to-slate-900 border border-sky-500/60 text-xs shadow-md">
-                  <div className="flex items-center gap-2 mb-1.5">
-                    <span className="text-base">🎯</span>
-                    <strong className="text-sky-300 font-bold uppercase tracking-wide">
-                      Επαληθευμένη Κινησιολογία Ποδιών &amp; Στήριξης
-                    </strong>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-200">
-                    <div className="bg-black/30 p-2 rounded-lg border border-sky-800/40">
-                      <span className="text-amber-300 font-bold block mb-0.5">🦶 ΜΟΝΙΜΗ ΣΤΗΡΙΞΗ:</span>
-                      <span><strong>Αριστερό πόδι</strong> — πατάει ακλόνητο και σταθερό με ολόκληρο το πέλμα στο δάπεδο.</span>
-                    </div>
-                    <div className="bg-black/30 p-2 rounded-lg border border-sky-800/40">
-                      <span className="text-emerald-300 font-bold block mb-0.5">🦵 ΚΙΝΟΥΜΕΝΟ ΠΟΔΙ:</span>
-                      <span><strong>Δεξί πόδι</strong> — κάνει το βήμα πίσω, και <strong>ΤΟ ΙΔΙΟ δεξί πόδι</strong> εκτινάσσεται εμπρός και ψηλά στις 90°.</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-
               <div className="frame-player-pose">
                 <span className="font-semibold text-sky-300 block mb-1">
                   📍 Αναλυτική στάση σώματος καρέ {index + 1}:
