@@ -12,6 +12,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLooping, setIsLooping] = useState(true);
   const [delay, setDelay] = useState(1500);
+  const [speedOpen, setSpeedOpen] = useState(false);
   const timerRef = useRef<number | null>(null);
 
   const frames = sequence.frames || [];
@@ -82,14 +83,9 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
     setIndex(Math.max(0, Math.min(frames.length - 1, targetIndex)));
   };
 
-  const speedOptions = [
-    { label: '0,5× · πιο αργά', value: 3000 },
-    { label: '0,75× · αργά', value: 2000 },
-    { label: '1× · κανονικά', value: 1500 },
-    { label: '1,5× · γρήγορα', value: 1000 },
-    { label: '2× · πιο γρήγορα', value: 750 },
-    { label: '3× · πολύ γρήγορα', value: 500 },
-  ];
+  const speedOptions = [0.25, 0.5, 0.75, 1, 1.5, 2, 2.5];
+  const speed = 1500 / delay;
+  const speedLabel = (value: number) => `${String(value).replace('.', ',')}×`;
 
   if (!frames || frames.length === 0) return null;
 
@@ -192,8 +188,33 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                   )}
                 </div>
 
-                <div className="absolute top-2 right-2 z-10">
-                  <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-black/80 text-amber-300 border border-amber-500/60 shadow">
+                <div className="absolute top-2 right-2 z-20 flex flex-col items-end gap-1">
+                  <button
+                    type="button"
+                    onClick={() => setSpeedOpen((open) => !open)}
+                    aria-label="Ταχύτητα αναπαραγωγής"
+                    aria-expanded={speedOpen}
+                    aria-haspopup="true"
+                    className="h-12 w-12 rounded-full bg-black/90 text-white font-extrabold border-2 border-sky-400 shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+                  >
+                    {speedLabel(speed)}
+                  </button>
+                  {speedOpen && (
+                    <div className="grid grid-cols-2 gap-1 p-2 rounded-xl border border-sky-500 bg-slate-950/95 shadow-2xl" role="group" aria-label="Επιλογές ταχύτητας">
+                      {speedOptions.map((value) => (
+                        <button
+                          type="button"
+                          key={value}
+                          onClick={() => { setDelay(1500 / value); setSpeedOpen(false); }}
+                          aria-pressed={speed === value}
+                          className={`px-2.5 py-1.5 rounded-lg text-xs font-bold ${speed === value ? 'bg-sky-600 text-white' : 'bg-slate-800 text-slate-100'}`}
+                        >
+                          {speedLabel(value)}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-black/80 text-amber-300 border border-amber-500/60">
                     📐 45° λοξά 3/4
                   </span>
                 </div>
@@ -330,20 +351,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
               Επόμενο →
             </button>
 
-            <label className="flex flex-col text-xs text-slate-300 ml-auto">
-              <span>Ταχύτητα αναπαραγωγής</span>
-              <select
-                value={delay}
-                onChange={(e) => setDelay(Number(e.target.value))}
-                className="mt-1 p-2 rounded bg-slate-800 border border-slate-600 text-white text-xs"
-              >
-                {speedOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>
-                    {opt.label}
-                  </option>
-                ))}
-              </select>
-            </label>
+
           </div>
         </div>
       )}
