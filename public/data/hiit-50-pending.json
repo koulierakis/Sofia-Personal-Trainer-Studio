@@ -13,7 +13,7 @@
     "requiresCoachReview": true,
     "reviewStatus": "pending",
     "approvalState": "pending_approval",
-    "imageStatus": "not_generated",
+    "imageStatus": "generated_pending_approval",
     "approvedBySofia": false,
     "newConcept": true,
     "modelProfile": "male",
@@ -63,7 +63,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 1 of 7. Αρχική θέση. Όρθια στάση, πέλματα στο άνοιγμα ισχίων, χέρια ενωμένα μπροστά από το στέρνο, κορμός κατακόρυφος, δύο πέλματα πλήρως στο δάπεδο."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 1 of 7. Αρχική θέση. Όρθια στάση, πέλματα στο άνοιγμα ισχίων, χέρια ενωμένα μπροστά από το στέρνο, κορμός κατακόρυφος, δύο πέλματα πλήρως στο δάπεδο.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-01.png"
         },
         {
           "frame": 2,
@@ -74,7 +75,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 2 of 7. Πρώτη μετάβαση. Αριστερό πέλμα μπροστά πλήρως στο δάπεδο και αριστερό γόνατο περίπου 90°. Δεξί πόδι βήμα πίσω, δεξιά φτέρνα ανασηκωμένη, πίσω γόνατο λίγα εκατοστά πάνω από το έδαφος. Κορμός όρθιος."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 2 of 7. Πρώτη μετάβαση. Αριστερό πέλμα μπροστά πλήρως στο δάπεδο και αριστερό γόνατο περίπου 90°. Δεξί πόδι βήμα πίσω, δεξιά φτέρνα ανασηκωμένη, πίσω γόνατο λίγα εκατοστά πάνω από το έδαφος. Κορμός όρθιος.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-02.png"
         },
         {
           "frame": 3,
@@ -85,7 +87,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 3 of 7. Ενδιάμεση θέση. Ο κορμός ανεβαίνει κατακόρυφα πάνω από το αριστερό πέλμα, αριστερό ισχίο και γόνατο σχεδόν εκτεταμένα. Δεξί πέλμα αποκολλημένο, δεξί γόνατο προωθείται εμπρός και ανέρχεται."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 3 of 7. Ενδιάμεση θέση. Ο κορμός ανεβαίνει κατακόρυφα πάνω από το αριστερό πέλμα, αριστερό ισχίο και γόνατο σχεδόν εκτεταμένα. Δεξί πέλμα αποκολλημένο, δεξί γόνατο προωθείται εμπρός και ανέρχεται.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-03.png"
         },
         {
           "frame": 4,
@@ -96,7 +99,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 4 of 7. Επόμενη μετάβαση. Πλήρης μονοποδική ισορροπία αποκλειστικά στο αριστερό πέλμα, αριστερό γόνατο εκτεταμένο, δεξί ισχίο σε κάμψη ~90°, δεξί γόνατο ~90°, δεξιός μηρός παράλληλος στο δάπεδο. Χέρια μπροστά στο στέρνο."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — attach this exact approved model-and-studio photo /images/athletes/athletico-male-reference.jpg (SHA-256 132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5). Use that person and that background only. Preserve the exact same identity, facial features, hair, proportions, clothes, shoes, black gym mat, studio lighting and framing in every frame. Camera angle is strictly locked at 45 degrees oblique (three-quarter semi-profile view, neither straight-on front nor fully side profile).\nCRITICAL SCREEN ORIENTATION LOCK: The athlete's head and primary movement direction MUST stay consistently oriented toward the RIGHT side of the frame across all panels. NEVER flip, mirror, or turn the athlete backward to face the left side in middle frames. Keep the supporting hand/foot planted consistently without switching sides mid-rep.\nFrame 4 of 7. Επόμενη μετάβαση. Πλήρης μονοποδική ισορροπία αποκλειστικά στο αριστερό πέλμα, αριστερό γόνατο εκτεταμένο, δεξί ισχίο σε κάμψη ~90°, δεξί γόνατο ~90°, δεξιός μηρός παράλληλος στο δάπεδο. Χέρια μπροστά στο στέρνο.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-04.png"
         },
         {
           "frame": 5,
@@ -107,7 +111,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": 3,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 3. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 3. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-03.png"
         },
         {
           "frame": 6,
@@ -118,7 +123,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": 2,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 2. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 2. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-02.png"
         },
         {
           "frame": 7,
@@ -129,7 +135,8 @@
           "referenceImage": "/images/athletes/athletico-male-reference.jpg",
           "referenceSha256": "132c39d363c91a4d49e117c408471bfcfa99d018e003b26ccec6519261569bd5",
           "sameImageAs": 1,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 1. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Επαναχρησιμοποίησε αυτούσιο το αρχείο εικόνας του καρέ 1. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-hiit-2026-01/frame-01.png"
         }
       ]
     }
