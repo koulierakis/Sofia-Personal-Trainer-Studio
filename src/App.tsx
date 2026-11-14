@@ -12,6 +12,7 @@ import {
 } from './services/review-system';
 import { FramePlayer } from './components/FramePlayer';
 import { PendingVisualBatch } from './components/PendingVisualBatch';
+import { firstPendingVisualPlans } from './services/pending-visual-batch';
 import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 import { SofiaAICoach } from './components/SofiaAICoach';
@@ -955,7 +956,11 @@ export const App: React.FC = () => {
 
                       {/* Interactive Frame Player with Visual Image Support */}
                       <FramePlayer
-                        sequence={currentSelectedExercise.visualization}
+                        sequence={
+                          firstPendingVisualPlans(conceptExercises, reviews, 10)
+                            .find((item) => item.exerciseId === currentSelectedExercise.id)?.sequence
+                          || currentSelectedExercise.visualization
+                        }
                         exerciseId={currentSelectedExercise.id}
                       />
                       <button type="button" onClick={() => { setSelectedExerciseId(null); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="bg-[#4f4f4f] hover:bg-[#656565] border-[#9a9a9a] text-white font-medium my-3">
