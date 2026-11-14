@@ -721,7 +721,7 @@ export const App: React.FC = () => {
 
                 {mode === 'functional' && tab === 'exercises' && (
                   <PendingVisualBatch
-                    concepts={conceptExercises}
+                    concepts={baseExercises.filter((ex) => ex.id.startsWith('hybrid-'))}
                     reviews={reviews}
                     onOpenExercise={jumpToExerciseFromProgram}
                   />
@@ -957,7 +957,7 @@ export const App: React.FC = () => {
                       {/* Interactive Frame Player with Visual Image Support */}
                       <FramePlayer
                         sequence={
-                          firstPendingVisualPlans(conceptExercises, reviews, 10)
+                          firstPendingVisualPlans(baseExercises.filter((ex) => ex.id.startsWith('hybrid-')), reviews, 10)
                             .find((item) => item.exerciseId === currentSelectedExercise.id)?.sequence
                           || currentSelectedExercise.visualization
                         }
