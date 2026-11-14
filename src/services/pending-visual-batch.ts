@@ -11,6 +11,10 @@ export function mirrorExerciseSequence(sequence: VisualizationSequence): Visuali
   const original = sequence.frames ?? [];
   if (original.length < 3) throw new Error('At least three frames are required');
 
+  // An explicitly stored return alias is authoritative, even when the peak label
+  // is localized or renamed (e.g. "Peak Hold"). Never treat return aliases
+  // as unique outward poses or manufacture extra playback frames.
+  const firstAliasIndex = original.findIndex(f => f.sameImageAs != null);
   const peakIndex = original.findIndex(f =>
     /κορύφωση|peak|apex|τέλος εκτέλεσης|τελική θέση της εξόδου/i.test(f.label || '')
   );
@@ -18,7 +22,9 @@ export function mirrorExerciseSequence(sequence: VisualizationSequence): Visuali
     i > 1 && /^(επιστροφή [12]|ελεγχόμενη επαναφορά|καρέ \d+ — επιστροφή)/i.test(f.label || '')
   );
   const lastOriginal = original.findIndex((f, i) => i > 0 && f.sameImageAs === 1);
-  const count = peakIndex >= 1
+  const count = firstAliasIndex > 1
+    ? firstAliasIndex
+    : peakIndex >= 1
     ? peakIndex + 1
     : firstReturn > 1
       ? firstReturn
