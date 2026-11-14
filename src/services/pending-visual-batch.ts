@@ -1,33 +1,54 @@
-import { Exercise, ReviewMap, VisualizationSequence } from '../types';
+import { Exercise, FrameItem, ReviewMap, VisualizationSequence } from '../types';
 import { reviewStatus } from './review-system';
 
 /**
- * Important: visualization-sequence.ts ALREADY supplies the complete canonical
- * outward + exact reverse-alias sequence. Never re-generate, shorten, re-label,
- * replace or reinterpret any exercise's frame prompts here.
+ * Preserve every stored outward pose/prompt up to the actual peak.
+ * The return path references those ORIGINAL images by index; never render it.
+ * The virtual "0" is the player reset state after the last displayed frame 1,
+ * NOT a new image or an extra generation request.
  */
 export function mirrorExerciseSequence(sequence: VisualizationSequence): VisualizationSequence {
-  const frames = sequence.frames ?? [];
-  if (frames.length < 3) throw new Error('Exercise has too few canonical frames');
-  if (frames[frames.length - 1].sameImageAs !== 1) {
-    throw new Error('Canonical exercise is missing last-frame alias to frame 1');
-  }
-  for (const [index, frame] of frames.entries()) {
-    if (frame.frame !== index + 1) {
-      throw new Error('Invalid canonical frame numbering');
-    }
-    if (!frame.prompt?.trim()) {
-      throw new Error('Missing original frame prompt at ' + frame.frame);
-    }
-    if (frame.sameImageAs !== null && frame.sameImageAs !== undefined) {
-      const source = frames[frame.sameImageAs - 1];
-      if (!source || source.frame >= frame.frame || source.sameImageAs != null) {
-        throw new Error('Invalid source-frame alias at ' + frame.frame);
-      }
-    }
-  }
-  // Return the original sequence untouched so the exact stored prompts survive.
-  return sequence;
+  const original = sequence.frames ?? [];
+  if (original.length < 3) throw new Error('At least three frames are required');
+
+  const peakIndex = original.findIndex(f =>
+    /κορύφωση|peak|apex|τέλος εκτέλεσης|τελική θέση της εξόδου/i.test(f.label || '')
+  );
+  const firstReturn = original.findIndex((f, i) =>
+    i > 1 && /^(επιστροφή [12]|ελεγχόμενη επαναφορά|καρέ \d+ — επιστροφή)/i.test(f.label || '')
+  );
+  const lastOriginal = original.findIndex((f, i) => i > 0 && f.sameImageAs === 1);
+  const count = peakIndex >= 1
+    ? peakIndex + 1
+    : firstReturn > 1
+      ? firstReturn
+      : lastOriginal > 1
+        ? lastOriginal
+        : original.length;
+
+  const forward = original.slice(0, count).map((f, i) => ({
+    ...f, frame: i + 1, sameImageAs: null,
+  }));
+  if (forward.length < 2) throw new Error('No usable outward movement');
+
+  const aliases: FrameItem[] = forward.slice(0, -1).reverse().map((source, i) => ({
+    ...source,
+    frame: forward.length + i + 1,
+    label: 'Επιστροφή — ίδιο ακριβώς με καρέ ' + source.frame,
+    sameImageAs: source.frame,
+    imageUrl: undefined,
+    prompt: 'REUSE EXACT ORIGINAL IMAGE FROM FRAME ' + source.frame +
+      '. DO NOT GENERATE A NEW IMAGE. DO NOT FLIP, MIRROR, RETOUCH OR CHANGE PIXELS.',
+  }));
+
+  const frames = [...forward, ...aliases];
+  return {
+    ...sequence,
+    frames,
+    frameCount: frames.length,
+    closingFrameReuses: 1,
+    coachReviewRequired: true,
+  };
 }
 
 export interface PendingExerciseRenderPlan {
@@ -41,14 +62,18 @@ export interface PendingExerciseRenderPlan {
   sequence: VisualizationSequence;
 }
 
-/** Review decisions saved in the user's browser take precedence. */
+/**
+ * The ten FIRST hybrid exercises in the repository are the selected Custom /
+ * Advanced set (Zevara, Vyxora, Qorix ...). Keep repository sequence ordering.
+ * Do not silently fall back to the unrelated sofia-original-001 family.
+ */
 export function firstPendingVisualPlans(
   concepts: Exercise[],
   reviews: ReviewMap,
   max = 10,
 ): PendingExerciseRenderPlan[] {
   return concepts
-    .filter(ex => ex.id.startsWith('sofia-original-') && reviewStatus(ex.id, reviews) === 'pending')
+    .filter(ex => ex.id.startsWith('hybrid-') && reviewStatus(ex.id, reviews) === 'pending')
     .slice(0, max)
     .filter(ex => !!ex.visualization?.frames?.length)
     .map(ex => {
