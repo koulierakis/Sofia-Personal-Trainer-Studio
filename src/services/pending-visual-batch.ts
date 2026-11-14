@@ -9,8 +9,16 @@ import { reviewStatus } from './review-system';
 export function mirrorExerciseSequence(sequence: VisualizationSequence): VisualizationSequence {
   const original = sequence.frames ?? [];
   if (original.length < 3) return sequence;
-  // Peak is the central frame in the stored motion sequence.
-  const peak = Math.floor(original.length / 2);
+  // Stop BEFORE the first return phase; complex movements can have several
+  // outward poses and just one generic closing frame, so midpoint is wrong.
+  const returnIndex = original.findIndex((frame, i) =>
+    i > 0 && /επιστροφ|επαναφορ|return|reverse|reset/i.test(
+      (frame.label ?? '') + ' ' + (frame.transitionDescription ?? '')
+    )
+  );
+  const peak = returnIndex > 1
+    ? returnIndex - 1
+    : Math.floor((original.length - 1) / 2);
   const outward = original.slice(0, peak + 1);
   const forward: FrameItem[] = outward.map((frame, i) => ({
     ...frame,
