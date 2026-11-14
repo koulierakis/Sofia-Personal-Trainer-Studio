@@ -12,7 +12,7 @@ import {
 } from './services/review-system';
 import { FramePlayer } from './components/FramePlayer';
 import { PendingVisualBatch } from './components/PendingVisualBatch';
-import { firstPendingVisualPlans } from './services/pending-visual-batch';
+import { firstPendingVisualPlans, mirrorExerciseSequence } from './services/pending-visual-batch';
 import { MotionValidation } from './components/MotionValidation';
 import { VISUAL_REFERENCES, modelProfileFor } from './services/visual-reference-lock';
 import { SofiaAICoach } from './components/SofiaAICoach';
@@ -527,8 +527,16 @@ export const App: React.FC = () => {
   const currentSelectedExercise = useMemo(() => {
     if (!selectedExerciseId) return null;
     const found = currentCatalog.find((x) => x.id === selectedExerciseId);
-    return found ? ensureVisualization(found) : null;
-  }, [selectedExerciseId, currentCatalog]);
+    if (!found) return null;
+    const normalized = ensureVisualization(found);
+    // Detail prompts, progress, thumbnails and player must share ONE sequence.
+    // In pending Custom / Advanced exercises the original authored prompts
+    // are preserved while return frames are strict image aliases.
+    if ((normalized.id.startsWith('hybrid-') || ['sofia-original-001', 'sofia-original-002'].includes(normalized.id)) && normalized.visualization && reviewStatus(normalized.id, reviews) === 'pending') {
+      return { ...normalized, visualization: mirrorExerciseSequence(normalized.visualization) };
+    }
+    return normalized;
+  }, [selectedExerciseId, currentCatalog, reviews]);
 
   // Selected program for detail view
   const currentSelectedProgram = useMemo(() => {
@@ -956,11 +964,7 @@ export const App: React.FC = () => {
 
                       {/* Interactive Frame Player with Visual Image Support */}
                       <FramePlayer
-                        sequence={
-                          firstPendingVisualPlans([...baseExercises.filter((ex) => ex.id.startsWith('hybrid-')), ...conceptExercises.filter((ex) => ['sofia-original-001', 'sofia-original-002'].includes(ex.id))], reviews, 15)
-                            .find((item) => item.exerciseId === currentSelectedExercise.id)?.sequence
-                          || currentSelectedExercise.visualization
-                        }
+                        sequence={currentSelectedExercise.visualization}
                         exerciseId={currentSelectedExercise.id}
                       />
                       <button type="button" onClick={() => { setSelectedExerciseId(null); window.scrollTo({ top: 0, behavior: 'instant' }); }} className="bg-[#4f4f4f] hover:bg-[#656565] border-[#9a9a9a] text-white font-medium my-3">
