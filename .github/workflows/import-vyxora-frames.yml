@@ -1,0 +1,59 @@
+name: Import Vyxora frame PNGs
+on:
+  push:
+    branches:
+      - feat/sofia-vyxora-png-frames
+    paths:
+      - public/data/vyxora-image-import.json
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch generated PNGs and connect exercise player
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import path from 'node:path';
+          const manifest=JSON.parse(await fs.readFile('public/data/vyxora-image-import.json','utf8'));
+          const file='public/data/custom-sequences.json';
+          const data=JSON.parse(await fs.readFile(file,'utf8'));
+          const e=data.find(x=>x.id===manifest.exerciseId);
+          if(!e || e.visualization.frames.length!==7 || manifest.uniqueFrames.length!==4) throw Error('Invalid exercise data');
+          const images=new Map();
+          for(const f of manifest.uniqueFrames) {
+            const frame=e.visualization.frames.find(x=>x.frame===f.frame);
+            if(!frame || frame.sameImageAs!==null) throw Error('Bad source frame '+f.frame);
+            const res=await fetch(f.url,{redirect:'follow'});
+            if(!res.ok) throw Error('Unable to fetch generated frame '+f.frame+': '+res.status);
+            const b=Buffer.from(await res.arrayBuffer());
+            if(b.length<12000 || b[0]!==137 || b[1]!==80 || b[2]!==78 || b[3]!==71) throw Error('PNG verification failed '+f.frame);
+            const target='public/images/exercises/hybrid-vyx/frame-'+String(f.frame).padStart(2,'0')+'.png';
+            await fs.mkdir(path.dirname(target),{recursive:true});
+            await fs.writeFile(target,b);
+            images.set(f.frame,'/'+target.slice(7));
+            console.log(target, b.length);
+          }
+          for (const f of e.visualization.frames){
+            const source=f.sameImageAs??f.frame;
+            if(!images.has(source)) throw Error('Missing frame '+source);
+            f.imageUrl=images.get(source);
+          }
+          e.reviewStatus='pending';
+          e.imageStatus='generated_pending_approval';
+          e.verified=false;
+          e.approvedBySofia=false;
+          e.visualization.fixedVisualContext='Actual PNG frames 1,2,3,4. Return frames 5,6,7 exact reuse from 3,2,1. Female ATHLETICO reference, same studio.';
+          await fs.writeFile(file,JSON.stringify(data,null,2)+'\n');
+          JS
+      - name: Commit PNGs and player references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/exercises/hybrid-vyx/ public/data/custom-sequences.json
+          git diff --cached --quiet || (git commit -m "Upload Vyxora actual PNG poses and link all seven player frames" && git push)
