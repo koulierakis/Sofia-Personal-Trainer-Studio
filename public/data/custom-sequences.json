@@ -1608,5 +1608,259 @@
     "custom": true,
     "classification": "Custom",
     "newConcept": true
+  },
+  {
+    "id": "sofia-pilates-teaser-01",
+    "name": "Single-Leg Pilates Teaser Curl-Up",
+    "greekName": "Pilates — Μονοποδικό Teaser / Κοιλιακή αναδίπλωση",
+    "code": "PIL-TEASER-01",
+    "discipline": "pilates",
+    "trainingType": "Pilates Mat / Box",
+    "level": "Advanced",
+    "category": "Κορμός",
+    "muscles": [
+      "Κοιλιακοί",
+      "Καμπτήρες ισχίου",
+      "Σταθεροποιητές λεκάνης"
+    ],
+    "equipment": [
+      "Χαμηλό σταθερό Pilates box",
+      "Στρώμα"
+    ],
+    "custom": true,
+    "classification": "Custom / Advanced",
+    "source": "user-supplied-pilates-video-2026-11-17",
+    "verified": false,
+    "requiresCoachReview": true,
+    "reviewStatus": "pending",
+    "approvalState": "pending_approval",
+    "imageStatus": "not_generated",
+    "approvedBySofia": false,
+    "modelProfile": "female",
+    "description": "Οπτικοποίηση της κίνησης του βίντεο αναφοράς με 8 μοναδικές στάσεις στην άνοδο και πιστή αντίστροφη επιστροφή, συνολικά 15 καρέ.",
+    "instructions": "1. Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια.\n2. Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα.\n3. Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης.\n4. Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι.\n5. Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες.\n6. Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια.\n7. Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι.\n8. Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς.",
+    "breathing": "Εκπνοή στην άνοδο του κορμού, εισπνοή στην ελεγχόμενη επιστροφή.",
+    "safety": "Το χαμηλό υποστήριγμα πρέπει να είναι σταθερό και μη ολισθηρό. Το εύρος κίνησης να προσαρμόζεται από προπονητή Pilates, χωρίς επιβάρυνση του αυχένα ή της μέσης.",
+    "phases": [
+      {
+        "label": "Έναρξη — ύπτια έκταση",
+        "cue": "Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια.",
+        "sequenceIndex": 1
+      },
+      {
+        "label": "Τα χέρια αρχίζουν να ανεβαίνουν",
+        "cue": "Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα.",
+        "sequenceIndex": 2
+      },
+      {
+        "label": "Χέρια πάνω από τους ώμους",
+        "cue": "Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης.",
+        "sequenceIndex": 3
+      },
+      {
+        "label": "Πρώτη κάμψη κορμού",
+        "cue": "Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι.",
+        "sequenceIndex": 4
+      },
+      {
+        "label": "Μεσαία κάμψη κορμού",
+        "cue": "Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες.",
+        "sequenceIndex": 5
+      },
+      {
+        "label": "Προσέγγιση κνήμης",
+        "cue": "Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια.",
+        "sequenceIndex": 6
+      },
+      {
+        "label": "Σχεδόν τελική θέση",
+        "cue": "Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι.",
+        "sequenceIndex": 7
+      },
+      {
+        "label": "Κορύφωση — πλήρης προσέγγιση",
+        "cue": "Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς.",
+        "sequenceIndex": 8
+      }
+    ],
+    "visualization": {
+      "version": 3,
+      "referenceProfile": "female",
+      "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+      "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.",
+      "fixedVisualContext": "Same user-uploaded ATHLETICO female model and interior, identical camera fixed 45°. Frame playback: 1,2,3,4,5,6,7,8,7,6,5,4,3,2,1. Reference video determines motion, not model identity.",
+      "frameCount": 15,
+      "closingFrameReuses": 1,
+      "coachReviewRequired": true,
+      "uniqueForwardFrames": 8,
+      "frames": [
+        {
+          "frame": 1,
+          "label": "Έναρξη — ύπτια έκταση",
+          "poseDescription": "Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια.",
+          "changeFromPrevious": "Σταθεροποίηση λεκάνης και έκταση χεριών πίσω από το κεφάλι.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 1 of 15 — Έναρξη — ύπτια έκταση. Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια."
+        },
+        {
+          "frame": 2,
+          "label": "Τα χέρια αρχίζουν να ανεβαίνουν",
+          "poseDescription": "Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα.",
+          "changeFromPrevious": "Μόνο οι ώμοι και τα χέρια μετακινούνται, πόδια σταθερά.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 2 of 15 — Τα χέρια αρχίζουν να ανεβαίνουν. Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα."
+        },
+        {
+          "frame": 3,
+          "label": "Χέρια πάνω από τους ώμους",
+          "poseDescription": "Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης.",
+          "changeFromPrevious": "Ολοκλήρωση της αρχικής κίνησης χεριών, χωρίς μεταφορά θέσης κάμερας.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 3 of 15 — Χέρια πάνω από τους ώμους. Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης."
+        },
+        {
+          "frame": 4,
+          "label": "Πρώτη κάμψη κορμού",
+          "poseDescription": "Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι.",
+          "changeFromPrevious": "Μικρή σπονδυλική κάμψη 15° με σταθερή λεκάνη.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 4 of 15 — Πρώτη κάμψη κορμού. Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι."
+        },
+        {
+          "frame": 5,
+          "label": "Μεσαία κάμψη κορμού",
+          "poseDescription": "Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες.",
+          "changeFromPrevious": "Συνέχεια της ανόδου των ώμων και του θώρακα.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 5 of 15 — Μεσαία κάμψη κορμού. Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες."
+        },
+        {
+          "frame": 6,
+          "label": "Προσέγγιση κνήμης",
+          "poseDescription": "Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια.",
+          "changeFromPrevious": "Αργή ελεγχόμενη κάμψη και προσέγγιση του ποδιού.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 6 of 15 — Προσέγγιση κνήμης. Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια."
+        },
+        {
+          "frame": 7,
+          "label": "Σχεδόν τελική θέση",
+          "poseDescription": "Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι.",
+          "changeFromPrevious": "Μικρή τελική προσέγγιση με πλήρη έλεγχο κορμού.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 7 of 15 — Σχεδόν τελική θέση. Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι."
+        },
+        {
+          "frame": 8,
+          "label": "Κορύφωση — πλήρης προσέγγιση",
+          "poseDescription": "Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς.",
+          "changeFromPrevious": "Ολοκλήρωση της ανόδου με διατήρηση ανατομικής ευθυγράμμισης.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": null,
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 8 of 15 — Κορύφωση — πλήρης προσέγγιση. Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς."
+        },
+        {
+          "frame": 9,
+          "label": "επαναφορά — ακριβές καρέ 7",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 7. Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 9 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 7, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 7,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 7. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 10,
+          "label": "επαναφορά — ακριβές καρέ 6",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 6. Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 10 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 6, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 6,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 6. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 11,
+          "label": "επαναφορά — ακριβές καρέ 5",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 5. Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 11 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 5, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 5,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 5. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 12,
+          "label": "επαναφορά — ακριβές καρέ 4",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 4. Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 12 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 4, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 4,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 4. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 13,
+          "label": "επαναφορά — ακριβές καρέ 3",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 3. Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 13 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 3, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 3,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 14,
+          "label": "επαναφορά — ακριβές καρέ 2",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 2. Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 14 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 2, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 2,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        },
+        {
+          "frame": 15,
+          "label": "επαναφορά — ακριβές καρέ 1",
+          "poseDescription": "Επιστροφή στην ακριβώς ίδια στάση του καρέ 1. Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια.",
+          "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 15 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 1, χωρίς νέα παραγωγή.",
+          "referenceProfile": "female",
+          "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
+          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "sameImageAs": 1,
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+        }
+      ]
+    }
   }
 ]
