@@ -11,7 +11,8 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const [index, setIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLooping, setIsLooping] = useState(true);
-  const [delay, setDelay] = useState(1500);
+  const [delay, setDelay] = useState(sequence.uniqueForwardFrames ? 280 : 1500);
+  const [exportingVideo, setExportingVideo] = useState(false);
   const [speedOpen, setSpeedOpen] = useState(false);
   const timerRef = useRef<number | null>(null);
   const exerciseVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -27,6 +28,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
     // Reset index when sequence or exercise changes
     setIndex(0);
     setIsPlaying(false);
+    setDelay(sequence.uniqueForwardFrames ? 280 : 1500);
   }, [sequence, exerciseId]);
 
   useEffect(() => {
@@ -85,13 +87,96 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   };
 
   const speedOptions = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
-  const speed = 1500 / delay;
+  const frameInterval = sequence.uniqueForwardFrames ? 280 : 1500;
+  const speed = frameInterval / delay;
   const speedLabel = (value: number) => `${value}x`;
   // Keep the MP4 and the legacy frame stepper on the same speed setting.
   useEffect(() => {
     if (exerciseVideoRef.current) exerciseVideoRef.current.playbackRate = speed;
   }, [speed, sequence.videoUrl]);
 
+
+
+  const renderFrameVideo = async () => {
+    if (exportingVideo || !frames.length) return;
+    const urls = frames.map(frame =>
+      frame.imageUrl || frames.find(source => source.frame === frame.sameImageAs)?.imageUrl
+    );
+    if (urls.some(url => !url) || !('MediaRecorder' in window)) {
+      window.alert('Απαιτούνται πραγματικές εικόνες για κάθε καρέ και υποστήριξη MediaRecorder.');
+      return;
+    }
+    setExportingVideo(true);
+    try {
+      const images = await Promise.all(urls.map(url => new Promise<HTMLImageElement>((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => reject(new Error('Αδύνατη φόρτωση καρέ: ' + url));
+        img.src = url!;
+      })));
+      const canvas = document.createElement('canvas');
+      canvas.width = 720;
+      canvas.height = 960;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) throw new Error('Canvas unavailable');
+      const draw = (img: HTMLImageElement) => {
+        const scale = Math.min(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+        const w = img.naturalWidth * scale, h = img.naturalHeight * scale;
+        ctx.drawImage(img, (canvas.width - w) / 2, (canvas.height - h) / 2, w, h);
+      };
+      const formats = ['video/mp4;codecs=avc1.42E01E', 'video/webm;codecs=vp9', 'video/webm;codecs=vp8', 'video/webm'];
+      const mimeType = formats.find(type => MediaRecorder.isTypeSupported(type)) || '';
+      const recorder = new MediaRecorder(canvas.captureStream(24), mimeType ? { mimeType } : undefined);
+      const chunks: BlobPart[] = [];
+      recorder.ondataavailable = event => { if (event.data.size) chunks.push(event.data); };
+      const done = new Promise<void>((resolve, reject) => {
+        recorder.onerror = () => reject(new Error('Αποτυχία εξαγωγής βίντεο'));
+        recorder.onstop = () => {
+          if (!chunks.length) { reject(new Error('Δεν δημιουργήθηκε βίντεο')); return; }
+          const blob = new Blob(chunks, {type: mimeType || 'video/webm'});
+          const ext = blob.type.startsWith('video/mp4') ? 'mp4' : 'webm';
+          const target = URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = target;
+          link.download = (exerciseId || 'sofia-exercise') + '-complete-motion.' + ext;
+          link.click();
+          window.setTimeout(() => URL.revokeObjectURL(target), 3000);
+          resolve();
+        };
+      });
+      const duration = Math.max(140, frameInterval);
+      const total = images.length * duration;
+      draw(images[0]);
+      recorder.start();
+      const start = performance.now();
+      await new Promise<void>(resolve => {
+        const tick = (now: number) => {
+          const elapsed = now - start;
+          const at = Math.min(images.length - 1, Math.floor(elapsed / duration));
+          const next = Math.min(images.length - 1, at + 1);
+          const blend = Math.min(1, (elapsed % duration) / duration);
+          ctx.fillStyle = '#000';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.globalAlpha = 1;
+          draw(images[at]);
+          if (next !== at) {
+            ctx.globalAlpha = blend;
+            draw(images[next]);
+            ctx.globalAlpha = 1;
+          }
+          if (elapsed >= total) resolve();
+          else window.requestAnimationFrame(tick);
+        };
+        window.requestAnimationFrame(tick);
+      });
+      recorder.stop();
+      await done;
+    } catch (err) {
+      window.alert('Σφάλμα δημιουργίας βίντεο: ' + (err instanceof Error ? err.message : String(err)));
+    } finally {
+      setExportingVideo(false);
+    }
+  };
 
   if (!frames || frames.length === 0) return null;
 
@@ -119,6 +204,16 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
         </div>
       )}
 
+
+      {!sequence.videoUrl && frames.every(f => !!(f.imageUrl || frames.find(src => src.frame === f.sameImageAs)?.imageUrl)) && (
+        <div className="rounded-xl p-3 mb-3 border border-amber-500/50 bg-slate-900 flex flex-wrap items-center justify-between gap-2">
+          <span className="text-amber-100 text-xs font-semibold">Πλήρης κίνηση: {sequence.uniqueForwardFrames ?? Math.ceil(frames.length / 2)} στάσεις + αντίστροφη επιστροφή</span>
+          <button type="button" disabled={exportingVideo} onClick={renderFrameVideo}
+            className="bg-amber-600 disabled:opacity-50 px-4 py-2 rounded-lg text-white font-bold text-sm">
+            {exportingVideo ? 'Παραγωγή βίντεο…' : 'Δημιουργία βίντεο MP4/WebM'}
+          </button>
+        </div>
+      )}
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
@@ -235,7 +330,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
                         <button
                           type="button"
                           key={value}
-                          onClick={() => { setDelay(1500 / value); setSpeedOpen(false); }}
+                          onClick={() => { setDelay(frameInterval / value); setSpeedOpen(false); }}
                           aria-pressed={speed === value}
                           className={`px-2.5 py-1.5 rounded-lg text-xs font-bold ${speed === value ? 'bg-sky-600 text-white' : 'bg-slate-800 text-slate-100'}`}
                         >
