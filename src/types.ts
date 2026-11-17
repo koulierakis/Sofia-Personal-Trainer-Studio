@@ -29,6 +29,10 @@ export interface VisualizationSequence {
   closingFrameReuses: number;
   coachReviewRequired: boolean;
   frames: FrameItem[];
+  /** Optional verified MP4 built from exactly the frame image sequence. */
+  videoUrl?: string;
+  /** Unique forward images; return frames must point at the same original files. */
+  uniqueForwardFrames?: number;
 }
 
 export interface Exercise {
