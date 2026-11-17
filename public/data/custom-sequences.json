@@ -1634,7 +1634,7 @@
     "requiresCoachReview": true,
     "reviewStatus": "pending",
     "approvalState": "pending_approval",
-    "imageStatus": "not_generated",
+    "imageStatus": "generated_pending_approval",
     "approvedBySofia": false,
     "modelProfile": "female",
     "description": "Οπτικοποίηση της κίνησης του βίντεο αναφοράς με 8 μοναδικές στάσεις στην άνοδο και πιστή αντίστροφη επιστροφή, συνολικά 15 καρέ.",
@@ -1687,8 +1687,8 @@
       "version": 3,
       "referenceProfile": "female",
       "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-      "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
-      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.",
+      "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
+      "promptTemplate": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.",
       "fixedVisualContext": "Same user-uploaded ATHLETICO female model and interior, identical camera fixed 45°. Frame playback: 1,2,3,4,5,6,7,8,7,6,5,4,3,2,1. Reference video determines motion, not model identity.",
       "frameCount": 15,
       "closingFrameReuses": 1,
@@ -1702,9 +1702,10 @@
           "changeFromPrevious": "Σταθεροποίηση λεκάνης και έκταση χεριών πίσω από το κεφάλι.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 1 of 15 — Έναρξη — ύπτια έκταση. Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 1 of 15 — Έναρξη — ύπτια έκταση. Ύπτια πάνω σε σταθερό χαμηλό μαύρο Pilates box. Η πλάτη και οι ώμοι υποστηρίζονται, τα δύο χέρια εκτείνονται πίσω από το κεφάλι, το δεξί πόδι είναι τεντωμένο κάθετα προς τα πάνω και το αριστερό τεντωμένο οριζόντια.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-01.jpg"
         },
         {
           "frame": 2,
@@ -1713,9 +1714,10 @@
           "changeFromPrevious": "Μόνο οι ώμοι και τα χέρια μετακινούνται, πόδια σταθερά.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 2 of 15 — Τα χέρια αρχίζουν να ανεβαίνουν. Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 2 of 15 — Τα χέρια αρχίζουν να ανεβαίνουν. Χωρίς αλλαγή στα πόδια ή στη λεκάνη, οι δύο τεντωμένοι βραχίονες ανεβαίνουν από πίσω προς γωνία περίπου 55° πάνω από τον κορμό. Κεφάλι και ώμοι παραμένουν κοντά στο υποστήριγμα.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-02.jpg"
         },
         {
           "frame": 3,
@@ -1724,9 +1726,10 @@
           "changeFromPrevious": "Ολοκλήρωση της αρχικής κίνησης χεριών, χωρίς μεταφορά θέσης κάμερας.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 3 of 15 — Χέρια πάνω από τους ώμους. Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 3 of 15 — Χέρια πάνω από τους ώμους. Τα χέρια φτάνουν κάθετα πάνω από τους ώμους, το πηγούνι χαμηλώνει ελάχιστα και η κοιλιά προετοιμάζεται για τον έλεγχο της ανασήκωσης.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-03.jpg"
         },
         {
           "frame": 4,
@@ -1735,9 +1738,10 @@
           "changeFromPrevious": "Μικρή σπονδυλική κάμψη 15° με σταθερή λεκάνη.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 4 of 15 — Πρώτη κάμψη κορμού. Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 4 of 15 — Πρώτη κάμψη κορμού. Το κεφάλι και οι ωμοπλάτες ανασηκώνονται λίγο με ελεγχόμενη κάμψη του θωρακικού μέρους. Τα τεντωμένα χέρια προωθούνται προς το ανασηκωμένο δεξί πόδι.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-04.jpg"
         },
         {
           "frame": 5,
@@ -1746,9 +1750,10 @@
           "changeFromPrevious": "Συνέχεια της ανόδου των ώμων και του θώρακα.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 5 of 15 — Μεσαία κάμψη κορμού. Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 5 of 15 — Μεσαία κάμψη κορμού. Η κάμψη των κοιλιακών ανασηκώνει τον κορμό περίπου 30° από την ύπτια θέση. Οι παλάμες πλησιάζουν το ύψος του δεξιού γονάτου χωρίς να λυγίζουν οι αγκώνες.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-05.jpg"
         },
         {
           "frame": 6,
@@ -1757,9 +1762,10 @@
           "changeFromPrevious": "Αργή ελεγχόμενη κάμψη και προσέγγιση του ποδιού.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 6 of 15 — Προσέγγιση κνήμης. Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 6 of 15 — Προσέγγιση κνήμης. Ο κορμός ανασηκώνεται περίπου 45°· οι βραχίονες ακολουθούν την κατακόρυφη δεξιά κνήμη προς τον αστράγαλο. Η αριστερή κνήμη παραμένει ευθεία οριζόντια.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-06.jpg"
         },
         {
           "frame": 7,
@@ -1768,9 +1774,10 @@
           "changeFromPrevious": "Μικρή τελική προσέγγιση με πλήρη έλεγχο κορμού.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 7 of 15 — Σχεδόν τελική θέση. Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 7 of 15 — Σχεδόν τελική θέση. Ο κορμός βρίσκεται περίπου 55° πάνω από το σταθερό υποστήριγμα, χέρια προτεταμένα προς το δεξί πέλμα, λεκάνη σταθερή και βλέμμα προς το ανασηκωμένο παπούτσι.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-07.jpg"
         },
         {
           "frame": 8,
@@ -1779,9 +1786,10 @@
           "changeFromPrevious": "Ολοκλήρωση της ανόδου με διατήρηση ανατομικής ευθυγράμμισης.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": null,
-          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 8 of 15 — Κορύφωση — πλήρης προσέγγιση. Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς."
+          "prompt": "MANDATORY SOFIA VISUAL REFERENCE LOCK — exact female reference /images/athletes/sofia-pilates-teaser-female-reference.jpg SHA-256 5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5. Preserve her appearance, black top and shorts, white sneakers, the ATHLETICO luxury interior, camera, light and black mat. The camera is fixed at 45-degree three-quarter oblique side angle throughout; athlete's head stays on RIGHT side of the image. Low safe padded black Pilates box is unchanged. Right leg vertical, left leg extended horizontally throughout. No flipping, extra arms, text, arrows or camera movement.\nFrame 8 of 15 — Κορύφωση — πλήρης προσέγγιση. Κορύφωση της άσκησης Pilates: ο κορμός περίπου 65° με ελεγχόμενο abdominal curl-up, τα δύο χέρια προσεγγίζουν το ανασηκωμένο δεξί πέλμα. Δεξί πόδι κάθετο και αριστερό οριζόντιο, χωρίς αλλαγή πλευράς.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-08.jpg"
         },
         {
           "frame": 9,
@@ -1790,9 +1798,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 9 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 7, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 7,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 7. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 7. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-07.jpg"
         },
         {
           "frame": 10,
@@ -1801,9 +1810,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 10 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 6, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 6,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 6. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 6. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-06.jpg"
         },
         {
           "frame": 11,
@@ -1812,9 +1822,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 11 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 5, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 5,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 5. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 5. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-05.jpg"
         },
         {
           "frame": 12,
@@ -1823,9 +1834,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 12 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 4, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 4,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 4. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 4. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-04.jpg"
         },
         {
           "frame": 13,
@@ -1834,9 +1846,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 13 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 3, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 3,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 3. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-03.jpg"
         },
         {
           "frame": 14,
@@ -1845,9 +1858,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 14 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 2, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 2,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 2. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-02.jpg"
         },
         {
           "frame": 15,
@@ -1856,9 +1870,10 @@
           "changeFromPrevious": "Αντίστροφη εκτέλεση: το καρέ 15 δείχνει το ΑΚΡΙΒΩΣ ίδιο αρχείο εικόνας με το καρέ 1, χωρίς νέα παραγωγή.",
           "referenceProfile": "female",
           "referenceImage": "/images/athletes/sofia-pilates-teaser-female-reference.jpg",
-          "referenceSha256": "7c627cd9180de90239d99bd60ca0736b7661f6b1f8cbe3f301ab9f5dbd6d9273",
+          "referenceSha256": "5b6d799a34dcdf19e782e1800b23c3dda71e13704c59840ec30caa8a7fca3aa5",
           "sameImageAs": 1,
-          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό."
+          "prompt": "REUSE THE EXACT IMAGE FILE from frame 1. ΜΗΝ ΠΑΡΑΓΕΙΣ ΝΕΑ ΕΙΚΟΝΑ. Χωρίς κατοπτρισμό.",
+          "imageUrl": "/images/exercises/sofia-pilates-teaser-01/frame-01.jpg"
         }
       ]
     }
