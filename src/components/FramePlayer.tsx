@@ -14,6 +14,7 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const [delay, setDelay] = useState(1500);
   const [speedOpen, setSpeedOpen] = useState(false);
   const timerRef = useRef<number | null>(null);
+  const exerciseVideoRef = useRef<HTMLVideoElement | null>(null);
 
   const frames = sequence.frames || [];
   const currentFrame = frames[index] || frames[0];
@@ -86,11 +87,38 @@ export const FramePlayer: React.FC<FramePlayerProps> = ({ sequence, exerciseId }
   const speedOptions = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
   const speed = 1500 / delay;
   const speedLabel = (value: number) => `${value}x`;
+  // Keep the MP4 and the legacy frame stepper on the same speed setting.
+  useEffect(() => {
+    if (exerciseVideoRef.current) exerciseVideoRef.current.playbackRate = speed;
+  }, [speed, sequence.videoUrl]);
+
 
   if (!frames || frames.length === 0) return null;
 
   return (
     <section className="frame-player flex flex-col" aria-label="SOFIA Motion Player — αριθμημένα καρέ άσκησης">
+      {sequence.videoUrl && (
+        <div className="rounded-2xl border border-amber-500/50 bg-slate-950/80 p-3 mb-4" data-testid="sofia-exercise-video">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <strong className="text-amber-200 text-sm">Βίντεο πλήρους κίνησης • έξοδος και αντίστροφη επιστροφή</strong>
+            <span className="text-xs text-amber-300">{sequence.uniqueForwardFrames ?? Math.ceil(frames.length / 2)} μοναδικά • {frames.length} καρέ</span>
+          </div>
+          <video
+            ref={exerciseVideoRef}
+            key={sequence.videoUrl}
+            src={sequence.videoUrl}
+            poster={frames[0]?.imageUrl}
+            controls
+            loop
+            playsInline
+            preload="metadata"
+            className="block w-full max-w-[420px] mx-auto rounded-xl bg-black"
+            aria-label="Βίντεο της άσκησης σε πλήρη κίνηση"
+          />
+          <p className="text-xs text-slate-400 mt-2 text-center">Κάτω από το βίντεο διατηρείται ο έλεγχος κάθε καρέ και των prompts.</p>
+        </div>
+      )}
+
       {/* ΜΠΛΟΚΑΡΙΣΜΑ ΕΑΝ ΔΕΝ ΤΗΡΕΙΤΑΙ Η ΑΣΦΑΛΙΣΤΙΚΗ ΔΙΚΛΕΙΔΑ */}
       {/* FRAME PLAYER CONTROLS & ANIMATION */}
       {(
