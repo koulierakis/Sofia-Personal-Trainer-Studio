@@ -93,7 +93,12 @@ test('Every remaining exercise has descriptions, initial position, intermediate 
   const concepts = buildOriginalConcepts();
 
   const allExercises = [...f1, ...f2, ...f3, ...f4, ...custom, ...concepts].map(ensureVisualization);
-  assert.equal(custom.length, 12);
+  assert.equal(custom.length, 13);
+  const teaser = custom.find((exercise) => exercise.id === 'sofia-pilates-teaser-01');
+  assert.ok(teaser && teaser.discipline === 'pilates');
+  assert.equal(teaser.visualization.frames.length, 15);
+  assert.equal(teaser.visualization.frames.filter((frame) => frame.sameImageAs == null).length, 8);
+  assert.deepEqual(teaser.visualization.frames.slice(8).map((frame) => frame.sameImageAs), [7,6,5,4,3,2,1]);
   assert.ok(!custom.some((exercise) => exercise.id === 'hybrid-zev' || exercise.name === 'Zevara'));
   assert.equal(allExercises.length, f1.length + f2.length + f3.length + f4.length + custom.length + concepts.length);
 
