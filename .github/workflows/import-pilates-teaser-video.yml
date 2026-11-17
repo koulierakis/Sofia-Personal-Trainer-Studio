@@ -1,0 +1,99 @@
+name: Build Sofia Pilates teaser video from original frames
+on:
+  push:
+    branches:
+      - feat/sofia-pilates-teaser-video-15-frames
+    paths:
+      - public/data/pilates-teaser-import-manifest.json
+permissions:
+  contents: write
+jobs:
+  build-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Download exactly eight Adobe frames and original approved reference
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          import crypto from 'node:crypto';
+          import path from 'node:path';
+          const manifest=JSON.parse(await fs.readFile('public/data/pilates-teaser-import-manifest.json','utf8'));
+          if(manifest.frames.length!==8 || manifest.id!=='sofia-pilates-teaser-01')throw Error('Unexpected asset manifest');
+          const dataPath='public/data/custom-sequences.json';
+          const data=JSON.parse(await fs.readFile(dataPath,'utf8'));
+          const exercise=data.find(x=>x.id===manifest.id);
+          if(!exercise || exercise.visualization.frames.length!==15)throw Error('Exercise frame count mismatch');
+          async function download(url) {
+            const response=await fetch(url,{redirect:'follow'});
+            if(!response.ok) throw Error('Download HTTP '+response.status+' URL '+url);
+            return Buffer.from(await response.arrayBuffer());
+          }
+          const source=await download(manifest.reference.url);
+          const hash=crypto.createHash('sha256').update(source).digest('hex');
+          if(hash!==manifest.reference.sha256)throw Error('ATHLETICO reference SHA-256 differs: '+hash);
+          const refPath='public/images/athletes/sofia-pilates-teaser-female-reference.jpg';
+          await fs.mkdir(path.dirname(refPath),{recursive:true});
+          await fs.writeFile(refPath,source);
+          const tmp='.sofia-video-sequence';
+          const imageDir='public/images/exercises/'+manifest.id;
+          await fs.mkdir(tmp,{recursive:true});
+          await fs.mkdir(imageDir,{recursive:true});
+          const originalPaths=new Map();
+          for(let i=1;i<=8;i++) {
+            const frame=manifest.frames.find(f=>f.frame===i);
+            if(!frame)throw Error('Missing generated frame '+i);
+            const bytes=await download(frame.url);
+            if(bytes.length<25000 || !bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))throw Error('Image is not a PNG: '+i);
+            const p=imageDir+'/frame-'+String(i).padStart(2,'0')+'.png';
+            await fs.writeFile(p,bytes);
+            originalPaths.set(i,p);
+            exercise.visualization.frames[i-1].imageUrl='/'+p.slice('public/'.length);
+            console.log('Frame',i,'size',bytes.length);
+          }
+          for(let i=1;i<=15;i++) {
+            const src=i<=8?i:16-i;
+            const frame=exercise.visualization.frames[i-1];
+            if(frame.sameImageAs!==(i<=8?null:src))throw Error('REUSE mismatch at displayed frame '+i);
+            const body=await fs.readFile(originalPaths.get(src));
+            await fs.writeFile(tmp+'/frame-'+String(i).padStart(2,'0')+'.png',body);
+            frame.imageUrl='/'+originalPaths.get(src).slice('public/'.length);
+          }
+          exercise.imageStatus='generated_pending_approval';
+          exercise.reviewStatus='pending';
+          exercise.approvalState='pending_approval';
+          exercise.verified=false;
+          exercise.approvedBySofia=false;
+          await fs.writeFile(dataPath,JSON.stringify(data,null,2)+'\n');
+          JS
+      - name: Render MP4 with forward and reverse keyframes
+        run: |
+          mkdir -p public/videos/exercises
+          ffmpeg -hide_banner -loglevel warning -y -framerate 4 -start_number 1 -i .sofia-video-sequence/frame-%02d.png \
+            -vf "scale=720:960:force_original_aspect_ratio=decrease,pad=720:960:(ow-iw)/2:(oh-ih)/2,minterpolate=fps=24:mi_mode=mci:mc_mode=obmc:me_mode=bidir:vsbmc=1,format=yuv420p" \
+            -c:v libx264 -preset medium -crf 21 -movflags +faststart -an \
+            public/videos/exercises/sofia-pilates-teaser-01.mp4
+          test -s public/videos/exercises/sofia-pilates-teaser-01.mp4
+          ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height -of json public/videos/exercises/sofia-pilates-teaser-01.mp4
+      - name: Set published video path only after successful render
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs/promises';
+          const file='public/data/custom-sequences.json';
+          const data=JSON.parse(await fs.readFile(file,'utf8'));
+          const x=data.find(e=>e.id==='sofia-pilates-teaser-01');
+          x.visualization.videoUrl='/videos/exercises/sofia-pilates-teaser-01.mp4';
+          await fs.writeFile(file,JSON.stringify(data,null,2)+'\n');
+          JS
+      - name: Commit actual image assets, MP4, and player bindings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/images/athletes/sofia-pilates-teaser-female-reference.jpg public/images/exercises/sofia-pilates-teaser-01/ public/videos/exercises/sofia-pilates-teaser-01.mp4 public/data/custom-sequences.json
+          git diff --cached --quiet || (git commit -m "Add eight real Pilates frames and fifteen-frame MP4 with exact return aliases" && git push)
